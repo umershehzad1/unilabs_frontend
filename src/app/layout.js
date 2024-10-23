@@ -1,6 +1,7 @@
 import { Smooch_Sans } from 'next/font/google';
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from '@/components/layouts/NavigationBar';
 
 const smoochSans = Smooch_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`m-0 ${smoochSans.variable}`}>
+      <NavigationBar />
         {children}
       </body>
     </html>

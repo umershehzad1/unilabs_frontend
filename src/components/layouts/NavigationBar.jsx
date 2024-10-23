@@ -7,10 +7,11 @@ import logo from "../../assets/logo.png";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
 import { FaBarsStaggered } from "react-icons/fa6";
-
+import { usePathname } from "next/navigation";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
+  const pathname = usePathname(); 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -30,7 +31,7 @@ const NavigationBar = () => {
             />
           </Navbar.Brand>
           <Navbar.Toggle
-            className="nav-button d-flex align-items-center py-2"
+            className="nav-button d-flex align-items-center py-2  d-lg-none d-block"
             aria-controls="offcanvasNavbar"
             onClick={handleShow}
           >
@@ -39,7 +40,11 @@ const NavigationBar = () => {
           <Navbar.Collapse id="navbarScroll">
             <Nav className="ms-auto my-2 my-lg-0 d-none d-lg-block" style={{ maxHeight: "100px" }} navbarScroll>
               {menuItems.map((link, index) => (
-                <Link className="mx-3 text-white text-decoration-none" key={index} href={link.href}>
+                <Link
+                  className={`mx-3 text-decoration-none ${pathname === link.href ? 'text-green' : 'text-white'}`} 
+                  key={index}
+                  href={link.href}
+                >
                   {link.label}
                 </Link>
               ))}
