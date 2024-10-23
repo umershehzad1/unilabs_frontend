@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
 import { menuItems } from "../shared/MenuItems";
 import Image from "next/image";
-import logo from "../../assets/logo.png";
 import Link from "next/link";
 import Sidebar from "./Sidebar";
 import { FaBarsStaggered } from "react-icons/fa6";
@@ -11,27 +10,27 @@ import { usePathname } from "next/navigation";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
-  const pathname = usePathname(); 
+  const pathname = usePathname();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   return (
     <>
-      <Container>
-        <Navbar expand="lg" className="nav-bg stick-top mt-4 px-3 py-0 overflow-hidden">
+
+      <Navbar expand="lg" className="fixed-top mt-4 mx-2">
+        <Container className="nav-bg px-3 py-0 overflow-hidden ">
           <Navbar.Brand href="#" style={{ width: "50px" }}>
             <Image
-              src={logo}
-              width={0}
-              height={0}
-              style={{ width: "100%", height: "100%" }}
+              src={"/logo.png"}
+              width={50}
+              height={50}
               alt="logo"
               className="logo"
             />
           </Navbar.Brand>
           <Navbar.Toggle
-            className="nav-button d-flex align-items-center py-2  d-lg-none d-block"
+            className="nav-button d-flex align-items-center py-2 d-lg-none d-block"
             aria-controls="offcanvasNavbar"
             onClick={handleShow}
           >
@@ -41,7 +40,7 @@ const NavigationBar = () => {
             <Nav className="ms-auto my-2 my-lg-0 d-none d-lg-block" style={{ maxHeight: "100px" }} navbarScroll>
               {menuItems.map((link, index) => (
                 <Link
-                  className={`mx-3 text-decoration-none ${pathname === link.href ? 'text-green' : 'text-white'}`} 
+                  className={`mx-3 text-decoration-none ${pathname === link.href ? 'text-green' : 'text-white'}`}
                   key={index}
                   href={link.href}
                 >
@@ -56,8 +55,9 @@ const NavigationBar = () => {
               <Button className="py-2 px-3 nav-button">Connect to Wallet</Button>
             </Form>
           </Navbar.Collapse>
-        </Navbar>
-      </Container>
+        </Container>
+      </Navbar>
+
 
       <Sidebar show={show} handleClose={handleClose} />
     </>
