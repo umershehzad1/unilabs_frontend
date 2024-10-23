@@ -1,4 +1,5 @@
 import Hero from '@/components/Home/Hero'
+import ManageTransactions from '@/components/Home/ManageTransactions'
 import PoweredBy from '@/components/Home/PoweredBy'
 import Presales from '@/components/Home/Presales'
 import React from 'react'
@@ -8,6 +9,7 @@ const page = () => {
     <>
       <Hero />
       <Presales />
+      <ManageTransactions />
       <PoweredBy />
     </>
   )

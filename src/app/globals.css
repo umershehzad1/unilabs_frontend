@@ -194,15 +194,44 @@ body {
   font-weight: 700;
   line-height: 30.58px;
 }
-.star{
-  filter: drop-shadow(0px 0px 10px #FFFFFF);
+.star {
+  filter: drop-shadow(0px 0px 10px #ffffff);
 }
-.section-heading h1{
+.section-heading h1 {
   font-size: 70px;
   font-weight: 700;
   line-height: 153.6px;
   text-align: center;
-  
+}
+.manage h1 {
+  font-size: 76px;
+  font-weight: 600;
+  line-height: 70px;
+}
+.manage h1 span {
+  background: linear-gradient(268.97deg, #2e7d32 50.1%, #54e35b 99.32%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.manage p {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  color: white;
+}
+.phone{
+  background-color: #132944;
+  height: 450px;
+  border-radius: 20px;
+}
+.phone h3 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40.6px;
+  color: #2e7d32;
 }
 @media only screen and (max-width: 768px) {
   .hero h1 {
@@ -222,5 +251,6 @@ body {
     line-height: 20px;
   }
 }
+
 
 
