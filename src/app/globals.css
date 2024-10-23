@@ -190,9 +190,19 @@ body {
 }
 
 .presales h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 30.58px;
+}
+.star{
+  filter: drop-shadow(0px 0px 10px #FFFFFF);
+}
+.section-heading h1{
   font-size: 70px;
   font-weight: 700;
-  line-height: 80.58px;
+  line-height: 153.6px;
+  text-align: center;
+  
 }
 @media only screen and (max-width: 768px) {
   .hero h1 {
@@ -212,3 +222,5 @@ body {
     line-height: 20px;
   }
 }
+
+

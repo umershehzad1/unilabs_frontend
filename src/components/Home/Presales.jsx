@@ -12,7 +12,7 @@ const Presales = () => {
     ];
 
     return (
-        <Container className='py-5'>
+        <Container className='pt-5 pb-2'>
             <Col xs={11} lg={5} className='m-auto py-5'>
                 <Card className='border-0 p-lg-5 p-4 presales'>
                     <div>
@@ -37,7 +37,7 @@ const Presales = () => {
                             </Row>
                         ))}
                         <Row className='mt-4'>
-                            <Col xs={8}>
+                            <Col xs={12} lg={8} className='mt-2'>
                                 <div style={{
                                     background: "#D9D9D921",
                                     borderRadius: "30px",
@@ -45,11 +45,11 @@ const Presales = () => {
                                     display: "flex", alignItems: "center"
                                 }}>
                                     <div>
-                                        <Button className='bg-white border-0 ms-1' style={{borderRadius:"60px"}}>
+                                        <Button className='bg-white border-0 ms-1' style={{ borderRadius: "60px" }}>
                                             <FaCopy color='#2E7D32E5' />
                                         </Button>
 
-                                        </div>
+                                    </div>
                                     <div>
 
                                         <Form>
@@ -60,7 +60,7 @@ const Presales = () => {
                                 </div>
 
                             </Col>
-                            <Col xs={4}>
+                            <Col xs={12} lg={4} className='mt-2'>
                                 <Button className="py-2 nav-button w-100">Apply Code</Button>
                             </Col>
                         </Row>
