@@ -8,24 +8,38 @@ body {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 50px;
 }
+.nav-bg .logo {
+  filter: 
+    drop-shadow(0px 54px 55px rgba(244, 165, 64, 0.2))  /* First shadow */
+    drop-shadow(0px -12px 30px rgba(244, 165, 64, 0.12)) /* Second shadow */
+    drop-shadow(0px 4px 6px rgba(244, 165, 64, 0.12))   /* Third shadow */
+    drop-shadow(0px 12px 13px rgba(244, 165, 64, 0.17)) /* Fourth shadow */
+    drop-shadow(0px -3px 5px rgba(244, 165, 64, 0.09));  /* Fifth shadow */
+}
+
+
+
+
 .nav-bg a {
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
   letter-spacing: 0.01em;
 }
-.nav-bg button {
+.nav-button{
   background: linear-gradient(90deg, #4caf50, #204921, #4caf50);
-  background-size: 300% 300%;
-  border-radius: 30px;
+  background-size: 300% 300% !important;
+  border-radius: 30px !important;
   color: white !important;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 28px;
-  border: none;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  line-height: 28px !important;
+  border: none !important;
   animation: gradient-animation 3s ease infinite;
 }
-
+.nav-button:hover {
+  box-shadow: rgba(76, 175, 80, 0.2) 8px 8px 24px;
+}
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -41,6 +55,17 @@ body {
 .nav-bg form {
   border-left: 1px solid #626769;
 }
-.nav-bg button:hover {
-  box-shadow: rgba(76, 175, 80, 0.35) 0px 5px 15px;
+
+.offcanvasNavbar {
+  width: 250px !important;
+}
+
+.offcanvasNavbar a{
+  border-bottom: 1px solid #4caf50;
+}
+.offcanvasNavbar .btn-close{
+  background-color: #4caf50;
+}
+.navbar-toggler{
+  box-shadow: none !important;
 }
