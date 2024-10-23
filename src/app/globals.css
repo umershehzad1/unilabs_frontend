@@ -2,7 +2,7 @@
   font-family: var(--font-smooch-sans), sans-serif;
 }
 body {
-  background-color: black !important;
+  background-color: #030b15 !important;
 }
 .nav-bg {
   background: rgba(0, 0, 0, 0.5);
@@ -157,7 +157,43 @@ body {
   justify-content: flex-start;
   padding: 20px;
 }
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: none; /* No shadow */
+  }
+  50% {
+    box-shadow: rgba(88, 156, 255, 0.1) 0px -1px 2px,
+      rgba(88, 156, 255, 0.15) 0px -2px 4px,
+      rgba(88, 156, 255, 0.2) 0px -4px 8px,
+      rgba(88, 156, 255, 0.25) 0px -6px 12px,
+      rgba(88, 156, 255, 0.3) 0px -8px 16px,
+      rgba(88, 156, 255, 0.35) 0px -10px 20px,
+      rgba(88, 156, 255, 0.4) 0px -12px 24px,
+      rgba(88, 156, 255, 0.5) 0px -16px 32px,
+      rgba(88, 156, 255, 0.1) 0px 1px 2px, rgba(88, 156, 255, 0.15) 0px 2px 4px,
+      rgba(88, 156, 255, 0.2) 0px 4px 8px, rgba(88, 156, 255, 0.25) 0px 6px 12px,
+      rgba(88, 156, 255, 0.3) 0px 8px 16px,
+      rgba(88, 156, 255, 0.35) 0px 10px 20px,
+      rgba(88, 156, 255, 0.4) 0px 12px 24px,
+      rgba(88, 156, 255, 0.5) 0px 16px 32px;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
 
+.presales {
+  background: #011329 !important;
+  color: white !important;
+  border-radius: 30px !important;
+  animation: pulse-shadow 4s infinite ease-in-out;
+}
+
+.presales h1 {
+  font-size: 70px;
+  font-weight: 700;
+  line-height: 80.58px;
+}
 @media only screen and (max-width: 768px) {
   .hero h1 {
     font-size: 60px;
