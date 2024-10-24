@@ -36,31 +36,28 @@ const Presales = () => {
                                 </Col>
                             </Row>
                         ))}
-                        <Row className='mt-4'>
-                            <Col xs={12} lg={8} className='mt-2'>
+                        <Row className="mt-4 mx-0 w-100">
+                            <Col xs={12} lg={8} className="mt-2">
                                 <div style={{
                                     background: "#D9D9D921",
                                     borderRadius: "30px",
                                     minHeight: "45px",
-                                    display: "flex", alignItems: "center"
+                                    display: "flex",
+                                    alignItems: "center",
+                                    width: "100%"
                                 }}>
-                                    <div>
-                                        <Button className='bg-white border-0 ms-1' style={{ borderRadius: "60px" }}>
-                                            <FaCopy color='#2E7D32E5' />
-                                        </Button>
-
-                                    </div>
-                                    <div>
-
-                                        <Form>
-                                            <Form.Control className='w-100 bg-transparent border-0 text-white shadow-none' type="text" />
-                                        </Form>
-
-                                    </div>
+                                    <Button className="bg-white border-0 ms-1" style={{ borderRadius: "60px" }}>
+                                        <FaCopy color='#2E7D32E5' />
+                                    </Button>
+                                    <Form className="w-100">
+                                        <Form.Control
+                                            className="bg-transparent border-0 text-white shadow-none"
+                                            type="text"
+                                        />
+                                    </Form>
                                 </div>
-
                             </Col>
-                            <Col xs={12} lg={4} className='mt-2'>
+                            <Col xs={12} lg={4} className="mt-2">
                                 <Button className="py-2 nav-button w-100">Apply Code</Button>
                             </Col>
                         </Row>
