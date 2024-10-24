@@ -3,6 +3,7 @@
 }
 body {
   background-color: #030b15 !important;
+  overflow-x: hidden !important;
 }
 .nav-bg {
   background: rgba(0, 0, 0, 0.5);
