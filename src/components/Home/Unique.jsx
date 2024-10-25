@@ -1,0 +1,40 @@
+import React from 'react';
+import SectionHeading from '../shared/SectionHeading';
+import { Col, Container, Row } from 'react-bootstrap';
+import Image from 'next/image';
+
+const Unique = () => {
+
+    const uniqueItems = [
+        { id: 1, icon: "/verified.gif" },
+        { id: 2, icon: "/customize.gif"},
+        { id: 3, icon: "/box.gif" },
+    ];
+
+    return (
+        <>
+            <Container>
+                <SectionHeading 
+                    heading={"Unique About Launchpad"} 
+                    paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum."} 
+                />
+                <Row className='justify-content-center py-5'>
+                    {uniqueItems.map(item => (
+                        <Col xs={12} lg={4} className='text-center' key={item.id}>
+                            <div className='d-flex align-items-center' style={{ background: "#C1EBC2", width: "210px", height: "210px", borderRadius: "60%", margin: "auto" }}>
+                                <div className='d-flex align-items-center' style={{ background: "#91E095", width: "150px", height: "150px", borderRadius: "60%", margin: "auto", boxShadow: "0px 0px 20px 0px #00000066" }}>
+                                    <div className='d-flex align-items-center justify-content-center' style={{ background: "linear-gradient(90deg, #4CAF50 0%, #204921 100%)", width: "80px", height: "80px", borderRadius: "60px", margin: "auto", boxShadow: "0px 0px 20px 0px #00000066" }}>
+                               
+                                        <Image src={item.icon} width={40} height={40} alt="icon" />
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
+        </>
+    );
+};
+
+export default Unique;

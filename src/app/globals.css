@@ -75,16 +75,18 @@ body {
   line-height: 100px;
   letter-spacing: 0.02em;
   background: linear-gradient(
-    to right, 
-    rgba(255, 255, 255, 0) 0%, 
-    rgba(255, 255, 255, 0.5) 50%, 
-    rgba(255, 255, 255, 0) 100% 
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
   );
-  background-size: 200% 100%; /* Make the gradient twice as wide */
+  background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shining-effect 3s infinite; /* Smooth animation for a shining effect */
+  color: white;
+  will-change: background-position;
+  animation: shining-effect 3s infinite;
 }
 
 @keyframes shining-effect {
@@ -95,7 +97,6 @@ body {
     background-position: 100% 0%;
   }
 }
-
 
 .heroouter {
   height: 100vh;
@@ -223,7 +224,13 @@ body {
 .section-heading h1 {
   font-size: 70px;
   font-weight: 700;
-  line-height: 153.6px;
+  line-height: 70.6px;
+  text-align: center;
+}
+.section-heading p {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 40.6px;
   text-align: center;
 }
 .manage h1 {
@@ -255,6 +262,22 @@ body {
   font-weight: 700;
   line-height: 40.6px;
   color: #2e7d32;
+}
+.why h3 {
+  background: linear-gradient(90deg, #4caf50 0%, #204921 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* For WebKit browsers */
+  color: transparent; /* For other browsers */
+  text-shadow: 0px 0px 30px #77f47c; /* Drop shadow effect */
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 60px;
+}
+
+.why p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
 }
 @media only screen and (max-width: 768px) {
   .hero h1 {
