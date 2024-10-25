@@ -1,11 +1,11 @@
 import React from 'react'
 
-const SectionHeading = ({ heading, paragraph }) => {
+const SectionHeading = ({ heading, subHeading }) => {
     return (
         <>
             <div className="section-heading text-center">
                 <h1 className='text-white mb-0'>{heading}</h1>
-                {paragraph && <p className='text-white mb-0'>{paragraph}</p>}
+                {subHeading && <p className='text-white mb-0'>{subHeading}</p>}
             </div>
 
         </>

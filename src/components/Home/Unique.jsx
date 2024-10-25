@@ -16,7 +16,7 @@ const Unique = () => {
             <Container>
                 <SectionHeading 
                     heading={"Unique About Launchpad"} 
-                    paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum."} 
+                    subHeading={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum."} 
                 />
                 <Row className='justify-content-center py-4'>
                     {uniqueItems.map(item => (

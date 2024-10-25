@@ -221,6 +221,27 @@ body {
 .star {
   filter: drop-shadow(0px 0px 10px #ffffff);
 }
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg); /* Rotate a bit to the left */
+  }
+  75% {
+    transform: rotate(10deg); /* Rotate a bit to the right */
+  }
+  100% {
+    transform: rotate(0deg); /* Return to original position */
+  }
+}
+
+.coin-image {
+  filter: drop-shadow(0px 0px 20px rgb(242, 140, 60));
+  animation: swing 2s ease-in-out infinite;
+}
+
+
 .section-heading h1 {
   font-size: 70px;
   font-weight: 700;
@@ -247,7 +268,7 @@ body {
 }
 
 .manage p {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 30px;
   color: white;
@@ -279,6 +300,10 @@ body {
   font-weight: 400;
   line-height: 30px;
 }
+.need-icons {
+  filter: drop-shadow(0px 5px 35px rgba(67, 132, 70, 0.35));
+}
+
 @media only screen and (max-width: 768px) {
   .hero h1 {
     font-size: 60px;
