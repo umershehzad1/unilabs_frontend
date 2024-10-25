@@ -69,12 +69,34 @@ body {
 .navbar-toggler {
   box-shadow: none !important;
 }
-
 .hero h1 {
   font-size: 100px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 100px;
+  letter-spacing: 0.02em;
+  background: linear-gradient(
+    to right, 
+    rgba(255, 255, 255, 0) 0%, 
+    rgba(255, 255, 255, 0.5) 50%, 
+    rgba(255, 255, 255, 0) 100% 
+  );
+  background-size: 200% 100%; /* Make the gradient twice as wide */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shining-effect 3s infinite; /* Smooth animation for a shining effect */
 }
+
+@keyframes shining-effect {
+  0% {
+    background-position: -100% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+
 .heroouter {
   height: 100vh;
 }
@@ -237,7 +259,6 @@ body {
 @media only screen and (max-width: 768px) {
   .hero h1 {
     font-size: 60px;
-    font-weight: 700;
     line-height: 50px;
   }
   .heroouter {
