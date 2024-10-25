@@ -4,21 +4,20 @@ import { Col, Container, Row } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
+import Image from "next/image";
 gsap.registerPlugin(Draggable);
 
 const ManageTransactions = () => {
-    const dragRef = useRef(null); // Ref for the draggable element
-    const containerRef = useRef(null); // Ref for the container element
-    const draggableInstance = useRef(null); // Ref to store the Draggable instance
+    const dragRef = useRef(null);
+    const containerRef = useRef(null);
+    const draggableInstance = useRef(null);
 
-    const [isSwiped, setIsSwiped] = useState(false); // State to track swipe status
+    const [isSwiped, setIsSwiped] = useState(false);
 
     useEffect(() => {
         if (containerRef.current && dragRef.current) {
             const containerWidth = containerRef.current.offsetWidth;
             const elementWidth = dragRef.current.offsetWidth;
-
-            // Initialize Draggable
             draggableInstance.current = Draggable.create(dragRef.current, {
                 type: "x",
                 bounds: {
@@ -27,16 +26,13 @@ const ManageTransactions = () => {
                 },
                 inertia: true,
                 onDragEnd: function () {
-                    // Check if the element is dragged to the end
                     if (this.endX >= containerWidth - elementWidth - 10) {
-                        setIsSwiped(true); // Set state to true when swiped fully
-                        this.disable(); // Disable further dragging
+                        setIsSwiped(true);
+                        this.disable();
                     }
                 },
             })[0];
         }
-
-        // Cleanup function to kill the draggable instance if the component unmounts
         return () => {
             if (draggableInstance.current) {
                 draggableInstance.current.kill();
@@ -46,10 +42,28 @@ const ManageTransactions = () => {
 
     return (
         <Container className="py-5">
-            <Row>
-                <Col xs={12} lg={6}>
-                    <Col xs={12} lg={6} className="mx-auto">
-                        <div className="phone text-white p-3">
+            <Row className="align-items-center">
+                <Col xs={12} lg={6} className="d-flex justify-content-center">
+                    <div className="phone-wrapper" style={{ position: "relative", width: "300px", height: "600px" }}>
+                        <Image
+                            src="/phone.png"
+                            alt="phone"
+                            layout="fill"
+                            objectFit="cover"
+                        />
+                        <div
+                            className="phone text-white p-3"
+                            style={{
+                                position: "absolute",
+                                top: "10%",
+                                left: "8%",
+                                width: "82%",
+                                height: "80%",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "space-between",
+                            }}
+                        >
                             <h3>MANAGE YOUR TRANSACTIONS ON THE GO</h3>
                             <TypeAnimation
                                 sequence={[
@@ -64,7 +78,7 @@ const ManageTransactions = () => {
                                 ]}
                                 wrapper="span"
                                 speed={50}
-                                style={{ fontSize: "22px", display: "inline-block" }}
+                                style={{ fontSize: "18px", display: "inline-block" }}
                                 repeat={Infinity}
                             />
                             <div className="text-center">
@@ -99,7 +113,7 @@ const ManageTransactions = () => {
                                 ></div>
                             </div>
                         </div>
-                    </Col>
+                    </div>
                 </Col>
                 <Col xs={12} lg={6}>
                     <div className="manage">

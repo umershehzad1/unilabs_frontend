@@ -223,13 +223,13 @@ body {
   line-height: 30px;
   color: white;
 }
-.phone{
-  background-color: #132944;
+.phone {
+  background-color: #030b15;
   height: 450px;
   border-radius: 20px;
 }
 .phone h3 {
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 40.6px;
   color: #2e7d32;
@@ -252,6 +252,3 @@ body {
     line-height: 20px;
   }
 }
-
-
-
