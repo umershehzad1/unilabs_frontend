@@ -25,7 +25,7 @@ const PoweredBy = () => {
         <>
             <Container fluid className='px-0  pb-3'>
                 <SectionHeading heading={"Powered By"} />
-                <Marquee className='pt-3'>
+                <Marquee className='pt-5'>
                     {logos.map((logo, index) => (
                         <React.Fragment key={index}>
                             <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>

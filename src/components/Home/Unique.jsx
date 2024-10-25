@@ -18,9 +18,9 @@ const Unique = () => {
                     heading={"Unique About Launchpad"} 
                     paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum."} 
                 />
-                <Row className='justify-content-center py-5'>
+                <Row className='justify-content-center py-4'>
                     {uniqueItems.map(item => (
-                        <Col xs={12} lg={4} className='text-center' key={item.id}>
+                        <Col xs={12} lg={4} className='text-center my-3' key={item.id}>
                             <div className='d-flex align-items-center' style={{ background: "#C1EBC2", width: "210px", height: "210px", borderRadius: "60%", margin: "auto" }}>
                                 <div className='d-flex align-items-center' style={{ background: "#91E095", width: "150px", height: "150px", borderRadius: "60%", margin: "auto", boxShadow: "0px 0px 20px 0px #00000066" }}>
                                     <div className='d-flex align-items-center justify-content-center' style={{ background: "linear-gradient(90deg, #4CAF50 0%, #204921 100%)", width: "80px", height: "80px", borderRadius: "60px", margin: "auto", boxShadow: "0px 0px 20px 0px #00000066" }}>

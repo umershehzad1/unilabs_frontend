@@ -4,6 +4,7 @@ import PoweredBy from '@/components/Home/PoweredBy'
 import Presales from '@/components/Home/Presales'
 import Unique from '@/components/Home/Unique'
 import WhyUnilabs from '@/components/Home/WhyUnilabs'
+import Youtube from '@/components/Home/Youtube'
 import React from 'react'
 
 const page = () => {
@@ -15,6 +16,7 @@ const page = () => {
       <PoweredBy />
       <WhyUnilabs />
       <Unique/>
+      <Youtube/>
     </>
   )
 }
