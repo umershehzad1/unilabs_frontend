@@ -241,7 +241,6 @@ body {
   animation: swing 2s ease-in-out infinite;
 }
 
-
 .section-heading h1 {
   font-size: 70px;
   font-weight: 700;
@@ -303,7 +302,56 @@ body {
 .need-icons {
   filter: drop-shadow(0px 5px 35px rgba(67, 132, 70, 0.35));
 }
+.accordion-button {
+  background-color: #264168 !important;
+  color: white;
+  border-radius: 10px !important;
+  font-size: 20px !important;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1px;
+}
+.accordion-body {
+  background: transparent !important;
+  color: white;
+  padding-left: 10px !important;
+  font-size: 18px !important;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
 
+.accordion-button:not(.collapsed) {
+  color: white !important;
+}
+.accordion-button:not(.not-collapsed) {
+  color: white !important;
+  box-shadow: none !important;
+}
+.footer .link-text {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #9eabbc !important;
+}
+.footer .footer-input {
+  background: linear-gradient(
+    85.02deg,
+    rgba(38, 53, 75, 0.62) 16.14%,
+    rgba(38, 53, 75, 0) 97.59%
+  ) !important;
+  border: 1px solid;
+
+border-image-source: linear-gradient(180deg, rgba(62, 87, 123, 0.93) 0%, rgba(62, 87, 123, 0) 65.21%);
+
+
+}
+.footer .footer-input::placeholder{
+  color:#9eabbc
+}
+.footer .copyright{
+  color:#9eabbc
+}
 @media only screen and (max-width: 768px) {
   .hero h1 {
     font-size: 60px;

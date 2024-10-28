@@ -3,6 +3,7 @@ import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavigationBar from '@/components/layouts/NavigationBar';
 import 'swiper/swiper-bundle.css';
+import Footer from '@/components/layouts/Footer';
 const smoochSans = Smooch_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={`m-0 ${smoochSans.variable}`}>
         <NavigationBar />
         {children}
+        <Footer/>
       </body>
     </html>
   );

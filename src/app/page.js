@@ -8,6 +8,7 @@ import SpreadTheWorld from '@/components/Home/SpreadTheWorld'
 import Unique from '@/components/Home/Unique'
 import WhyUnilabs from '@/components/Home/WhyUnilabs'
 import Youtube from '@/components/Home/Youtube'
+import Faqs from '@/components/shared/Faqs'
 import React from 'react'
 
 const page = () => {
@@ -23,6 +24,7 @@ const page = () => {
       <AllYouNeed />
       <Attributes/>
       <SpreadTheWorld/>
+      <Faqs/>
     </>
   )
 }
