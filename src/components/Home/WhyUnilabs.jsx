@@ -4,6 +4,9 @@ import SectionHeading from '../shared/SectionHeading'
 
 const WhyUnilabs = () => {
     return (
+        <div className="whybg">
+
+        
         <Container className='text-center py-5 why'>
             <SectionHeading heading={"WHY UNILABS?"} />
             <hr className='text-white' />
@@ -14,6 +17,7 @@ const WhyUnilabs = () => {
                 <Button className="transparentbtn">DA Gpaper V2</Button>
             </div>
         </Container>
+        </div>
     )
 }
 

@@ -283,6 +283,12 @@ body {
   line-height: 40.6px;
   color: #2e7d32;
 }
+.whybg{
+  background-image: url("../../public/map.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 .why h3 {
   background: linear-gradient(90deg, #4caf50 0%, #204921 100%);
   -webkit-background-clip: text;
@@ -342,25 +348,27 @@ body {
   ) !important;
   border: 1px solid;
 
-border-image-source: linear-gradient(180deg, rgba(62, 87, 123, 0.93) 0%, rgba(62, 87, 123, 0) 65.21%);
-
-
+  border-image-source: linear-gradient(
+    180deg,
+    rgba(62, 87, 123, 0.93) 0%,
+    rgba(62, 87, 123, 0) 65.21%
+  );
 }
-.footer .footer-input::placeholder{
-  color:#9eabbc
+.footer .footer-input::placeholder {
+  color: #9eabbc;
 }
-.footer .copyright{
-  color:#9eabbc
+.footer .copyright {
+  color: #9eabbc;
 }
 .no-box-shadow .vertical-timeline-element-content {
   box-shadow: none !important;
 }
-.vertical-timeline-element-content-arrow{
+.vertical-timeline-element-content-arrow {
   display: none !important;
 }
-.presalesstats{
+.presalesstats {
   clip-path: polygon(100% 0, 95% 49%, 90% 100%, 0% 100%, 4% 48%, 8% 0);
- background: #08140d
+  background: #08140d;
 }
 .progress-bar-wrapper {
   position: relative;
@@ -379,20 +387,29 @@ border-image-source: linear-gradient(180deg, rgba(62, 87, 123, 0.93) 0%, rgba(62
 }
 
 .progress-bar-wrapper progress::-webkit-progress-bar {
-  background: transparent; 
+  background: transparent;
 }
 
 .progress-bar-wrapper progress::-webkit-progress-value {
-  background: linear-gradient(90deg, #4CAF50 0%, #204921 100%);
+  background: linear-gradient(90deg, #4caf50 0%, #204921 100%);
   transition: width 0.3s ease;
   border-radius: 30px;
 }
 
 .progress-bar-wrapper progress::-moz-progress-bar {
-  background: linear-gradient(90deg, #4CAF50 0%, #204921 100%);
+  background: linear-gradient(90deg, #4caf50 0%, #204921 100%);
   transition: width 0.3s ease;
   border-radius: 30px;
 }
+.footerbg {
+  background: linear-gradient(
+    171.05deg,
+    #030b15 10.83%,
+    #12407b 93.41%
+  ) !important;
+}
+
+
 
 @media only screen and (max-width: 768px) {
   .hero h1 {
