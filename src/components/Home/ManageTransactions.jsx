@@ -46,7 +46,7 @@ const ManageTransactions = () => {
                 <Col xs={12} lg={6} className="d-flex justify-content-center">
                     <div className="phone-wrapper" style={{ position: "relative", width: "300px", height: "600px" }}>
                         <Image
-                            src="/phone.png"
+                            src="/phoneframe.png"
                             alt="phone"
                             layout="fill"
                             objectFit="cover"
@@ -56,8 +56,8 @@ const ManageTransactions = () => {
                             style={{
                                 position: "absolute",
                                 top: "10%",
-                                left: "8%",
-                                width: "82%",
+                                left: "10%",
+                                width: "80%",
                                 height: "80%",
                                 display: "flex",
                                 flexDirection: "column",

@@ -358,6 +358,42 @@ border-image-source: linear-gradient(180deg, rgba(62, 87, 123, 0.93) 0%, rgba(62
 .vertical-timeline-element-content-arrow{
   display: none !important;
 }
+.presalesstats{
+  clip-path: polygon(100% 0, 95% 49%, 90% 100%, 0% 100%, 4% 48%, 8% 0);
+ background: #08140d
+}
+.progress-bar-wrapper {
+  position: relative;
+  width: 100%;
+  height: 15px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-wrapper progress {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+}
+
+.progress-bar-wrapper progress::-webkit-progress-bar {
+  background: transparent; 
+}
+
+.progress-bar-wrapper progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #4CAF50 0%, #204921 100%);
+  transition: width 0.3s ease;
+  border-radius: 30px;
+}
+
+.progress-bar-wrapper progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #4CAF50 0%, #204921 100%);
+  transition: width 0.3s ease;
+  border-radius: 30px;
+}
+
 @media only screen and (max-width: 768px) {
   .hero h1 {
     font-size: 60px;
