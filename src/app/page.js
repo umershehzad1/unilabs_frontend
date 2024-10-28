@@ -4,6 +4,7 @@ import Hero from '@/components/Home/Hero'
 import ManageTransactions from '@/components/Home/ManageTransactions'
 import PoweredBy from '@/components/Home/PoweredBy'
 import Presales from '@/components/Home/Presales'
+import RoadMaps from '@/components/Home/RoadMaps'
 import SpreadTheWorld from '@/components/Home/SpreadTheWorld'
 import Tokenomics from '@/components/Home/Tokenomics'
 import Unique from '@/components/Home/Unique'
@@ -20,6 +21,7 @@ const page = () => {
       <ManageTransactions />
       <PoweredBy />
       <WhyUnilabs />
+      <RoadMaps/>
       <Unique />
       <Youtube />
       <AllYouNeed />

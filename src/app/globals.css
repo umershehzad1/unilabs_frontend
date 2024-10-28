@@ -352,6 +352,12 @@ border-image-source: linear-gradient(180deg, rgba(62, 87, 123, 0.93) 0%, rgba(62
 .footer .copyright{
   color:#9eabbc
 }
+.no-box-shadow .vertical-timeline-element-content {
+  box-shadow: none !important;
+}
+.vertical-timeline-element-content-arrow{
+  display: none !important;
+}
 @media only screen and (max-width: 768px) {
   .hero h1 {
     font-size: 60px;
