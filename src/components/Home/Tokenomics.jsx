@@ -21,7 +21,7 @@ const Tokenomics = () => {
                     <Col xs={12} lg={8}>
                         <PieChartComponent data={data} />
                     </Col>
-                    <Col xs={12} lg={8}>
+                    <Col xs={12} lg={4}>
                         <Row>
                             {data.map((item, index) => (
                                 <React.Fragment key={index}>
