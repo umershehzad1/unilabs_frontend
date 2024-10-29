@@ -456,5 +456,10 @@ body {
   background-image: url("./../../public/plus.png") !important;
 }
 
+.vertical-timeline::before{
+  background-color: #4CAF50 !important;
+  width: 6px !important;
+  box-shadow: rgba(76, 175, 80, 0.6) 0px 3px 8px !important;
+  border-radius: 20px;
 
-
+}

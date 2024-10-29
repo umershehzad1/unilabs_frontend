@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { Button, Container, Spinner } from 'react-bootstrap';
@@ -16,7 +16,8 @@ const roadmapData = [
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: true },
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: false },
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: true }
-        ]
+        ],
+        icon: <SiReactos className='text-black' />
     },
     {
         title: 'Launch Phase 2',
@@ -24,7 +25,8 @@ const roadmapData = [
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: false },
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: false },
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: true }
-        ]
+        ],
+        icon: <SiReactos className='text-black' />
     },
     {
         title: 'Launch Phase 3',
@@ -32,7 +34,8 @@ const roadmapData = [
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: false },
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: false },
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: true }
-        ]
+        ],
+        icon: <SiReactos className='text-black' />
     },
     {
         title: 'Launch Phase 4',
@@ -40,11 +43,14 @@ const roadmapData = [
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: false },
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: false },
             { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum.', completed: true }
-        ]
+        ],
+        icon: <SiReactos className='text-black' />
     },
 ];
 
 const RoadMaps = () => {
+    const [activePhaseIndex, setActivePhaseIndex] = useState(0);
+
     const particlesInit = async (main) => {
         await loadFull(main);
     };
@@ -106,8 +112,24 @@ const RoadMaps = () => {
             },
         },
         detectRetina: true,
-
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const phases = document.querySelectorAll('.vertical-timeline-element');
+            phases.forEach((phase, index) => {
+                const rect = phase.getBoundingClientRect();
+                if (rect.top <= 0 && rect.bottom >= 0) {
+                    setActivePhaseIndex(index);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <>
@@ -130,11 +152,11 @@ const RoadMaps = () => {
                         {roadmapData.map((phase, index) => (
                             <VerticalTimelineElement
                                 key={index}
-                                className="vertical-timeline-element--work no-box-shadow"
+                                className={`vertical-timeline-element--work no-box-shadow ${index <= activePhaseIndex ? 'active' : ''}`}
                                 contentStyle={{ background: 'transparent', color: '#fff' }}
                                 contentArrowStyle={{ borderRight: '7px solid #438446' }}
                                 iconStyle={{ background: '#438446', color: '#fff' }}
-                                icon={<SiReactos className='text-black' />}
+                                icon={phase.icon}
                                 visible={true}
                             >
                                 <h1 className="vertical-timeline-element-title fw-bold">{phase.title}</h1>
@@ -159,12 +181,9 @@ const RoadMaps = () => {
                         ))}
                     </VerticalTimeline>
                     <div className='text-center'>
-                        <Button
-                         
-                        className="py-2 px-3 nav-button">Download RoadMap</Button>
+                        <Button className="py-2 px-3 nav-button">Download RoadMap</Button>
                     </div>
                 </Container>
-
             </div>
         </>
     );
