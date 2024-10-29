@@ -50,7 +50,7 @@ const Presales = () => {
                                 textAlign: "center",
                                 color: "#000",
                             }}>
-                                <h5  style={{ fontWeight: "bold",color:"#737373" }}>Total Raised</h5>
+                                <h5 style={{ fontWeight: "bold", color: "#737373" }}>Total Raised</h5>
                             </div>
                         </div>
                     </Col>
@@ -62,20 +62,26 @@ const Presales = () => {
                         <progress value={50} max={100} className='w-100 d-flex'></progress>
                     </div>
                     <div>
-                        <div className='py-4 px-3 presalesstats'>
-                            <Row>
-                                {presaleStages.map((stageData, index) => (
-                                    <Col xs={12} lg={4} key={index}>
-                                        <div className='text-center'>
-                                            <h5 className='text-white'>{stageData.stage}</h5>
-                                            <h2 className={"text-white fw-bold"}>
-                                                {stageData.remaining}
-                                            </h2>
-                                        </div>
-                                    </Col>
-                                ))}
-                            </Row>
+                        <div className="presalesstats-wrapper">
+                            <div className="rainbow border-style-thin py-4 px-3">
+                                <Row className='align-items-center w-100'>
+                                    {presaleStages.map((stageData, index) => (
+                                        <Col xs={12} lg={4} key={index}>
+                                            <div className='text-center'>
+                                                <h5 className='text-white'>{stageData.stage}</h5>
+                                                <h2 className={"text-white fw-bold mb-0"}>
+                                                    {stageData.remaining}
+                                                </h2>
+                                            </div>
+                                        </Col>
+                                    ))}
+                                </Row>
+                            </div>
                         </div>
+
+
+
+
 
 
                         <Col xs={12} lg={6} className='ms-auto mt-2'>
