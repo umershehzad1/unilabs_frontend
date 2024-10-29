@@ -47,10 +47,10 @@ const AllYouNeed = () => {
                     }
                 />
                 <Row className="py-5 align-items-center">
-                    <Col xs={12} lg={6}>
-                        <Image src={"/coin.png"} className="coin-image" width={0} height={0} layout="responsive" style={{ width: "90%", height: "100%" }} alt={"coin"} />
+                    <Col xs={10} lg={6} className="mx-auto mb-3">
+                        <Image src={"/coin.png"} className="coin-image" width={0} height={0} layout="responsive" style={{ width: "80%", height: "100%" }} alt={"coin"} />
                     </Col>
-                    <Col xs={12} lg={6}>
+                    <Col xs={11} lg={6} className="mx-auto">
                         <Row>
                             {cardData.map((card) => (
                                 <Col xs={12} lg={6} key={card.id}>

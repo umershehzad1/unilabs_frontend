@@ -5,6 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import Image from "next/image";
+import { MdOutlineAutoGraph } from "react-icons/md";
 
 const SpreadTheWorld = () => {
 
@@ -13,8 +14,10 @@ const SpreadTheWorld = () => {
         <Container className="py-5">
             <Row className="align-items-center">
                 <Col xs={12} lg={6} className="">
-                    
-                     <Image src="/touch.png" width={0} height={0} layout="responsive" style={{ width: "100%", height: "100%" }} alt={"coin"} />
+                <Col xs={12} lg={9} className="">
+
+                    <Image className="phone-wrapper" src="/spread.png" width={0} height={0} layout="responsive" style={{ width: "100%", height: "100%" }} alt={"coin"} />
+                </Col>
                 </Col>
                 <Col xs={12} lg={6}>
                     <div className="manage">
@@ -31,21 +34,34 @@ const SpreadTheWorld = () => {
                 </Col>
             </Row>
             <Row className="align-items-center">
-                
+
                 <Col xs={12} lg={6}>
                     <div className="manage">
                         <h1 className="text-white">
                             <span>Marketplace</span>
                         </h1>
                         <p>
-                        Lorem ipsum dolor sit amet consectetur. Tristique sed semper feugiat dolor. Amet sit viverra proin ac. Est blandit faucibus ut urna. Sit id vulputate cras vulputate ut quam risus quisque.
+                            Lorem ipsum dolor sit amet consectetur. Tristique sed semper feugiat dolor. Amet sit viverra proin ac. Est blandit faucibus ut urna. Sit id vulputate cras vulputate ut quam risus quisque.
                         </p>
-                       
+                        <div className="d-flex gap-3">
+                            <div className="d-flex align-items-center justify-content-center" style={{ height: "50px", width: "80px", backgroundColor: "#12407b", borderRadius: "8px" }}>
+                                <MdOutlineAutoGraph size={20} className="text-white" />
+                            </div>
+                            <div>
+                                <h5 className="text-white">Lorem ipsum dolor sit amet consectetur.</h5>
+                                <p className="fs-5">
+                                    Lorem ipsum dolor sit amet consectetur. Tristique sed semper feugiat dolor. Amet sit viverra proin ac. Est blandit faucibus ut urna. Sit id vulputate cras vulputate ut quam risus quisque.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </Col>
                 <Col xs={12} lg={6} className="">
-                    
-                     <Image src="/touch.png" width={0} height={0} layout="responsive" style={{ width: "100%", height: "100%" }} alt={"coin"} />
+
+                    <Col xs={12} lg={9} className="mx-auto">
+                        <Image className="blueToggle" src="/cards.png" width={0} height={0} layout="responsive" style={{ width: "100%", height: "100%" }} alt={"coin"} />
+                    </Col>
                 </Col>
             </Row>
         </Container>

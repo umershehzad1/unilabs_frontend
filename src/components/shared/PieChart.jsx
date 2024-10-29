@@ -79,7 +79,7 @@ const PieChartComponent = ({ data }) => {
   };
 
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer className={"phone-wrapper"} width="100%" height={400}>
       <PieChart>
         <Pie
           activeIndex={activeIndex}

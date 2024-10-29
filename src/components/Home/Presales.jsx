@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { FaCopy } from 'react-icons/fa6';
 import SectionHeading from '../shared/SectionHeading';
 import { CircularProgressbar } from 'react-circular-progressbar';
@@ -44,13 +44,13 @@ const Presales = () => {
                             />
                             <div style={{
                                 position: "absolute",
-                                top: "40%",
+                                top: "45%",
                                 left: "50%",
                                 transform: "translate(-50%, -50%)",
                                 textAlign: "center",
                                 color: "#000",
                             }}>
-                                <h5 className='text-white' style={{ fontWeight: "bold" }}>Total Raised</h5>
+                                <h5  style={{ fontWeight: "bold",color:"#737373" }}>Total Raised</h5>
                             </div>
                         </div>
                     </Col>
@@ -76,6 +76,8 @@ const Presales = () => {
                                 ))}
                             </Row>
                         </div>
+
+
                         <Col xs={12} lg={6} className='ms-auto mt-2'>
                             <div>
                                 <Row className="mt-2 mx-0 w-100">

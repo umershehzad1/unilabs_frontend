@@ -2,6 +2,7 @@
 import React from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
 import SectionHeading from '../shared/SectionHeading'
+import Divider from '../shared/Divider'
 
 const Attributes = () => {
     const attributes = [
@@ -35,7 +36,8 @@ const Attributes = () => {
         <>
             <Container>
                 <SectionHeading heading={"CORE ATTRIBUTES"} />
-                <hr className='text-white' />
+                <Divider/>
+
 
                 <Row className='py-4'>
                     {attributes.map(attribute => (

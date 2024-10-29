@@ -17,7 +17,7 @@ const Tokenomics = () => {
             <Container>
                 <SectionHeading heading={"TOKENOMICS"} subHeading={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est laborum."} />
 
-                <Row className='py-5 align-items-center'>
+                <Row className='pt-5 align-items-center'>
                     <Col xs={12} lg={8}>
                         <PieChartComponent data={data} />
                     </Col>

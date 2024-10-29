@@ -44,7 +44,7 @@ const roadmapData = [
 const RoadMaps = () => {
     return (
         <>
-            <Container className='py-3'>
+            <Container className='py-5'>
                 <SectionHeading heading={"UNILabs Roadmap"} />
                 <VerticalTimeline className='my-4'>
                     {roadmapData.map((phase, index) => (

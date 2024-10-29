@@ -6,7 +6,6 @@ body {
   overflow-x: hidden !important;
 }
 
-
 .text-green {
   color: green !important;
 }
@@ -109,7 +108,7 @@ body {
   line-height: 28px !important;
   border: 1px solid #2e7d32 !important;
   animation: gradient-animation 3s ease infinite;
-  padding: 15px 30px !important;
+  padding: 10px 30px !important;
 }
 .greenbtn:hover {
   box-shadow: rgba(76, 175, 80, 0.2) 8px 8px 24px;
@@ -264,8 +263,8 @@ body {
   color: white;
 }
 .phone {
-  background-color: #030b15;
-  height: 450px;
+  background-color: #000000;
+  height: 100%;
   border-radius: 20px;
 }
 .phone h3 {
@@ -274,7 +273,7 @@ body {
   line-height: 40.6px;
   color: #2e7d32;
 }
-.whybg{
+.whybg {
   background-image: url("../../public/map.png");
   background-size: contain;
   background-position: center center;
@@ -357,10 +356,7 @@ body {
 .vertical-timeline-element-content-arrow {
   display: none !important;
 }
-.presalesstats {
-  clip-path: polygon(100% 0, 95% 49%, 90% 100%, 0% 100%, 4% 48%, 8% 0);
-  background: #08140d;
-}
+
 .progress-bar-wrapper {
   position: relative;
   width: 100%;
@@ -400,8 +396,6 @@ body {
   ) !important;
 }
 
-
-
 @media only screen and (max-width: 768px) {
   .hero h1 {
     font-size: 60px;
@@ -419,3 +413,48 @@ body {
     line-height: 20px;
   }
 }
+
+.presalesstats {
+  width: 100%;
+  position: relative;
+  background: #081b1e;
+  clip-path: polygon(100% 0, 95% 49%, 90% 100%, 0% 100%, 4% 48%, 8% 0);
+}
+
+@keyframes shadowToggle {
+  0% {
+    filter: drop-shadow(0px 10px 50px rgba(76, 175, 80, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0px 10px 0px rgba(76, 175, 80, 0)); /* No shadow */
+  }
+  100% {
+    filter: drop-shadow(0px 10px 50px rgba(76, 175, 80, 0.7));
+  }
+}
+
+.phone-wrapper {
+  animation: shadowToggle 5s infinite alternate; /* Adjust duration as needed */
+}
+@keyframes blueToggle {
+  0% {
+    filter: drop-shadow(6, 46, 90 rgba(76, 175, 80, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0px 10px 0px rgba(76, 175, 80, 0)); /* No shadow */
+  }
+  100% {
+    filter: drop-shadow(6, 46, 90 rgba(76, 175, 80, 0.7));
+  }
+}
+
+.blueToggle {
+  animation: blueToggle 5s infinite alternate; /* Adjust duration as needed */
+}
+
+.accordion-button:not(.not-collapsed)::after {
+  background-image: url("./../../public/plus.png") !important;
+}
+
+
+
