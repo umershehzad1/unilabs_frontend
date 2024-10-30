@@ -557,3 +557,41 @@ body {
   background-repeat: no-repeat;
   background-position: left center ;
 }
+
+
+.selected-option {
+  border: 2px solid #4CAF50;
+}
+.not-selected-option {
+  border: 2px solid transparent;
+}
+
+
+.launch h1 {
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 100px;
+  letter-spacing: 0.02em;
+}
+.launchbg{
+  background-image: url("../../public/launchbg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center ;
+}
+
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+ 
+  100% {
+    transform: rotate(360deg); /* Return to original position */
+  }
+}
+
+.launch-image {
+  filter: drop-shadow(0px 0px 150px rgb(242, 140, 60));
+  animation: swing 10s ease-in-out infinite;
+}
