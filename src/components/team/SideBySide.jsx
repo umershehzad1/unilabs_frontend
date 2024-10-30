@@ -2,12 +2,15 @@
 import React, { useEffect, useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { Button, Container, Spinner } from 'react-bootstrap';
+import { Button, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { FaCheckCircle } from 'react-icons/fa';
 import SectionHeading from '../shared/SectionHeading';
 import { SiReactos } from "react-icons/si";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { MdOutlineAutoGraph } from 'react-icons/md';
+import Image from 'next/image';
+import ReactPlayer from 'react-player';
 
 const roadmapData = [
     {
@@ -48,7 +51,7 @@ const roadmapData = [
     },
 ];
 
-const RoadMaps = () => {
+const SideBySide = () => {
     const [activePhaseIndex, setActivePhaseIndex] = useState(0);
 
     const particlesInit = async (main) => {
@@ -133,7 +136,7 @@ const RoadMaps = () => {
 
     return (
         <>
-            <div className="position-relative">
+            <div className="position-relative pt-5 teambg">
                 <Particles
                     style={{
                         position: "absolute",
@@ -147,46 +150,71 @@ const RoadMaps = () => {
                 />
 
                 <Container className='py-5 ' style={{ zIndex: 9999 }}>
-                    <SectionHeading heading={"UNILabs Roadmap"} />
-                    <VerticalTimeline className='my-4'>
-                        {roadmapData.map((phase, index) => (
-                            <VerticalTimelineElement
-                                key={index}
-                                className={`vertical-timeline-element--work no-box-shadow ${index <= activePhaseIndex ? 'active' : ''}`}
-                                contentStyle={{ background: 'transparent', color: '#fff' }}
-                                contentArrowStyle={{ borderRight: '7px solid #438446' }}
-                                iconStyle={{ background: '#438446', color: '#fff' }}
-                                icon={phase.icon}
-                                visible={true}
-                            >
-                                <h1 className="vertical-timeline-element-title fw-bold">{phase.title}</h1>
-                                <ul className="list-unstyled">
-                                    {phase.items.map((item, idx) => (
-                                        <li key={idx} className="mb-3 fs-5 d-flex">
-                                            {item.completed ? (
-                                                <FaCheckCircle className="me-2 mt-1" style={{ color: '#28a745', minWidth: '20px', minHeight: '20px' }} />
-                                            ) : (
-                                                <Spinner
-                                                    animation="border"
-                                                    size="sm"
-                                                    className="me-2 mt-2"
-                                                    style={{ color: '#fff', minWidth: '20px', minHeight: '20px' }}
-                                                />
-                                            )}
-                                            {item.text}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </VerticalTimelineElement>
-                        ))}
-                    </VerticalTimeline>
-                    <div className='text-center'>
-                        <Button className="py-2 px-3 nav-button">Download RoadMap</Button>
-                    </div>
+                    <Row className="align-items-center py-5" >
+                        <Col xs={12} lg={6} className="">
+
+                            <Col xs={12} lg={11} className="mx-auto">
+                                <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={"100%"} />
+                            </Col>
+                        </Col>
+                        <Col xs={12} lg={6} className='manage'>
+                            <h1 className="text-white">
+                                <span>Team </span>Video
+                            </h1>
+                            <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  mollit anim id est laborum.
+                            </p>
+                            <div className="d-flex gap-4 pt-2">
+                                <Button className="greenbtn">Share It</Button>
+                                <Button className="transparentbtn">How To Buy</Button>
+                            </div>
+                        </Col>
+
+                    </Row>
+                    <Row className="align-items-center py-5" >
+                        <Col xs={12} lg={6} className='manage'>
+                            <h1 className="text-white">
+                                <span>Keynote </span>1
+                            </h1>
+                            <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  mollit anim id est laborum.
+                            </p>
+                            <div className="d-flex gap-4 pt-2">
+                                <Button className="greenbtn">Share It</Button>
+                                <Button className="transparentbtn">DA Gpaper V2</Button>
+                            </div>
+                        </Col>
+                        <Col xs={12} lg={6} className="">
+
+                            <Col xs={12} lg={11} className="mx-auto">
+                                <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={"100%"} />
+                            </Col>
+                        </Col>
+
+
+                    </Row>
+                    <Row className="align-items-center py-5" >
+                        <Col xs={12} lg={6} className="">
+
+                            <Col xs={12} lg={11} className="mx-auto">
+                                <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={"100%"} />
+                            </Col>
+                        </Col>
+                        <Col xs={12} lg={6} className='manage'>
+                            <h1 className="text-white">
+                                <span>Keynote </span>2
+                            </h1>
+                            <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  mollit anim id est laborum.
+                            </p>
+                            <div className="d-flex gap-4 pt-2">
+                                <Button className="greenbtn">Learn More</Button>
+                                <Button className="transparentbtn">DA Gpaper V2</Button>
+                            </div>
+                        </Col>
+
+                    </Row>
                 </Container>
             </div>
         </>
     );
 };
 
-export default RoadMaps;
+export default SideBySide;

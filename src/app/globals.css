@@ -550,3 +550,10 @@ body {
   background: #081b1e;
   border-radius: 5px;
 }
+
+.teambg{
+  background-image: url("../../public/teambg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center ;
+}
