@@ -41,7 +41,7 @@ const NavigationBar = () => {
             transition: "background-color 0.5s ease",
           }}
         >
-          <Navbar.Brand href="#" style={{ width: "50px" }}>
+          <Navbar.Brand as={Link}  href={"/"} style={{ width: "50px" }}>
             <Image
               src={"/logo.png"}
               width={100}

@@ -1,5 +1,5 @@
 export const menuItems = [
-    { href: "/", label: "Keynotes" },
+    { href: "/keynotes", label: "Keynotes" },
     { href: "/team", label: "Team" },
     { href: "/blogs", label: "Blogs" },
     { href: "/partners", label: "Partners" },

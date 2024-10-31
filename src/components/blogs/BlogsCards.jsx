@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { Card, Col, Row } from "react-bootstrap";
 
 const BlogsCards = ({ blogs }) => {
+    
     return (
         <>
             {blogs.length > 0 && (
@@ -25,9 +27,9 @@ const BlogsCards = ({ blogs }) => {
                             </Col>
                             <Col xs={7} className="d-flex flex-column justify-content-between">
                                 <div>
-
-
-                                    <h2 className="text-white">{blogs[0].title}</h2>
+                                    <Link className="text-decoration-none" href={`/blogsdetail`} passHref>
+                                        <h2 className="text-white" style={{ cursor: "pointer" }}>{blogs[0].title}</h2>
+                                    </Link>
                                     <p style={{ color: "#818ea3" }}>
                                         {blogs[0].description}
                                     </p>
@@ -57,7 +59,9 @@ const BlogsCards = ({ blogs }) => {
                                     style={{ width: "100%", height: "100%" }}
                                     alt="Blog Image"
                                 />
-                                <h4 className="text-white mt-3">{blog.title}</h4>
+                                <Link className="text-decoration-none" href={`/blogsdetail`} passHref>
+                                    <h4 className="text-white mt-3" style={{ cursor: "pointer" }}>{blog.title}</h4>
+                                </Link>
                                 <p className="text-white" style={{ minHeight: "40px", color: "#818ea3" }}>
                                     {blog.description}
                                 </p>
