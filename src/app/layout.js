@@ -8,6 +8,8 @@ import 'react-circular-progressbar/dist/styles.css';
 import 'aos/dist/aos.css'; 
 
 
+
+
 const smoochSans = Smooch_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],

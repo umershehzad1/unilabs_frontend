@@ -551,21 +551,19 @@ body {
   border-radius: 5px;
 }
 
-.teambg{
+.teambg {
   background-image: url("../../public/teambg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left center ;
+  background-position: left center;
 }
 
-
 .selected-option {
-  border: 2px solid #4CAF50;
+  border: 2px solid #4caf50;
 }
 .not-selected-option {
   border: 2px solid transparent;
 }
-
 
 .launch h1 {
   font-size: 100px;
@@ -573,19 +571,18 @@ body {
   line-height: 100px;
   letter-spacing: 0.02em;
 }
-.launchbg{
+.launchbg {
   background-image: url("../../public/launchbg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: left center ;
+  background-position: left center;
 }
-
 
 @keyframes swing {
   0% {
     transform: rotate(0deg);
   }
- 
+
   100% {
     transform: rotate(360deg); /* Return to original position */
   }
@@ -594,4 +591,15 @@ body {
 .launch-image {
   filter: drop-shadow(0px 0px 150px rgb(242, 140, 60));
   animation: swing 10s ease-in-out infinite;
+}
+
+.globe-container {
+  height: 100%;
+}
+
+@media (max-width: 991px) {
+  .globe-container {
+    margin-top: 20px;
+    height: 300px;
+  }
 }

@@ -16,7 +16,7 @@ const GlobeComponent = () => {
 
     // Set up auto-rotation
     globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = 0.3;
+    globe.controls().autoRotateSpeed = 0.8;
     const N = 10000; 
     const gData = [...Array(N).keys()].map(() => ({
       lat: (Math.random() - 0.5) * 180, 
