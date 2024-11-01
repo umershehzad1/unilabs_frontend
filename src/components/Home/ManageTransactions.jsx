@@ -64,21 +64,24 @@ const ManageTransactions = () => {
                                 flexDirection: "column",
                                 justifyContent: "space-between",
                                 overflow: "hidden",
+                                backgroundColor:!isSwiped?"black":"transparent"
                             }}
                         >
                             <div>
                             <h3 style={{ overflow: 'hidden' }}>
-                                MANAGE YOUR TRANSACTIONS ON THE GO
+
+                                {isSwiped?"YOUR TRANSACTIONS ARE MANAGED.":"MANAGE YOUR TRANSACTIONS ON THE GO"}
+                                
                             </h3>
                             <TypeAnimation
                                 sequence={[
-                                    "securely from your mobile device!",
+                                    "Securely from your mobile device!",
                                     1000,
-                                    "securely from your mobile device!",
+                                    "Make payments and transfers with just a few taps!",
                                     1000,
-                                    "securely from your mobile device!",
+                                    "Securely from your mobile device!",
                                     1000,
-                                    "securely from your mobile device!",
+                                    "Make payments and transfers with just a few taps!",
                                     1000,
                                 ]}
                                 wrapper="span"
@@ -86,7 +89,7 @@ const ManageTransactions = () => {
                                 style={{
                                     fontSize: "18px",
                                     display: "inline-block",
-                                    whiteSpace: 'nowrap',
+                                    whiteSpace: 'wrap',
                                     overflow: 'hidden',
                                     textOverflow: 'ellipsis',
                                 }}
@@ -133,7 +136,7 @@ const ManageTransactions = () => {
                 </Col>
 
                 <Col xs={12} lg={6}>
-                    <div className="manage">
+                    <div className="manage mt-3 mt-lg-0 text-center text-lg-start">
                         <h1 className="text-white">
                             Manage Your <span>Transactions</span> through UNILABS
                         </h1>
