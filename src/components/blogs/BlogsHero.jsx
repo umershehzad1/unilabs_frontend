@@ -56,7 +56,6 @@ const BlogsHero = () => {
                 </Carousel.Item>
             </Carousel>
 
-            {/* Overlay content */}
             <Container>
                 <Row className="align-items-center py-5" style={{ position: 'relative', zIndex: 2 }}>
                     <Col xs={12} lg={6} className="manage hero-text-responsive text-center text-lg-start pt-3">
@@ -71,7 +70,6 @@ const BlogsHero = () => {
                 </Row>
             </Container>
             
-            {/* Background Overlay */}
             <div
                 style={{
                     position: 'absolute',
