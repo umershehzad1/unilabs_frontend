@@ -3,7 +3,6 @@ import React from 'react';
 import 'react-vertical-timeline-component/style.min.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Image from 'next/image';
-import SectionHeading from '../shared/SectionHeading';
 
 const contentData = [
     {
@@ -36,7 +35,6 @@ const SideBySide = () => {
             <div className="position-relative pt-5">
                 
                 <Container className="py-5">
-                <SectionHeading heading={"Partners"} />
                     {contentData.map((item, index) => (
                         <Row
                             className={`align-items-center py-5 ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
@@ -56,12 +54,12 @@ const SideBySide = () => {
                                     alt={item.title}
                                 />
                             </Col>
-                            <Col xs={12} lg={6} className="manage">
+                            <Col xs={12} lg={6} className="manage text-center text-lg-start">
                                 <h1 className="text-white">
                                     <span>{item.title}</span>
                                 </h1>
                                 <p className="text-white">{item.description}</p>
-                                <div className="d-flex gap-4 pt-2">
+                                <div className="d-flex gap-4 pt-2 justify-content-center justify-content-lg-start">
                                     <Button className="transparentbtn">{item.buttonText}</Button>
                                 </div>
                             </Col>
