@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import { PieChart, Pie, Sector, ResponsiveContainer } from "recharts";
+import { PieChart, Pie, Sector, ResponsiveContainer, Cell } from "recharts";
+
+const COLORS = ['#24406a', '#44963d', '#90df94', '#4dc0ef'];
 
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
@@ -57,6 +59,7 @@ const renderActiveShape = (props) => {
         y={ey}
         textAnchor={textAnchor}
         fill="#333"
+        fontSize={16}
       >{`PV ${value}`}</text>
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
@@ -79,19 +82,25 @@ const PieChartComponent = ({ data }) => {
   };
 
   return (
-    <ResponsiveContainer className={"phone-wrapper"} width="100%" height={400}>
+    <ResponsiveContainer className={"phone-wrapper"} width="100%" height={450}>
       <PieChart>
         <Pie
-          activeIndex={activeIndex}
-          activeShape={renderActiveShape}
           data={data}
           cx="50%"
           cy="50%"
-          innerRadius={60}
-          outerRadius={80}
+          innerRadius={90} 
+          outerRadius={130}
+          fill="#8884d8"
+          paddingAngle={5}
           dataKey="value"
+          activeIndex={activeIndex}
+          activeShape={renderActiveShape}
           onMouseEnter={onPieEnter}
-        />
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
       </PieChart>
     </ResponsiveContainer>
   );

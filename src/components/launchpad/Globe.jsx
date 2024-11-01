@@ -14,6 +14,7 @@ const GlobeComponent = () => {
       .atmosphereAltitude(0) 
       .pointOfView({ altitude: 2 }, 1000);
 
+    // Set up auto-rotation
     globe.controls().enableZoom = false;
     globe.controls().autoRotate = true;
     globe.controls().autoRotateSpeed = 0.8;
