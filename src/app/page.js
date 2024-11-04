@@ -37,6 +37,7 @@ const Page = () => {
       <SpreadTheWorld />
       <Tokenomics />
       <Faqs />
+      
     </>
   );
 }

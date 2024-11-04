@@ -1,9 +1,11 @@
 * {
   font-family: var(--font-smooch-sans), sans-serif;
+  scroll-behavior: smooth !important;
 }
 body {
   background-color: #030b15 !important;
   overflow-x: hidden !important;
+  scroll-behavior: smooth !important;
 }
 
 .text-green {
@@ -472,6 +474,9 @@ body {
 .accordion-button:not(.not-collapsed)::after {
   background-image: url("./../../public/plus.png") !important;
 }
+.accordion-button:not(.collapsed)::after {
+  background-image: url("./../../public/minus.png") !important;
+}
 
 .vertical-timeline::before {
   background-color: #4caf50 !important;
@@ -623,14 +628,27 @@ body {
 .ceo-shadow{
   filter: drop-shadow(0px 10px 10px #ffffff);
 }
+.linebg{
+  background-image: url("../../public/linesbg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 150%;
+  
+}
 
 @media (max-width: 991px) {
   .globe-container {
     margin-top: 20px;
-    height: 300px;
     width: 100% !important;
   }
-  
+  .scene-container canvas{
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+.scene-container{
+  width: 100% !important;
+  height: auto !important;
 }
 
 
