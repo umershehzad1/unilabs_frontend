@@ -1,21 +1,21 @@
-"use client"
+"use client";
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import Hero from '@/components/Home/Hero';
+import Presales from '@/components/Home/Presales';
+import ManageTransactions from '@/components/Home/ManageTransactions';
+import WhyUnilabs from '@/components/Home/WhyUnilabs';
+import PoweredBy from '@/components/Home/PoweredBy';
+import RoadMaps from '@/components/Home/RoadMaps';
+import Unique from '@/components/Home/Unique';
+import Youtube from '@/components/Home/Youtube';
 import AllYouNeed from '@/components/Home/AllYouNeed';
 import Attributes from '@/components/Home/Attributes';
-import Hero from '@/components/Home/Hero';
-import ManageTransactions from '@/components/Home/ManageTransactions';
-import PoweredBy from '@/components/Home/PoweredBy';
-import Presales from '@/components/Home/Presales';
-import RoadMaps from '@/components/Home/RoadMaps';
 import SpreadTheWorld from '@/components/Home/SpreadTheWorld';
 import Tokenomics from '@/components/Home/Tokenomics';
-import Unique from '@/components/Home/Unique';
-import WhyUnilabs from '@/components/Home/WhyUnilabs';
-import Youtube from '@/components/Home/Youtube';
 import Faqs from '@/components/shared/Faqs';
-import AOS from 'aos';
-import React, { useEffect } from 'react';
 
-const Page = () => {
+const LandingPage = () => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -39,6 +39,6 @@ const Page = () => {
       <Faqs />
     </>
   );
-}
+};
 
-export default Page;
+export default LandingPage;

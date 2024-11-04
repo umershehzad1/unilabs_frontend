@@ -1,0 +1,171 @@
+* {
+  font-family: var(--font-smooch-sans), sans-serif;
+}
+
+:root {
+  --color1: #FFC127;
+  --color2: #4CAF50;
+  --color3:#FFD98C;
+  --color4: linear-gradient(90deg, #589CFF 0%, #355E99 100%);;
+}
+
+
+body {
+  background-color: #010B18 !important;
+  overflow-x: hidden !important;
+}
+
+.primary-border,
+.primary-border-right {
+  position: relative;
+}
+
+.primary-border::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(90deg, #4CAF50 0%, #84F489 40.5%, #B3F1B6 72.5%, #204921 100%);
+}
+
+.primary-border-right::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  right: 0;
+  background-image: linear-gradient(90deg, #4CAF50 0%, #84F489 40.5%, #B3F1B6 72.5%, #204921 100%);
+}
+
+
+
+.caret-none::after {
+  display: none !important;
+}
+
+.f-qs {
+  font-family: var(--font-quicksand), sans-serif;
+}
+.f-of{
+  font-family: var(--font-outfit), sans-serif;
+  }
+
+.active-link {
+  animation: background-glow 0.6s ease forwards;
+  font-weight: 600 !important;
+}
+
+@keyframes background-glow {
+  0% {
+    background: linear-gradient(92.49deg,
+        #4caf50 0%,
+        #4caf50 34.78%,
+        #204921 90.46%);
+  }
+
+  50% {
+    background: linear-gradient(92.49deg,
+        #6ecf6e 0%,
+        #4caf50 50%,
+        #356e39 100%);
+  }
+
+  100% {
+    background: linear-gradient(92.49deg,
+        #4caf50 0%,
+        #4caf50 34.78%,
+        #204921 90.46%);
+  }
+}
+
+
+.smooth-transition {
+  transition: transform 0.5s ease-in-out !important;
+}
+
+.custom-close-button .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+.custom-close-button .btn-close:hover {
+  filter: brightness(0.8) invert(1);
+}
+
+
+
+
+
+.shadow-button {
+  box-shadow: 0 0 19.6px rgba(177, 209, 255, 0.5);
+}
+
+.shadow-button:hover {
+  box-shadow: 0 0 30px rgba(177, 209, 255, 0.8);
+}
+.page-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page-bg{
+  position: relative;
+}
+.page-bg::before {
+  content: "";
+  background: url("/dashboard/background.png") no-repeat center center;
+  background-size: 45%;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  bottom: 0;
+  height: 100%;
+  animation: rotate-bg 100s linear infinite;
+  animation-delay: 3s;
+  z-index: -1;
+}
+
+@keyframes rotate-bg {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.custom-Chart {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .custom-Chart {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+
+.amount-input {
+  width: 100%;
+  background-color: rgba(22, 48, 82, 0.5)!important;
+  color: white!important;
+}
+
+.amount-input::placeholder {
+  color: rgba(255, 255, 255, 0.8)!important;
+  opacity: 1;
+}
+
+.amount-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(22, 48, 82, 0.6)!important;
+}
