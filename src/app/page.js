@@ -9,6 +9,7 @@ import RoadMaps from '@/components/Home/RoadMaps';
 import SpreadTheWorld from '@/components/Home/SpreadTheWorld';
 import Tokenomics from '@/components/Home/Tokenomics';
 import Unique from '@/components/Home/Unique';
+import WalletInfo from '@/components/Home/WalletInfo';
 import WhyUnilabs from '@/components/Home/WhyUnilabs';
 import Youtube from '@/components/Home/Youtube';
 import Faqs from '@/components/shared/Faqs';
@@ -23,6 +24,7 @@ const Page = () => {
   return (
     <>
       <Hero />
+      <WalletInfo />
       <Presales />
       <ManageTransactions />
       <div className='whybg'>
@@ -37,7 +39,7 @@ const Page = () => {
       <SpreadTheWorld />
       <Tokenomics />
       <Faqs />
-      
+
     </>
   );
 }
