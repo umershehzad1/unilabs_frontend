@@ -37,10 +37,19 @@ const roadmapData = [
         ],
         icon: <SiReactos className='text-black' />
     },
+    {
+        title: 'Launch Phase 1',
+        items: [
+            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true },
+            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: false },
+            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true }
+        ],
+        icon: <SiReactos className='text-black' />
+    },
+    // ... rest of the data
 ];
 
 const RoadMaps = () => {
-    const [scrollHeight, setScrollHeight] = useState(10);
     const sectionRef = useRef(null);
 
     const particlesInit = async (main) => {
@@ -52,7 +61,7 @@ const RoadMaps = () => {
         fpsLimit: 60,
         motion: {
             reduce: {
-                value: true, 
+                value: true,
             }
         },
         interactivity: {
@@ -78,7 +87,7 @@ const RoadMaps = () => {
                 enable: true,
                 outModes: { default: "bounce" },
                 random: false,
-                speed: 0.1,
+                speed: 0.3,
                 straight: false,
             },
             number: { density: { enable: true, area: 800 }, value: 100 },
@@ -88,8 +97,6 @@ const RoadMaps = () => {
         },
         detectRetina: true,
     };
-    
-    
 
     const handleScroll = () => {
         if (sectionRef.current) {
@@ -101,7 +108,7 @@ const RoadMaps = () => {
 
             if (scrollPosition >= 0 && scrollPosition <= maxScroll) {
                 const newHeight = Math.min(100, (scrollPosition / maxScroll) * 100);
-                setScrollHeight(newHeight);
+                document.documentElement.style.setProperty('--timeline-height', `${newHeight}%`);
             }
         }
     };
@@ -118,7 +125,7 @@ const RoadMaps = () => {
             <style>
                 {`
                     .vertical-timeline::before {
-                        height: ${scrollHeight}% !important;
+                        height: var(--timeline-height, 10%) !important;
                     }
                 `}
             </style>
