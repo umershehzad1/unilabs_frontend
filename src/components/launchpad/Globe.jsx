@@ -1,7 +1,7 @@
-"use client"; 
+"use client";
 import dynamic from 'next/dynamic';
 import React, { useEffect, useRef } from 'react';
-import Globe from 'globe.gl'; // Import Globe
+import Globe from 'globe.gl';
 
 const GlobeComponent = dynamic(() => Promise.resolve(GlobeInnerComponent), {
   ssr: false,
@@ -9,6 +9,7 @@ const GlobeComponent = dynamic(() => Promise.resolve(GlobeInnerComponent), {
 
 const GlobeInnerComponent = () => {
   const globeRef = useRef();
+  const containerRef = useRef();
 
   useEffect(() => {
     if (typeof window !== 'undefined' && globeRef.current) {
@@ -28,28 +29,40 @@ const GlobeInnerComponent = () => {
       const gData = [...Array(N).keys()].map(() => ({
         lat: (Math.random() - 0.5) * 180,
         lng: (Math.random() - 0.5) * 360,
-        color: ['#589bff', '#589bff', '#589bff'][Math.floor(Math.random() * 3)],
+        color: ['#f3f3f3', '#589bff', '#589bff'][Math.floor(Math.random() * 3)],
       }));
       globe.pointsData(gData)
         .pointAltitude(0)
         .pointColor('color')
         .pointRadius(0.1);
 
-      const handleResize = () => {
-        globe.width(globeRef.current.clientWidth);
-        globe.height(globeRef.current.clientHeight);
+      const resizeGlobe = () => {
+        if (containerRef.current) {
+          globe.width(containerRef.current.clientWidth);
+          globe.height(containerRef.current.clientHeight);
+        }
       };
-
-      handleResize();
-      window.addEventListener('resize', handleResize);
+      resizeGlobe();
+      const resizeObserver = new ResizeObserver(resizeGlobe);
+      resizeObserver.observe(containerRef.current);
 
       return () => {
-        window.removeEventListener('resize', handleResize);
+        resizeObserver.disconnect();
       };
     }
-  }, [globeRef]);
+  }, []);
 
-  return <div ref={globeRef} style={{ width: '100%', height: '100%' }} />;
+  return (
+    <div ref={containerRef} style={{
+      width: '100%',
+      height: '100%',
+      overflow: 'hidden',
+      position: 'relative',
+      aspectRatio: '1', 
+    }}>
+      <div ref={globeRef} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+    </div>
+  );
 };
 
 export default GlobeComponent;

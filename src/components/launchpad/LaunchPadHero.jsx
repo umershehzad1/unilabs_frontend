@@ -17,10 +17,9 @@ const LaunchPadHero = () => {
                         </div>
                     </div>
                 </Col>
-                <Col xs={8} lg={6} className='mx-auto'>
-                    <div className="globe-container" style={{ width: '100%', height: '100%', position: 'relative' }}>
+                <Col xs={12} lg={6} className='mx-auto'>
+                   
                         <GlobeComponent />
-                    </div>
                 </Col>
             </Row>
         </Container>

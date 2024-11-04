@@ -8,8 +8,11 @@ import Image from 'next/image';
 const Contributers = () => {
     return (
         <>
+        <div className="py-5">
+
+    
             <div className="py-5">
-                <Container className='py-5'>
+                <Container className='py-3'>
                     <SectionHeading heading={"UNILABS NETWORK CONTRIBUTORS"} subHeading={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui nemo, quia ullam ea odio deleniti ducimus! Ab, distinctio itaque. Voluptatibus."} />
                     <Row className="align-items-center py-5" >
                         <Col xs={12} lg={6} className="">
@@ -90,6 +93,7 @@ const Contributers = () => {
                         </Col>
                     </Row>
                 </Container>
+            </div>
             </div>
         </>
     )
