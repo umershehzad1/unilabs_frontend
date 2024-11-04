@@ -1,9 +1,11 @@
 * {
   font-family: var(--font-smooch-sans), sans-serif;
+  scroll-behavior: smooth !important;
 }
 body {
   background-color: #030b15 !important;
   overflow-x: hidden !important;
+  scroll-behavior: smooth !important;
 }
 
 .text-green {
@@ -481,7 +483,6 @@ body {
   width: 6px !important;
   box-shadow: rgba(76, 175, 80, 0.6) 0px 3px 8px !important;
   border-radius: 20px;
-  height:0% !important;
 }
 
 /* 
@@ -649,3 +650,6 @@ body {
   width: 100% !important;
   height: auto !important;
 }
+
+
+
