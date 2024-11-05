@@ -17,7 +17,7 @@ const DashboardLayout = ({ children }) => {
                         <Sidebar />
                     </div>
                     <div className="d-flex flex-column" style={{ flex: 1 }}>
-                        <div className='py-md-2 primary-border'>
+                        <div className='primary-border'>
                             <SidebarHeader onLogoClick={() => setShowSidebar(true)} />
                         </div>
                         <div style={{  overflowY: 'auto',height:"90vh" }}>

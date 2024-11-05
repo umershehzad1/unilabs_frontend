@@ -6,7 +6,7 @@ const data = { stage: "4", remaining: "730921", price: "10", nextStagePrice: 102
 
 const StageCom = () => {
     return (
-        <Row className='py-5 page-bg  px-0'>
+        <Row className='py-4 page-bg  px-0'>
             <Col md={6} xs={12}  
                 className="d-flex flex-column align-items-center justify-content-center"
                 style={{ textAlign: 'center',  }}

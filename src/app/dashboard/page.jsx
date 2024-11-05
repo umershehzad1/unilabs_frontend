@@ -10,7 +10,7 @@ const Dashboard = () => {
 
 
     return (
-        <Container fluid className="p-md-4 text-white">
+        <Container fluid className="px-md-4 text-white">
             <div className="rounded-4 py-3 px-md-5 my-4" style={{ background: "#589CFF0A" }}>
                 <Row className="align-items-center text-center text-md-start">
                     <Col md={6} className="mb-3 mb-md-0">

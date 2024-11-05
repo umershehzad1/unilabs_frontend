@@ -21,12 +21,12 @@ const BuyToken = () => {
     { label: "Promo Bonus:", value: 0.00 },
   ]
   return (
-    <Container fluid className="p-md-4 text-white ">
+    <Container fluid className="px-md-4 text-white ">
       <div className="rounded-4 py-3 px-md-5 my-4 pb-5" style={{ background: "#589CFF0A" }}>
         <div className="page-bg bg-top">
-          <h1 className="fw-bold display-2 text-center">Step 1</h1>
-          <div className="border-bottom border-success my-4"></div>
-          <Form className="py-5">
+          <h1 className="fw-bold display-6 text-center">Step 1</h1>
+          <div className="border-bottom border-success "></div>
+          <Form className="py-3">
             <Form.Control
               type="number"
               placeholder="Enter the amount in USD you want to spend to purchase UNI tokens."
@@ -43,7 +43,7 @@ const BuyToken = () => {
           </Row>
 
         </div>
-        <h2 className="border-top border-bottom py-2 border-success fw-bold display-2 text-center">
+        <h2 className="border-top border-bottom py-2 border-success fw-bold display-6 text-center">
           Step 2
         </h2>
 
@@ -92,7 +92,7 @@ const BuyToken = () => {
 
           </Col>
 
-          <Col xs={12} className=" mb-4">
+          <Col xs={12} >
             <Button
               style={{ color: "var(--color1)" }}
               className="bg-transparent border-0 fw-semibold p-0"
@@ -115,9 +115,9 @@ const BuyToken = () => {
 
 
 
-        <h1 className="fw-bold display-4 text-center">You Get:</h1>
+        <h1 className="fw-bold display-6 text-center">You Get:</h1>
         <Col xl={5} md={7} xs={12} className="mx-auto text-center">
-          <p className=' mb-0 fs-3 f-of rounded-3 ms-md-3 fw-bold  border-top border-success border-2' style={{ padding: "15px", }}>
+          <p className=' mb-0 fs-4 f-of rounded-3 ms-md-3 fw-bold  border-top border-success border-2' style={{ padding: "15px", }}>
             <Image src="/dashboard/coin.png" alt="Coins" className='mx-1' width={40} height={40} />
 
             <span style={{ color: "var(--color2)" }} className='px-2'>I UNI</span>
@@ -125,7 +125,7 @@ const BuyToken = () => {
           </p>
           <Card className='p-sm-5 p-3 rounded-4' style={{
             color: "white",
-            background: "#142F51"
+            backgroundColor: "rgba(20, 47, 81, 0.7)"
           }}>
 
 
