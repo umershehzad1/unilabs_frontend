@@ -29,7 +29,7 @@ const modal = createAppKit({
   metadata,
   features: {
     analytics: true,
-    email:true,
+    email:false,
     socials:['google','x','github','discord','farcaster'],
     emailShowWallets:true,
   },
