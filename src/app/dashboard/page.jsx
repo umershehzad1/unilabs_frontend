@@ -27,15 +27,7 @@ const Dashboard = () => {
                         </h2>
                     </Col>
 
-                    <Col md={6} className="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-end">
-                        <h2 className="fs-5 fw-bold mb-2 mb-md-0">
-                            <span style={{ color: "var(--color1)" }}>Receiving Wallet:</span>
-                            <span className=" ms-2">Add Your Wallet Address</span>
-                        </h2>
-                        <Button variant="success" size="sm" className="ms-md-3 mt-2 mt-md-0">
-                            Add
-                        </Button>
-                    </Col>
+
                 </Row>
                 <div className="border-bottom  my-4"></div>
                 <Row>

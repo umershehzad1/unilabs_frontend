@@ -47,10 +47,10 @@ body {
 }
 
 .f-qs {
-  font-family: var(--font-quicksand), sans-serif;
+  font-family: var(--font-quicksand), sans-serif!important;
 }
 .f-of{
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-outfit), sans-serif!important;
   }
 
 .active-link {

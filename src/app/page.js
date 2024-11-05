@@ -8,6 +8,8 @@ import WhyUnilabs from '@/components/Home/WhyUnilabs';
 import PoweredBy from '@/components/Home/PoweredBy';
 import RoadMaps from '@/components/Home/RoadMaps';
 import Unique from '@/components/Home/Unique';
+import WalletInfo from '@/components/Home/WalletInfo';
+import WhyUnilabs from '@/components/Home/WhyUnilabs';
 import Youtube from '@/components/Home/Youtube';
 import AllYouNeed from '@/components/Home/AllYouNeed';
 import Attributes from '@/components/Home/Attributes';
@@ -23,6 +25,7 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
+      <WalletInfo />
       <Presales />
       <ManageTransactions />
       <div className='whybg'>
@@ -37,6 +40,7 @@ const LandingPage = () => {
       <SpreadTheWorld />
       <Tokenomics />
       <Faqs />
+
     </>
   );
 };
