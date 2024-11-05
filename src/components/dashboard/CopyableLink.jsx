@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { FaCopy } from 'react-icons/fa';
 import Confetti from 'react-confetti';
+import { MdContentCopy } from "react-icons/md";
 import { useWindowSize } from 'react-use';
 
 const CopyableLink = () => {
@@ -42,7 +42,7 @@ const CopyableLink = () => {
                     padding: "10px"
                 }}
             >
-                <FaCopy color={copied ? "green" : "black"} />
+                <MdContentCopy color={copied ? "green" : "white"} />
             </Button>
         </div>
     );

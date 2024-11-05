@@ -5,8 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'swiper/swiper-bundle.css';
 import 'react-circular-progressbar/dist/styles.css';
 import 'aos/dist/aos.css';
-import ContextProvider from '../../context';
-import { headers } from 'next/headers';
+// import ContextProvider from '../../context';
+// import { headers } from 'next/headers';
 import { Quicksand, Smooch_Sans, Outfit } from 'next/font/google';
 import { usePathname } from 'next/navigation';
 import DashboardLayout from './DashboardLayout';
@@ -36,7 +36,7 @@ const quicksand = Quicksand({
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const [isMounted, setIsMounted] = useState(false);
-  const cookies = headers().get('cookie')
+  // const cookies = headers().get('cookie')
   const isDashboard = pathname?.startsWith('/dashboard');
 
   useEffect(() => {
@@ -67,11 +67,11 @@ export default function RootLayout({ children }) {
       <body className={`m-0 ${smoochSans.variable} ${quicksand.variable} ${outfit.variable}`}>
         <DynamicTitle />
         <Suspense fallback={<div>Loading layout...</div>}>
-          <ContextProvider cookies={cookies}>
+          {/* <ContextProvider cookies={cookies}> */}
             <Layout>
               {children}
             </Layout>
-          </ContextProvider>
+          {/* </ContextProvider> */}
         </Suspense>
       </body>
     </html>
