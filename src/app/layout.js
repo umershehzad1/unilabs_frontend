@@ -6,8 +6,8 @@ import Head from 'next/head';
 import 'react-circular-progressbar/dist/styles.css';
 import 'swiper/swiper-bundle.css';
 import ClientWrapper from "./ClientWrapper";
-import "./dashboard.css";
 import "./globals.css";
+import "./dashboard.css";
 
 const smoochSans = Smooch_Sans({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],

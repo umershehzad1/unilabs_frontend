@@ -20,7 +20,7 @@ const MyToken = () => {
                     <h1 className="fw-bold border-bottom border-success pb-2">My UNI Token</h1>
 
                     <Row className='py-4 px-0'>
-                        <Col md={6} xs={12}>
+                        <Col xl={6} xs={12}>
                             <Card className="p-3 rounded-4 mb-4" style={{
                                 color: "#DBDBDB",
                                 background: "#589CFF38",
@@ -34,19 +34,19 @@ const MyToken = () => {
                                         borderImageSlice: 1,
                                     }}
                                 >
-                                    <p className="mt-3" style={{ color: "#DBDBDB80" }}>
+                                    <p className="mt-3 mb-0 f-of" style={{ color: "#DBDBDB80" }}>
                                         Add or update your Ethereum wallet address to receive your $UNI tokens.
                                     </p>
                                     <Col className="d-flex flex-column flex-md-row align-items-center">
-                                        <small className="fs-6 mb-2 mb-md-0">
+                                        <small className="fs-5 f-of mb-2 mb-md-0">
                                             <small style={{ color: "var(--color1)" }}>Receiving Wallet:</small>
-                                            <Link href="#" className="ms-2 small">Add Your Wallet Address</Link>
+                                            <Link href="#" className="ms-2 small f-of">Add Your Wallet Address</Link>
                                         </small>
                                         <Button
                                             size="sm"
-                                            className="ms-md-3 mt-2 mt-md-0"
+                                            className="ms-md-3 mt-2 mt-md-0 f-of"
                                             style={{
-                                                backgroundColor: "rgba(13, 110, 253, 0.7)",
+                                                backgroundColor: "rgba(13, 110, 253, 0.4)!important",
                                                 borderColor: "rgba(13, 110, 253, 0.7)"
                                             }}
                                         >
@@ -69,9 +69,9 @@ const MyToken = () => {
                                         borderImageSlice: 1,
                                     }}
                                 >
-                                    <h4 className="text-white mt-2">
-                                        0 <span style={{ color: "var(--color2)" }} className="px-2">UNI</span>
-                                    </h4>
+                                    <h5 className="text-white mt-2 f-of">
+                                        0 <span style={{ color: "var(--color2)" }} className="px-1 f-of">UNI</span>
+                                    </h5>
                                 </div>
                             </Card>
 
@@ -89,20 +89,25 @@ const MyToken = () => {
                                         borderImageSlice: 1,
                                     }}
                                 >
-                                    <h4 className="text-white">Refer a friend and earn UNI tokens.</h4>
-                                    <h4 className="text-white">My referral link:</h4>
+                                    <h6 className="text-white f-of">Refer a friend and earn 
+
+                                        <span style={{color:"var(--color2)"
+                                        }} className="px-2">UNI tokens.</span>
+
+                                    </h6>
+                                    <h5 className="text-white ">My referral link:</h5>
                                     <CopyableLink />
                                 </div>
                             </Card>
                         </Col>
 
-                        <Col md={6} xs={12}>
+                        <Col className='offset-xl-1 mt-xl-0 mt-4' xl={5} xs={12}>
                             <Row className="mb-3">
                                 <div className="d-flex flex-md-row flex-column align-items-center justify-content-lg-end gap-3">
                                     <h2 className='mb-0 f-of'>My Token Balance</h2>
                                     <p className='mb-0 f-of rounded-3 ms-md-3 fw-bold' style={{ padding: "15px", background: "var(--color2)", color: "var(--color3)" }}>
                                         <Image src="/dashboard/coin.png" alt="Coins" className='mx-1 mb-1' width={20} height={20} />
-                                        100,00,00
+                                        100,00
                                     </p>
                                 </div>
                             </Row>
@@ -111,12 +116,12 @@ const MyToken = () => {
                                     <h4 className='mb-0 f-of'>Equivalent to:</h4>
                                     <p className='mb-0 f-of rounded-3 ms-md-3 fw-bold' style={{ padding: "15px", border: "2px solid #EFD396", color: "var(--color3)" }}>
                                         <Image src="/dashboard/MoneyBag.png" alt="Coins" className='mx-1 mb-1' width={20} height={20} />
-                                        100,00,00
+                                        100,00
                                     </p>
                                 </div>
                             </Row>
 
-                            <Card className='p-4 rounded-4' style={{
+                            <Card className='p-5  rounded-4' style={{
                                 color: "white",
                                 background: "#589CFF38",
                             }}>

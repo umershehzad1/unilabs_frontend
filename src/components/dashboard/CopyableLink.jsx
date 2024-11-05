@@ -15,7 +15,7 @@ const CopyableLink = () => {
     };
 
     return (
-        <div className="my-4 d-flex align-items-center">
+        <div className=" d-flex align-items-center">
             {copied && <Confetti width={width} height={height} recycle={false} numberOfPieces={200} />}
             <div
                 style={{
