@@ -30,7 +30,7 @@ const modal = createAppKit({
   features: {
     analytics: true,
     email:false,
-    socials:['google','x','github','discord','farcaster'],
+    socials:false,
     emailShowWallets:true,
   },
   themeMode:'dark'
