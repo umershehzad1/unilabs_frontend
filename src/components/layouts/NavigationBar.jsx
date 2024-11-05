@@ -7,11 +7,13 @@ import Link from "next/link";
 import Sidebar from "./Sidebar";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
+import { useAccount } from "wagmi";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
   const [navbarColor, setNavbarColor] = useState("rgba(0, 0, 0, 0.5)");
   const pathname = usePathname();
+  const isConnected = useAccount()
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -30,6 +32,7 @@ const NavigationBar = () => {
     };
   }, []);
 
+
   return (
     <>
       <Navbar expand="lg" className="fixed-top mt-4 mx-2">
@@ -41,7 +44,7 @@ const NavigationBar = () => {
             transition: "background-color 0.5s ease",
           }}
         >
-          <Navbar.Brand as={Link}  href={"/"} style={{ width: "50px" }}>
+          <Navbar.Brand as={Link} href={"/"} style={{ width: "50px" }}>
             <Image
               src={"/logo.png"}
               width={100}
@@ -74,17 +77,26 @@ const NavigationBar = () => {
                 </Link>
               ))}
             </Nav>
-            <Form className="d-flex gap-2 align-items-center d-none d-lg-block">
-              <Link className="mx-3 text-white text-decoration-none" href="#sign-in">
-                Sign In
-              </Link>
-              <Button className="py-2 px-3 nav-button">Connect to Wallet</Button>
+            <Form>
+              <div>
+                <Link className="mx-3 text-white text-decoration-none" href="#sign-in">
+                  Sign In
+                </Link>
+              </div>
+
             </Form>
+            <div className="d-flex gap-2 align-items-center d-none d-lg-block">
+
+              <div className="mx-3 nav-button">
+                {!isConnected ? <w3m-network-button /> : <w3m-button />}
+
+              </div>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <Sidebar show={show} handleClose={handleClose} />
+      <Sidebar show={show} handleClose={handleClose} isConnected={isConnected} />
     </>
   );
 };

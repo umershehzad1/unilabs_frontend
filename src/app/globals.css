@@ -19,7 +19,7 @@ body {
   letter-spacing: 0.01em;
 }
 .nav-button {
-  background: linear-gradient(90deg, #4caf50, #204921, #4caf50);
+  background: linear-gradient(90deg, #4caf50, #204921, #4caf50) !important;
   background-size: 300% 300% !important;
   border-radius: 30px !important;
   color: white !important;
@@ -47,7 +47,9 @@ body {
 .nav-bg form {
   border-left: 1px solid #626769;
 }
-
+.navbar{
+  z-index: 999 !important;
+}
 .offcanvasNavbar {
   width: 250px !important;
 }
@@ -650,6 +652,8 @@ body {
   width: 100% !important;
   height: auto !important;
 }
+
+
 
 
 

@@ -3,7 +3,7 @@ import { Button, Nav, Offcanvas } from "react-bootstrap";
 import Link from "next/link";
 import { menuItems } from "../shared/MenuItems";
 
-const Sidebar = ({ show, handleClose }) => {
+const Sidebar = ({ show, handleClose,isConnected }) => {
     return (
         <Offcanvas show={show} onHide={handleClose} id="offcanvasNavbar" className="offcanvasNavbar bg-black" placement="end">
             <Offcanvas.Header closeButton>
@@ -19,8 +19,9 @@ const Sidebar = ({ show, handleClose }) => {
                     <Link className="px-3  text-white text-decoration-none py-3" href="#sign-in">
                         Sign In
                     </Link>
-                    <div className="mx-3 mb-3">
-                        <Button className="mt-3 py-2 px-3 w-100 nav-button">Connect to Wallet</Button>
+                    <div className="mx-3 nav-button mt-3">
+                        {!isConnected ? <w3m-network-button /> : <w3m-button />}
+
                     </div>
 
                 </Nav>
