@@ -79,7 +79,7 @@ const NavigationBar = () => {
             </Nav>
             <Form>
               <div>
-                <Link className="mx-3 text-white text-decoration-none" href="#sign-in">
+                <Link className="mx-3 text-white text-decoration-none" href="/dashboard">
                   Sign In
                 </Link>
               </div>

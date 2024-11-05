@@ -4,7 +4,6 @@ import AOS from 'aos';
 import Hero from '@/components/Home/Hero';
 import Presales from '@/components/Home/Presales';
 import ManageTransactions from '@/components/Home/ManageTransactions';
-import WhyUnilabs from '@/components/Home/WhyUnilabs';
 import PoweredBy from '@/components/Home/PoweredBy';
 import RoadMaps from '@/components/Home/RoadMaps';
 import Unique from '@/components/Home/Unique';
