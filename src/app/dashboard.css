@@ -8,9 +8,11 @@
   --color3:#FFD98C;
   --color4: linear-gradient(90deg, #589CFF 0%, #355E99 100%);;
   --color5: linear-gradient(90deg, #4CAF50 0%, #204921 100%);
+  --color6:#5291ED;
 }
-
-
+#shadow-root button[data-size='md']{
+    background-color: green !important;
+}
 body {
   background-color: #010B18 !important;
   overflow-x: hidden !important;
@@ -99,22 +101,24 @@ body {
   width: 1.3rem;
   height: 1.3rem;
   border: 2px solid #7D8389 !important;
-  background-color: transparent;
+  background-color: transparent !important;
+  background-image: none !important;
   border-radius: 0.25rem;
   position: relative;
   cursor: pointer;
   transition: all 0.3s ease;
+  --bs-form-check-bg-image: none !important;
 }
 
 .custom-checkbox .form-check-input:checked {
-  background-color: var(--color2);
-  border-color: #7D8389;
+  background-color: transparent !important;
+  border-color: #6ef389 !important;
 }
 
 .custom-checkbox .form-check-input:checked::before {
   content: '✔';
-  color: white;
-  font-size: 0.9rem;
+  color: #6ef389 !important;
+  font-size: 1.8rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -123,11 +127,18 @@ body {
 
 .custom-checkbox .form-check-input:focus {
   outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(50, 205, 50, 0.4);
+  box-shadow: 0 0 0 0.2rem rgba(50, 205, 50, 0.4) !important;
 }
 
-
-
+.PhoneInputInput{
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.PhoneInputInput:focus{
+  border: none;
+  outline: none;
+}
 
 
 .shadow-button {
@@ -268,3 +279,152 @@ table {
   border-bottom: 4px solid #010B18 !important;
 }
 
+
+.SignIn-modal-dialog .modal-content {
+  background-color: transparent;
+
+}
+.SignIn-modal-dialog {
+  border: 2px solid #589CFF;
+  border-radius: 25px;
+  max-width: 900px;
+  background-color: #010B18;
+}
+.SignIn-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.login-btn {
+  background: linear-gradient(90deg, #4CAF50, #204921, #3e8e41) !important;
+  background-size: 200% 200% !important;
+  border: none !important;
+  width: 200px !important;
+  height: 50px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: white !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  border-radius: 10px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  animation: gradientAnimation 5s ease infinite !important;
+}
+
+.signup-btn {
+  background: linear-gradient(90deg, #589CFF, #355E99, #2a4c7a) !important;
+  background-size: 200% 200% !important;
+  border: none !important;
+  width: 200px !important;
+  height: 50px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: white !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  border-radius: 10px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  animation: gradientAnimation 5s ease infinite !important;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0px 8px 15px rgba(35, 244, 7, 0.7) !important;
+}
+
+.form-label::after {
+  color: white!important;
+  background-color: transparent !important;
+}
+.form-label {
+  color: white!important;
+  background-color: transparent !important;
+}
+
+
+.form-control:focus {
+  box-shadow: none !important;
+  border-color: var(--color2) !important;
+  outline: none!important;
+}
+.form-control:focus-visible {
+  box-shadow: none !important;
+  border-color: var(--color2) !important;
+  outline: none!important;
+}
+
+.input-custom {
+  background: linear-gradient(92.01deg, rgba(255, 255, 255, 0.02) -8.99%, rgba(255, 255, 255, 0.14) 101.74%) !important;
+  color: white !important;
+  border: 2px solid  rgb(168, 165, 165)!important;
+  transition: box-shadow 0.3s ease !important;
+}
+
+.input-custom:focus {
+  box-shadow: 0 0 5px var(--color6) !important;
+  outline: none !important;
+}
+
+.eye-icon {
+  transition: color 0.3s !important;
+}
+
+.eye-icon:hover {
+  color: var(--color6) !important;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-background-clip: text !important;
+}
+
+
+.layoutloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-radius: 50%;
+  border-image: linear-gradient(to right, green, blue);
+  border-image-slice: 1;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

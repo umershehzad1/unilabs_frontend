@@ -3,7 +3,7 @@ import { Button, Nav, Offcanvas } from "react-bootstrap";
 import Link from "next/link";
 import { menuItems } from "../shared/MenuItems";
 
-const Sidebar = ({ show, handleClose,isConnected }) => {
+const Sidebar = ({ show, handleClose, isConnected, setShowModal }) => {
     return (
         <Offcanvas show={show} onHide={handleClose} id="offcanvasNavbar" className="offcanvasNavbar bg-black" placement="end">
             <Offcanvas.Header closeButton>
@@ -16,7 +16,7 @@ const Sidebar = ({ show, handleClose,isConnected }) => {
                             {link.label}
                         </Link>
                     ))}
-                    <Link className="px-3  text-white text-decoration-none py-3" href="#sign-in">
+                    <Link onClick={() => setShowModal(true)} className="px-3  text-white text-decoration-none py-3" href="#sign-in">
                         Sign In
                     </Link>
                     <div className="mx-3 nav-button mt-3">

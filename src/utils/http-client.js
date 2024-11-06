@@ -1,7 +1,7 @@
-import { Config } from '../config';
+import { API_BASE_URL } from '../../config';
 import { AuthHeader } from './auth.utils';
 import axios from 'axios';
-const baseURL = Config.API_BASE_URL;
+const baseURL = API_BASE_URL;
 
 export const GetApiData = async (endpoint, method, payload, secured) => {
     let headers = AuthHeader();

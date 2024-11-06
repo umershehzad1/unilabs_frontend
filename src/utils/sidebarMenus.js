@@ -36,7 +36,7 @@ export const SidebarMenus = [
     {
         
         icon: <HiOutlineGlobeAlt color="white" size={27} />,
-        path: "/dashboard/main",
+        path: "/",
         label: "Main Site",
     },
    

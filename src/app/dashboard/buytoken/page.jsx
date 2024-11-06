@@ -1,10 +1,12 @@
 "use client";
 import DiscountCard from '@/components/dashboard/DiscountCard';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Button, Card, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import { AiOutlineDown } from 'react-icons/ai';
 
 const BuyToken = () => {
+  const router=useRouter()
   const [havePromo, setHavePromo] = useState(null)
   const data = [
     { discount: 5, ds: 250.00, de: 1999.9 },
@@ -168,7 +170,7 @@ const BuyToken = () => {
           />
         </Form>
         <div className="text-center">
-          <Button className='shadow-button-lg mt-4 mb-0 f-of btn-lg   fw-bold' style={{ background: 'var(--color4)' }}>
+          <Button onClick={() => router.push("/dashboard/makepayment")} className='shadow-button-lg mt-4 mb-0 f-of btn-lg   fw-bold' style={{ background: 'var(--color4)' }}>
             <Image src="/dashboard/coin.png" alt="Coins" className='mx-1' width={20} height={20} />
             Buy with Crypto
           </Button>

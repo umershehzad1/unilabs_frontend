@@ -1,13 +1,14 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
-import { menuItems } from "../shared/MenuItems";
 import Image from "next/image";
 import Link from "next/link";
-import Sidebar from "./Sidebar";
-import { FaBarsStaggered } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { Container, Form, Nav, Navbar } from "react-bootstrap";
+import { FaBarsStaggered } from "react-icons/fa6";
 import { useAccount } from "wagmi";
+import { menuItems } from "../shared/MenuItems";
+import CustomModal from "../shared/SignInModal";
+import Sidebar from "./Sidebar";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
@@ -32,10 +33,12 @@ const NavigationBar = () => {
     };
   }, []);
 
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
-      <Navbar expand="lg" className="fixed-top mt-4 mx-2">
+      <CustomModal  setShowModal={setShowModal} showModal={showModal}/>
+      <Navbar expand="lg" className="fixed-top mt-lg-4  mx-2">
         <Container
           className="nav-bg px-3 py-0 overflow-hidden"
           style={{
@@ -78,8 +81,8 @@ const NavigationBar = () => {
               ))}
             </Nav>
             <Form>
-              <div>
-                <Link className="mx-3 text-white text-decoration-none" href="/dashboard">
+              <div className="d-lg-block d-none">
+                <Link onClick={()=>setShowModal(true)} className="mx-3 text-white text-decoration-none" href="">
                   Sign In
                 </Link>
               </div>
@@ -88,7 +91,7 @@ const NavigationBar = () => {
             <div className="d-flex gap-2 align-items-center d-none d-lg-block">
 
               <div className="mx-3 nav-button">
-                {!isConnected ? <w3m-network-button /> : <w3m-button />}
+                {!isConnected ? <w3m-network-button /> : <w3m-button  />}
 
               </div>
             </div>
@@ -96,7 +99,7 @@ const NavigationBar = () => {
         </Container>
       </Navbar>
 
-      <Sidebar show={show} handleClose={handleClose} isConnected={isConnected} />
+      <Sidebar setShowModal={setShowModal} show={show} handleClose={handleClose} isConnected={isConnected} />
     </>
   );
 };

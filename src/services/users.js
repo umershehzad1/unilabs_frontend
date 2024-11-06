@@ -1,9 +1,10 @@
-import { GetApiData } from "utils/http-client";
+import { GetApiData } from "@/utils/http-client";
+
 export const LoginForm = function (data) {
   return GetApiData(`/user/login`, "POST", data, true);
 };
 export const UsersCreate = function (data) {
-  return GetApiData(`/user/sign-up`, "POST", data, true);
+  return GetApiData(`/user/signup`, "POST", data, true);
 };
 export const GetAllUser = function (query) {
   return GetApiData(`/user/get-users?search=${query}`, "GET", null, true);

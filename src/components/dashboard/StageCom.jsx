@@ -1,10 +1,13 @@
+"use client"
 import React from 'react'
 import { Button, Card, Col, Row } from 'react-bootstrap'
 import CustomChart from './CustomChart'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 const data = { stage: "4", remaining: "730921", price: "10", nextStagePrice: 102, total: "2000", sold: 20 }
 
 const StageCom = () => {
+    const router=useRouter()
     return (
         <Row className='py-4 page-bg  px-0'>
             <Col md={6} xs={12}  
@@ -91,7 +94,7 @@ const StageCom = () => {
 
                 <div className="d-flex justify-content-end">
 
-                    <Button className='shadow-button mb-0 f-of rounded-3 ms-md-3 fw-bold' style={{ background: 'var(--color4)' }}>
+                    <Button onClick={() => router.push("/dashboard/makepayment")} className='shadow-button mb-0 f-of rounded-3 ms-md-3 fw-bold' style={{ background: 'var(--color4)' }}>
                         <Image src="/dashboard/coin.png" alt="Coins" className='mx-1' width={20} height={20} />
                         Buy New Token
                     </Button>

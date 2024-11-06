@@ -16,8 +16,8 @@ const Footer = () => {
 
                 <Container className='footer'>
                     <Row className='py-5 align-items-center'>
-                        <Col xs={10} lg={2}>
-                            <Col xs={8} className='mx-auto'>
+                        <Col xs={12} lg={2}>
+                            <Col xs={12} md={8} className='mx-auto'>
                                 <div>
                                     <Image src={"/logo.png"} width={0} height={0} layout="responsive" style={{ width: "50%", height: "50%" }} alt={"coin"} />
                                 </div>

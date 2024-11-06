@@ -1,12 +1,21 @@
 import NavigationBar from '@/components/layouts/NavigationBar';
 import Footer from '@/components/layouts/Footer';
+import { usePathname } from 'next/navigation';
 
 const LandingLayout = ({ children }) => {
+    const pathname = usePathname();
+
     return (
         <>
-            <NavigationBar />
-            <main>{children}</main>
-            <Footer />
+            {pathname === "/login" || pathname==="/signup" ? (
+                <main>{children}</main>
+            ) : (
+                <>
+                    <NavigationBar />
+                    <main>{children}</main>
+                    <Footer />
+                </>
+            )}
         </>
     );
 };

@@ -7,7 +7,9 @@ import 'react-circular-progressbar/dist/styles.css';
 import 'swiper/swiper-bundle.css';
 import ClientWrapper from "./ClientWrapper";
 import "./globals.css";
-import "./dashboard.css";
+import "./dashboard.css"; 
+import 'react-phone-number-input/style.css';
+
 
 const smoochSans = Smooch_Sans({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],

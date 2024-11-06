@@ -1,8 +1,6 @@
-// ClientWrapper.js
-"use client"; // Mark as a client component
-
+"use client";
 import React, { useEffect, useState } from 'react';
-import DynamicTitle from '@/components/DynamicTitle';
+import DynamicTitle from '@/components/shared/DynamicTitle';
 import ContextProvider from '../../context';
 import DashboardLayout from './DashboardLayout';
 import LandingLayout from './LandingLayout';
@@ -18,7 +16,9 @@ export default function ClientWrapper({ children }) {
     }, []);
 
     if (!isMounted) {
-        return <div>Loading...</div>;
+        return <div className="layoutloader">
+            <div className="spinner"></div>
+        </div>
     }
 
     const Layout = isDashboard ? DashboardLayout : LandingLayout;
