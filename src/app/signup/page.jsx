@@ -280,15 +280,11 @@ function Signup() {
                         <OverlayTrigger
                             placement="top"
                             overlay={
-                                <p className='custom-tooltip'>
-
-                                    {(!isChecked.notifications || !isChecked.terms)
-                                        ? "Please check all conditions to proceed."
-                                        : "Now you are creating a new account."}
-
-                                </p>
-
+                                (!isChecked.notifications || !isChecked.terms) ? (
+                                    <p className='custom-tooltip f-of '>Please check all conditions to proceed.</p>
+                                ) : <></>
                             }
+
                         >
                             <div className="d-flex justify-content-center">
                                 <Button

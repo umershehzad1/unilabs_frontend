@@ -5,6 +5,8 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { ResetPasswordService } from '@/services/users';
 import OTPInput from 'otp-input-react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Swal from 'sweetalert2';
+import { Salsa } from 'next/font/google';
 
 const ResetPassword = () => {
     const [formData, setFormData] = useState({
@@ -34,25 +36,42 @@ const ResetPassword = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // Check if passwords match
         if (formData.password !== formData.confirmPassword) {
-            alert('Passwords do not match.');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Passwords do not match.',
+            });
             return;
         }
 
         try {
-            const response = await ResetPasswordService(email, formData.password, formData.otp);
+            // Prepare data to send to the reset password service
+            const data = { email, password: formData.password, code: formData.otp };
+            const response = await ResetPasswordService(data);
 
-            if (response?.success) {
-                setIsPasswordReset(true);
-                router.push('/login');
+            if (response) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Password Updated',
+                    text: 'Your password has been successfully changed.',
+                }).then(() => {
+                    router.push('/login'); // Redirect after successful reset
+                });
             } else {
-                alert('Failed to reset password, please try again.');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Reset Failed',
+                    text: 'Failed to reset password, please try again.',
+                });
             }
         } catch (error) {
             console.error('Error resetting password:', error);
-            alert('Something went wrong, please try again later.');
+          
         }
     };
+
 
     return (
         <Container fluid className="px-md-4 text-white d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
@@ -66,17 +85,10 @@ const ResetPassword = () => {
                                 <OTPInput
                                     value={otpValue}
                                     onChange={handleOtpChange}
-                                    numInputs={4}
+                                    OTPLength={6}  
                                     separator={<span>-</span>}
-                                    inputStyle={{
-                                        width: '40px',
-                                        height: '40px',
-                                        margin: '0 5px',
-                                        borderRadius: '8px',
-                                        border: '1px solid #ddd',
-                                        textAlign: 'center',
-                                        fontSize: '18px',
-                                    }}
+                                    inputClassName={"otp-input"}
+                                   
                                 />
                             </Form.Group>
                             <Form.Group className="mb-4 position-relative">
