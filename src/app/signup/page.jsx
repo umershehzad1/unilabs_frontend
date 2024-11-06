@@ -3,7 +3,7 @@ import { LoginForm, UsersCreate } from '@/services/users';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { Alert, Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Alert, Button, Col, Container, Form, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import PhoneInput from 'react-phone-number-input';
@@ -68,6 +68,12 @@ function Signup() {
                 confirmButtonText: 'Ok',
             });
         }
+    };
+    const [isChecked, setIsChecked] = useState({ notifications: false, terms: false });
+
+    const handleCheckboxChange = (e) => {
+        const { name, checked } = e.target;
+        setIsChecked((prev) => ({ ...prev, [name]: checked }));
     };
 
     const handleTogglePassword = () => setShowPassword((prev) => !prev);
@@ -144,11 +150,11 @@ function Signup() {
                                     <Form.Control
                                         type={showPassword ? 'text' : 'password'}
                                         placeholder="Password"
-                                        
+
                                         className="px-3 pb-2 border-0 input-custom"
                                         name="password"
                                         value={formData.password}
-                                        onChange={handleChange}    required
+                                        onChange={handleChange} required
                                     />
                                     <Form.Label>Enter your password</Form.Label>
                                     <span
@@ -242,7 +248,9 @@ function Signup() {
                         <Form.Group className="mt-3 mb-3">
                             <Form.Check
                                 type="checkbox"
-                                
+                                name="notifications"
+                                checked={isChecked.notifications}
+                                onChange={handleCheckboxChange}
                                 className="custom-checkbox"
                                 label={
                                     <span className="text-white ps-3">
@@ -252,7 +260,9 @@ function Signup() {
                             />
                             <Form.Check
                                 type="checkbox"
-                                
+                                name="terms"
+                                checked={isChecked.terms}
+                                onChange={handleCheckboxChange}
                                 className="custom-checkbox"
                                 label={
                                     <span className="text-white ps-3">
@@ -265,9 +275,31 @@ function Signup() {
                             />
                         </Form.Group>
 
-                        <div className="d-flex justify-content-center">
-                            <Button type="submit" className="mb-4 login-btn f-of">Create Account</Button>
-                        </div>
+
+
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={
+                                <p className='custom-tooltip'>
+
+                                    {(!isChecked.notifications || !isChecked.terms)
+                                        ? "Please check all conditions to proceed."
+                                        : "Now you are creating a new account."}
+
+                                </p>
+
+                            }
+                        >
+                            <div className="d-flex justify-content-center">
+                                <Button
+                                    type="submit"
+                                    className="mb-4 login-btn f-of"
+                                    disabled={!isChecked.notifications || !isChecked.terms}
+                                >
+                                    Create Account
+                                </Button>
+                            </div>
+                        </OverlayTrigger>
                     </Form>
                 </Col>
 

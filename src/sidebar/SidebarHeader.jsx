@@ -1,3 +1,4 @@
+import { AuthName } from '@/utils/auth.utils';
 import { useAuth } from '@/utils/AuthContext';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -9,8 +10,8 @@ const SidebarHeader = ({ onLogoClick }) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const { logout } = useAuth();
     const [user, setUser] = useState({});
-    const fullName = user.fullName || "Siraj Amjad";
-
+    const userName = AuthName() ;
+    const fullName = `${userName?.firstName || ""} ${user?.lastName || "Siraj Amjad"}`;
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem("user")) || {};
         setUser(storedUser);

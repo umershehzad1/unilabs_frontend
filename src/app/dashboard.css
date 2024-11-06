@@ -5,14 +5,17 @@
 :root {
   --color1: #FFC127;
   --color2: #4CAF50;
-  --color3:#FFD98C;
-  --color4: linear-gradient(90deg, #589CFF 0%, #355E99 100%);;
+  --color3: #FFD98C;
+  --color4: linear-gradient(90deg, #589CFF 0%, #355E99 100%);
+  ;
   --color5: linear-gradient(90deg, #4CAF50 0%, #204921 100%);
-  --color6:#5291ED;
+  --color6: #5291ED;
 }
-#shadow-root button[data-size='md']{
-    background-color: green !important;
+
+#shadow-root button[data-size='md'] {
+  background-color: green !important;
 }
+
 body {
   background-color: #010B18 !important;
   overflow-x: hidden !important;
@@ -49,11 +52,12 @@ body {
 }
 
 .f-qs {
-  font-family: var(--font-quicksand), sans-serif!important;
+  font-family: var(--font-quicksand), sans-serif !important;
 }
-.f-of{
-  font-family: var(--font-outfit), sans-serif!important;
-  }
+
+.f-of {
+  font-family: var(--font-outfit), sans-serif !important;
+}
 
 .active-link {
   animation: background-glow 0.6s ease forwards;
@@ -130,12 +134,13 @@ body {
   box-shadow: 0 0 0 0.2rem rgba(50, 205, 50, 0.4) !important;
 }
 
-.PhoneInputInput{
+.PhoneInputInput {
   background-color: transparent;
   border: none;
   color: white;
 }
-.PhoneInputInput:focus{
+
+.PhoneInputInput:focus {
   border: none;
   outline: none;
 }
@@ -144,22 +149,26 @@ body {
 .shadow-button {
   box-shadow: 0 0 19.6px rgba(177, 209, 255, 0.8);
 }
+
 .shadow-button-lg {
   box-shadow: 0 0 30.6px rgba(177, 209, 255, 0.9);
 }
+
 .shadow-button-lg:hover {
   box-shadow: 0 0 30.6px rgba(177, 209, 255, 0.5);
 }
+
 .shadow-button:hover {
   box-shadow: 0 0 30px rgba(177, 209, 255, 0.5);
 }
 
 
 
-.page-bg{
+.page-bg {
   position: relative;
   overflow: hidden;
 }
+
 .page-bg::before {
   content: "";
   background: url("/dashboard/background.png") no-repeat center center;
@@ -173,7 +182,8 @@ body {
   animation-delay: 3s;
   z-index: -1;
 }
-.bg-top.page-bg::before{
+
+.bg-top.page-bg::before {
   /* top: -200px; */
 }
 
@@ -186,6 +196,7 @@ body {
     transform: rotate(360deg);
   }
 }
+
 .custom-Chart {
   width: 300px;
   height: 300px;
@@ -205,18 +216,18 @@ body {
 
 .amount-input {
   width: 100%;
-  background-color: rgba(22, 48, 82, 0.5)!important;
-  color: white!important;
+  background-color: rgba(22, 48, 82, 0.5) !important;
+  color: white !important;
 }
 
 .amount-input::placeholder {
-  color: rgba(255, 255, 255, 0.8)!important;
+  color: rgba(255, 255, 255, 0.8) !important;
   opacity: 1;
 }
 
 .amount-input:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(22, 48, 82, 0.6)!important;
+  box-shadow: 0 0 5px rgba(22, 48, 82, 0.6) !important;
 }
 
 
@@ -243,11 +254,11 @@ body {
 .current-page .page-link {
   background-color: transparent !important;
   border-radius: 50% !important;
-  width: 35px!important;
+  width: 35px !important;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35px!important;
+  height: 35px !important;
 
   margin: 0 5px !important;
   color: var(--inactiveColor) !important;
@@ -258,15 +269,15 @@ body {
 .current-page.active .page-link {
   background-image: var(--color5) !important;
   color: white !important;
-  border: 1px solid transparent!important;
+  border: 1px solid transparent !important;
 }
 
 .current-page .page-link:focus,
 .pre-page .page-link:focus,
 .next-page .page-link:focus,
 .current-page .page-link:hover {
- outline: none!important;
- box-shadow: none!important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 
@@ -284,15 +295,18 @@ table {
   background-color: transparent;
 
 }
+
 .SignIn-modal-dialog {
   border: 2px solid #589CFF;
   border-radius: 25px;
   max-width: 900px;
   background-color: #010B18;
 }
+
 .SignIn-backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 /* Keyframes for Gradient Animation */
 @keyframes gradientAnimation {
   0% {
@@ -349,11 +363,12 @@ table {
 }
 
 .form-label::after {
-  color: white!important;
+  color: white !important;
   background-color: transparent !important;
 }
+
 .form-label {
-  color: white!important;
+  color: white !important;
   background-color: transparent !important;
 }
 
@@ -361,18 +376,19 @@ table {
 .form-control:focus {
   box-shadow: none !important;
   border-color: var(--color2) !important;
-  outline: none!important;
+  outline: none !important;
 }
+
 .form-control:focus-visible {
   box-shadow: none !important;
   border-color: var(--color2) !important;
-  outline: none!important;
+  outline: none !important;
 }
 
 .input-custom {
   background: linear-gradient(92.01deg, rgba(255, 255, 255, 0.02) -8.99%, rgba(255, 255, 255, 0.14) 101.74%) !important;
   color: white !important;
-  border: 2px solid  rgb(168, 165, 165)!important;
+  border: 2px solid rgb(168, 165, 165) !important;
   transition: box-shadow 0.3s ease !important;
 }
 
@@ -388,6 +404,7 @@ table {
 .eye-icon:hover {
   color: var(--color6) !important;
 }
+
 input:-webkit-autofill {
   -webkit-text-fill-color: white !important;
   box-shadow: 0 0 0px 1000px transparent inset !important;
@@ -428,3 +445,55 @@ input:-webkit-autofill {
     transform: rotate(360deg);
   }
 }
+
+
+.custom-tooltip {
+  background: linear-gradient(135deg, rgba(0, 162, 255, 0.8), rgba(0, 255, 153, 0.8));
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  max-width: 320px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  animation: tooltip 0.5s forwards;
+  transform: translateX(-100px);
+  z-index: 9999;
+  margin: 0 auto;
+  display: inline-block;
+  word-wrap: break-word;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes tooltip {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+.vedio-custom-player {
+  background-color: rgba(33, 33, 34, 0.7)!important;
+}
+.vedio-custom-player .modal-content {
+  border: 2px solid white!important;
+  border-radius: 20px!important;
+  background: linear-gradient(116.52deg, rgba(255, 255, 255, 0.6) -0.3%, rgba(255, 255, 255, 0.2) 100%)!important;
+}
+
+
+
+

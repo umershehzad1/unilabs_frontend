@@ -1,12 +1,20 @@
+"use client"
 import StageCom from '@/components/dashboard/StageCom';
+import { AuthVerify } from '@/utils/auth.utils';
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const tick = '/dashboard/verified.png';
 
 const Dashboard = () => {
-    const verified = false;
+    const User = AuthVerify();
+    const [verified,setVerified]=useState(false)
+    useEffect(() => {
+        verified&&setVerified(true)
+    
+    }, [verified])
+    
 
 
     return (
@@ -16,7 +24,7 @@ const Dashboard = () => {
                     <Col md={6} className="mb-3 mb-md-0">
                         <h2 className="fs-5 fw-bold">
                             <span className='me-1' style={{ color: "var(--color1)" }}>Account Status:</span>
-                            {verified ? (
+                            {User ? (
                                 <span >
                                     <Image width={24} height={24} src={tick} alt="Check" className="mx-1" />
                                     Verified

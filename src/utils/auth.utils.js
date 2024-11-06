@@ -11,12 +11,12 @@ export const GetUserRoles = () => {
 };
 export const AuthName = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
-  return loggedInUser?.fullName || "User";
+  return loggedInUser || "User";
 };
 
 
 export const AuthVerify = () => {
-  const loggedInUser = JSON.parse(localStorage?.getItem("user"));
+  const loggedInUser = JSON.parse(localStorage.getItem("user"));
   if (loggedInUser) {
     return true;
   } else return false;

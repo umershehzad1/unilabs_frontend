@@ -1,17 +1,41 @@
 "use client";
+import { ForgotPasswordService } from '@/services/users';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
 const router =useRouter()
-    const handleSubmit = (e) => {
+  
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        router.push("/otp")
-        console.log('Forgot Password Email:', email);
+        try {
+            const response = await ForgotPasswordService({ "email": email });
 
+            if (response) {
+                router.push(`/reset?email=${email}`); 
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Check your email for reset instructions.',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'There was an issue processing your request.',
+                    icon: 'error',
+                    confirmButtonText: 'Try Again'
+                });
+            }
+        } catch (error) {
+            console.error('Error:', error);
+          
+        }
     };
+
 
     return (
         <Container fluid className="px-md-4 text-white d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
@@ -21,7 +45,7 @@ const router =useRouter()
                         <h1 className="fw-bold text-center border-bottom border-success pb-2">Forgot Password</h1>
                         <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-4">
-                                <Form.Label>Enter your registered email</Form.Label>
+                                <Form.Label className='f-of'>Enter your registered email</Form.Label>
                                 <Form.Control
                                     type="email"
                                     placeholder="Email"

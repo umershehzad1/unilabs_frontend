@@ -7,15 +7,15 @@ const LandingLayout = ({ children }) => {
 
     return (
         <>
-            {pathname === "/login" || pathname==="/signup" ? (
-                <main>{children}</main>
-            ) : (
+            {/* {pathname === "/login" || pathname==="/signup" ? ( */}
+                {/* <main>{children}</main> */}
+            {/* ) : ( */}
                 <>
                     <NavigationBar />
                     <main>{children}</main>
                     <Footer />
                 </>
-            )}
+            {/* )} */}
         </>
     );
 };

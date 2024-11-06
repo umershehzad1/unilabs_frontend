@@ -2,14 +2,23 @@
 import { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { ResetPasswordService } from '@/services/users';
+import OTPInput from 'otp-input-react'; 
+import { useRouter, useSearchParams } from 'next/navigation';
 
 const ResetPassword = () => {
     const [formData, setFormData] = useState({
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        otp: ''
     });
     const [showPassword, setShowPassword] = useState(false);
+    const [otpValue, setOtpValue] = useState('');
+    const [isPasswordReset, setIsPasswordReset] = useState(false); 
 
+    const router = useRouter();
+    const query=useSearchParams()
+    const email = query.get("email"); 
     const handleTogglePassword = () => setShowPassword(!showPassword);
 
     const handleChange = (e) => {
@@ -17,9 +26,32 @@ const ResetPassword = () => {
         setFormData((prevData) => ({ ...prevData, [name]: value }));
     };
 
-    const handleSubmit = (e) => {
+    const handleOtpChange = (otp) => {
+        setOtpValue(otp);
+        setFormData((prevData) => ({ ...prevData, otp })); 
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('New Password:', formData);
+
+        if (formData.password !== formData.confirmPassword) {
+            alert('Passwords do not match.');
+            return;
+        }
+
+        try {
+            const response = await ResetPasswordService(email, formData.password, formData.otp);
+
+            if (response.success) {
+                setIsPasswordReset(true);
+                router.push('/login'); 
+            } else {
+                alert('Failed to reset password, please try again.');
+            }
+        } catch (error) {
+            console.error('Error resetting password:', error);
+            alert('Something went wrong, please try again later.');
+        }
     };
 
     return (
@@ -29,8 +61,26 @@ const ResetPassword = () => {
                     <div className="rounded-4 py-3 px-md-5 my-4 pb-5" style={{ background: "#589CFF0A" }}>
                         <h1 className="fw-bold text-center border-bottom border-success pb-2">Reset Password</h1>
                         <Form onSubmit={handleSubmit}>
+                            <Form.Group className="mb-4 d-flex justify-content-center flex-column align-items-center">
+                                <Form.Label className='f-of'>Enter OTP</Form.Label>
+                                <OTPInput
+                                    value={otpValue}
+                                    onChange={handleOtpChange}
+                                    numInputs={4}
+                                    separator={<span>-</span>}
+                                    inputStyle={{
+                                        width: '40px',
+                                        height: '40px',
+                                        margin: '0 5px',
+                                        borderRadius: '8px',
+                                        border: '1px solid #ddd',
+                                        textAlign: 'center',
+                                        fontSize: '18px',
+                                    }}
+                                />
+                            </Form.Group>
                             <Form.Group className="mb-4 position-relative">
-                                <Form.Label>Enter new password</Form.Label>
+                                <Form.Label className='f-of'>Enter new password</Form.Label>
                                 <Form.Control
                                     type={showPassword ? 'text' : 'password'}
                                     name="password"
@@ -56,7 +106,7 @@ const ResetPassword = () => {
                             </Form.Group>
 
                             <Form.Group className="mb-4">
-                                <Form.Label>Confirm new password</Form.Label>
+                                <Form.Label className='f-of'>Confirm new password</Form.Label>
                                 <Form.Control
                                     type={showPassword ? 'text' : 'password'}
                                     name="confirmPassword"
@@ -67,6 +117,8 @@ const ResetPassword = () => {
                                     required
                                 />
                             </Form.Group>
+
+
 
                             <div className="d-flex justify-content-center">
                                 <Button type="submit" className="login-btn f-of">Reset Password</Button>
