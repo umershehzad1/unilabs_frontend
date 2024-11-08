@@ -339,7 +339,6 @@ table {
   justify-content: center !important;
   align-items: center !important;
   color: white !important;
-  font-weight: 700 !important;
   text-decoration: none !important;
   border-radius: 10px !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
@@ -356,7 +355,6 @@ table {
   justify-content: center !important;
   align-items: center !important;
   color: white !important;
-  font-weight: 700 !important;
   text-decoration: none !important;
   border-radius: 10px !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;

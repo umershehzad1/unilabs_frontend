@@ -43,7 +43,7 @@ const ManageTransactions = () => {
     return (
         <Container className="py-5">
             <Row className="align-items-center">
-                <Col xs={12} lg={6} className="d-flex justify-content-center">
+                <Col xs={12} lg={5} className="d-flex justify-content-center justify-content-lg-start">
                     <div className="phone-wrapper" style={{ position: "relative", width: "300px", height: "600px", overflow: "hidden" }}>
                         <Image
                             src="/phoneframe.png"
@@ -135,7 +135,7 @@ const ManageTransactions = () => {
                     </div>
                 </Col>
 
-                <Col xs={12} lg={6}>
+                <Col xs={12} lg={7}>
                     <div className="manage mt-3 mt-lg-0 text-center text-lg-start">
                         <h1 className="text-white">
                             Manage Your <span>Transactions</span> through UNILABS

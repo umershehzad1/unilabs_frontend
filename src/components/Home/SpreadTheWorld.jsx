@@ -1,9 +1,6 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { TypeAnimation } from "react-type-animation";
-import { gsap } from "gsap";
-import { Draggable } from "gsap/Draggable";
 import Image from "next/image";
 import { MdOutlineAutoGraph } from "react-icons/md";
 
@@ -14,13 +11,15 @@ const SpreadTheWorld = () => {
         <Container className="py-5">
             <Row className="align-items-center">
                 <Col xs={12} lg={6} className="">
-                <Col xs={12} lg={9} className="">
+                <Col xs={12} lg={9} className="position-relative">
 
-                    <Image className="phone-wrapper" src="/spread.png" width={0} height={0} layout="responsive" style={{ width: "100%", height: "100%" }} alt={"coin"} />
+                    <Image className="phone-wrapper" src="/spread-img.png" width={0} height={0} layout="responsive" style={{ width: "100%", height: "100%" }} alt={"coin"} />
+
+                    <Image className="position-absolute" style={{right:"40px",top:"20px"}} src="/horn.gif" width={150} height={150}  alt={"coin"} />
                 </Col>
                 </Col>
                 <Col xs={12} lg={6}>
-                    <div className="manage">
+                    <div className="manage ">
                         <h1 className="text-white">
                             <span>SPREAD</span> THE WORD
                         </h1>

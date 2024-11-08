@@ -11,38 +11,46 @@ import { loadFull } from "tsparticles";
 
 const roadmapData = [
     {
-        title: 'Launch Phase 1',
+        title: 'Building the Base',
         items: [
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true },
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: false },
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true }
+            { text: 'Public Whitepaper Launch', completed: true },
+            { text: 'Initial Presale Website Launch', completed: false },
+            { text: 'Smart Contract Development', completed: true },
+            { text: '3rd Party Security Audit', completed: true },
+            { text: 'Initial Teambuilding', completed: true },
+            { text: 'Marketing Rollout', completed: true },
         ],
         icon: <SiReactos className='text-black' />
     },
     {
-        title: 'Launch Phase 1',
+        title: 'Market Expansion ',
         items: [
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true },
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: false },
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true }
+            { text: 'Community Expansion', completed: true },
+            { text: 'Visual Marketing Expansion', completed: false },
+            { text: 'Social Media Initiation', completed: true },
+            { text: 'Blockchain Development', completed: true },
+            { text: 'Technical Knowledge Base', completed: true },
         ],
         icon: <SiReactos className='text-black' />
     },
     {
-        title: 'Launch Phase 1',
+        title: 'Mainstream Rollout',
         items: [
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true },
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: false },
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true }
+            { text: 'CoinMarketCap Listing', completed: true },
+            { text: 'Testnet Launch', completed: false },
+            { text: 'Wallet Application', completed: true },
+            { text: 'Influencer Onboarding', completed: true },
+            { text: 'Tier 3 CEX Listing', completed: true },
         ],
         icon: <SiReactos className='text-black' />
     },
     {
-        title: 'Launch Phase 1',
+        title: 'Zerg Rush',
         items: [
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true },
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: false },
-            { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', completed: true }
+            { text: 'Mainnet Launch', completed: true },
+            { text: 'Tier 1 and Tier 2 CEX Listing', completed: false },
+            { text: 'Physical Office Launch in 4 Locations', completed: true },
+            { text: 'Regulatory Approval in 12+ Regions', completed: true },
         ],
         icon: <SiReactos className='text-black' />
     },

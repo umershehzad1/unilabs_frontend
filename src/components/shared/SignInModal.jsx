@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { useState } from 'react';
-import { Modal, Button, Row, Col, Image } from 'react-bootstrap';
+import { Modal, Row, Col, Image } from 'react-bootstrap';
+import { FaX } from 'react-icons/fa6';
 
 function CustomModal({showModal,setShowModal}) {
 
@@ -15,6 +15,9 @@ function CustomModal({showModal,setShowModal}) {
             dialogClassName="SignIn-modal-dialog"
             backdropClassName="SignIn-backdrop"
         >
+            <div className='text-end p-3'>
+            <FaX onClick={handleClose}  className='text-white'/>    
+            </div>
             <Modal.Body>
                 <Row className="align-items-center justify-content-center">
                     <Col md={6} xs={12} className="text-center d-flex flex-column align-items-center text-white">

@@ -1,4 +1,3 @@
-"use client";
 import 'aos/dist/aos.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outfit, Quicksand, Smooch_Sans } from 'next/font/google';
@@ -9,7 +8,7 @@ import ClientWrapper from "./ClientWrapper";
 import "./globals.css";
 import "./dashboard.css"; 
 import 'react-phone-number-input/style.css';
-
+import { Metadata } from 'next';
 
 const smoochSans = Smooch_Sans({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -28,6 +27,11 @@ const quicksand = Quicksand({
   variable: '--font-quicksand',
 });
 
+export const metadata = {
+  title: 'UniLabs | The Leading AI DeFi Asset Management Platform',
+  description: 'Unilabs is the first AI-based asset management platform that is unleashing opportunities for generational wealth through intuitive capital allocation.',
+
+};
 
 export default function RootLayout({ children }) {
  
