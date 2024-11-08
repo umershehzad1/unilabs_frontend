@@ -73,14 +73,14 @@ const Footer = () => {
                     <div className='text-center d-flex gap-2 justify-content-center'>
                         <p className='copyright'>UNILABS © 2024, All rights reserved</p>
                         <Link
-                            href={"#"}
+                            href={"/privacy&policy"}
                             className='text-decoration-none'
                             style={{fontSize:"16px",color:"white"}}
                         >
                                 Privacy Policy
                         </Link>
                         <Link
-                            href={"#"}
+                            href={"/terms&conditions"}
                             className='text-decoration-none'
                             style={{fontSize:"16px",color:"white"}}
                         >

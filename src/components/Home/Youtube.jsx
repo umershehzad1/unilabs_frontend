@@ -13,27 +13,27 @@ const Youtube = () => {
     },
     {
 
-      imageUrl: "/youtube.png",
+      imageUrl: "/youtube1.png",
     },
     {
 
-      imageUrl: "/youtube.png",
+      imageUrl: "/youtube2.png",
     },
     {
 
-      imageUrl: "/youtube.png",
+      imageUrl: "/youtube3.png",
+    },
+    {
+      imageUrl: "/youtube4.png",
     },
     {
       imageUrl: "/youtube.png",
     },
     {
-      imageUrl: "/youtube.png",
+      imageUrl: "/youtube1.png",
     },
     {
-      imageUrl: "/youtube.png",
-    },
-    {
-      imageUrl: "/youtube.png",
+      imageUrl: "/youtube2.png",
     },
   ];
 

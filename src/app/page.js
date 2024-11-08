@@ -15,8 +15,10 @@ import Attributes from '@/components/Home/Attributes';
 import SpreadTheWorld from '@/components/Home/SpreadTheWorld';
 import Tokenomics from '@/components/Home/Tokenomics';
 import Faqs from '@/components/shared/Faqs';
+import { useAccount } from 'wagmi';
 
 const LandingPage = () => {
+  const isConnected=useAccount()
   useEffect(() => {
     AOS.init();
   }, []);
@@ -24,7 +26,8 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
-      <WalletInfo />
+      {isConnected&& <WalletInfo />}
+     
       <Presales />
       <ManageTransactions />
       <div className='whybg'>

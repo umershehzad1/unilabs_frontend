@@ -138,26 +138,20 @@ const ManageTransactions = () => {
                 <Col xs={12} lg={7}>
                     <div className="manage mt-3 mt-lg-0 text-center text-lg-start">
                         <h1 className="text-white">
-                            Manage Your <span>Transactions</span> through UNILABS
+                            Get In Early On The <span>Hottest Opportunities</span> In Crypto - The Unilab Launchpad
+
                         </h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo consequat. Duis aute mollit anim
-                            id est laborum. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute mollit anim id est laborum.
+                        Unilabs is ushering a future where every investors can capitalize on the most promising opportunities in the crypto world. Access opportunities typically inaccessible for retail traders with our AI powered launchpad. Our enterprise AI evaluates market for early backing opportunities and makes them accessible for global investors. 
+
                         </p>
-                        <p>
+                        {/* <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                             enim ad minim veniam, quis nostrud exercitation ullamco laboris
                             nisi ut aliquip ex ea commodo consequat. Duis aute mollit anim
                             id est laborum.
-                        </p>
+                        </p> */}
                     </div>
                 </Col>
             </Row>

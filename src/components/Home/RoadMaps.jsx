@@ -14,7 +14,7 @@ const roadmapData = [
         title: 'Building the Base',
         items: [
             { text: 'Public Whitepaper Launch', completed: true },
-            { text: 'Initial Presale Website Launch', completed: false },
+            { text: 'Initial Presale Website Launch', completed: true },
             { text: 'Smart Contract Development', completed: true },
             { text: '3rd Party Security Audit', completed: true },
             { text: 'Initial Teambuilding', completed: true },
@@ -26,7 +26,7 @@ const roadmapData = [
         title: 'Market Expansion ',
         items: [
             { text: 'Community Expansion', completed: true },
-            { text: 'Visual Marketing Expansion', completed: false },
+            { text: 'Visual Marketing Expansion', completed: true },
             { text: 'Social Media Initiation', completed: true },
             { text: 'Blockchain Development', completed: true },
             { text: 'Technical Knowledge Base', completed: true },
@@ -37,7 +37,7 @@ const roadmapData = [
         title: 'Mainstream Rollout',
         items: [
             { text: 'CoinMarketCap Listing', completed: true },
-            { text: 'Testnet Launch', completed: false },
+            { text: 'Testnet Launch', completed: true },
             { text: 'Wallet Application', completed: true },
             { text: 'Influencer Onboarding', completed: true },
             { text: 'Tier 3 CEX Listing', completed: true },
@@ -48,7 +48,7 @@ const roadmapData = [
         title: 'Zerg Rush',
         items: [
             { text: 'Mainnet Launch', completed: true },
-            { text: 'Tier 1 and Tier 2 CEX Listing', completed: false },
+            { text: 'Tier 1 and Tier 2 CEX Listing', completed: true },
             { text: 'Physical Office Launch in 4 Locations', completed: true },
             { text: 'Regulatory Approval in 12+ Regions', completed: true },
         ],

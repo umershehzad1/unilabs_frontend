@@ -307,11 +307,11 @@ function Signup() {
                 <Col xs={12} className="text-center mt-4">
                     <div className="d-flex justify-content-center align-items-center gap-3 mb-3">
 
-                        <Link href="#" className="text-white text-decoration-none f-of">
+                        <Link href="terms&conditions" className="text-white text-decoration-none f-of">
                             Terms of Service
                         </Link>
                         <span className="text-white-50 f-of fs-3">|</span>
-                        <Link href="#" className="text-white text-decoration-none f-of"  >
+                        <Link href="/privacy&policy" className="text-white text-decoration-none f-of"  >
                             Privacy Policy
                         </Link>
                     </div>

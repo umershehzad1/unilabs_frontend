@@ -9,30 +9,38 @@ const cardData = [
     {
         id: 1,
         icon: <FaRegUser color={"#438446"} className=" mx-auto" size={50} />,
-        title: "Free Trial Account",
-        description:
-            "Lorem ullamco laboris nisi ex ea commodo consequat. Duis aute mollit anim id est laborum sad to veniam nostrud quis exercition laboris.",
+        title: "Upto 122% APY in Staking Rewards",
+
     },
     {
         id: 2,
         icon: <FaRegUser color={"#438446"} className=" mx-auto" size={50} />,
-        title: "Premium Account",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Access to Exclusive Investment Insights",
+
     },
     {
         id: 2,
         icon: <FaRegUser color={"#438446"} className=" mx-auto" size={50} />,
-        title: "Premium Account",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Prioritized Access to dApps ",
+
     },
     {
         id: 2,
         icon: <FaRegUser color={"#438446"} className=" mx-auto" size={50} />,
-        title: "Premium Account",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        title: "Contribute to Governance Decisions",
+
+    },
+    {
+        id: 2,
+        icon: <FaRegUser color={"#438446"} className=" mx-auto" size={50} />,
+        title: "Earn Referral Bonuses",
+
+    },
+    {
+        id: 2,
+        icon: <FaRegUser color={"#438446"} className=" mx-auto" size={50} />,
+        title: "Eligible for Upcoming Airdrops",
+
     },
 ];
 
@@ -51,19 +59,27 @@ const AllYouNeed = () => {
                         <Image src={"/coin.png"} className="coin-image" width={0} height={0} layout="responsive" style={{ width: "80%", height: "100%" }} alt={"coin"} />
                     </Col>
                     <Col xs={11} lg={6} className="mx-auto">
+                    <Col xs={8} className="mx-auto">
                         <Row>
                             {cardData.map((card) => (
-                                <Col xs={12} lg={6} key={card.id}>
-                                    <Card className="bg-black py-5 text-center presales mb-5" style={{ borderRadius: "20px" }}>
-                                       <div className="need-icons">{card.icon}</div> 
-                                        <Card.Body className="text-white text-center mt-3">
-                                            <h3>{card.title}</h3>
-                                            <Card.Text style={{ color: "#aaaaaa" }}>{card.description}</Card.Text>
-                                        </Card.Body>
-                                    </Card>
+                                <Col xs={12} lg={12} key={card.id}>
+                                    <div className=" text-center mb-4 " style={{ borderRadius: "20px" }}>
+                                    
+                                        <div className="text-white text-center d-flex gap-2 align-items-center">
+                                        <Image
+                                        src={"/star.png"}
+                                        alt={"star"}
+                                        width={40}
+                                        height={40}
+                                        className='star'
+                                    />
+                                            <h3 className="mt-2">{card.title}</h3>
+                                        </div>
+                                    </div>
                                 </Col>
                             ))}
                         </Row>
+                        </Col>
                     </Col>
                 </Row>
             </Container>
