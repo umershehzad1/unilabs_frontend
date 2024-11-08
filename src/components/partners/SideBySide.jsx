@@ -52,6 +52,7 @@ const SideBySide = () => {
                                         filter: `drop-shadow(0px 0px 100px ${item.shadowColor})`,
                                     }}
                                     alt={item.title}
+                                    className='moving'
                                 />
                             </Col>
                             <Col xs={12} lg={6} className="manage text-center text-lg-start">

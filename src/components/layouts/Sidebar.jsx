@@ -2,8 +2,9 @@ import React from "react";
 import { Button, Nav, Offcanvas } from "react-bootstrap";
 import Link from "next/link";
 import { menuItems } from "../shared/MenuItems";
+import ConnectBtn from "../shared/ConnectBtn";
 
-const Sidebar = ({ show, handleClose, isConnected, setShowModal }) => {
+const Sidebar = ({ show, handleClose, setShowModal }) => {
     return (
         <Offcanvas show={show} onHide={handleClose} id="offcanvasNavbar" className="offcanvasNavbar bg-black" placement="end">
             <Offcanvas.Header closeButton>
@@ -20,7 +21,7 @@ const Sidebar = ({ show, handleClose, isConnected, setShowModal }) => {
                         Sign In
                     </Link>
                     <div className="mx-3 nav-button mt-3">
-                        {!isConnected ? <w3m-network-button /> : <w3m-button />}
+                    <ConnectBtn/>
 
                     </div>
 

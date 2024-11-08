@@ -99,7 +99,7 @@ const SideBySide = () => {
                     <Row className="align-items-center py-5">
                         <Col xs={12} lg={6}>
                             {isClient && (
-                                <Col xs={12} lg={11} className="mx-auto">
+                                <Col xs={12} lg={12} className="mx-auto">
                                     <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={"100%"} />
                                 </Col>
                             )}
@@ -120,7 +120,7 @@ const SideBySide = () => {
                     <Row className="align-items-center py-5">
                         <Col xs={12} lg={6} className="order-lg-2">
                             {isClient && (
-                                <Col xs={12} lg={11} className="mx-auto">
+                                <Col xs={12} lg={12} className="mx-auto">
                                     <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={"100%"} />
                                 </Col>
                             )}
@@ -141,7 +141,7 @@ const SideBySide = () => {
                     <Row className="align-items-center py-5">
                         <Col xs={12} lg={6}>
                             {isClient && (
-                                <Col xs={12} lg={11} className="mx-auto">
+                                <Col xs={12} lg={12} className="mx-auto">
                                     <ReactPlayer url='https://www.youtube.com/watch?v=LXb3EKWsInQ' width={"100%"} />
                                 </Col>
                             )}

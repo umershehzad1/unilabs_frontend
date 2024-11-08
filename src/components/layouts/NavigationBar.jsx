@@ -5,16 +5,16 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container, Form, Nav, Navbar } from "react-bootstrap";
 import { FaBarsStaggered } from "react-icons/fa6";
-import { useAccount } from "wagmi";
 import { menuItems } from "../shared/MenuItems";
 import CustomModal from "../shared/SignInModal";
 import Sidebar from "./Sidebar";
+import ConnectBtn from "../shared/ConnectBtn";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
   const [navbarColor, setNavbarColor] = useState("rgba(0, 0, 0, 0.5)");
   const pathname = usePathname();
-  const isConnected = useAccount()
+ 
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -91,7 +91,7 @@ const NavigationBar = () => {
             <div className="d-flex gap-2 align-items-center d-none d-lg-block">
 
               <div className="mx-3 nav-button">
-                {!isConnected ? <w3m-network-button /> : <w3m-button  />}
+               <ConnectBtn/>
 
               </div>
             </div>
@@ -99,7 +99,7 @@ const NavigationBar = () => {
         </Container>
       </Navbar>
 
-      <Sidebar setShowModal={setShowModal} show={show} handleClose={handleClose} isConnected={isConnected} />
+      <Sidebar setShowModal={setShowModal} show={show} handleClose={handleClose} />
     </>
   );
 };

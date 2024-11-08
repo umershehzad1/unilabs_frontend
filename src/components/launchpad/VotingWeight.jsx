@@ -18,7 +18,7 @@ const VotingWeight = () => {
 
     return (
         <>
-            <Row className='py-4'>
+            <Row className='pb-4'>
                 <h1 className='text-white fw-bold'>Voting Weight</h1>
                 {votingData.map((item) => (
                     <Col key={item.id} className="col-10 mx-auto col-lg">
