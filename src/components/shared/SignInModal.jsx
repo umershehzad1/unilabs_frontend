@@ -12,13 +12,15 @@ function CustomModal({showModal,setShowModal}) {
             onHide={handleClose}
             // backdrop="static"
             centered
+            size='xl'
             dialogClassName="SignIn-modal-dialog"
-            backdropClassName="SignIn-backdrop"
+            // backdropClassName="SignIn-backdrop"
         >
-            <div className='text-end p-3'>
-            <FaX onClick={handleClose}  className='text-white'/>    
-            </div>
+           
             <Modal.Body>
+            <div className='text-end p-3'>
+            <FaX onClick={handleClose} style={{cursor:"pointer"}}  className='text-white'/>    
+            </div>
                 <Row className="align-items-center justify-content-center">
                     <Col md={6} xs={12} className="text-center d-flex flex-column align-items-center text-white">
                         <h1 className="mb-3 display-4 fw-bold">Sign In</h1>

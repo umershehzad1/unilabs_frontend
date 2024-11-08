@@ -306,7 +306,6 @@ table {
 .SignIn-modal-dialog {
   border: 2px solid #589CFF;
   border-radius: 25px;
-  max-width: 900px;
   background-color: #010B18;
 }
 
@@ -343,6 +342,7 @@ table {
   border-radius: 10px !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   animation: gradientAnimation 5s ease infinite !important;
+  font-family: var(--font-smooch-sans), sans-serif !important;
 }
 
 .signup-btn {
@@ -359,6 +359,7 @@ table {
   border-radius: 10px !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
   animation: gradientAnimation 5s ease infinite !important;
+  font-family: var(--font-smooch-sans), sans-serif !important;
 }
 
 .login-btn:hover,
