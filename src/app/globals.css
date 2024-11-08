@@ -677,6 +677,10 @@ body {
 }
 
 
+.progress-bar{
+overflow: visible !important;
+}
+
 
 
 

@@ -100,7 +100,7 @@ const ManageTransactions = () => {
 
                             <div className="text-center">
                                 <h3 className="text-white">
-                                    {isSwiped ? "SWIPED" : "SWIPE ME"}
+                                    {isSwiped ? "" : "SWIPE ME"}
                                 </h3>
                             </div>
                             <div

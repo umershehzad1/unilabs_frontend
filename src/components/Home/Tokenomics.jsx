@@ -1,8 +1,7 @@
-import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
-import SectionHeading from '../shared/SectionHeading'
+import React from 'react';
+import { Col, Container, Row,ProgressBar } from 'react-bootstrap';
+import SectionHeading from '../shared/SectionHeading';
 import PieChartComponent from '../shared/PieChart';
-
 const Tokenomics = () => {
 
     const data = [
@@ -15,23 +14,42 @@ const Tokenomics = () => {
     return (
         <>
             <Container>
-                <SectionHeading heading={"TOKENOMICS"} subHeading={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est laborum."} />
+                <SectionHeading
+                    heading={"TOKENOMICS"}
+                    subHeading={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum."}
+                />
 
                 <Row className='pt-5 align-items-center'>
-                    <Col xs={12} lg={8}>
+                    <Col xs={12} lg={6} className="pe-0">
                         <PieChartComponent data={data} />
                     </Col>
-                    <Col xs={12} lg={4}>
+                    <Col xs={12} lg={6}>
                         <Row>
                             {data.map((item, index) => (
                                 <React.Fragment key={index}>
                                     <Col xs={9}>
-                                        <div className='fs-5 text-white py-2 px-4 rounded-5 mb-3 d-flex align-items-center' style={{ height: "50px", background: "#24406a" }}>
-                                            {item.name}
-                                        </div>
+                                      
+                                        <ProgressBar
+                                            now={item.value} 
+                                            label={
+                                                <div style={{ textAlign: 'left', paddingLeft: '10px',fontSize:"20px" }}>
+                                                    {item.name}
+                                                </div>
+                                            }
+                                            style={{
+                                                minHeight: "50px",
+                                                borderRadius: "30px",
+                                                background: "#24406a",
+                                            }}
+                                            variant={"success"}
+                                            animated
+                                        />
                                     </Col>
                                     <Col xs={3}>
-                                        <div className='fs-5 text-white py-2 px-4 rounded-5 mb-3 d-flex align-items-center justify-content-center' style={{ width: "50px", height: "50px", background: "#24406a" }}>
+                                        <div
+                                            className='fs-5 text-white py-2 px-4 rounded-5 mb-3 d-flex align-items-center justify-content-center'
+                                            style={{ width: "50px", height: "50px", background: "#24406a" }}
+                                        >
                                             {item.value}
                                         </div>
                                     </Col>
@@ -45,4 +63,4 @@ const Tokenomics = () => {
     )
 }
 
-export default Tokenomics
+export default Tokenomics;
