@@ -64,25 +64,16 @@ body {
   box-shadow: none !important;
 }
 .hero h1 {
-  font-size: 80px;
+  font-size: 64px;
   font-weight: 400;
-  line-height: 100px;
+  line-height: 60px;
   letter-spacing: 0.02em;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.5) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   color: white;
-  will-change: background-position;
-  animation: shining-effect 3s infinite;
 }
-
+.hero h1 span{
+  color: #4caf50 !important;
+  font-weight: 700 !important;
+}
 @keyframes shining-effect {
   0% {
     background-position: -100% 0%;
