@@ -12,18 +12,16 @@ import ConnectBtn from "../shared/ConnectBtn";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
-  const [navbarColor, setNavbarColor] = useState("rgba(0, 0, 0, 0.5)");
+  const [isNavbarScroll, SetIsNavbarScroll] = useState(false);
   const pathname = usePathname();
- 
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const handleScroll = () => {
-    if (window.scrollY >= 80) {
-      setNavbarColor("black");
+    if (window.scrollY >= 10) {
+      SetIsNavbarScroll(true);
     } else {
-      setNavbarColor("rgba(0, 0, 0, 0.5)");
+      SetIsNavbarScroll(false);
     }
   };
   useEffect(() => {
@@ -37,14 +35,14 @@ const NavigationBar = () => {
 
   return (
     <>
-      <CustomModal  setShowModal={setShowModal} showModal={showModal}/>
-      <Navbar expand="lg" className="fixed-top mt-lg-4  mx-2">
+      <CustomModal setShowModal={setShowModal} showModal={showModal} />
+      <Navbar expand="lg" className="fixed-top mt-lg-4  mx-md-2">
         <Container
-          className="nav-bg px-3 py-0 overflow-hidden"
+          className="nav-bg px-md-3 py-0 overflow-hidden"
           style={{
-            backgroundColor: navbarColor,
-            borderRadius: "50px",
-            transition: "background-color 0.5s ease",
+            background: isNavbarScroll ? "linear-gradient(to right,#2E0E41, #170B2C )" : "",
+            borderRadius: isNavbarScroll ? "50px" : "",
+            transition: "background 0.5s ease-in-out",
           }}
         >
           <Navbar.Brand as={Link} href={"/"} style={{ width: "50px" }}>
@@ -71,7 +69,7 @@ const NavigationBar = () => {
             >
               {menuItems.map((link, index) => (
                 <Link
-                  className={`mx-3 text-decoration-none ${pathname === link.href ? "text-green" : "text-white"
+                  className={`mx-4  ${pathname === link.href ? "text-green" : "text-white"
                     }`}
                   key={index}
                   href={link.href}
@@ -82,7 +80,7 @@ const NavigationBar = () => {
             </Nav>
             <Form>
               <div className="d-lg-block d-none">
-                <Link onClick={()=>setShowModal(true)} className="mx-3 text-white text-decoration-none" href="">
+                <Link onClick={() => setShowModal(true)} className="mx-4 text-white text-decoration-none" href="">
                   Sign In
                 </Link>
               </div>
@@ -91,7 +89,7 @@ const NavigationBar = () => {
             <div className="d-flex gap-2 align-items-center d-none d-lg-block">
 
               <div className="mx-3 nav-button">
-               <ConnectBtn/>
+                <ConnectBtn />
 
               </div>
             </div>

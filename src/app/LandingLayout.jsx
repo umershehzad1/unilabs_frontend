@@ -13,7 +13,7 @@ const LandingLayout = ({ children }) => {
                 <>
                     <NavigationBar />
                     <main>{children}</main>
-                    <Footer />
+                    {/* <Footer /> */}
                 </>
             {/* )} */}
         </>

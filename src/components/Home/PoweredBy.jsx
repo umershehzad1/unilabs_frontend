@@ -29,7 +29,7 @@ const PoweredBy = () => {
                     {logos.map((logo, index) => (
                         <React.Fragment key={index}>
                             <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-                                <div style={{ width: "150px", padding: "0 10px" }}>
+                                <div className='mx-5' style={{ width: "150px", padding: "0 10px" }}>
                                     <Image
                                         src={logo.src}
                                         alt={logo.alt}

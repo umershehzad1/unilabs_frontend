@@ -16,9 +16,10 @@ import SpreadTheWorld from '@/components/Home/SpreadTheWorld';
 import Tokenomics from '@/components/Home/Tokenomics';
 import Faqs from '@/components/shared/Faqs';
 import { useAccount } from 'wagmi';
+import HowItWorks from './howitworks/page';
 
 const LandingPage = () => {
-  const isConnected=useAccount()
+  const isConnected = useAccount()
   useEffect(() => {
     AOS.init();
   }, []);
@@ -26,13 +27,15 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
+      <PoweredBy />
+      <ManageTransactions />
+      <HowItWorks />
+      {/* 
+      <Presales />
+      <WhyUnilabs />
       {isConnected&& <WalletInfo />}
      
-      <Presales />
-      <ManageTransactions />
       <div className='whybg'>
-        <WhyUnilabs />
-        <PoweredBy />
       </div>
       <RoadMaps />
       <Unique />
@@ -41,7 +44,8 @@ const LandingPage = () => {
       <Attributes />
       <SpreadTheWorld />
       <Tokenomics />
-      <Faqs />
+      <Faqs /> 
+      {/* */}
 
     </>
   );
