@@ -5,6 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 import { gsap } from "gsap";
 import { Draggable } from "gsap/Draggable";
 import Image from "next/image";
+import WavyLine from "../shared/WavyLineHero";
 gsap.registerPlugin(Draggable);
 
 const ManageTransactions = () => {
@@ -41,13 +42,11 @@ const ManageTransactions = () => {
     }, []);
 
     return (
-        <div className="position-relative manage-transactions">
-            <img src='/MilkyWay.png' alt="Stars" className='starts-bg img-fluid' />
+        <div className="position-relative manage-transactions custom-overflow">
             <Container className="py-5">
-
                 <Row className="align-items-center">
                     <Col xs={12} lg={5} className="d-flex justify-content-center justify-content-lg-start position-relative">
-                        <div className="d-lg-block d-none purple-bg-right"></div>
+                        <div className="purple-bg-right"></div>
                         <div className="phone-wrapper" style={{ position: "relative", width: "300px", height: "600px", overflow: "hidden" }}>
                             <Image
                                 src="/phoneframe.png"
@@ -175,6 +174,7 @@ const ManageTransactions = () => {
                     </Col>
                 </Row>
             </Container>
+            <WavyLine />
         </div>
 
     );

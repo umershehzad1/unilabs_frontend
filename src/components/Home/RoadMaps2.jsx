@@ -1,9 +1,13 @@
 "use client";
-import { useEffect, useRef } from 'react';
-import { Container } from 'react-bootstrap';
-import { FaCheckCircle } from 'react-icons/fa';
+import React, { useEffect, useRef, useState } from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import { Button, Container, Spinner } from 'react-bootstrap';
+import { FaCheckCircle } from 'react-icons/fa';
+import SectionHeading from '../shared/SectionHeading';
+import { SiReactos } from "react-icons/si";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
 import DotSpinner from '../shared/DotSpinner';
 
 const roadmapData = [
@@ -56,6 +60,51 @@ const roadmapData = [
 const RoadMaps = () => {
     const sectionRef = useRef(null);
 
+    const particlesInit = async (main) => {
+        await loadFull(main);
+    };
+
+    const particlesOptions = {
+        fullScreen: { enable: false },
+        fpsLimit: 60,
+        motion: {
+            reduce: {
+                value: true,
+            }
+        },
+        interactivity: {
+            events: {
+                onHover: { enable: false, mode: "repulse" },
+                resize: false,
+            },
+            modes: {
+                repulse: { distance: 100, duration: 0.4 },
+            },
+        },
+        particles: {
+            color: { value: "#202731" },
+            links: {
+                color: "#202731",
+                distance: 150,
+                enable: true,
+                opacity: 0.5,
+                width: 1,
+            },
+            move: {
+                direction: "none",
+                enable: true,
+                outModes: { default: "bounce" },
+                random: false,
+                speed: 0.3,
+                straight: false,
+            },
+            number: { density: { enable: true, area: 800 }, value: 100 },
+            opacity: { value: 0.5 },
+            shape: { type: "circle" },
+            size: { value: { min: 1, max: 5 } },
+        },
+        detectRetina: true,
+    };
 
     const handleScroll = () => {
         if (sectionRef.current) {
@@ -90,6 +139,18 @@ const RoadMaps = () => {
             </style>
 
             <div ref={sectionRef} className="position-relative">
+                <Particles
+                    style={{
+                        position: "absolute",
+                        width: "100%",
+                        height: "100%",
+                        zIndex: -1,
+                    }}
+                    id="tsparticles"
+                    init={particlesInit}
+                    options={particlesOptions}
+                />
+
                 <Container className='py-5 ' style={{ zIndex: 9999 }}>
                     <h1 className='text-white fw-bold text-center  '>Roadmap</h1>
                     <div className="border-bottom border-secondary"></div>
@@ -97,9 +158,9 @@ const RoadMaps = () => {
                         {roadmapData.map((phase, index) => (
                             <VerticalTimelineElement
                                 key={index}
-                                className="vertical-timeline-element-work no-box-shadow"
+                                className="vertical-timeline-element--work no-box-shadow"
                                 contentStyle={{ background: 'transparent', color: '#fff' }}
-                                contentArrowStyle={{ borderRight: '6px solid #438446' }}
+                                contentArrowStyle={{ borderRight: '7px solid #438446' }}
                                 iconStyle={{ background: '#438446', color: '#fff' }}
                                 icon={phase.icon}
                                 visible={true}

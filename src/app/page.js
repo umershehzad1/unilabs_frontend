@@ -17,6 +17,7 @@ import Tokenomics from '@/components/Home/Tokenomics';
 import Faqs from '@/components/shared/Faqs';
 import { useAccount } from 'wagmi';
 import HowItWorks from './howitworks/page';
+import WavyLine from '@/components/shared/WavyLineHero';
 
 const LandingPage = () => {
   const isConnected = useAccount()
@@ -26,22 +27,22 @@ const LandingPage = () => {
 
   return (
     <>
-      <Hero />
-      <PoweredBy />
-      <ManageTransactions />
-      <HowItWorks />
-      {/* 
-      <Presales />
-      <WhyUnilabs />
-      {isConnected&& <WalletInfo />}
-     
+      {/* <Hero /> */}
+      {/* <PoweredBy /> */}
+      {/* <ManageTransactions /> */}
+      {/* <HowItWorks /> */}
+      {/* <Attributes /> */}
+      <RoadMaps />
+      {/* {isConnected&& <WalletInfo />} */}
+      {/* <WhyUnilabs /> */}
+      {/* <Presales /> */}
+      {/* <Unique /> */}
+      {/* <Youtube /> */}
+      {/* <AllYouNeed /> */}
       <div className='whybg'>
       </div>
-      <RoadMaps />
-      <Unique />
-      <Youtube />
-      <AllYouNeed />
-      <Attributes />
+      {/* 
+     
       <SpreadTheWorld />
       <Tokenomics />
       <Faqs /> 
