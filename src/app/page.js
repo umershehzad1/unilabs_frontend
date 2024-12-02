@@ -16,9 +16,12 @@ import SpreadTheWorld from '@/components/Home/SpreadTheWorld';
 import Tokenomics from '@/components/Home/Tokenomics';
 import Faqs from '@/components/shared/Faqs';
 import { useAccount } from 'wagmi';
+import HowItWorks from './howitworks/page';
+import WavyLine from '@/components/shared/WavyLineHero';
+import UnilToken from '@/components/unilToken/UnilToken';
 
 const LandingPage = () => {
-  const isConnected=useAccount()
+  const isConnected = useAccount()
   useEffect(() => {
     AOS.init();
   }, []);
@@ -26,22 +29,24 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
-      {isConnected&& <WalletInfo />}
-     
-      <Presales />
+      <PoweredBy />
       <ManageTransactions />
-      <div className='whybg'>
-        <WhyUnilabs />
-        <PoweredBy />
-      </div>
-      <RoadMaps />
-      <Unique />
-      <Youtube />
-      <AllYouNeed />
+      <HowItWorks />
       <Attributes />
-      <SpreadTheWorld />
-      <Tokenomics />
-      <Faqs />
+      <UnilToken/>
+      <RoadMaps />
+      <Faqs /> 
+
+
+
+      {/* {isConnected&& <WalletInfo />} */}
+      {/* <WhyUnilabs /> */}
+      {/* <Presales /> */}
+      {/* <Unique /> */}
+      {/* <Youtube /> */}
+      {/* <AllYouNeed /> */}
+      {/* <Tokenomics /> */}
+      {/* <SpreadTheWorld /> */}
 
     </>
   );

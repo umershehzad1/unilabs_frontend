@@ -1,47 +1,101 @@
 "use client";
-import React from 'react';
-import { Accordion, Col, Container } from 'react-bootstrap';
-import SectionHeading from './SectionHeading';
+import { Accordion, Col, Container } from "react-bootstrap";
+import { useState } from "react";
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 const faqItems = [
     {
         key: "0",
-        header: "What is Unilabs, and how does it work?",
-        body: "Unilabs is an AI-powered DeFi launchpad that identifies and supports early-stage cryptocurrency projects, offering retail traders access to high-potential investment opportunities. By leveraging advanced AI algorithms and financial insights, Unilabs brings institutional-grade analysis and investment support to the broader crypto community."
+        header: "What is the price for Unilabs tokens during the presale?",
+        body: "Unilabs is an AI-powered DeFi launchpad that identifies and supports early-stage cryptocurrency projects, offering retail traders access to high-potential investment opportunities.",
     },
     {
         key: "1",
-        header: "Who can benefit from Unilabs?",
-        body: "Unilabs is designed for retail traders who want access to professional-grade investment insights in the cryptocurrency space. Whether you are a new or seasoned investor, Unilabs provides tools and resources that empower you to make strategic investment decisions typically available only to institutional investors."
+        header: "What is the price for Unilabs tokens during the presale?",
+        body: "Unilabs is designed for retail traders who want access to professional-grade investment insights in the cryptocurrency space.",
     },
     {
         key: "2",
-        header: "What is the price for Unilabs tokens during the presale?",
-        body: "The presale price for Unilabs tokens is set at $0.01 per token, offering an exclusive early entry opportunity for investors before the official launch. This will increase in every round until the listing price of $0.20."
+        header: "What payment methods are accepted in the presale?",
+        body: "The presale price for Unilabs tokens is set at $0.01 per token, offering an exclusive early entry opportunity for investors before the official launch.",
     },
     {
         key: "3",
-        header: "What payment methods are accepted in the presale?",
-        body: "We accept various cryptocurrencies for presale purchases, including Bitcoin (BTC), Ethereum (ETH), and USDT. More details can be found on our presale page, where we provide specific instructions for each payment option."
+        header: "How long until we deliver your first Phase post?",
+        body: "We accept various cryptocurrencies for presale purchases, including Bitcoin (BTC), Ethereum (ETH), and USDT.",
+    },
+    {
+        key: "4",
+        header: "Who can benefit from Unilabs?",
+        body: "We accept various cryptocurrencies for presale purchases, including Bitcoin (BTC), Ethereum (ETH), and USDT.",
     },
 ];
 
 const Faqs = () => {
-    return (
-        <Container className="py-5">
-            <SectionHeading heading={"Frequently Asked Questions"} />
+    const [openKey, setOpenKey] = useState(null);
 
-            <Col xs={12} lg={9} className='mx-auto py-4'>
-            <Accordion className='bg-transparent' defaultActiveKey="0">
-                {faqItems.map((item,index) => (
-                    <Accordion.Item className='my-3  bg-transparent border-0 shadow-none  text-white' eventKey={item.key} key={item.key}>
-                        <Accordion.Header className=' fw-bold text-white px-0 border-0 shadow-none '>{index+1}. {item.header}</Accordion.Header>
-                        <Accordion.Body>{item.body}</Accordion.Body>
-                    </Accordion.Item>
-                ))}
-            </Accordion>
-            </Col>
-        </Container>
+    const handleToggle = (key) => {
+        setOpenKey(openKey === key ? null : key);
+    };
+
+    return (
+        <div className="faq position-relative">
+            <Container className="py-5 text-white  ">
+                <h1 className="display-5 fw-bold">Frequently Asked Questions</h1>
+                <Col xs={12} className="mx-auto py-4">
+                    <Accordion activeKey={openKey}>
+                        {faqItems.map((item, index) => (
+                            <Accordion.Item
+                                className="my-3 bg-transparent border-0 text-white"
+                                eventKey={item.key}
+                                key={item.key}
+                            >
+                                <Accordion.Header
+                                    className={`custom-header  ${openKey === item.key ? "active" : ""}`}
+                                    onClick={() => handleToggle(item.key)}
+                                >
+                                    <span>
+                                        {index + 1}. {item.header}
+                                    </span>
+                                    <span className="custom-icon">
+                                        {openKey === item.key ? (
+                                            <FaMinus />
+                                        ) : (
+                                            <FaPlus />
+                                        )}
+                                    </span>
+                                </Accordion.Header>
+                                <Accordion.Body>{item.body}</Accordion.Body>
+                            </Accordion.Item>
+                        ))}
+                    </Accordion>
+                </Col>
+
+                <style jsx>{`
+                .custom-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: transparent;
+                    color: white;
+                    border: none;
+                    width: 100%;
+                    padding: 0;
+                    font-size: 1.1rem;
+                }
+
+                .custom-icon {
+                    margin-left: auto;
+                    font-size: 1.2rem;
+                    transition: transform 0.3s ease-in-out;
+                }
+
+             
+            `}</style>
+            </Container>
+            <div className="purple-bg-right"></div>
+        </div>
+
     );
 };
 
