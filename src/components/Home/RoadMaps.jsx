@@ -17,7 +17,6 @@ const roadmapData = [
             { text: 'Initial Teambuilding', completed: false },
             { text: 'Marketing Rollout', completed: false },
         ],
-        // icon: <SiReactos className='text-black' />
     },
     {
         title: 'Phase 2 - Market Expansion ',
@@ -28,7 +27,6 @@ const roadmapData = [
             { text: 'Blockchain Development', completed: false },
             { text: 'Technical Knowledge Base', completed: false },
         ],
-        // icon: <SiReactos className='text-black' />
     },
     {
         title: 'Phase 3 - Mainstream Rollout',
@@ -39,7 +37,6 @@ const roadmapData = [
             { text: 'Influencer Onboarding', completed: false },
             { text: 'Tier 3 CEX Listing', completed: false },
         ],
-        // icon: <SiReactos className='text-black' />
     },
     {
         title: 'Phase 4 - Zerg Rush',
@@ -49,16 +46,15 @@ const roadmapData = [
             { text: 'Physical Office Launch in 4 Locations', completed: false },
             { text: 'Regulatory Approval in 12+ Regions', completed: false },
         ],
-        // icon: <SiReactos className='text-black' />
     },
 ];
 
 const RoadMaps = () => {
     const sectionRef = useRef(null);
-
+    const progressIconRef = useRef(null);
 
     const handleScroll = () => {
-        if (sectionRef.current) {
+        if (sectionRef.current && progressIconRef.current) {
             const sectionTop = sectionRef.current.offsetTop;
             const sectionHeight = sectionRef.current.clientHeight;
             const scrollY = window.scrollY;
@@ -68,6 +64,7 @@ const RoadMaps = () => {
             if (scrollPosition >= 0 && scrollPosition <= maxScroll) {
                 const newHeight = Math.min(100, (scrollPosition / maxScroll) * 100);
                 document.documentElement.style.setProperty('--timeline-height', `${newHeight}%`);
+                progressIconRef.current.style.top = `calc(${newHeight}%)`;
             }
         }
     };
@@ -86,14 +83,34 @@ const RoadMaps = () => {
                     .vertical-timeline::before {
                         height: var(--timeline-height, 10%) !important;
                     }
+                    .progress-icon {
+                        position: absolute;
+                        left: 50.1%;
+                        transform: translateX(-50%);
+                        top: 0;
+                        z-index: 10;
+                        width: 24px;
+                        height: 24px;
+                        background-color: #28a745;
+                        border-radius: 50%;
+                        box-shadow: 0 0 10px rgba(40, 167, 69, 0.8),
+                                    0 0 20px rgba(40, 167, 69, 0.6),
+                                    0 0 30px rgba(40, 167, 69, 0.4);
+                    }
+                    @media (max-width: 1170px) {
+                        .progress-icon {
+                            left: 9px;
+                            transform: none;
+                        }
+                    }
                 `}
             </style>
 
             <div ref={sectionRef} className="position-relative">
-                <Container className='py-5 ' style={{ zIndex: 9999 }}>
-                    <h1 className='text-white fw-bold text-center  '>Roadmap</h1>
+                <Container className="py-5">
+                    <h1 className="text-white fw-bold text-center">Roadmap</h1>
                     <div className="border-bottom border-secondary"></div>
-                    <VerticalTimeline className='my-4'>
+                    <VerticalTimeline className="my-4">
                         {roadmapData.map((phase, index) => (
                             <VerticalTimelineElement
                                 key={index}
@@ -101,7 +118,6 @@ const RoadMaps = () => {
                                 contentStyle={{ background: 'transparent', color: '#fff' }}
                                 contentArrowStyle={{ borderRight: '6px solid #438446' }}
                                 iconStyle={{ background: '#438446', color: '#fff' }}
-                                icon={phase.icon}
                                 visible={true}
                                 animate={true}
                             >
@@ -122,6 +138,8 @@ const RoadMaps = () => {
                                 </ul>
                             </VerticalTimelineElement>
                         ))}
+                        <div ref={progressIconRef} className="progress-icon"></div>
+
                     </VerticalTimeline>
                 </Container>
             </div>

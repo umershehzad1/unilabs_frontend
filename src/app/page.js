@@ -27,11 +27,11 @@ const LandingPage = () => {
 
   return (
     <>
-      {/* <Hero /> */}
-      {/* <PoweredBy /> */}
-      {/* <ManageTransactions /> */}
-      {/* <HowItWorks /> */}
-      {/* <Attributes /> */}
+      <Hero />
+      <PoweredBy />
+      <ManageTransactions />
+      <HowItWorks />
+      <Attributes />
       <RoadMaps />
       {/* {isConnected&& <WalletInfo />} */}
       {/* <WhyUnilabs /> */}
