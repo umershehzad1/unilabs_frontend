@@ -5,6 +5,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import DotSpinner from '../shared/DotSpinner';
+import WavyLineHero from '../shared/WavyLineHero';
 
 const roadmapData = [
     {
@@ -60,7 +61,6 @@ const RoadMaps = () => {
             const scrollY = window.scrollY;
             const maxScroll = sectionHeight - window.innerHeight;
             const scrollPosition = scrollY - sectionTop;
-
             if (scrollPosition >= 0 && scrollPosition <= maxScroll) {
                 const newHeight = Math.min(100, (scrollPosition / maxScroll) * 100);
                 document.documentElement.style.setProperty('--timeline-height', `${newHeight}%`);
@@ -81,7 +81,9 @@ const RoadMaps = () => {
             <style>
                 {`
                     .vertical-timeline::before {
-                        height: var(--timeline-height, 10%) !important;
+                        height: var(--timeline-height, 0%) !important;
+                        transition: height 0.4s ease-in-out; 
+
                     }
                     .progress-icon {
                         position: absolute;
@@ -93,9 +95,11 @@ const RoadMaps = () => {
                         height: 24px;
                         background-color: #28a745;
                         border-radius: 50%;
+
                         box-shadow: 0 0 10px rgba(40, 167, 69, 0.8),
                                     0 0 20px rgba(40, 167, 69, 0.6),
                                     0 0 30px rgba(40, 167, 69, 0.4);
+                        transition: top 0.4s ease-in-out; 
                     }
                     @media (max-width: 1170px) {
                         .progress-icon {
@@ -106,7 +110,11 @@ const RoadMaps = () => {
                 `}
             </style>
 
-            <div ref={sectionRef} className="position-relative">
+            <div ref={sectionRef} className="position-relative roadmaps">
+                <WavyLineHero />
+                <div className="purple-bg-right right"></div>
+                <div className="purple-bg-right left"></div>
+
                 <Container className="py-5">
                     <h1 className="text-white fw-bold text-center">Roadmap</h1>
                     <div className="border-bottom border-secondary"></div>
@@ -139,9 +147,10 @@ const RoadMaps = () => {
                             </VerticalTimelineElement>
                         ))}
                         <div ref={progressIconRef} className="progress-icon"></div>
-
                     </VerticalTimeline>
                 </Container>
+
+
             </div>
         </>
     );

@@ -18,6 +18,7 @@ import Faqs from '@/components/shared/Faqs';
 import { useAccount } from 'wagmi';
 import HowItWorks from './howitworks/page';
 import WavyLine from '@/components/shared/WavyLineHero';
+import UnilToken from '@/components/unilToken/UnilToken';
 
 const LandingPage = () => {
   const isConnected = useAccount()
@@ -32,21 +33,20 @@ const LandingPage = () => {
       <ManageTransactions />
       <HowItWorks />
       <Attributes />
+      <UnilToken/>
       <RoadMaps />
+      <Faqs /> 
+
+
+
       {/* {isConnected&& <WalletInfo />} */}
       {/* <WhyUnilabs /> */}
       {/* <Presales /> */}
       {/* <Unique /> */}
       {/* <Youtube /> */}
       {/* <AllYouNeed /> */}
-      <div className='whybg'>
-      </div>
-      {/* 
-     
-      <SpreadTheWorld />
-      <Tokenomics />
-      <Faqs /> 
-      {/* */}
+      {/* <Tokenomics /> */}
+      {/* <SpreadTheWorld /> */}
 
     </>
   );

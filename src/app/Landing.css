@@ -104,6 +104,24 @@ body {
     right: 50% !important;
 }
 
+.roadmaps .purple-bg-right.right::before {
+    top: 0 !important;
+    right: 0% !important;
+}
+
+.roadmaps .purple-bg-right.left::before {
+    top: 50% !important;
+    right: 60% !important;
+}
+
+.faq .purple-bg-right::before {
+    top: 0 !important;
+    right: 70% !important;
+    animation: none !important;
+    background-color: #3d1e4d !important;
+
+}
+
 @keyframes moveBackground {
     0% {
         top: -2rem;
@@ -130,14 +148,61 @@ body {
     }
 }
 
-@keyframes shining-effect {
+
+
+
+@keyframes unil-glowAnimation {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(88, 156, 255, 0.8), 0 0 20px rgba(88, 156, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(88, 156, 255, 1), 0 0 40px rgba(88, 156, 255, 0.7);
+    }
+}
+
+@keyframes unil-borderMoveCorner {
     0% {
-        background-position: -100% 0%;
+        border-image-source: linear-gradient(45deg, rgba(88, 156, 255, 0.3), rgba(88, 156, 255, 1));
     }
 
     100% {
-        background-position: 100% 0%;
+        border-image-source: linear-gradient(225deg, rgba(88, 156, 255, 0.3), rgba(88, 156, 255, 1));
     }
+}
+
+.unil-card {
+    position: relative;
+    background: linear-gradient(45deg, rgba(88, 156, 255, 0.2), rgba(88, 156, 255, 0.5));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+    background-size: 200% 200%;
+    border: 4px solid transparent;
+    border-image-source: linear-gradient(45deg, rgba(88, 156, 255, 0.3), rgba(88, 156, 255, 1));
+    border-image-slice: 1;
+    animation: unil-borderMoveCorner 3s linear infinite;
+    transition: all 0.3s ease-in-out;
+}
+
+.unil-card:hover {
+    animation: none;
+    animation: unil-glowAnimation 1.5s infinite alternate;
+    background: rgba(88, 156, 255, 0.3);
+    border: 4px solid rgba(88, 156, 255, 0.6);
+}
+
+.pieBG {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .greenbtn {
@@ -574,6 +639,11 @@ body {
     transform: rotate(-10deg);
 }
 
+.roadmaps .starts-bg {
+    bottom: 44%;
+    transform: rotate(90deg);
+}
+
 
 .whybg {
     background-image: url("../../public/map.png");
@@ -606,17 +676,50 @@ body {
     filter: drop-shadow(0px 5px 35px rgba(67, 132, 70, 0.35));
 }
 
-.accordion-button {
-    background-color: #264168 !important;
+.faq .accordion-button {
+    background-color: transparent !important;
     color: white;
-    border-radius: 10px !important;
     font-size: 20px !important;
     font-weight: 700;
     line-height: 36px;
     letter-spacing: 1px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
 }
 
-.accordion-body {
+.faq .accordion-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 2 !important;
+    background: linear-gradient(90deg, #10223D, #2d5fab, #10223D);
+    animation: move-border 2s linear infinite;
+    transform: translateX(-100%);
+}
+
+.faq .active .accordion-button {
+    border-color: #2d5fab !important;
+}
+
+.faq .active .accordion-button::before {
+    animation: none !important;
+}
+
+@keyframes move-border {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.faq .accordion-body {
     background: transparent !important;
     color: white;
     padding-left: 10px !important;
@@ -624,15 +727,21 @@ body {
     font-weight: 400;
     line-height: 22px;
     letter-spacing: 1px;
+    border: 2px solid #10223D;
 }
 
-.accordion-button:not(.collapsed) {
+.faq .accordion-button:not(.collapsed) {
     color: white !important;
 }
 
-.accordion-button:not(.not-collapsed) {
+.faq .accordion-button:not(.not-collapsed) {
     color: white !important;
     box-shadow: none !important;
+}
+
+.faq .accordion-button:not(.not-collapsed)::after,
+.faq .accordion-button:not(.collapsed)::after {
+    display: none;
 }
 
 .footer .link-text {
@@ -711,6 +820,11 @@ body {
         letter-spacing: 0.02em;
     }
 
+    .pieBG {
+        height: 100px;
+        width: 100px;
+
+    }
 
 
     .section-heading h1 {
@@ -813,14 +927,7 @@ body {
 
 
 
-@media screen and (max-width:768px) {
-    .hero {
-        overflow: hidden;
-    }
 
-
-
-}
 
 @media screen and (max-width:576px) {
     .works1::after {
@@ -831,13 +938,6 @@ body {
 }
 
 
-.accordion-button:not(.not-collapsed)::after {
-    background-image: url("./../../public/plus.png") !important;
-}
-
-.accordion-button:not(.collapsed)::after {
-    background-image: url("./../../public/minus.png") !important;
-}
 
 
 
@@ -1023,4 +1123,46 @@ body {
 
 .progress-bar {
     overflow: visible !important;
+}
+
+.custom-label-card {
+    background-color: #010B18;
+}
+
+.custom-label-header {
+    font-size: 7px;
+    font-weight: normal;
+    padding: 3px 0;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background-color: transparent;
+    border: 3px solid #265C34;
+    width: 70px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.custom-label-body {
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-bottom: 5px;
+
+}
+
+.custom-label-body::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -35px;
+    width: 100%;
+    height: 100%;
+    background: url("/chartPieIcon.png") no-repeat center center;
+    background-size: contain;
+}
+.line-index{
+    z-index: -1!important;
+    position: absolute
 }
