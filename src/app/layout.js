@@ -5,7 +5,7 @@ import Head from 'next/head';
 import 'react-circular-progressbar/dist/styles.css';
 import 'swiper/swiper-bundle.css';
 import ClientWrapper from "./ClientWrapper";
-import "./Landing.css";
+import "./globals.css";
 import "./dashboard.css"; 
 import 'react-phone-number-input/style.css';
 import { Metadata } from 'next';

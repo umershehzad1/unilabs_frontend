@@ -82,7 +82,7 @@ const RoadMaps = () => {
                 {`
                     .vertical-timeline::before {
                         height: var(--timeline-height, 0%) !important;
-                        transition: height 0.4s ease-in-out; 
+                        transition: height 0.2s ease-in-out; 
 
                     }
                     .progress-icon {
@@ -99,7 +99,7 @@ const RoadMaps = () => {
                         box-shadow: 0 0 10px rgba(40, 167, 69, 0.8),
                                     0 0 20px rgba(40, 167, 69, 0.6),
                                     0 0 30px rgba(40, 167, 69, 0.4);
-                        transition: top 0.4s ease-in-out; 
+                        transition: top 0.2s ease-in-out; 
                     }
                     @media (max-width: 1170px) {
                         .progress-icon {

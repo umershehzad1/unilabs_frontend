@@ -8,13 +8,13 @@ const LandingLayout = ({ children }) => {
     return (
         <>
             {/* {pathname === "/login" || pathname==="/signup" ? ( */}
-                {/* <main>{children}</main> */}
+            {/* <main>{children}</main> */}
             {/* ) : ( */}
-                <>
-                    <NavigationBar />
-                    <main className='overflow-x-hidden'>{children}</main>
-                    {/* <Footer /> */}
-                </>
+            <>
+                <NavigationBar />
+                <main className='overflow-x-hidden'>{children}</main>
+                <Footer />
+            </>
             {/* )} */}
         </>
     );
