@@ -1,6 +1,5 @@
 "use client";
 import React from 'react';
-import 'react-vertical-timeline-component/style.min.css';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Image from 'next/image';
 

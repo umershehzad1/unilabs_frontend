@@ -2,7 +2,6 @@
 import { useEffect, useRef } from 'react';
 import { Container, Image } from 'react-bootstrap';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 import { GoDotFill } from "react-icons/go";
 
 const steps = [

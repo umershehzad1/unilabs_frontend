@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import { FaCheckCircle } from 'react-icons/fa';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 import DotSpinner from '../shared/DotSpinner';
 import WavyLineHero from '../shared/WavyLineHero';
 

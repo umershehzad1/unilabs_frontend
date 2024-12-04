@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from 'react';
-import 'react-vertical-timeline-component/style.min.css';
 import { Col } from 'react-bootstrap';
 import PollCard from '../shared/PollCards';
 import Divider from '../shared/Divider';
