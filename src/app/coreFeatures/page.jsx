@@ -47,9 +47,9 @@ const page = () => {
                             </Zoom>
                         </Col>
 
-                        <Col xs={12} md={6} className='text-start'>
+                        <Col xs={12} md={6} className='text-md-start text-center'>
                             <Fade delay={200} duration={1000} triggerOnce>
-                                <h1 className="fw-bold green border-bottom pb-2 me-5" style={{ borderColor: "var(--green)!important" }}>
+                                <h1 className="fw-bold green border-bottom pb-2 me-md-5 px-md-auto px-3" style={{ borderColor: "var(--green)!important" }}>
                                     {item.heading}
                                 </h1>
                                 <p className="fs-4">{item.text}</p>
