@@ -34,7 +34,7 @@ const Hero = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col xs={12} lg={5} className="position-relative" >
+                    <Col xs={12} lg={5} className="position-relative " style={{ scrollBehavior: 'smooth' }}>
                         <div className=" purple-bg-right"></div>
                         <GlobeComponent />
                     </Col>

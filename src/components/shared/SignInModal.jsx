@@ -1,47 +1,37 @@
 import Link from 'next/link';
-import { Modal, Row, Col, Image } from 'react-bootstrap';
-import { FaX } from 'react-icons/fa6';
+import { Col, Image, Modal, Row } from 'react-bootstrap';
 
-function CustomModal({showModal,setShowModal}) {
+function BasicModal({ showModal, setShowModal }) {
 
     const handleClose = () => setShowModal(false);
+    const handleShow = () => setShowModal(true);
 
     return (
-        <Modal
-            show={showModal}
-            onHide={handleClose}
-            // backdrop="static"
-            centered
-            size='xl'
-            dialogClassName="SignIn-modal-dialog"
-            // backdropClassName="SignIn-backdrop"
-        >
-           
+
+        <Modal size='xl'   show={showModal} onHide={handleClose} dialogClassName='SignIn-modal-dialog'>
+            <Modal.Header closeButton className='border-0' >
+            </Modal.Header>
             <Modal.Body>
-            <div className='text-end p-3'>
-            <FaX onClick={handleClose} style={{cursor:"pointer"}}  className='text-white'/>    
-            </div>
                 <Row className="align-items-center justify-content-center">
                     <Col md={6} xs={12} className="text-center d-flex flex-column align-items-center text-white">
                         <h1 className="mb-3 display-4 fw-bold">Sign In</h1>
-                        <p className="text-center  f-of px-5">
+                        <p className="text-center f-of px-5">
                             To log in please use the method you used during the initial account opening process
                         </p>
-                        <Link href="/login" className="mb-4  login-btn f-of" onClick={handleClose}>
+                        <Link href="/login" className="mb-4 login-btn f-of" onClick={handleClose}>
                             Log In
                         </Link>
-                        <Link href="/signup" className="mb-3  signup-btn  f-of" onClick={handleClose}>
+                        <Link href="/signup" className="mb-3 signup-btn f-of" onClick={handleClose}>
                             Sign Up
                         </Link>
                         <div className="d-flex justify-content-center align-items-center gap-3 mb-3">
-
                             <Link onClick={handleClose} href="#" className="text-white text-decoration-none f-of">
-                            Terms of Service
-                        </Link>
+                                Terms of Service
+                            </Link>
                             <span className="text-white-50 f-of fs-3">|</span>
-                            <Link onClick={handleClose} href="#" className="text-white text-decoration-none f-of"  >
-                            Privacy Policy
-                        </Link>
+                            <Link onClick={handleClose} href="#" className="text-white text-decoration-none f-of">
+                                Privacy Policy
+                            </Link>
                         </div>
                         <p className="f-of">2024 Copyrights UNILABS</p>
                     </Col>
@@ -55,7 +45,6 @@ function CustomModal({showModal,setShowModal}) {
                             className="modal-image"
                             style={{ maxHeight: '80%', objectFit: 'cover', borderRadius: '20px' }}
                         />
-
                     </Col>
                 </Row>
             </Modal.Body>
@@ -63,4 +52,4 @@ function CustomModal({showModal,setShowModal}) {
     );
 }
 
-export default CustomModal;
+export default BasicModal;

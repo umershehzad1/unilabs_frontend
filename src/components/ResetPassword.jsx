@@ -67,7 +67,7 @@ const ResetPassword = () => {
                 });
             }
         } catch (error) {
-            console.error('Error resetting password:', error);
+            // console.error('Error resetting password:', error);
           
         }
     };

@@ -29,14 +29,14 @@ const OTPVerification = () => {
         e.preventDefault();
         router.push("/resetpassword")
 
-        console.log('Entered OTP:', OTP);
+        // console.log('Entered OTP:', OTP);
     };
 
     const handleResendOTP = () => {
         setCanResend(false);
         setTimer(120);  // Reset timer for next resend
         setOTP("");  // Clear the OTP input
-        console.log("OTP has been resent to your email");
+        // console.log("OTP has been resent to your email");
     };
 
     return (

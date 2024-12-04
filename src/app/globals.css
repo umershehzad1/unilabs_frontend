@@ -1,6 +1,5 @@
 * {
   font-family: "Helvetica", sans-serif;
-  scroll-behavior: smooth !important;
 }
 
 :root {
@@ -25,9 +24,7 @@
 
 body {
   background-color: var(--color1) !important;
-
   overflow-x: hidden !important;
-  scroll-behavior: smooth !important;
 }
 
 .nav-bg a {
@@ -82,7 +79,7 @@ body {
 
 
 
-.offcanvasNavbar .btn-close {
+.offcanvasNavbar .btn-close ,.SignIn-modal-dialog .btn-close{
   filter: grayscale(100%) brightness(0) invert(1) !important;
 }
 
@@ -520,11 +517,12 @@ body {
   z-index: -1;
   background: #FFFFFF80;
 }
+
 .howtobuysteps .vertical-timeline::after {
   content: '';
   position: absolute;
   top: 0;
-  left: 19px!important;
+  left: 19px !important;
   height: 95%;
   width: 5px;
   z-index: -1;
@@ -533,6 +531,10 @@ body {
 
 
 
+.signin-close-btn {
+  top: -30px;
+  right: 30px;
+}
 
 @media only screen and (min-width: 1170px) {
   .roadmaps .vertical-timeline::after {
@@ -541,6 +543,17 @@ body {
   }
 }
 
+
+@media only screen and (max-width: 1200px) {
+  .signin-close-btn {
+    top: -30%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .signin-close-btn {
+    top: -20%;
+  }
+}
 
 .video-background {
   position: absolute;
@@ -856,7 +869,34 @@ body {
   color: #9eabbc !important;
 }
 
+.active-link {
+  animation: backgroundGlowActiveLink 0.6s ease forwards;
+  font-weight: 600 !important;
+}
 
+
+@keyframes backgroundGlowActiveLink {
+  0% {
+    background: linear-gradient(92.49deg,
+        #4caf50 0%,
+        #4caf50 34.78%,
+        #204921 90.46%);
+  }
+
+  50% {
+    background: linear-gradient(92.49deg,
+        #6ecf6e 0%,
+        #4caf50 50%,
+        #356e39 100%);
+  }
+
+  100% {
+    background: linear-gradient(92.49deg,
+        #4caf50 0%,
+        #4caf50 34.78%,
+        #204921 90.46%);
+  }
+}
 
 .footer .footer-input {
   animation: neon-border 2s infinite alternate;
@@ -947,6 +987,13 @@ body {
   .pieBG {
     display: none;
   }
+     .signin-close-btn {
+       top: -20%;
+     }
+
+  .vertical-timeline-element-content {
+    margin-left: 29px !important;
+  }
 
   .highcharts-figure #container {
     height: auto;
@@ -1031,6 +1078,8 @@ body {
   animation: blueToggle 5s infinite alternate;
   /* Adjust duration as needed */
 }
+
+
 
 .works1 {
   position: relative;
@@ -1344,6 +1393,7 @@ body {
   width: 2px;
   background-color: #4caf50;
 }
+
 
 @media (max-width: 768px) {
   .roadmaps .timeline {

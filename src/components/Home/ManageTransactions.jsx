@@ -2,41 +2,83 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
-import { gsap } from "gsap";
-import { Draggable } from "gsap/Draggable";
 import Image from "next/image";
 import WavyLine from "../shared/WavyLineHero";
-gsap.registerPlugin(Draggable);
+import Confetti from "react-confetti"; // Import the react-confetti package
 
 const ManageTransactions = () => {
     const dragRef = useRef(null);
     const containerRef = useRef(null);
-    const draggableInstance = useRef(null);
-
+    const phoneRef = useRef(null); // Reference for the mobile frame
     const [isSwiped, setIsSwiped] = useState(false);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [confettiTriggered, setConfettiTriggered] = useState(false); // state to trigger confetti
+    const [confettiWidth, setConfettiWidth] = useState(0); // State to control confetti width
+    const [confettiHeight, setConfettiHeight] = useState(0); // State to control confetti height
 
     useEffect(() => {
-        if (containerRef.current && dragRef.current) {
-            const containerWidth = containerRef.current.offsetWidth;
-            const elementWidth = dragRef.current.offsetWidth;
-            draggableInstance.current = Draggable.create(dragRef.current, {
-                type: "x",
-                bounds: {
-                    minX: 0,
-                    maxX: containerWidth - elementWidth,
-                },
-                inertia: true,
-                onDragEnd: function () {
-                    if (this.endX >= containerWidth - elementWidth - 10) {
-                        setIsSwiped(true);
-                        this.disable();
-                    }
-                },
-            })[0];
+        // Update confetti size when the phone frame size changes
+        if (phoneRef.current) {
+            setConfettiWidth(phoneRef.current.offsetWidth);
+            setConfettiHeight(phoneRef.current.offsetHeight);
         }
+
+        let initialX = 0;
+        let currentX = 0;
+        let isMouseDown = false;
+
+        // Ensure dragRef and containerRef are available
+        const slideMovementTotal = containerRef?.current?.offsetWidth - dragRef?.current?.offsetWidth;
+
+        const handleMouseDown = (e) => {
+            isMouseDown = true;
+            initialX = e.clientX || e.touches[0].pageX;
+        };
+
+        const handleMouseMove = (e) => {
+            if (!isMouseDown || !dragRef.current) return; // Safety check for dragRef
+            currentX = e.clientX || e.touches[0].pageX;
+            let diff = currentX - initialX;
+
+            if (diff < 0) diff = 0;
+
+            dragRef.current.style.left = `${diff}px`;
+
+            if (diff >= slideMovementTotal - 10) {
+                setIsSwiped(true);
+                setIsAnimating(true);
+                setConfettiTriggered(true); // Trigger the confetti on swipe
+                setTimeout(() => setIsAnimating(false), 1000);
+                isMouseDown = false;
+            }
+        };
+
+        const handleMouseUp = () => {
+            if (isMouseDown && dragRef.current) {
+                if (currentX - initialX < slideMovementTotal) {
+                    dragRef.current.style.left = "0px";
+                }
+                isMouseDown = false;
+            }
+        };
+
+        // Attach events for mouse or touch
+        const events = {
+            mousedown: handleMouseDown,
+            mousemove: handleMouseMove,
+            mouseup: handleMouseUp,
+            touchstart: handleMouseDown,
+            touchmove: handleMouseMove,
+            touchend: handleMouseUp,
+        };
+
+        for (const [event, handler] of Object.entries(events)) {
+            document.addEventListener(event, handler);
+        }
+
         return () => {
-            if (draggableInstance.current) {
-                draggableInstance.current.kill();
+            for (const [event, handler] of Object.entries(events)) {
+                document.removeEventListener(event, handler);
             }
         };
     }, []);
@@ -56,6 +98,7 @@ const ManageTransactions = () => {
                                 style={{ zIndex: "3", overflow: "hidden" }}
                             />
                             <div
+                                ref={phoneRef}
                                 className="phone text-white px-3 py-5"
                                 style={{
                                     position: "absolute",
@@ -70,7 +113,15 @@ const ManageTransactions = () => {
                                     backgroundColor: !isSwiped ? "black" : "transparent"
                                 }}
                             >
-                                <div>
+                                {confettiTriggered && (
+                                    <Confetti
+                                        gravity={0.6}
+                                        width={confettiWidth}
+                                        height={confettiHeight}
+                                        numberOfPieces={100}
+                                        recycle={false}
+                                    />
+                                )}                                <div>
                                     <div className="d-flex justify-content-center align-items-center my-4" style={{ width: "100%" }}>
                                         <Image
                                             src="/logo.png"
@@ -85,9 +136,7 @@ const ManageTransactions = () => {
                                     </div>
 
                                     <h3 className="display-6" style={{ overflow: 'hidden' }}>
-
                                         {isSwiped ? "YOUR TRANSACTIONS ARE MANAGED." : "The UNILABS Launchpad"}
-
                                     </h3>
                                     <TypeAnimation
                                         sequence={[
@@ -113,7 +162,6 @@ const ManageTransactions = () => {
                                     />
                                 </div>
                                 <div>
-
                                     <div className="text-center">
                                         <h3 className="text-white fs-4">
                                             {isSwiped ? "" : "SWIPE ME"}
@@ -133,18 +181,24 @@ const ManageTransactions = () => {
                                             zIndex: "9999",
                                         }}
                                     >
-                                        <div
-                                            ref={dragRef}
-                                            style={{
-                                                width: "40px",
-                                                height: "40px",
-                                                backgroundImage: "url('/slide.svg')",
-                                                backgroundSize: "cover",
-                                                cursor: "pointer",
-                                                position: "absolute",
-                                                left: "0px",
-                                            }}
-                                        ></div>
+                                        {isSwiped ?
+                                            <h3 className="text-white mx-auto mb-0 fs-4">
+                                                UNILAB
+                                            </h3> :
+                                            <div
+                                                ref={dragRef}
+                                                style={{
+                                                    width: "40px",
+                                                    height: "40px",
+                                                    backgroundImage: "url('/slide.svg')",
+                                                    backgroundSize: "cover",
+                                                    cursor: "pointer",
+                                                    position: "absolute",
+                                                    left: "0px",
+                                                    transition: isAnimating ? "left 0.3s ease-out" : "none",
+                                                }}
+                                            ></div>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -153,30 +207,23 @@ const ManageTransactions = () => {
 
                     <Col xs={12} lg={7}>
                         <div className=" mt-3 mt-lg-0 text-center text-lg-start">
-                            <h1 className="text-white  display-2">
+                            <h1 className="text-white display-2">
                                 Get In Early On The Hottest Opportunities In Crypto -
-                                <span className="fw-semibold " style={{ color: "var(--green)" }}>
+                                <span className="fw-semibold" style={{ color: "var(--green)" }}>
                                     The Unilab Launchpad
                                 </span>
                             </h1>
                             <p className="text-white fs-5">
-                                Unilabs is ushering a future where every investors can capitalize on the most promising opportunities in the crypto world. Access opportunities typically inaccessible for retail traders with our AI powered launchpad. Our enterprise AI evaluates market for early backing opportunities and makes them accessible for global investors.
-
+                                Unilabs is ushering a future where every investor can capitalize on the most promising opportunities in the crypto world. Access opportunities typically inaccessible for retail traders with our AI-powered launchpad. Our enterprise AI evaluates the market for early backing opportunities and makes them accessible for global investors.
                             </p>
-                            {/* <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo consequat. Duis aute mollit anim
-                            id est laborum.
-                        </p> */}
                         </div>
                     </Col>
                 </Row>
             </Container>
+
+
             <WavyLine />
         </div>
-
     );
 };
 

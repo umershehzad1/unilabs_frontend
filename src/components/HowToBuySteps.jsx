@@ -117,7 +117,7 @@ const RoadMaps = () => {
                 <div className="purple-bg-right right"></div>
                 <div className="purple-bg-right left"></div>
 
-                <Container className="py-5 col-8 mx-auto">
+                <Container className="py-5 col-lg-8 col-12 px-md-auto px-0 mx-auto">
                     <VerticalTimeline className="my-4" animate
                         layout={"1-column-left"}>
                         {steps.map((phase, index) => (

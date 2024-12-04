@@ -59,7 +59,7 @@ function Signup() {
                 Swal.close();
             }
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             const errorMessage = error.response?.data?.message || error.response?.data?.error || 'Something went wrong. Please try again.';
             Swal.fire({
                 title: 'Signup Failed',

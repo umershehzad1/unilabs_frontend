@@ -6,7 +6,9 @@ import { Container } from 'react-bootstrap'
 
 const page = () => {
     return (
-        <div className='position-relative py-5 my-5 howtobuy overflow-hidden'>
+        <div className="py-5 overflow-hidden">
+
+        <div className='position-relative py-5  howtobuy '>
             <div className="purple-bg-right"></div>
             <div className="wave1">
                 <WavyLineHero />
@@ -14,7 +16,7 @@ const page = () => {
             <div className="wave2">
                 <WavyLineHero />
             </div>
-            <Container className='text-white text-center'>
+            <Container className='text-white text-center px-md-auto px-0'>
                 <Fade bottom delay={300}>
                     <h1 className='display-5 fw-bold py-5'>
                         How to Buy <span className="px-2 green">UNIL</span>
@@ -29,6 +31,8 @@ const page = () => {
                 <HowToBuySteps />
             </Container>
         </div>
+        </div>
+
     )
 }
 
