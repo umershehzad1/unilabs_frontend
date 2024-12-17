@@ -1,5 +1,9 @@
+@font-face {
+  font-family: Neue_Machina;
+  src: url(../../public//font/NeueMachina.otf);
+}
 * {
-  font-family: "Helvetica", sans-serif;
+  font-family: "Neue_Machina", sans-serif;
 }
 
 :root {
