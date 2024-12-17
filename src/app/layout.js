@@ -8,10 +8,9 @@ import ClientWrapper from "./ClientWrapper";
 import "./globals.css";
 import "./dashboard.css"; 
 import 'react-phone-number-input/style.css';
-import "react-loading-skeleton/dist/skeleton.css";
+// import "react-loading-skeleton/dist/skeleton.css";
 import 'react-vertical-timeline-component/style.min.css';
 
-import { Metadata } from 'next';
 
 const smoochSans = Smooch_Sans({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
