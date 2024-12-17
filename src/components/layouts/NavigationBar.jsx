@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Container, Form, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { menuItems } from "../shared/MenuItems";
 import CustomModal from "../shared/SignInModal";
 import Sidebar from "./Sidebar";
 import ConnectBtn from "../shared/ConnectBtn";
+import { MdLogin } from "react-icons/md";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
@@ -63,7 +64,7 @@ const NavigationBar = () => {
           </Navbar.Toggle>
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="ms-auto my-2 my-lg-0 d-none d-lg-block"
+              className="mx-auto my-2 my-lg-0 d-none d-lg-block"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
@@ -80,9 +81,9 @@ const NavigationBar = () => {
             </Nav>
             <Form>
               <div className="d-lg-block d-none">
-                <Link onClick={() => setShowModal(true)} className="mx-4 text-white text-decoration-none" href="">
-                  Sign In
-                </Link>
+                <Button onClick={() => setShowModal(true)} className="mx-4 text-white  fw-bold transparentbtn  py-2" style={{ fontFamily:"Neue_Machina!important"}} href="">
+                  Sign in <MdLogin size={25} className="ms-1" />
+                </Button>
               </div>
 
             </Form>

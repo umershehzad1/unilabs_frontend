@@ -7,9 +7,9 @@
 //     { href: "/whitepaper", label: "Whitepaper" },
 // ];
 export const menuItems = [
-    { href: "/", label: "Home" },
-    { href: "/howToBuy", label: "How to Buy" },
-    { href: "/coreFeatures", label: "Core Features" },
-    { href: "/roadmaps", label: "Unilabs Roadmap" },
-  
+  { href: "/", label: "Home" },
+  // { href: "/howToBuy", label: "How to Buy" },
+  // { href: "/coreFeatures", label: "Core Features" },
+  // { href: "/roadmaps", label: "Unilabs Roadmap" },
+  { href: "/news", label: "News" },
 ];
