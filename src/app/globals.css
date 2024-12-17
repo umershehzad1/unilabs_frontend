@@ -3,12 +3,12 @@
   src: url(../../public//font/NeueMachina.otf);
 }
 * {
-  font-family: "Neue_Machina", sans-serif;
+  font-family: "Neue_Machina";
 }
 
 :root {
-  --color1: #000A18;
-  --green: #4CAF50;
+  --color1: #000a18;
+  --green: #4caf50;
 }
 
 .text-green {
@@ -81,9 +81,8 @@ body {
   width: 250px !important;
 }
 
-
-
-.offcanvasNavbar .btn-close ,.SignIn-modal-dialog .btn-close{
+.offcanvasNavbar .btn-close,
+.SignIn-modal-dialog .btn-close {
   filter: grayscale(100%) brightness(0) invert(1) !important;
 }
 
@@ -130,7 +129,6 @@ body {
   right: 70% !important;
   animation: none !important;
   background-color: #3d1e4d !important;
-
 }
 
 @keyframes moveBackground {
@@ -159,14 +157,11 @@ body {
   }
 }
 
-
-
-
 @keyframes unil-glowAnimation {
-
   0%,
   100% {
-    box-shadow: 0 0 10px rgba(88, 156, 255, 0.8), 0 0 20px rgba(88, 156, 255, 0.5);
+    box-shadow: 0 0 10px rgba(88, 156, 255, 0.8),
+      0 0 20px rgba(88, 156, 255, 0.5);
   }
 
   50% {
@@ -176,17 +171,29 @@ body {
 
 @keyframes unil-borderMoveCorner {
   0% {
-    border-image-source: linear-gradient(45deg, rgba(88, 156, 255, 0.3), rgba(88, 156, 255, 1));
+    border-image-source: linear-gradient(
+      45deg,
+      rgba(88, 156, 255, 0.3),
+      rgba(88, 156, 255, 1)
+    );
   }
 
   100% {
-    border-image-source: linear-gradient(225deg, rgba(88, 156, 255, 0.3), rgba(88, 156, 255, 1));
+    border-image-source: linear-gradient(
+      225deg,
+      rgba(88, 156, 255, 0.3),
+      rgba(88, 156, 255, 1)
+    );
   }
 }
 
 .unil-card {
   position: relative;
-  background: linear-gradient(45deg, rgba(88, 156, 255, 0.2), rgba(88, 156, 255, 0.5));
+  background: linear-gradient(
+    45deg,
+    rgba(88, 156, 255, 0.2),
+    rgba(88, 156, 255, 0.5)
+  );
   color: white;
   padding: 2rem;
   text-align: center;
@@ -194,7 +201,11 @@ body {
   cursor: pointer;
   background-size: 200% 200%;
   border: 4px solid transparent;
-  border-image-source: linear-gradient(45deg, rgba(88, 156, 255, 0.3), rgba(88, 156, 255, 1));
+  border-image-source: linear-gradient(
+    45deg,
+    rgba(88, 156, 255, 0.3),
+    rgba(88, 156, 255, 1)
+  );
   border-image-slice: 1;
   animation: unil-borderMoveCorner 3s linear infinite;
   transition: all 0.3s ease-in-out;
@@ -221,7 +232,7 @@ body {
   text-align: center;
   width: 100px;
   background-color: transparent;
-  border: 3px solid #265C34;
+  border: 3px solid #265c34;
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -233,7 +244,6 @@ body {
   position: relative;
   margin-bottom: 5px;
   padding-left: 10px;
-
 }
 
 .custom-label-body::before {
@@ -256,7 +266,7 @@ body {
 }
 
 .greenbtn {
-  background: linear-gradient(180deg, #4CAF50 0%, #204921 100%);
+  background: linear-gradient(180deg, #4caf50 0%, #204921 100%);
   background-size: 300% 300% !important;
   border-radius: 0px !important;
   color: white !important;
@@ -267,7 +277,8 @@ body {
   animation: gradient-animation 3s ease infinite;
   padding: 10px 30px !important;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .greenbtn:hover {
@@ -279,7 +290,7 @@ body {
 .greenbtn::before {
   content: "";
   position: absolute;
-  background-image: url('/btnRight.svg');
+  background-image: url("/btnRight.svg");
   background-repeat: no-repeat;
   background-size: contain;
   height: 104%;
@@ -292,7 +303,7 @@ body {
 .greenbtn::after {
   content: "";
   position: absolute;
-  background-image: url('/btnLeft.svg');
+  background-image: url("/btnLeft.svg");
   background-repeat: no-repeat;
   background-size: contain;
   height: 104%;
@@ -312,7 +323,7 @@ body {
   padding: 15px 40px !important;
   background-color: transparent !important;
   position: relative;
-  background-color: #000A18 !important;
+  background-color: #000a18 !important;
   transition: all 0.5s ease-in-out;
 }
 
@@ -322,13 +333,13 @@ body {
   top: 11px;
   left: -4px;
   right: -4px;
-  background: linear-gradient(180deg, #4CAF50 0%, #204921 100%);
+  background: linear-gradient(180deg, #4caf50 0%, #204921 100%);
   z-index: -1;
   height: 36px;
 }
 
 .transparentbtn:hover {
-  background: linear-gradient(180deg, #4CAF50 0%, #204921 100%);
+  background: linear-gradient(180deg, #4caf50 0%, #204921 100%);
   color: white;
   border-color: #2e7d32;
   box-shadow: 0 4px 12px rgba(175, 216, 13, 0.1);
@@ -343,11 +354,9 @@ body {
   z-index: -1;
 }
 
-
-
-
 #wavy-path {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)) drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 1));
 }
 
 .icon {
@@ -359,7 +368,8 @@ body {
 }
 
 #wavy-path {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)) drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 1));
 }
 
 .icon {
@@ -369,10 +379,8 @@ body {
   filter: drop-shadow(0px 0px 15px #ffffff);
   animation: waveBlink 2s ease-in-out infinite;
 }
-
 
 @keyframes waveBlink {
-
   0%,
   100% {
     transform: scale(1);
@@ -385,10 +393,9 @@ body {
   }
 }
 
-
 .dot-spinner {
   --uib-size: 1.3rem;
-  --uib-speed: .6s;
+  --uib-speed: 0.6s;
   --uib-color: white;
   position: relative;
   display: flex;
@@ -410,7 +417,7 @@ body {
 }
 
 .dot-spinner__dot::before {
-  content: '';
+  content: "";
   height: 10%;
   width: 20%;
   border-radius: 50%;
@@ -478,7 +485,6 @@ body {
 }
 
 @keyframes pulse0112 {
-
   0%,
   100% {
     transform: scale(0);
@@ -512,28 +518,26 @@ body {
 }
 
 .roadmaps .vertical-timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 18px;
   height: 95%;
   width: 5px;
   z-index: -1;
-  background: #FFFFFF80;
+  background: #ffffff80;
 }
 
 .howtobuysteps .vertical-timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 19px !important;
   height: 95%;
   width: 5px;
   z-index: -1;
-  background: #FFFFFF80;
+  background: #ffffff80;
 }
-
-
 
 .signin-close-btn {
   top: -30px;
@@ -546,7 +550,6 @@ body {
     margin-left: -1px;
   }
 }
-
 
 @media only screen and (max-width: 1200px) {
   .signin-close-btn {
@@ -569,7 +572,6 @@ body {
   z-index: 1;
   object-fit: cover;
 }
-
 
 .overlay {
   position: absolute;
@@ -657,8 +659,6 @@ body {
   }
 }
 
-
-
 .coin-image {
   filter: drop-shadow(0px 0px 20px rgb(242, 140, 60));
   animation: swing 2s ease-in-out infinite;
@@ -685,18 +685,12 @@ body {
   }
 }
 
-
 .moving {
   filter: drop-shadow(0px 0px 20px rgb(242, 140, 60));
   animation: moving 2s infinite;
 }
 
-
-
-
-
 .phone {
-
   height: 100%;
   border-radius: 20px;
 }
@@ -725,9 +719,6 @@ body {
   bottom: 0;
   transform: rotate(155deg);
 }
-
-
-
 
 .roadmapspage .wave1,
 .corefeatures .wave1,
@@ -811,14 +802,14 @@ body {
 }
 
 .faq .accordion-button::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
   z-index: 2 !important;
-  background: linear-gradient(90deg, #10223D, #2d5fab, #10223D);
+  background: linear-gradient(90deg, #10223d, #2d5fab, #10223d);
   animation: move-border 2s linear infinite;
   transform: translateX(-100%);
 }
@@ -849,7 +840,7 @@ body {
   font-weight: 400;
   line-height: 22px;
   letter-spacing: 1px;
-  border: 2px solid #10223D;
+  border: 2px solid #10223d;
 }
 
 .faq .accordion-button:not(.collapsed) {
@@ -878,45 +869,50 @@ body {
   font-weight: 600 !important;
 }
 
-
 @keyframes backgroundGlowActiveLink {
   0% {
-    background: linear-gradient(92.49deg,
-        #4caf50 0%,
-        #4caf50 34.78%,
-        #204921 90.46%);
+    background: linear-gradient(
+      92.49deg,
+      #4caf50 0%,
+      #4caf50 34.78%,
+      #204921 90.46%
+    );
   }
 
   50% {
-    background: linear-gradient(92.49deg,
-        #6ecf6e 0%,
-        #4caf50 50%,
-        #356e39 100%);
+    background: linear-gradient(
+      92.49deg,
+      #6ecf6e 0%,
+      #4caf50 50%,
+      #356e39 100%
+    );
   }
 
   100% {
-    background: linear-gradient(92.49deg,
-        #4caf50 0%,
-        #4caf50 34.78%,
-        #204921 90.46%);
+    background: linear-gradient(
+      92.49deg,
+      #4caf50 0%,
+      #4caf50 34.78%,
+      #204921 90.46%
+    );
   }
 }
 
 .footer .footer-input {
   animation: neon-border 2s infinite alternate;
-  background: linear-gradient(85.02deg,
-      rgba(38, 53, 75, 0.62) 16.14%,
-      rgba(38, 53, 75, 0) 97.59%) !important;
+  background: linear-gradient(
+    85.02deg,
+    rgba(38, 53, 75, 0.62) 16.14%,
+    rgba(38, 53, 75, 0) 97.59%
+  ) !important;
   border: 0px;
   border-top: 2px solid rgba(62, 87, 123, 0.93);
   padding: 12px;
   color: #9eabbc;
   width: 100%;
-  border-radius: .375rem;
+  border-radius: 0.375rem;
   transition: all 0.3s ease-in-out;
 }
-
-
 
 @keyframes neon-border {
   0% {
@@ -944,9 +940,6 @@ body {
   color: white;
   cursor: pointer;
 }
-
-
-
 
 .progress-bar-wrapper {
   position: relative;
@@ -981,19 +974,20 @@ body {
 }
 
 .footerbg {
-  background: linear-gradient(171.05deg,
-      #030b15 10.83%,
-      #12407b 93.41%) !important;
+  background: linear-gradient(
+    171.05deg,
+    #030b15 10.83%,
+    #12407b 93.41%
+  ) !important;
 }
-
 
 @media only screen and (max-width: 768px) {
   .pieBG {
     display: none;
   }
-     .signin-close-btn {
-       top: -20%;
-     }
+  .signin-close-btn {
+    top: -20%;
+  }
 
   .vertical-timeline-element-content {
     margin-left: 29px !important;
@@ -1023,9 +1017,6 @@ body {
     line-height: 70px !important;
     letter-spacing: 0.02em;
   }
-
-
-
 
   .section-heading h1 {
     font-size: 30px;
@@ -1083,8 +1074,6 @@ body {
   /* Adjust duration as needed */
 }
 
-
-
 .works1 {
   position: relative;
   background-color: white;
@@ -1100,11 +1089,9 @@ body {
   right: 0;
   width: 40px;
   height: 60%;
-  background: linear-gradient(273.08deg, #4CAF50 45.88%, #204921 103.34%);
+  background: linear-gradient(273.08deg, #4caf50 45.88%, #204921 103.34%);
   background-size: 200% 200%;
   clip-path: polygon(73% 5%, 100% 0, 100% 86%, 73% 90%);
-
-
 }
 
 .works2 {
@@ -1122,26 +1109,16 @@ body {
   left: -30px;
   width: 40px;
   height: 100% !important;
-  background: linear-gradient(273.08deg, #4CAF50 45.88%, #204921 103.34%);
+  background: linear-gradient(273.08deg, #4caf50 45.88%, #204921 103.34%);
   background-size: 200% 200%;
   clip-path: polygon(73% 5%, 100% 0, 100% 86%, 73% 90%);
 }
 
-
-
-
-
-@media screen and (max-width:576px) {
+@media screen and (max-width: 576px) {
   .works1::after {
     height: 100% !important;
   }
-
-
 }
-
-
-
-
 
 /* 
 .presalesstats {
@@ -1248,7 +1225,6 @@ body {
   background-position: left center;
 }
 
-
 .selected-option {
   border: 2px solid #4caf50;
 }
@@ -1299,7 +1275,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50% 150%;
-
 }
 
 @media (max-width: 991px) {
@@ -1322,7 +1297,6 @@ body {
   width: 100% !important;
   height: auto !important;
 }
-
 
 .progress-bar {
   overflow: visible !important;
@@ -1389,7 +1363,7 @@ body {
 }
 
 .roadmaps .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 9px;
@@ -1397,7 +1371,6 @@ body {
   width: 2px;
   background-color: #4caf50;
 }
-
 
 @media (max-width: 768px) {
   .roadmaps .timeline {
@@ -1408,7 +1381,6 @@ body {
     width: 100%;
   }
 }
-
 
 /* Main container */
 .howtobuy {
@@ -1444,7 +1416,7 @@ body {
 
 /* Vertical line in the timeline */
 .howtobuy .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 10%;

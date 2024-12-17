@@ -1,0 +1,34 @@
+/* new css */
+.news {
+  padding-top: 100px;
+}
+
+.newButton {
+  background-color: transparent;
+  border-radius: 0;
+  border-color: #4caf50;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 8px;
+  color: #4caf50;
+}
+
+.newButton:hover {
+  background-color: #4caf50;
+  color: white;
+}
+.subscribeInput {
+  background-color: transparent !important;
+  border-radius: 0;
+  border-color: black !important;
+  height: 50px;
+  width: 100px;
+}
+.subcribButton {
+  height: 50px;
+  padding: 10;
+  border-radius: 0;
+  margin-left: 20px;
+}
