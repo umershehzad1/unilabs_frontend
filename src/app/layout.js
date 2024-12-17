@@ -6,6 +6,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import 'swiper/swiper-bundle.css';
 import ClientWrapper from "./ClientWrapper";
 import "./globals.css";
+import "./animation.css";
 import "./dashboard.css"; 
 import 'react-phone-number-input/style.css';
 import "react-loading-skeleton/dist/skeleton.css";

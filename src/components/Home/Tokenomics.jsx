@@ -1,56 +1,60 @@
 import React from 'react';
-import { Col, Container, Row,ProgressBar } from 'react-bootstrap';
+import { Col, Container, Row, ProgressBar } from 'react-bootstrap';
 import SectionHeading from '../shared/SectionHeading';
 import PieChartComponent from '../shared/PieChart';
+
 const Tokenomics = () => {
 
     const data = [
-        { name: 'PRESALES', value: 10, fill: '#4ec1ee' },
-        { name: 'LIQUIDITY', value: 25, fill: '#135eb4' },
-        { name: 'MARKETING', value: 20, fill: '#0e5fc3' },
-        { name: 'DEVELOPMENT', value: 10, fill: '#2c91f7' },
+        { name: 'Private Sale', value: 10 },
+        { name: 'Burned', value: 30 },
+        { name: 'Public Sale', value: 20 },
+        { name: 'Staking Reward', value: 28 },
+        { name: 'Partneship Funds', value: 7 },
+        { name: 'Team Pool', value: 5 },
     ];
 
     return (
         <>
-            <Container>
-                <SectionHeading
-                    heading={"TOKENOMICS"}
-                    subHeading={"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute mollit anim id est laborum."}
-                />
-
+            <Container className='py-4'>
+                <h1 className='fw-bold text-white text-center text-uppercase'>Tokenomics</h1>
                 <Row className='pt-5 align-items-center'>
                     <Col xs={12} lg={6} className="pe-0">
-                        <PieChartComponent data={data} />
+                        <div className='tokemonics-Bg-img'>
+                            <PieChartComponent data={data} />
+                        </div>
                     </Col>
                     <Col xs={12} lg={6}>
-                        <Row>
+                        <h4 className='text-white text-uppercase fw-bold'>Allocation of funds</h4>
+                        <p style={{ color: "#898990" }}>Total token supply - 10,000,000,000 SDW</p>
+
+                        <Row className='gap-3'>
                             {data.map((item, index) => (
                                 <React.Fragment key={index}>
-                                    <Col xs={9}>
-                                      
-                                        <ProgressBar
-                                            now={item.value} 
-                                            label={
-                                                <div style={{ textAlign: 'left', paddingLeft: '10px',fontSize:"20px" }}>
-                                                    {item.name}
-                                                </div>
-                                            }
-                                            style={{
-                                                minHeight: "50px",
-                                                borderRadius: "30px",
-                                                background: "#24406a",
-                                            }}
-                                            variant={"success"}
-                                            animated
-                                        />
-                                    </Col>
-                                    <Col xs={3}>
-                                        <div
-                                            className='fs-5 text-white py-2 px-4 rounded-5 mb-3 d-flex align-items-center justify-content-center'
-                                            style={{ width: "50px", height: "50px", background: "#24406a" }}
-                                        >
-                                            {item.value}
+                                    <Col xs={12}>
+                                        <div className="position-relative">
+                                            <ProgressBar
+                                                now={item.value}
+                                                style={{
+                                                    minHeight: "30px",
+                                                    borderRadius: "5px",
+                                                    background: "transparent",
+                                                }}
+                                                variant={"success"}
+                                            />
+                                            <div
+                                                style={{
+                                                    position: "absolute",
+                                                    top: "0%",
+                                                    left: `calc(${item.value}% + 10px)`,
+                                                    fontSize: '16px',
+                                                    fontWeight: 'bold',
+                                                    color: '#fff',
+                                                    whiteSpace: 'nowrap',
+                                                }}
+                                            >
+                                                {item.value}% {item.name}
+                                            </div>
                                         </div>
                                     </Col>
                                 </React.Fragment>
@@ -60,7 +64,7 @@ const Tokenomics = () => {
                 </Row>
             </Container>
         </>
-    )
+    );
 }
 
 export default Tokenomics;

@@ -1,9 +1,7 @@
-"use client"
-import React, { useState } from "react";
-import { PieChart, Pie, Sector, ResponsiveContainer, Cell } from "recharts";
-
-const COLORS = ['#24406a', '#44963d', '#90df94', '#4dc0ef'];
-
+"use client";
+import { useState } from "react";
+import { Cell, Pie, PieChart, ResponsiveContainer, Sector } from "recharts";
+const COLORS = ['#5BFF62', '#4CDC52', '#4CAF50', '#3D9040', '#5BFF62', '#C7F6C9'];
 const renderActiveShape = (props) => {
   const RADIAN = Math.PI / 180;
   const {
@@ -57,18 +55,11 @@ const renderActiveShape = (props) => {
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
-        textAnchor={textAnchor}
-        fill="#333"
-        fontSize={16}
-      >{`PV ${value}`}</text>
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
         dy={18}
         textAnchor={textAnchor}
         fill="#999"
       >
-        {`(Rate ${(percent * 100).toFixed(2)}%)`}
+        {`${(percent * 100).toFixed()}%`}
       </text>
     </g>
   );
@@ -82,16 +73,16 @@ const PieChartComponent = ({ data }) => {
   };
 
   return (
-    <ResponsiveContainer className={"phone-wrapper"} width="100%" height={500}> 
+    <ResponsiveContainer width="100%" height={500}>
       <PieChart>
         <Pie
           data={data}
-          cx="25%" 
-          cy="50%"   
-          innerRadius={120} 
-          outerRadius={160}  
+          cx="50%"
+          cy="50%"
+          innerRadius={70}
+          stroke="green"
+          outerRadius={160}
           fill="#8884d8"
-          paddingAngle={5}
           dataKey="value"
           activeIndex={activeIndex}
           activeShape={renderActiveShape}
