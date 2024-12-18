@@ -5,7 +5,7 @@ import Tokenomics from '@/components/Home/Tokenomics';
 import AOS from 'aos';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import HowItWorks from './HowItWorks/page';
+import HowItWorks from '../components/HowItWorks/page'
 
 const LandingPage = () => {
   const isConnected = useAccount()

@@ -9,7 +9,6 @@ import "./globals.css";
 import "./animation.css";
 import "./dashboard.css"; 
 import 'react-phone-number-input/style.css';
-import "react-loading-skeleton/dist/skeleton.css";
 import 'react-vertical-timeline-component/style.min.css';
 import "./custom.css";
 
