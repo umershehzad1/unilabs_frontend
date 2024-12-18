@@ -23,12 +23,8 @@
   background-color: transparent !important;
   border-radius: 0;
   border-color: black !important;
-  height: 50px;
-  width: 100px;
 }
-.subcribButton {
-  height: 50px;
-  padding: 10;
-  border-radius: 0;
-  margin-left: 20px;
+
+.newsBullet li::marker {
+    color: #CBFB45;
 }
