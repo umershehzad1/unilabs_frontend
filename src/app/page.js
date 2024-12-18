@@ -6,6 +6,8 @@ import AOS from 'aos';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
 import HowItWorks from '../components/HowItWorks/page'
+import RoadMaps from '@/components/Home/RoadMaps';
+import Faqs from '@/components/shared/Faqs';
 
 const LandingPage = () => {
   const isConnected = useAccount()
@@ -15,14 +17,14 @@ const LandingPage = () => {
 
   return (
     <>
-      <Hero />
-      <HowItWorks />
-      <Attributes />
-      <Tokenomics />
+      {/* <Hero /> */}
+      {/* <HowItWorks /> */}
+      {/* <Attributes /> */}
+      {/* <Tokenomics /> */}
+      {/* <RoadMaps /> */}
 
       {/* <UnilToken/> */}
-      {/* <RoadMaps /> */}
-      {/* <Faqs />  */}
+      <Faqs /> 
 
 
 

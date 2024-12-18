@@ -30,7 +30,7 @@ const Hero = () => {
                                 <Button className="greenbtn">
                                     <small>Join Presales</small>
                                 </Button>
-                                <Button className="transparentbtn">
+                                <Button className="transparentBtn">
                                     <small>How to Buy</small>
                                 </Button>
                             </div>

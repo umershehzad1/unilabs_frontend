@@ -2,6 +2,7 @@
   font-family: Neue_Machina;
   src: url(../../public//font/NeueMachina-Regular.otf);
 }
+
 @font-face {
   font-family: ApfelGrotezk;
   src: url(../../public//font/ApfelGrotezk.woff);
@@ -50,7 +51,7 @@
   transform-origin: bottom left;
 }
 
-.transparentbtn {
+.transparentBtn {
   border-radius: 0px !important;
   color: white !important;
   border: 2px solid white !important;
@@ -61,7 +62,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.transparentbtn::before {
+.transparentBtn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -75,11 +76,11 @@
   transition: transform 0.4s ease-in-out;
 }
 
-.transparentbtn:hover {
+.transparentBtn:hover {
   color: #000A18;
 }
 
-.transparentbtn:hover::before {
+.transparentBtn:hover::before {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -111,12 +112,31 @@
 .font-arial {
   font-family: Arial !important;
 }
-.font-apfel{
-    font-family: "ApfelGrotezk", sans-serif!important;
+
+.font-apfel {
+  font-family: "ApfelGrotezk", sans-serif !important;
 }
-.font-neue{
-    font-family: "Neue_Machina"!important;
+
+.font-neue {
+  font-family: "Neue_Machina" !important;
 }
+
+.tokemonics-Bg-img img {
+  position: absolute;
+  top: -30px;
+  left: -80px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-inner {
+  box-shadow: 0px 0px 29.6px 0px #4CAF50 inset;
+  color: #E0E0E0;
+  padding: 20px;
+  border-radius: 20px;
+  }
+
 body {
   background-color: var(--color1) !important;
   overflow-x: hidden !important;
@@ -247,6 +267,7 @@ body {
 }
 
 @keyframes unil-glowAnimation {
+
   0%,
   100% {
     box-shadow: 0 0 10px rgba(88, 156, 255, 0.8),
@@ -260,29 +281,23 @@ body {
 
 @keyframes unil-borderMoveCorner {
   0% {
-    border-image-source: linear-gradient(
-      45deg,
-      rgba(88, 156, 255, 0.3),
-      rgba(88, 156, 255, 1)
-    );
+    border-image-source: linear-gradient(45deg,
+        rgba(88, 156, 255, 0.3),
+        rgba(88, 156, 255, 1));
   }
 
   100% {
-    border-image-source: linear-gradient(
-      225deg,
-      rgba(88, 156, 255, 0.3),
-      rgba(88, 156, 255, 1)
-    );
+    border-image-source: linear-gradient(225deg,
+        rgba(88, 156, 255, 0.3),
+        rgba(88, 156, 255, 1));
   }
 }
 
 .unil-card {
   position: relative;
-  background: linear-gradient(
-    45deg,
-    rgba(88, 156, 255, 0.2),
-    rgba(88, 156, 255, 0.5)
-  );
+  background: linear-gradient(45deg,
+      rgba(88, 156, 255, 0.2),
+      rgba(88, 156, 255, 0.5));
   color: white;
   padding: 2rem;
   text-align: center;
@@ -290,11 +305,9 @@ body {
   cursor: pointer;
   background-size: 200% 200%;
   border: 4px solid transparent;
-  border-image-source: linear-gradient(
-    45deg,
-    rgba(88, 156, 255, 0.3),
-    rgba(88, 156, 255, 1)
-  );
+  border-image-source: linear-gradient(45deg,
+      rgba(88, 156, 255, 0.3),
+      rgba(88, 156, 255, 1));
   border-image-slice: 1;
   animation: unil-borderMoveCorner 3s linear infinite;
   transition: all 0.3s ease-in-out;
@@ -370,8 +383,7 @@ body {
 }
 
 #wavy-path {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1))
-    drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)) drop-shadow(0 0 10px rgba(255, 255, 255, 1));
 }
 
 .icon {
@@ -383,8 +395,7 @@ body {
 }
 
 #wavy-path {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1))
-    drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1)) drop-shadow(0 0 10px rgba(255, 255, 255, 1));
 }
 
 .icon {
@@ -396,6 +407,7 @@ body {
 }
 
 @keyframes waveBlink {
+
   0%,
   100% {
     transform: scale(1);
@@ -500,6 +512,7 @@ body {
 }
 
 @keyframes pulse0112 {
+
   0%,
   100% {
     transform: scale(0);
@@ -858,40 +871,32 @@ body {
 
 @keyframes backgroundGlowActiveLink {
   0% {
-    background: linear-gradient(
-      92.49deg,
-      #4caf50 0%,
-      #4caf50 34.78%,
-      #204921 90.46%
-    );
+    background: linear-gradient(92.49deg,
+        #4caf50 0%,
+        #4caf50 34.78%,
+        #204921 90.46%);
   }
 
   50% {
-    background: linear-gradient(
-      92.49deg,
-      #6ecf6e 0%,
-      #4caf50 50%,
-      #356e39 100%
-    );
+    background: linear-gradient(92.49deg,
+        #6ecf6e 0%,
+        #4caf50 50%,
+        #356e39 100%);
   }
 
   100% {
-    background: linear-gradient(
-      92.49deg,
-      #4caf50 0%,
-      #4caf50 34.78%,
-      #204921 90.46%
-    );
+    background: linear-gradient(92.49deg,
+        #4caf50 0%,
+        #4caf50 34.78%,
+        #204921 90.46%);
   }
 }
 
 .footer .footer-input {
   animation: neon-border 2s infinite alternate;
-  background: linear-gradient(
-    85.02deg,
-    rgba(38, 53, 75, 0.62) 16.14%,
-    rgba(38, 53, 75, 0) 97.59%
-  ) !important;
+  background: linear-gradient(85.02deg,
+      rgba(38, 53, 75, 0.62) 16.14%,
+      rgba(38, 53, 75, 0) 97.59%) !important;
   border: 0px;
   border-top: 2px solid rgba(62, 87, 123, 0.93);
   padding: 12px;
@@ -961,17 +966,16 @@ body {
 }
 
 .footerbg {
-  background: linear-gradient(
-    171.05deg,
-    #030b15 10.83%,
-    #12407b 93.41%
-  ) !important;
+  background: linear-gradient(171.05deg,
+      #030b15 10.83%,
+      #12407b 93.41%) !important;
 }
 
 @media only screen and (max-width: 768px) {
   .pieBG {
     display: none;
   }
+
   .signin-close-btn {
     top: -20%;
   }

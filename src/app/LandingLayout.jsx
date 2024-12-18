@@ -11,9 +11,9 @@ const LandingLayout = ({ children }) => {
             {/* <main>{children}</main> */}
             {/* ) : ( */}
             <>
-                <NavigationBar />
+                {/* <NavigationBar /> */}
                 <main className='overflow-x-hidden'>{children}</main>
-                <Footer />
+                {/* <Footer /> */}
             </>
             {/* )} */}
         </>

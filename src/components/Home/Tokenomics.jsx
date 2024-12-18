@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row, ProgressBar } from 'react-bootstrap';
+import { Col, Container, Row, ProgressBar, Image } from 'react-bootstrap';
 import SectionHeading from '../shared/SectionHeading';
 import PieChartComponent from '../shared/PieChart';
 
@@ -16,11 +16,12 @@ const Tokenomics = () => {
 
     return (
         <>
-            <Container className='py-4'>
+            <Container className='py-4 overflow-hidden'>
                 <h1 className='fw-bold text-white text-center text-uppercase'>Tokenomics</h1>
                 <Row className='pt-5 align-items-center'>
-                    <Col xs={12} lg={6} className="pe-0">
-                        <div className='tokemonics-Bg-img'>
+                    <Col xs={12} lg={6} className="position-relative ">
+                        <div className='tokemonics-Bg-img '>
+                            <Image  src="/chartBG.png"  alt="Chart BG"  />
                             <PieChartComponent data={data} />
                         </div>
                     </Col>

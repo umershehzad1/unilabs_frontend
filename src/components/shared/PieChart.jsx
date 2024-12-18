@@ -79,7 +79,7 @@ const PieChartComponent = ({ data }) => {
           data={data}
           cx="50%"
           cy="50%"
-          innerRadius={70}
+          innerRadius={80}
           stroke="green"
           outerRadius={160}
           fill="#8884d8"

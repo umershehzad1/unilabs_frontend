@@ -1,7 +1,7 @@
 "use client";
-import { Accordion, Col, Container } from "react-bootstrap";
+import { Accordion, Button, Col, Container, Row } from "react-bootstrap";
 import { useState } from "react";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { FaPlus, FaMinus, FaArrowDown, FaArrowRight } from "react-icons/fa";
 
 const faqItems = [
     {
@@ -39,37 +39,47 @@ const Faqs = () => {
     };
 
     return (
-        <div className="faq position-relative">
+        <div className="faq">
             <Container className="py-5 text-white  ">
-                <h1 className="display-5 fw-bold">Frequently Asked Questions</h1>
-                <Col xs={12} className="mx-auto py-4">
-                    <Accordion activeKey={openKey}>
-                        {faqItems.map((item, index) => (
-                            <Accordion.Item
-                                className="my-3 bg-transparent border-0 text-white"
-                                eventKey={item.key}
-                                key={item.key}
-                            >
-                                <Accordion.Header
-                                    className={`custom-header  ${openKey === item.key ? "active" : ""}`}
-                                    onClick={() => handleToggle(item.key)}
+                <Row>
+                    <Col lg={5}>
+                        <h4 className="display-3 fw-bold mt-xl-5">FAQs</h4>
+                        <p style={{ color: "#898990" }} className="fs-4 col-xl-9">Didn’t find an answer to your question? Drop us a line here. </p>
+                        <Button className="transparentBtn">Ask A Question
+                            <span className="ms-2">
+                                <FaArrowRight />
+                            </span>
+                        </Button>
+                    </Col>
+                    <Col lg={7}>
+                        <Accordion activeKey={openKey}>
+                            {faqItems.map((item, index) => (
+                                <Accordion.Item
+                                    className="my-3 bg-transparent border-0 text-white"
+                                    eventKey={item.key}
+                                    key={item.key}
                                 >
-                                    <span>
-                                        {index + 1}. {item.header}
-                                    </span>
-                                    <span className="custom-icon">
-                                        {openKey === item.key ? (
-                                            <FaMinus />
-                                        ) : (
-                                            <FaPlus />
-                                        )}
-                                    </span>
-                                </Accordion.Header>
-                                <Accordion.Body>{item.body}</Accordion.Body>
-                            </Accordion.Item>
-                        ))}
-                    </Accordion>
-                </Col>
+                                    <Accordion.Header
+                                        className={`custom-header  fs-6 ${openKey === item.key ? "active" : ""}`}
+                                        onClick={() => handleToggle(item.key)}
+                                    >
+                                        <span>
+                                            {index + 1}. {item.header}
+                                        </span>
+                                        <span className="custom-icon">
+                                            {openKey === item.key ? (
+                                                <FaMinus />
+                                            ) : (
+                                                <FaPlus />
+                                            )}
+                                        </span>
+                                    </Accordion.Header>
+                                    <Accordion.Body>{item.body}</Accordion.Body>
+                                </Accordion.Item>
+                            ))}
+                        </Accordion>
+                    </Col>
+                </Row>
 
                 <style jsx>{`
                 .custom-header {
@@ -93,7 +103,6 @@ const Faqs = () => {
              
             `}</style>
             </Container>
-            <div className="purple-bg-right"></div>
         </div>
 
     );

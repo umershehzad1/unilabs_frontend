@@ -60,7 +60,7 @@ const SideBySide = () => {
                                 </h1>
                                 <p className="text-white">{item.description}</p>
                                 <div className="d-flex gap-4 pt-2 justify-content-center justify-content-lg-start">
-                                    <Button className="transparentbtn">{item.buttonText}</Button>
+                                    <Button className="transparentBtn">{item.buttonText}</Button>
                                 </div>
                             </Col>
                         </Row>

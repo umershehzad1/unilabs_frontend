@@ -304,7 +304,7 @@ body {
     z-index: 1;
 }
 
-.transparentbtn {
+.transparentBtn {
     border-radius: 0px !important;
     color: white !important;
     font-size: 24px !important;
@@ -318,7 +318,7 @@ body {
     transition: all 0.5s ease-in-out;
 }
 
-.transparentbtn::before {
+.transparentBtn::before {
     content: "";
     position: absolute;
     top: 11px;
@@ -329,7 +329,7 @@ body {
     height: 36px;
 }
 
-.transparentbtn:hover {
+.transparentBtn:hover {
     background: linear-gradient(180deg, #4CAF50 0%, #204921 100%);
     color: white;
     border-color: #2e7d32;
