@@ -80,7 +80,7 @@ const data = [
 ];
 const News = () => {
   return (
-    <Container className=" text-white news">
+    <Container className="text-white news">
       <h1 className="py-2 text-center fw-bold">NEWS</h1>
       <Row className="py-5">
         <Col
@@ -155,16 +155,14 @@ const News = () => {
           </span>
           update!
         </h2>
-        <div className="d-flex py-3">
-          <InputGroup className="mb-3">
-            <Form.Control
-              className="subscribeInput"
-              placeholder="Your email address..."
-              aria-label="Username"
-              aria-describedby="basic-addon1"
-            />
-          </InputGroup>
-          <Button variant="dark" className="subcribButton">
+        <div className="d-flex py-3 flex-md-row flex-column justify-content-center align-items-center gap-2">
+          <Form.Control
+            className="subscribeInput w-100"
+            placeholder="Your email address..."
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
+          <Button variant="dark" className="rounded-0 ">
             Subscribe
           </Button>
         </div>
