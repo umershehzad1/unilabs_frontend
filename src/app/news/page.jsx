@@ -4,9 +4,12 @@ import { Col, Container, Form, Image, InputGroup, Row } from "react-bootstrap";
 import { TiPinOutline } from "react-icons/ti";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Link from "next/link";
+import Subscribe from "@/components/shared/Subscribe";
 const data = [
   {
     image: "/news1.png",
+    link: "/newsDetail",
     date: "January 10, 2024",
     tag: "development",
     title: "Ethereum Eyes $6,200 Amid Secondary Bull Run",
@@ -15,6 +18,8 @@ const data = [
   },
   {
     image: "/news2.png",
+    link: "/newsDetail",
+
     date: "January 10, 2024",
     tag: "development",
     title: "Ethereum Eyes $6,200 Amid Secondary Bull Run",
@@ -23,6 +28,8 @@ const data = [
   },
   {
     image: "/news3.png",
+    link: "/newsDetail",
+
     date: "January 10, 2024",
     tag: "development",
     title: "Ethereum Eyes $6,200 Amid Secondary Bull Run",
@@ -31,6 +38,8 @@ const data = [
   },
   {
     image: "/news1.png",
+    link: "/newsDetail",
+
     date: "January 10, 2024",
     tag: "development",
     title: "How creative industries benefit from blockchain",
@@ -39,6 +48,8 @@ const data = [
   },
   {
     image: "/news.png",
+    link: "/newsDetail",
+
     date: "January 10, 2024",
     tag: "development",
     title: "Ethereum Eyes $6,200 Amid Secondary Bull Run",
@@ -47,6 +58,8 @@ const data = [
   },
   {
     image: "/news1.png",
+    link: "/newsDetail",
+
     date: "January 10, 2024",
     tag: "development",
     title: "What are the advantages of F-NFTs?",
@@ -55,6 +68,8 @@ const data = [
   },
   {
     image: "/news1.png",
+    link: "/newsDetail",
+
     date: "January 10, 2024",
     tag: "development",
     title: "Evaluate a new Web3 startup idea?",
@@ -63,6 +78,8 @@ const data = [
   },
   {
     image: "/news3.png",
+    link: "/newsDetail",
+
     date: "January 10, 2024",
     tag: "development",
     title: "Ethereum Eyes $6,200 Amid Secondary Bull Run",
@@ -71,6 +88,8 @@ const data = [
   },
   {
     image: "/news1.png",
+    link: "/newsDetail",
+
     date: "January 10, 2024",
     tag: "development",
     title: "How to Mint and Earn with your own NFTs on Polygon",
@@ -116,7 +135,7 @@ const News = () => {
           <Col key={index} xs={12} md={4} className="py-3">
             <Card
               style={{ backgroundColor: "#232325" }}
-              className="text-secondary"
+              className="text-secondary h-100"
             >
               <Card.Img
                 variant="top"
@@ -128,7 +147,7 @@ const News = () => {
                   <small>{item.date}</small>
                   <small className="px-3">{item.tag}</small>
                 </p>
-                <Card.Title className="text-white">{item.title}</Card.Title>
+                <Card.Title as={Link} href={item?.link} className="text-white pointer text-decoration-none">{item.title}</Card.Title>
                 <Card.Text>{item.content}</Card.Text>
               </Card.Body>
             </Card>
@@ -141,32 +160,7 @@ const News = () => {
         </div>
       </Row>
 
-      <div
-        style={{ backgroundColor: "#4CAF50" }}
-        className="p-5 d-flex justify-content-center align-items-center flex-column"
-      >
-        <h2
-          style={{ color: "#161617" }}
-          className="fw-bold text-uppercase col-xl-7 text-center"
-        >
-          Stay informed and never miss an
-          <span className="px-2" style={{ color: "#fff" }}>
-            UNILABS
-          </span>
-          update!
-        </h2>
-        <div className="d-flex py-3 flex-md-row flex-column justify-content-center align-items-center gap-2">
-          <Form.Control
-            className="subscribeInput w-100"
-            placeholder="Your email address..."
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-          />
-          <Button variant="dark" className="rounded-0 ">
-            Subscribe
-          </Button>
-        </div>
-      </div>
+      <Subscribe />
     </Container>
   );
 };

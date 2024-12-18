@@ -17,14 +17,14 @@ const LandingPage = () => {
 
   return (
     <>
-      {/* <Hero /> */}
-      {/* <HowItWorks /> */}
-      {/* <Attributes /> */}
-      {/* <Tokenomics /> */}
-      {/* <RoadMaps /> */}
+      <Hero />
+      <HowItWorks />
+      <Attributes />
+      <Tokenomics />
+      <RoadMaps />
+      <Faqs /> 
 
       {/* <UnilToken/> */}
-      <Faqs /> 
 
 
 

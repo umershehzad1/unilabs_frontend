@@ -1,4 +1,5 @@
 "use client";
+import Subscribe from "@/components/shared/Subscribe";
 import { Button, Container, Form, Image } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { FaRegComment } from "react-icons/fa";
@@ -67,32 +68,7 @@ const NewsDetail = () => {
                 </Card.Body>
             </Card>
 
-            <div
-                style={{ backgroundColor: "#4CAF50" }}
-                className="p-5 d-flex justify-content-center align-items-center flex-column"
-            >
-                <h2
-                    style={{ color: "#161617" }}
-                    className="fw-bold text-uppercase col-xl-7 text-center"
-                >
-                    Stay informed and never miss an
-                    <span className="px-2" style={{ color: "#fff" }}>
-                        UNILABS
-                    </span>
-                    update!
-                </h2>
-                <div className="d-flex py-3 flex-md-row flex-column justify-content-center align-items-center gap-2">
-                    <Form.Control
-                        className="subscribeInput w-100"
-                        placeholder="Your email address..."
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                    />
-                    <Button variant="dark" className="rounded-0 ">
-                        Subscribe
-                    </Button>
-                </div>
-            </div>
+            <Subscribe/>
         </Container>
     );
 };
