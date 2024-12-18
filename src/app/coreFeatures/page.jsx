@@ -1,22 +1,23 @@
 "use client"
 import { Container, Row, Col } from 'react-bootstrap';
-import { Fade, Zoom } from 'react-awesome-reveal';  
+import { Fade, Zoom } from 'react-awesome-reveal';
 import WavyLineHero from '@/components/shared/WavyLineHero';
+import Subscribe from '@/components/shared/Subscribe';
 
 const page = () => {
     const sideByside = [
         {
-            img: "/core1.png",
+            img: "/feature1.png",
             heading: "AI Market Pulse",
             text: "Unilabs’ Market Pulse relies on advanced AI to scout the market for opportunities. Use the Pulse for analysis on market trends, key token movements, and other pressing opportunities in the market. We’re constantly evaluating on-chain and off-chain data to deliver actionable insights and generate returns for your portfolio."
         },
         {
-            img: "/core2.png",
+            img: "/feature2.png",
             heading: "Early Access Scoring System (EASS)",
             text: "Our proprietary Early Access Scoring System ranks projects based on a combination of factors, including team credibility, use-case potential, tokenomics, and market sentiment. This dynamic scoring system simplifies decision-making by presenting clear, data-backed ratings for upcoming crypto projects, giving you the confidence to act quickly."
         },
         {
-            img: "/core3.png",
+            img: "/feature3.png",
             heading: "Meme-coin Identification Tool",
             text: "The most promising growth opportunities are found today in the memecoin segment. For high-risk investors, our risk allocation tool utilizes an advanced memecoin identification algorithm. We monitor liquidity, listing chances, and virality metrics to help you leverage growth from the most promising projects in the market."
         },
@@ -24,22 +25,24 @@ const page = () => {
 
     return (
         <div className='position-relative py-5 my-5 corefeatures'>
-            <div className="purple-bg-right"></div>
-            <div className="wave1">
-                <WavyLineHero />
-            </div>
-            <div className="wave2">
-                <WavyLineHero />
-            </div>
-            <Container className='text-white text-center'>
-                <h1 className='display-5 fw-bold py-5'>
-                    Core <span className="px-2 green">UNILABS</span> Features
-                </h1>
+
+            <Container className='text-white text-center py-3'>
+                <Container fluid className="Feature-bg-image text-white text-center">
+                    <div className="p-4">
+                        <p className="text-uppercase green mt-4 mb-2">
+                            We are currently in the Presale of the UNIL Token. Log-In or Create an account to buy.
+                        </p>
+                        <h1 className="display-5 fw-bold">
+                            CORE <span className="px-2 green">UNILABS</span>FEATURES
+                        </h1>
+                        <h1 className="display-5 green fw-bold py-5">FEATURES</h1>
+                    </div>
+                </Container>
 
                 {sideByside.map((item, index) => (
                     <Row
                         key={index}
-                        className={`mb-5 d-flex align-items-center ${index % 2 !== 0 ? 'flex-row-reverse' : ''}`}
+                        className={`mb-5 d-flex align-items-center ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
                     >
                         <Col xs={12} md={6} className="text-center">
                             <Zoom delay={100} duration={1000} triggerOnce>
@@ -49,15 +52,17 @@ const page = () => {
 
                         <Col xs={12} md={6} className='text-md-start text-center'>
                             <Fade delay={200} duration={1000} triggerOnce>
-                                <h1 className="fw-bold green border-bottom pb-2 me-md-5 px-md-auto px-3" style={{ borderColor: "var(--green)!important" }}>
+                                <h2 className="fw-bold display-3 pb-2 me-md-5 px-md-auto px-3" style={{ borderColor: "var(--green)!important" }}>
                                     {item.heading}
-                                </h1>
-                                <p className="fs-4">{item.text}</p>
+                                </h2>
+                                <p className='text-secondary small pe-lg-5' >{item.text}</p>
                             </Fade>
                         </Col>
                     </Row>
                 ))}
             </Container>
+            <Subscribe />
+
         </div>
     );
 };
