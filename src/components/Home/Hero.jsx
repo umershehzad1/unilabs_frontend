@@ -48,10 +48,10 @@ const Hero = () => {
                     </Col>
                     <Col xs={12} lg={5} className="position-relative" style={{ scrollBehavior: 'smooth' }}>
 
-                        {/* <div className="animated-earth">
+                        <div className="animated-earth">
                                 <Image src="/earth.png" alt="Earth" fluid />
-                            </div> */}
-                        <GlobeVisualization/>                    
+                            </div>
+                        {/* <GlobeVisualization/>                     */}
                     </Col>
 
                 </Row>
