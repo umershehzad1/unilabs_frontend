@@ -27,7 +27,7 @@ const SpreadTheWorld = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est.
                         </p>
                         <div className="d-flex gap-4 justify-content-start">
-                            <Button className="greenbtn">Share Now</Button>
+                            <Button className="greenBtn">Share Now</Button>
                         </div>
                     </div>
                 </Col>

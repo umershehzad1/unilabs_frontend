@@ -60,7 +60,7 @@ const Footer = () => {
                                 </Form>
                             </Col>
                             <Col md={4} className="mx-auto">
-                                <Button className="greenbtn"><small>Subscribe</small></Button>
+                                <Button className="greenBtn"><small>Subscribe</small></Button>
                             </Col>
                         </Row>
                     </Col>

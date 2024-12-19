@@ -100,3 +100,21 @@
         transform: scale(1.2);
     }
 }
+.ufoImage {
+
+    animation: rotateUFO 10s linear infinite;
+}
+
+@keyframes rotateUFO {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}

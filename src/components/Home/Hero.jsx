@@ -27,7 +27,7 @@ const Hero = () => {
                                 Leverage the artificial intelligence advantage with the first DeFi launchpad identifying opportunities across the crypto market. Enjoy unprecedented gains and enhanced transparency.
                             </p>
                             <div className="d-flex flex-md-row flex-column my-4 gap-md-5 gap-3 px-md-0 px-2">
-                                <Button className="greenbtn">
+                                <Button className="greenBtn">
                                     <small>Join Presales</small>
                                 </Button>
                                 <Button className="transparentBtn">

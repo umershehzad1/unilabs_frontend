@@ -112,7 +112,7 @@ const SideBySide = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  mollit anim id est laborum.
                             </p>
                             <div className="d-flex flex-md-row flex-column p-md-auto px-4 gap-4 pt-2">
-                                <Button className="greenbtn">Share It</Button>
+                                <Button className="greenBtn">Share It</Button>
                                 <Button className="transparentBtn">How To Buy</Button>
                             </div>
                         </Col>
@@ -133,7 +133,7 @@ const SideBySide = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  mollit anim id est laborum.
                             </p>
                             <div className="d-flex flex-md-row flex-column p-md-auto px-4 gap-4 pt-2">
-                                <Button className="greenbtn">Share It</Button>
+                                <Button className="greenBtn">Share It</Button>
                                 <Button className="transparentBtn">DA Gpaper V2</Button>
                             </div>
                         </Col>
@@ -154,7 +154,7 @@ const SideBySide = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute  mollit anim id est laborum.
                             </p>
                             <div className="d-flex flex-md-row flex-column p-md-auto px-4 gap-4 pt-2">
-                                <Button className="greenbtn">Learn More</Button>
+                                <Button className="greenBtn">Learn More</Button>
                                 <Button className="transparentBtn">DA Gpaper V2</Button>
                             </div>
                         </Col>
