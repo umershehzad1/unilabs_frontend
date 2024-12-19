@@ -34,3 +34,33 @@ background-image: url("/featureHeader.png");
 /* width: 100% ; */
 background-size: 100%;
 }
+.custom-date {
+  font-size: 2rem !important; /* Adjust the size as needed to match h3 */
+  font-weight: bold;
+}
+.white-line {
+  transition: height 0.5s ease-out;
+  height: 100%;
+}
+
+.green-line {
+  transition: height 0.1s ease-out;
+  height: 0%; /* Green line starts from 0% */
+}
+.custom-icon {
+  background-color: #fff !important;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+}
+.custom-icon ::after {
+  background-color: #4caf50 !important; 
+  position:absolute;
+  content: "";
+  color: #fff !important;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+}
