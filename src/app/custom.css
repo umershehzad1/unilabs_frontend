@@ -29,9 +29,9 @@
 .newsBullet li::marker {
   color: #CBFB45;
 }
-
+/* 
 .custom-date {
-  font-size: 2rem !important; /* Adjust the size as needed to match h3 */
+  font-size: 2rem !important; 
   font-weight: bold;
 }
 .white-line {
@@ -41,7 +41,8 @@
 
 .green-line {
   transition: height 0.1s ease-out;
-  height: 0%; /* Green line starts from 0% */
+  height: 0%;
+  
 }
 .custom-icon {
   background-color: #fff !important;
@@ -59,4 +60,4 @@
   width: 50px;
   border-radius: 50%;
   display: flex;
-}
+} */
