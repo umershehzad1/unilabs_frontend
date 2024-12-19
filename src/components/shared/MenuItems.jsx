@@ -13,3 +13,4 @@ export const menuItems = [
   { href: "/howToBuy", label: "How to Buy" },
   { href: "/news", label: "News" },
 ];
+

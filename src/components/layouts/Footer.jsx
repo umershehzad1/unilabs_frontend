@@ -1,91 +1,79 @@
-"use client"
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { Button, Col, Container, Row, Form } from 'react-bootstrap'
-import { menuItems } from '../shared/MenuItems'
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { Col, Container, Row } from "react-bootstrap";
+import { FaDiscord, FaFacebook, FaTelegram, FaTwitter, FaYoutube } from "react-icons/fa";
+import { menuItems } from "../shared/MenuItems";
 
 const Footer = () => {
-    const firstHalf = menuItems.slice(0, 3);
-    const secondHalf = menuItems.slice(3, 6);
+    const icons = [
+        { icon: FaTelegram, href: "https://t.me/unilab" },
+        { icon: FaTwitter, href: "https://twitter.com/unilab" },
+        { icon: FaFacebook, href: "https://facebook.com/unilab" },
+        { icon: FaYoutube, href: "https://youtube.com/unilab" },
+        { icon: FaDiscord, href: "https://discord.gg/unilab" },
+    ];
+
+    const resources = [
+        { label: "FAQ", href: "faq" },
+        { label: "Pay with Card", href: "payWithCard" },
+    ];
 
     return (
-        <div className="footerbg pt-5">
-            <Container className="footer text-white">
-                <Row className="py-5 align-items-center">
-                    <Col xs={12} lg={2} className="d-flex justify-content-center align-items-center mb-4 mb-lg-0">
-                        <div className="text-center">
-                            <Image
-                                src={"/logo.png"}
-                                className="mx-auto"
-                                width={0}
-                                height={0}
-                                layout="responsive"
-                                style={{ maxWidth: "80%", height: "auto" }}
-                                alt={"coin"}
-                            />
-                            <h1 className="fw-bold fs-4">UNILABS</h1>
-                        </div>
+        <div className="footer pt-5">
+            <Container className="text-white">
+                <Row className="py-5">
+                    {/* Company Info Section */}
+                    <Col md={6} lg={8} className="mb-4 mb-lg-0">
+                        <Col lg={6} md={12} className="d-flex flex-column align-items-center align-items-md-start text-center text-md-start">
+                            <div className="d-flex gap-2 align-items-center">
+                                <Image src="/logo.png" width={60} height={50} alt="logo" />
+                                <h1 className="fw-bold mb-0">Unilabs</h1>
+                            </div>
+                            <p className="gray mt-3">
+                                Leverage the artificial intelligence advantage with the first DeFi launchpad identifying opportunities across the crypto market. Enjoy unprecedented gains and enhanced transparency.
+                            </p>
+                        </Col>
                     </Col>
 
                     {/* Links Section */}
-                    <Col xs={12} lg={5} className="d-flex justify-content-center">
-                        <Row className="w-100">
-                            <Col xs={12} md={6} className="text-center text-md-start">
-                                {firstHalf.map((link, index) => (
-                                    <Link key={index} href={link.href} className="text-decoration-none d-block py-2  copyright">
+                    <Col md={6} lg={4}>
+                        <Row className="footer-links">
+                            <Col xs={12} md={6} className="text-center text-md-start mb-4 mb-md-0">
+                                <h5 className="text-white fw-bold text-uppercase">Company</h5>
+                                {menuItems.slice(0, 4).map((link, index) => (
+                                    <Link key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
                                         {link.label}
                                     </Link>
                                 ))}
                             </Col>
                             <Col xs={12} md={6} className="text-center text-md-start">
-                                {firstHalf.reverse().map((link, index) => (
-                                    <Link key={index} href={link.href} className="text-decoration-none d-block py-2  copyright">
+                                <h5 className="text-white fw-bold text-uppercase">Resources</h5>
+                                {menuItems.slice(4, 8).map((link, index) => (
+                                    <Link key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
                                         {link.label}
                                     </Link>
                                 ))}
-                            </Col>
-                        </Row>
-                    </Col>
-
-                    {/* Newsletter Section (Optional, if needed) */}
-                    <Col xs={12} lg={5} className="text-center text-lg-start">
-                        <h5 className="text-white mb-3 text-uppercase fs-6">Newsletter</h5>
-                        <Row>
-                            <Col md={8} className="mx-auto">
-                                <Form>
-                                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                                        <Form.Control type="email" placeholder="Enter your email address" className="footer-input rounded-pill " />
-                                    </Form.Group>
-                                </Form>
-                            </Col>
-                            <Col md={4} className="mx-auto">
-                                <Button className="greenBtn"><small>Subscribe</small></Button>
+                                {resources.map((link, index) => (
+                                    <Link key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
+                                        {link.label}
+                                    </Link>
+                                ))}
                             </Col>
                         </Row>
                     </Col>
                 </Row>
 
                 {/* Footer Bottom Section */}
-                <hr className="mt-0 text-white" />
-                <div className="text-center d-flex flex-column flex-sm-row justify-content-center gap-2 pb-2">
-                    <p className="copyright mb-0">UNILABS © 2024, All rights reserved</p>
-                    <div className="d-flex gap-2">
-                        <Link
-                            href="/terms&conditions"
-                            className="text-decoration-none copyright"
-                        >
-                            Terms & Conditions
-                        </Link>
-                        <div className="vr"></div>
-                        <Link
-                            href="/privacy&policy"
-                            className="text-decoration-none copyright"
-                        >
-                            Privacy Policy
-                        </Link>
-
-                        <div className="vr"></div>
+                <div className="text-center pb-2">
+                    <p style={{ color: "#ECEBF6" }}>Copyright © 2024 Unilabs. All Rights Reserved.</p>
+                    <div className="d-flex justify-content-center gap-3 social-icons">
+                        {icons.map((item, index) => (
+                            <a key={index} href={item.href} target="_blank" rel="noopener noreferrer">
+                                <item.icon className="footer-icon" />
+                            </a>
+                        ))}
                     </div>
                 </div>
             </Container>

@@ -27,7 +27,7 @@ const Tokenomics = () => {
                     </Col>
                     <Col xs={12} lg={6}>
                         <h4 className='text-white text-uppercase fw-bold'>Allocation of funds</h4>
-                        <p style={{ color: "#898990" }}>Total token supply - 10,000,000,000 SDW</p>
+                        <p className='gray'>Total token supply - 10,000,000,000 SDW</p>
 
                         <Row className='gap-3'>
                             {data.map((item, index) => (

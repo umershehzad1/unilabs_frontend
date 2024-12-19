@@ -6,6 +6,7 @@ import { Button, Container, Image, Row } from "react-bootstrap";
 import { Fade } from "react-awesome-reveal";
 import ParticlesWave from "@/components/ParticlesWave";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
+import LatestNews from "@/components/LatestNews";
 
 const page = () => {
     const particlesInit = async (main) => {
@@ -14,8 +15,6 @@ const page = () => {
 
     return (
         <div className="py-5">
-
-
             <div className="position-relative overflow-hidden">
                 <ParticlesWave
                     height="90vh"
@@ -34,13 +33,12 @@ const page = () => {
 
 
                         <div className="d-flex gap-4 align-items-stretch flex-md-row flex-column col-xl-10 mx-auto">
-                            {/* You Have Section */}
                             <div
                                 style={{ backgroundColor: "#232325" }}
                                 className="d-flex justify-content-between align-items-center py-2 px-3 rounded-3 flex-grow-1"
                             >
                                 <div>
-                                    <p className="mb-0" style={{ color: "#898990" }}>You have</p>
+                                    <p className="mb-0 gray" >You have</p>
                                     <p className="text-white">$42.984</p>
                                 </div>
                                 <div className="text-white d-flex align-items-center">
@@ -59,24 +57,21 @@ const page = () => {
                                 </div>
                             </div>
 
-                            {/* Icon Section */}
                             <div className="d-flex justify-content-center align-items-center flex-grow-0">
                                 <FaArrowRightArrowLeft color="white" size={30} />
                             </div>
 
-                            {/* You Get Section */}
                             <div
                                 style={{ backgroundColor: "#232325" }}
                                 className="d-flex justify-content-between align-items-center py-2 px-3 rounded-3 flex-grow-1"
                             >
                                 <div>
-                                    <p className="mb-0" style={{ color: "#898990" }}>You get</p>
+                                    <p className="mb-0 gray">You get</p>
                                     <p className="text-white">1.95</p>
                                 </div>
                                 <div className="text-white d-flex align-items-center">UNI</div>
                             </div>
 
-                            {/* Button Section */}
                             <div className="d-flex flex-grow-2 align-items-stretch">
                                 <Button className="greenBtn w-100">Buy Now</Button>
                             </div>
@@ -84,15 +79,14 @@ const page = () => {
 
                     </div>
                 </div>
-                <Image src="/UFO.png" alt="UFO IMAGE" className="ufoImage" />
+                <Image src="/UFO.png" alt="UFO IMAGE" className="ufoImage " />
             </div>
-
             <div className="howtobuy position-relative ">
                 <Particles
                     id="tsparticles"
                     init={particlesInit}
                     options={{
-                        fpsLimit: 60, // Higher FPS for smoothness
+                        fpsLimit: 60,
                         interactivity: {
                             events: {
                                 onHover: {
@@ -157,6 +151,7 @@ const page = () => {
                     <HowToBuySteps />
                 </Container>
             </div>
+            <LatestNews />
         </div>
     );
 };

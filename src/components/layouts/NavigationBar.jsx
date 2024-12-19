@@ -70,7 +70,7 @@ const NavigationBar = () => {
             >
               {menuItems.map((link, index) => (
                 <Link
-                  className={`mx-4  ${pathname === link.href ? "text-green" : "text-white"
+                  className={`mx-xl-4 mx-2  ${pathname === link.href ? "text-green" : "text-white"
                     }`}
                   key={index}
                   href={link.href}
@@ -81,7 +81,7 @@ const NavigationBar = () => {
             </Nav>
             <Form>
               <div className="d-lg-block d-none">
-                <Button onClick={() => setShowModal(true)} className="mx-4 text-white  fw-bold transparentBtn  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="">
+                <Button onClick={() => setShowModal(true)} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="">
                   Sign in <MdLogin size={25} className="ms-1" />
                 </Button>
               </div>
