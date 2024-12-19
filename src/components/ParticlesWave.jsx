@@ -115,7 +115,11 @@ const ParticlesWave = ({ height = "100vh", backgroundColor = "#010B18", particle
         animate();
 
         return () => {
-            containerRef.current.innerHTML = "";
+            if (containerRef.current) {
+                while (containerRef.current.firstChild) {
+                    containerRef.current.removeChild(containerRef.current.firstChild);
+                }
+            }
             window.removeEventListener("resize", onWindowResize);
         };
     }, [particleColor, backgroundColor]);
