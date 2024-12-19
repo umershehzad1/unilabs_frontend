@@ -8,6 +8,7 @@ import { useAccount } from 'wagmi';
 import HowItWorks from '../components/HowItWorks/page'
 import RoadMaps from '@/components/Home/RoadMaps';
 import Faqs from '@/components/shared/Faqs';
+import Subscribe from '@/components/shared/Subscribe';
 
 const LandingPage = () => {
   const isConnected = useAccount()
@@ -23,6 +24,7 @@ const LandingPage = () => {
       <Tokenomics />
       <RoadMaps />
       <Faqs /> 
+      <Subscribe/>
 
       {/* <UnilToken/> */}
 

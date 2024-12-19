@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, Form } from 'react-bootstrap'
+import { Button, Container, Form } from 'react-bootstrap'
 
 const Subscribe = () => {
     return (
-        <div
+        <Container
             style={{ backgroundColor: "var(--green)" }}
             className="p-5 d-flex justify-content-center align-items-center flex-column"
         >
@@ -28,7 +28,7 @@ const Subscribe = () => {
                     <small>                    Subscribe
                     </small>                </Button>
             </div>
-        </div>)
+        </Container>)
 }
 
 export default Subscribe

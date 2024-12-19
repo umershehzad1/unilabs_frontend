@@ -3,23 +3,28 @@ import { useEffect, useRef } from 'react';
 import { Container, Image } from 'react-bootstrap';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { GoDotFill } from "react-icons/go";
+import { Step1, Step2, Step3 } from '../../public/svg/SVG';
 
 const steps = [
     {
         text: "Welcome aboard! Start by getting MetaMask on your desktop browser or a Wallet Connect-compatible wallet like Trust Wallet for your mobile.",
         text2: "Desktop users, MetaMask is ideal for a smooth purchase process. Mobile users, Trust Wallet or MetaMask connected through Wallet Connect is your go-to.",
         heading: "Sign Up",
-        img: "/howtobuy1.png"
+        img: "/howtobuy1.png",
+        icon: <Step1 />
     },
     {
         text: "Ready to invest? Simply pick your preferred currency on our site, input how many UNIL tokens you'd like, and hit 'Buy Now'. A prompt will pop up from your wallet for transaction confirmation, where you’ll also see the gas fees.",
         heading: "Purchase Process",
-        img: "/howtobuy2.png"
+        img: "/howtobuy2.png",
+        icon: < Step2 />
     },
     {
         text: "Once our presale wraps up, you can collect your UNIL tokens through our website or wait for an airdrop straight to your wallet. Meanwhile, keep an eye on your investment and the token prices from your dashboard. Just connect your wallet to our website, and voilà—you’re there!",
         heading: "Make Your Payment",
-        img: "/howtobuy3.png"
+        img: "/howtobuy3.png",
+        icon: < Step3 />
+
     },
 ];
 
@@ -78,14 +83,15 @@ const RoadMaps = () => {
                     }
 
                     .green-icon {
-                        width: 30px;
-                        height: 30px;
+                        width: 40px;
+                        height: 40px;
                         background-color: #010B18; 
                         border: 5px solid #28a745; 
                         border-radius: 50%; 
                         display: flex;
                         align-items: center;
                         justify-content: center;
+
                     }
 
                     /* Ensure the icon stays centered on all screen sizes */
@@ -113,8 +119,7 @@ const RoadMaps = () => {
             </style>
 
             <div ref={sectionRef} className="position-relative roadmaps howtobuysteps">
-                <div className="purple-bg-right right"></div>
-                <div className="purple-bg-right left"></div>
+
 
                 <Container className="py-5 col-lg-8 col-12 px-md-auto px-0 mx-auto">
                     <VerticalTimeline className="my-4" animate
@@ -130,14 +135,16 @@ const RoadMaps = () => {
                                 animate
                                 position="right"
 
-                                icon={<GoDotFill className="green-icon" color='#0A0E20' />}
+                                icon={<div className='green-icon' >
+                                    <p className="m-0 pt-3">{phase.icon}</p>
+                                </div>}
                             >
                                 <div className="text-start pt-0">
-                                    <h3 className="text-white fw-bold display-5">
-                                        Step {index + 1}: <span className="px-2 green">{phase.heading}</span>
+                                    <h3 className="text-white fw-bold display-5 text-uppercase">
+                                        Step {index + 1}: <span className="px-2 green ">{phase.heading}</span>
                                     </h3>
-                                    <p className="fs-5">{phase.text}</p>
-                                    <p className="fs-5">{phase.text2}</p>
+                                    <p style={{ color: "#CFCFCF" }} className="font-apfel ">{phase.text}</p>
+                                    <p style={{ color: "#CFCFCF" }} className="font-apfel mt-1">{phase.text2}</p>
                                     <div className="pt-5">
                                         <Image src={phase.img} alt={index + " Image How To Buy"} fluid />
                                     </div>

@@ -257,7 +257,7 @@ body {
     height: 600px;
 }
 
-.greenbtn {
+.greenBtn {
     background: linear-gradient(180deg, #4CAF50 0%, #204921 100%);
     background-size: 300% 300% !important;
     border-radius: 0px !important;
@@ -272,13 +272,13 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.greenbtn:hover {
+.greenBtn:hover {
     background: linear-gradient(180deg, #45a047 0%, #1e3d22 100%);
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.greenbtn::before {
+.greenBtn::before {
     content: "";
     position: absolute;
     background-image: url('/btnRight.svg');
@@ -291,7 +291,7 @@ body {
     z-index: 1;
 }
 
-.greenbtn::after {
+.greenBtn::after {
     content: "";
     position: absolute;
     background-image: url('/btnLeft.svg');

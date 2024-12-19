@@ -13,7 +13,7 @@ const WhyUnilabs = () => {
             <h3>Safe and Secure</h3>
             <p className='text-white'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et consequat. Duis aute  mollit anim id est laborum.</p>
             <div className="d-flex gap-4 justify-content-center pt-4">
-                <Button className="greenbtn">Learn More</Button>
+                <Button className="greenBtn">Learn More</Button>
                 <Button className="transparentBtn">DA Gpaper V2</Button>
             </div>
         </Container>

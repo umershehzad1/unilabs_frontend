@@ -15,7 +15,7 @@ const LaunchPadHero = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute mollit anim id est laborum.
                         </p>
                         <div className="d-flex gap-4 justify-content-lg-start justify-content-center">
-                            {/* <Button className="greenbtn">Connect to Wallet</Button> */}
+                            {/* <Button className="greenBtn">Connect to Wallet</Button> */}
                           <ConnectBtn/>
                         </div>
                     </div>

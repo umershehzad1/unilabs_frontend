@@ -50,7 +50,7 @@ const Attributes = () => {
                     ))}
                 </Row>
                 <div className='text-center mb-4'>
-                    <Button className="greenbtn ">
+                    <Button className="greenBtn ">
 
                         <small>
 

@@ -81,7 +81,7 @@ const NavigationBar = () => {
             </Nav>
             <Form>
               <div className="d-lg-block d-none">
-                <Button onClick={() => setShowModal(true)} className="mx-4 text-white  fw-bold transparentBtn  py-2" style={{ fontFamily:"Neue_Machina!important"}} href="">
+                <Button onClick={() => setShowModal(true)} className="mx-4 text-white  fw-bold transparentBtn  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="">
                   Sign in <MdLogin size={25} className="ms-1" />
                 </Button>
               </div>

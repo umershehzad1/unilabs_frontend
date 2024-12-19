@@ -64,7 +64,7 @@ const BlogsHero = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute mollit anim id est laborum.
                         </p>
                         <div className="d-flex gap-4 pt-2 justify-content-center justify-content-lg-start">
-                            <Button className="greenbtn">Read More</Button>
+                            <Button className="greenBtn">Read More</Button>
                         </div>
                     </Col>
                 </Row>
