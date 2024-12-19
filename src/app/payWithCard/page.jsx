@@ -9,7 +9,6 @@ const PayWithCard = () => {
     return (
         <Container className="text-secondary news">
             <div className="py-5">
-                {/* Heading Section */}
                 <Fade >
                     <h1 className="fw-bold text-uppercase mx-auto text-center text-white">
                         Pay with card
@@ -19,7 +18,6 @@ const PayWithCard = () => {
                     </p>
                 </Fade>
 
-                {/* Getting Started Section */}
                 <Zoom>
                     <h2 className="fw-bold mb-5 text-white">Getting started</h2>
                 </Zoom>
@@ -73,7 +71,6 @@ const PayWithCard = () => {
                 </Slide>
             </div>
 
-            {/* Subscribe Section */}
             <Subscribe />
         </Container>
     );

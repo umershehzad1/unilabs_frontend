@@ -67,7 +67,7 @@ const NewsDetail = () => {
                     </Fade>
 
                     {/* Quote Section */}
-                    <Slide direction="left">
+                    <Slide direction="up">
                         <div className="d-flex gap-4">
                             <div>
                                 <Image src="/DoubleQuote.png" />

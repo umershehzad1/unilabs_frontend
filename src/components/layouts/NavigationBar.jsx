@@ -5,11 +5,10 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button, Container, Form, Nav, Navbar } from "react-bootstrap";
 import { FaBarsStaggered } from "react-icons/fa6";
-import { menuItems } from "../shared/MenuItems";
-import CustomModal from "../shared/SignInModal";
-import Sidebar from "./Sidebar";
-import ConnectBtn from "../shared/ConnectBtn";
 import { MdLogin } from "react-icons/md";
+import ConnectBtn from "../shared/ConnectBtn";
+import { menuItems } from "../shared/MenuItems";
+import Sidebar from "./Sidebar";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
@@ -36,12 +35,16 @@ const NavigationBar = () => {
 
   return (
     <>
-      <CustomModal setShowModal={setShowModal} showModal={showModal} />
+      {/* <CustomModal setShowModal={setShowModal} showModal={true} /> */}
       <Navbar expand="lg" className="fixed-top mt-lg-4  mx-md-2">
         <Container
           className="nav-bg px-md-3 py-0 overflow-hidden"
           style={{
-            background: isNavbarScroll ? "linear-gradient(to right,#2E0E41, #170B2C )" : "",
+            background: isNavbarScroll
+              ? "linear-gradient(to right, #1B3722, #3D6E47, #1E3A8A)"
+              : "",
+
+
             borderRadius: isNavbarScroll ? "50px" : "",
             transition: "background 0.5s ease-in-out",
           }}
@@ -81,7 +84,7 @@ const NavigationBar = () => {
             </Nav>
             <Form>
               <div className="d-lg-block d-none">
-                <Button onClick={() => setShowModal(true)} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="">
+                <Button as={Link} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn px-3 rounded-pill  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="/login">
                   Sign in <MdLogin size={25} className="ms-1" />
                 </Button>
               </div>

@@ -19,6 +19,7 @@
   background-color: #4caf50;
   color: white;
 }
+
 .subscribeInput {
   background-color: transparent !important;
   border-radius: 0;
@@ -26,11 +27,6 @@
 }
 
 .newsBullet li::marker {
-    color: #CBFB45;
+  color: #CBFB45;
 }
-.Feature-bg-image{
-background-image: url("/featureHeader.png");
-/* height: 100%; */
-/* width: 100% ; */
-background-size: 100%;
-}
+

@@ -1,8 +1,9 @@
 "use client"
-import { Container, Row, Col } from 'react-bootstrap';
-import { Fade, Zoom } from 'react-awesome-reveal';
-import WavyLineHero from '@/components/shared/WavyLineHero';
+import MovingIcons from '@/components/MovingIcon';
 import Subscribe from '@/components/shared/Subscribe';
+import WaterDrops from '@/components/shared/WaterFall';
+import { Fade, Zoom } from 'react-awesome-reveal';
+import { Col, Container, Image, Row } from 'react-bootstrap';
 
 const page = () => {
     const sideByside = [
@@ -22,12 +23,11 @@ const page = () => {
             text: "The most promising growth opportunities are found today in the memecoin segment. For high-risk investors, our risk allocation tool utilizes an advanced memecoin identification algorithm. We monitor liquidity, listing chances, and virality metrics to help you leverage growth from the most promising projects in the market."
         },
     ];
-
     return (
         <div className='position-relative py-5 my-5 corefeatures'>
-
+            <MovingIcons />
             <Container className='text-white text-center py-3'>
-                <Container fluid className="Feature-bg-image text-white text-center">
+                <div fluid className="FeatureContent text-white text-center">
                     <div className="p-4">
                         <p className="text-uppercase green mt-4 mb-2">
                             We are currently in the Presale of the UNIL Token. Log-In or Create an account to buy.
@@ -35,9 +35,12 @@ const page = () => {
                         <h1 className="display-5 fw-bold">
                             CORE <span className="px-2 green">UNILABS</span>FEATURES
                         </h1>
-                        <h1 className="display-5 green fw-bold py-5">FEATURES</h1>
                     </div>
-                </Container>
+                </div>
+                <div className="mx-auto">
+                    <WaterDrops />
+                </div>
+                <h1 className="display-4  fw-bold py-5">FEATURES</h1>
 
                 {sideByside.map((item, index) => (
                     <Row
@@ -46,13 +49,13 @@ const page = () => {
                     >
                         <Col xs={12} md={6} className="text-center">
                             <Zoom delay={100} duration={1000} triggerOnce>
-                                <img src={item.img} alt={item.heading} className="img-fluid" />
+                                <Image src={item.img} alt={item.heading} className="img-fluid" style={{ height: "400px", width: "400px" }} />
                             </Zoom>
                         </Col>
 
                         <Col xs={12} md={6} className='text-md-start text-center'>
                             <Fade delay={200} duration={1000} triggerOnce>
-                                <h2 className="fw-bold display-3 pb-2 me-md-5 px-md-auto px-3" style={{ borderColor: "var(--green)!important" }}>
+                                <h2 className="fw-bold display-5 pb-2 me-md-5 px-md-auto px-3" style={{ borderColor: "var(--green)!important" }}>
                                     {item.heading}
                                 </h2>
                                 <p className='text-secondary small pe-lg-5' >{item.text}</p>

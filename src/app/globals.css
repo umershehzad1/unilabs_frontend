@@ -16,11 +16,18 @@
 :root {
   --color1: #000a18;
   --green: #4caf50;
-  --gray:#898990
+  --gray: #898990
 }
 
-.gray{
-  color: var(--gray)!important;
+.gray {
+  color: var(--gray) !important;
+}
+
+
+.custom-divider {
+  height: 2px;
+  width: 170px;
+  background-color: var(--gray);
 }
 
 .greenBtn {
@@ -57,14 +64,98 @@
 }
 
 .transparentBtn {
-  border-radius: 0px !important;
   color: white !important;
   border: 2px solid white !important;
   font-weight: 800;
   background-color: transparent !important;
   position: relative;
+  overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
+
+
+
+.iconLeft,
+.iconRight {
+  position: absolute;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.iconLeft {
+  bottom: 0;
+  left: -10px;
+}
+
+.iconRight {
+  top: 10%;
+  right: -100px;
+}
+
+.waterfall-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.waterfall-container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.waterfall-container .container {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .waterfall-container {
+    height: 300px;
+  }
+}
+
+/* .fIcon1,
+.fIcon2,
+.fIcon3,
+.fIcon4,
+.fIcon5 {
+  position: absolute;
+}
+
+.fIcon1 {
+  right: 20%;
+  top: 7%;
+}
+
+.fIcon2 {
+  top: 25%;
+  left: 20%;
+}
+
+.fIcon3 {
+  left: 20%;
+  top: 10%;
+}
+
+.fIcon4 {
+  top: 20%;
+  right: 20%;
+}
+
+.fIcon5 {
+  top: 20%;
+  left: 50%;
+} */
+
+
+
+
 
 .transparentBtn::before {
   content: '';
@@ -208,8 +299,8 @@ body {
   overflow-x: hidden !important;
 }
 
-.footerlink a:hover{
-  color: var(--green)!important;
+.footerlink a:hover {
+  color: var(--green) !important;
 }
 
 

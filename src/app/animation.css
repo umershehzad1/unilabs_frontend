@@ -100,6 +100,7 @@
         transform: scale(1.2);
     }
 }
+
 .ufoImage {
 
     animation: rotateUFO 10s linear infinite;
@@ -118,3 +119,126 @@
         transform: translate(-50%, -50%) rotate(0deg);
     }
 }
+
+
+
+.icon-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Adjust the container height */
+    overflow: hidden;
+}
+
+/* Common styles for all icons */
+.fIcon1,
+.fIcon2,
+.fIcon3,
+.fIcon4,
+.fIcon5 {
+    position: absolute;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Unique starting positions */
+.fIcon1 {
+    right: 20%;
+    top: 7%;
+    animation: moveDown 10s infinite alternate;
+}
+
+.fIcon2 {
+    top: 25%;
+    left: 20%;
+    animation: moveUp 12s infinite alternate;
+}
+
+.fIcon3 {
+    left: 20%;
+    top: 10%;
+    animation: moveRight 8s infinite alternate;
+}
+
+.fIcon4 {
+    top: 20%;
+    right: 20%;
+    animation: moveLeft 9s infinite alternate;
+}
+
+.fIcon5 {
+    top: 20%;
+    left: 50%;
+    animation: moveDiagonal 11s infinite alternate;
+}
+
+/* Animations */
+
+/* Move vertically down */
+@keyframes moveDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(300px);
+        /* Adjust movement distance */
+    }
+}
+
+/* Move vertically up */
+@keyframes moveUp {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-300px);
+        /* Adjust movement distance */
+    }
+}
+
+/* Move horizontally right */
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(300px);
+        /* Adjust movement distance */
+    }
+}
+
+/* Move horizontally left */
+@keyframes moveLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-300px);
+    }
+}
+
+@keyframes moveDiagonal {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(200px, 200px);
+    }
+}
+
+.animated-earth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.animated-earth img {
+    animation: upandDown 10s linear infinite;
+}
+

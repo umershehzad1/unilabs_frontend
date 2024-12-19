@@ -113,7 +113,7 @@ const SideBySide = () => {
                             </p>
                             <div className="d-flex flex-md-row flex-column p-md-auto px-4 gap-4 pt-2">
                                 <Button className="greenBtn">Share It</Button>
-                                <Button className="transparentBtn">How To Buy</Button>
+                                <Button className="rounded-0 transparentBtn">How To Buy</Button>
                             </div>
                         </Col>
                     </Row>
@@ -134,7 +134,7 @@ const SideBySide = () => {
                             </p>
                             <div className="d-flex flex-md-row flex-column p-md-auto px-4 gap-4 pt-2">
                                 <Button className="greenBtn">Share It</Button>
-                                <Button className="transparentBtn">DA Gpaper V2</Button>
+                                <Button className="rounded-0 transparentBtn">DA Gpaper V2</Button>
                             </div>
                         </Col>
                     </Row>
@@ -155,7 +155,7 @@ const SideBySide = () => {
                             </p>
                             <div className="d-flex flex-md-row flex-column p-md-auto px-4 gap-4 pt-2">
                                 <Button className="greenBtn">Learn More</Button>
-                                <Button className="transparentBtn">DA Gpaper V2</Button>
+                                <Button className="rounded-0 transparentBtn">DA Gpaper V2</Button>
                             </div>
                         </Col>
                     </Row>

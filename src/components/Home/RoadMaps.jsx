@@ -56,21 +56,7 @@ const RoadMaps = () => {
                         height: var(--timeline-height, 0%) !important;
                         transition: height 0.2s ease-in-out;
                     }
-                    .progress-icon {
-                        position: absolute;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        top: 0;
-                        z-index: 10;
-                        width: 24px;
-                        height: 24px;
-                        background-color: #28a745;
-                        border-radius: 50%;
-                        box-shadow: 0 0 10px rgba(40, 167, 69, 0.8),
-                                    0 0 20px rgba(40, 167, 69, 0.6),
-                                    0 0 30px rgba(40, 167, 69, 0.4);
-                        transition: top 0.2s ease-in-out;
-                    }
+                  
                     .roadmap-title {
                         color: #fff;
                         font-size: 1.5rem;
@@ -89,29 +75,8 @@ const RoadMaps = () => {
                     <VerticalTimeline className="my-4">
                         {roadmapData.map((item, index) => (
                             <>
-                                {/* Phase Title */}
-                                <VerticalTimelineElement
-                                    key={`${item.phase}-title`}
-                                    visible={true}
-                                    className="vertical-timeline-element-work no-box-shadow"
-                                    contentStyle={{
-                                        textAlign: index % 2 === 0 ? "left" : "right",
-                                        background: "transparent",
-                                    }}
-                                    contentArrowStyle={{
-                                        borderRight: index % 2 === 0
-                                            ? "6px solid #438446"
-                                            : "6px solid transparent",
-                                        borderLeft: index % 2 !== 0
-                                            ? "6px solid #438446"
-                                            : "6px solid transparent",
-                                    }}
-                                    iconStyle={{ background: "#438446", color: "#fff" }}
-                                >
-                                    <h3 className=" fw-bold text-white">{item.phase}</h3>
-                                </VerticalTimelineElement>
+                              
 
-                                {/* Phase Details */}
                                 <VerticalTimelineElement
                                     key={`${item.phase}-details`}
                                     className="vertical-timeline-element-work no-box-shadow"
@@ -135,8 +100,8 @@ const RoadMaps = () => {
                                 </VerticalTimelineElement>
                             </>
                         ))}
-                        <div ref={progressIconRef} className="progress-icon"></div>
                     </VerticalTimeline>
+                        <div ref={progressIconRef} className="progress-icon"></div>
                 </Container>
             </div>
         </>

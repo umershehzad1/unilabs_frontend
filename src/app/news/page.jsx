@@ -94,13 +94,11 @@ const data = [
 
 const News = () => {
   return (
-    <Container className="text-white news">
-      {/* Page Title */}
+    <Container className="text-white news overflow-hidden">
       <Fade direction="down" triggerOnce>
         <h1 className="py-2 text-center fw-bold">NEWS</h1>
       </Fade>
 
-      {/* Featured Section */}
       <Row className="py-5">
         <Col lg={6} className="p-5 col-12 mb-4" style={{ backgroundColor: "#4CAF50" }}>
           <Slide direction="left" triggerOnce>
@@ -127,18 +125,17 @@ const News = () => {
         </Col>
       </Row>
 
-      {/* News Cards */}
       <Row className="mb-5 d-flex">
         {data.map((item, index) => (
           <Col key={index} xs={12} md={4} className="py-3">
             <Fade direction="up" triggerOnce>
-              <Card style={{ backgroundColor: "#232325" }} className="text-secondary h-100">
+              <Card style={{ backgroundColor: "#232325" }} className="text-secondary h-100 rounded-0">
                 <Card.Img
                   variant="top"
                   src={item.image}
                   style={{ height: "200px" }}
                 />
-                <Card.Body>
+                <Card.Body style={{ height: "200px" }} className="overflow-auto">
                   <p>
                     <small>{item.date}</small>
                     <small className="px-3">{item.tag}</small>
@@ -165,7 +162,6 @@ const News = () => {
         </div>
       </Row>
 
-      {/* Subscribe Section */}
       <Subscribe />
     </Container>
   );

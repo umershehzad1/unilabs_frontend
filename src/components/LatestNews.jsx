@@ -94,7 +94,7 @@ const News = () => {
                                         src={item.image}
                                         style={{ height: "200px" }}
                                     />
-                                    <Card.Body style={{ height: "200px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+                                    <Card.Body className="overflow-auto" style={{ height: "200px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                                         <div>
                                             <p>
                                                 <small>{item.date}</small>

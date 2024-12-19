@@ -1,27 +1,23 @@
 "use client"
-import React from 'react'
-import { Card, Col, Container, Image, Row } from 'react-bootstrap'
-import { Fade, Zoom, Slide } from 'react-awesome-reveal'  // Importing animations
-import WavyLineHero from '@/components/shared/WavyLineHero'
+import ParticlesBackground from '@/components/shared/Particles';
+import { Slide, Zoom } from 'react-awesome-reveal';
+import { Card, Col, Container, Image, Row } from 'react-bootstrap';
 
 const HowItWorks = () => {
     return (
-        <div className='py-md-5 position-relative howitworks roadmapspage overflow-hidden'>
-            <div className="wave1">
+        <div className='py-md-5 position-relative  howitworks roadmapspage overflow-hidden'>
+            <div className="iconRight">
+                <Image src="/svg/leftIcon.svg" alt="Right Icon" />
             </div>
-            <div className="wave2">
-            </div>
+            <ParticlesBackground particleColor={"#FFFFFF"} />;
             <Container className='text-white pt-5'>
                 <h1 className='display-6 fw-bold py-5 text-center '> A COMPREHENSIVE <span className="px-2 green">ROADMAP</span>
-
-
                     <br className="d-lg-block" />
-
                     TO
                     <span className="px-2 green">SUCCESS</span>
                 </h1>
 
-                <h1 className='display-6 fw-bold py-5 text-center green'>ROAD MAP</h1>
+                <h1 className='display-6 fw-bold py-md-5 pb-4 text-center green'>ROAD MAP</h1>
                 <Row>
                     <Col md={6} xs={12} className='d-flex align-items-center pe-0'>
                         <Card className="bg-transparent text-white ms-auto works1 mb-4">
@@ -167,6 +163,9 @@ const HowItWorks = () => {
                     </Col>
                 </Row>
             </Container>
+            <div className="iconLeft">
+                <Image src="/svg/leftIcon.svg" alt="Left Icon" />
+            </div>
         </div>
     )
 }

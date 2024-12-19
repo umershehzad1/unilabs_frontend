@@ -45,7 +45,7 @@ const Faqs = () => {
                     <Col lg={5}>
                         <h4 className="display-3 fw-bold mt-xl-5">FAQs</h4>
                         <p  className="fs-4 col-xl-9 gray">Didn’t find an answer to your question? Drop us a line here. </p>
-                        <Button className="transparentBtn">Ask A Question
+                        <Button className="transparentBtn rounded-0">Ask A Question
                             <span className="ms-2">
                                 <FaArrowRight />
                             </span>
