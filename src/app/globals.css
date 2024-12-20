@@ -74,6 +74,9 @@
 }
 
 
+.custom-header.active {
+  transform: scale(1) !important;
+}
 
 .iconLeft,
 .iconRight {
