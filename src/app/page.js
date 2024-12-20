@@ -9,6 +9,7 @@ import HowItWorks from '../components/HowItWorks/page'
 import RoadMaps from '@/components/Home/RoadMaps';
 import Faqs from '@/components/shared/Faqs';
 import Subscribe from '@/components/shared/Subscribe';
+import BlurShadowLayer from '@/components/BlurShadow';
 
 const LandingPage = () => {
   const isConnected = useAccount()
@@ -23,8 +24,9 @@ const LandingPage = () => {
       <Attributes />
       <Tokenomics />
       <RoadMaps />
-      <Faqs /> 
-      <Subscribe/>
+      <BlurShadowLayer />
+      <Faqs />
+      <Subscribe />
 
       {/* <UnilToken/> */}
 

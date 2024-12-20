@@ -1,6 +1,7 @@
 import { Slide } from 'react-awesome-reveal';
 import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import GlobeVisualization from '../Earth';
+import MovingIcons from '../MovingIcon';
 const Hero = () => {
     const icons = [
         '/svg/git.svg',
@@ -10,6 +11,13 @@ const Hero = () => {
         '/svg/git.svg',
         '/svg/binance.svg',
     ];
+
+    const images = [
+        { url: '/svg/git.svg', position: [1.5, 0, 0] },
+        { url: '/svg/git.svg', position: [-1.5, 0.5, 0] },
+        { url: '/svg/git.svg', position: [0, -1.5, 0.5] },
+    ];
+
 
     return (
         <div className="position-relative py-5 custom-overflow">
@@ -49,9 +57,11 @@ const Hero = () => {
                     <Col xs={12} lg={5} className="position-relative" style={{ scrollBehavior: 'smooth' }}>
 
                         <div className="animated-earth">
-                                <Image src="/earth.png" alt="Earth" fluid />
-                            </div>
-                        {/* <GlobeVisualization/>                     */}
+                            <Image src="/earth.png" alt="Earth" fluid />
+                        </div>
+                        <MovingIcons />
+
+                        {/* <GlobeVisualization /> */}
                     </Col>
 
                 </Row>

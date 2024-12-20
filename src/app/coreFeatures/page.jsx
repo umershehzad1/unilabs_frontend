@@ -1,4 +1,5 @@
 "use client"
+import BlurShadowLayer from '@/components/BlurShadow';
 import MovingIcons from '@/components/MovingIcon';
 import Subscribe from '@/components/shared/Subscribe';
 import WaterDrops from '@/components/shared/WaterFall';
@@ -25,6 +26,8 @@ const page = () => {
     ];
     return (
         <div className='position-relative py-5 my-5 corefeatures'>
+            <BlurShadowLayer />
+
             <MovingIcons />
             <Container className='text-white text-center py-3'>
                 <div fluid className="FeatureContent text-white text-center">

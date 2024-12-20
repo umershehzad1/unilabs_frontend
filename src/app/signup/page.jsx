@@ -64,7 +64,7 @@ function SignUp() {
             const user = response.data.data;
             if (user) {
                 localStorage.setItem("user", JSON.stringify(user));
-                router.push("/dashboard");
+                router.push("/login");
                 Swal.close();
             }
         } catch (error) {
@@ -91,7 +91,7 @@ function SignUp() {
             <Col xs={12} md={6} className="d-flex flex-column justify-content-center align-items-center text-white" >
                 <h1 className="display-5 fw-bold mb-4">Sign Up</h1>
 
-                <Button
+                {/* <Button
                     variant="light"
                     className="mb-4 w-100 py-2 d-flex align-items-center justify-content-center"
                     style={{ maxWidth: "400px" }}
@@ -103,7 +103,7 @@ function SignUp() {
                     <div class="custom-divider"></div>
                     <span class="mx-3 text-white">Or</span>
                     <div class="custom-divider"></div>
-                </div>
+                </div> */}
                 <Form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "400px" }}>
                     <Form.Group className="mb-3 ">
                         <Form.Label>Full Name</Form.Label>

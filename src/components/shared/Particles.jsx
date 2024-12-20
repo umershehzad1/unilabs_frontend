@@ -13,7 +13,7 @@ const ParticlesBackground = ({ particleColor = "#00FF00", backgroundColor = "#00
             id="tsparticles"
             init={particlesInit}
             options={{
-                fullScreen: { enable: true, zIndex: -1 },
+                fullScreen: { enable: true, zIndex: -2 },
                 particles: {
                     number: {
                         value: 30,

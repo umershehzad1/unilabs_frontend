@@ -4,10 +4,12 @@ import Subscribe from '@/components/shared/Subscribe';
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Fade, Slide, Zoom } from 'react-awesome-reveal';
+import BlurShadowLayer from '@/components/BlurShadow';
 
 const PayWithCard = () => {
     return (
         <Container className="text-secondary news">
+            <BlurShadowLayer />
             <div className="py-5">
                 <Fade >
                     <h1 className="fw-bold text-uppercase mx-auto text-center text-white">

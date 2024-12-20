@@ -2,7 +2,6 @@
 import { useEffect, useRef } from 'react';
 import { Container, Image } from 'react-bootstrap';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import { GoDotFill } from "react-icons/go";
 import { Step1, Step2, Step3 } from '../../public/svg/SVG';
 
 const steps = [
@@ -34,16 +33,31 @@ const RoadMaps = () => {
 
     const handleScroll = () => {
         if (sectionRef.current && progressIconRef.current) {
-            const sectionTop = sectionRef.current.offsetTop;
-            const sectionHeight = sectionRef.current.clientHeight;
-            const scrollY = window.scrollY;
-            const maxScroll = sectionHeight - window.innerHeight;
-            const scrollPosition = scrollY - sectionTop;
-            if (scrollPosition >= 0 && scrollPosition <= maxScroll) {
-                const newHeight = Math.min(100, (scrollPosition / maxScroll) * 100);
-                document.documentElement.style.setProperty('--timeline-height', `${newHeight}%`);
-                progressIconRef.current.style.top = `calc(${newHeight}%)`;
-            }
+            const sectionTop = sectionRef.current.offsetTop; // Top of the section
+            const sectionHeight = sectionRef.current.clientHeight; // Height of the section
+            const scrollY = window.scrollY; // Current scroll position
+            const viewportHeight = window.innerHeight; // Height of the viewport
+
+            const maxScroll = sectionHeight - viewportHeight;
+
+            // Calculate progress based on how far the user has scrolled in the section
+            const scrollPosition = Math.min(
+                Math.max(scrollY - sectionTop, 0), // Ensure value is >= 0
+                maxScroll // Ensure value doesn't exceed maxScroll
+            );
+
+            // Calculate progress percentage
+            const progressPercentage = (scrollPosition / maxScroll) * 100;
+
+            // Update timeline height and progress icon position
+            document.documentElement.style.setProperty(
+                '--timeline-height',
+                `${Math.min(100, progressPercentage)}%`
+            );
+            progressIconRef.current.style.top = `calc(${Math.min(
+                100,
+                progressPercentage
+            )}%)`;
         }
     };
 
@@ -62,7 +76,7 @@ const RoadMaps = () => {
                     padding:0px;
                 }
                     .vertical-timeline::before {
-                        height: var(--timeline-height, 0%) !important;
+                        height: var(--timeline-height,0)!important;
                         transition: height 0.2s ease-in-out; 
                     }
 
@@ -94,18 +108,20 @@ const RoadMaps = () => {
 
                     }
 
-                    /* Ensure the icon stays centered on all screen sizes */
                     @media (max-width: 1170px) {
                         .progress-icon {
                             left: 8px!important;
                             transform: none;
                         }
-
-                        /* Adjust the icon size for smaller screens */
                         .green-icon {
-                            width: 20px;
-                            height: 20px;
-                            border: 3px solid #28a745;
+                        width: 40px;
+                        height: 40px;
+                        background-color: #010B18; 
+                        border: 5px solid #28a745; 
+                        border-radius: 50%; 
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         }
                     }
 

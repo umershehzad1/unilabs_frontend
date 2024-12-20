@@ -29,11 +29,8 @@
 .newsBullet li::marker {
   color: #CBFB45;
 }
-/* 
-.custom-date {
-  font-size: 2rem !important; 
-  font-weight: bold;
-}
+
+
 .white-line {
   transition: height 0.5s ease-out;
   height: 100%;
@@ -42,22 +39,21 @@
 .green-line {
   transition: height 0.1s ease-out;
   height: 0%;
-  
+
 }
-.custom-icon {
+
+.roadmap-icon {
   background-color: #fff !important;
   height: 50px;
   width: 50px;
   border-radius: 50%;
   display: flex;
 }
-.custom-icon ::after {
-  background-color: #4caf50 !important; 
-  position:absolute;
-  content: "";
-  color: #fff !important;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  display: flex;
-} */
+
+.roadmap-icon.active {
+  background-color: var(--green) !important;
+}
+
+.roadmap-icon.active svg path {
+  fill: white !important;
+}

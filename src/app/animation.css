@@ -93,13 +93,14 @@
 
     0%,
     100% {
-        transform: scale(1);
+        transform: scale(1.5);
     }
 
     50% {
-        transform: scale(1.2);
+        transform: scale(1);
     }
 }
+
 
 .ufoImage {
 
@@ -242,3 +243,107 @@
     animation: upandDown 10s linear infinite;
 }
 
+
+
+.blur-shadow {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(100px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    background: linear-gradient(180deg, #7D32F9 0%, #486FF8 91.67%);
+    pointer-events: none;
+}
+
+.blur-shadow-left {
+    left: -5%;
+    top: 0;
+    animation: moveTopToBottom 18s ease-in-out infinite, pulseGlow 4s ease-in-out infinite alternate;
+}
+
+.blur-shadow-right {
+    right: -5%;
+    bottom: 0;
+    animation: moveBottomToTop 18s ease-in-out infinite, pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0px 15px 60px rgba(125, 50, 249, 0.4);
+        opacity: 0.6;
+    }
+
+    100% {
+        box-shadow: 0px 15px 80px rgba(125, 50, 249, 0.7);
+        opacity: 1;
+    }
+}
+
+@keyframes moveTopToBottom {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(150%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveBottomToTop {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-150%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.moving-shadow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(40, 167, 69, 0.5), transparent);
+    border-radius: 50%;
+    z-index: -1;
+    animation: glow-and-move 4s infinite alternate ease-in-out;
+}
+
+@keyframes glow-and-move {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(10px);
+        opacity: 0.7;
+    }
+
+    50% {
+        transform: translate(-48%, -52%) scale(1.2);
+        filter: blur(15px);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(10px);
+        opacity: 0.7;
+    }
+}

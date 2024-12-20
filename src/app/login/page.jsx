@@ -1,9 +1,10 @@
 "use client";
 import LoginLeftAnime from "@/components/shared/LoginLeftAnime";
 import { LoginForm } from "@/services/users";
+import { AuthVerify } from "@/utils/auth.utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Col, Container, Form } from "react-bootstrap";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -15,6 +16,12 @@ function Login() {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const router = useRouter();
+    const Auth = AuthVerify()
+    useEffect(() => {
+        if (Auth) {
+            router.back();
+        }
+    }, [Auth, router]); 
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -68,26 +75,26 @@ function Login() {
     return (
         <Container fluid className="d-flex vh-100 overflow-hidden">
             <Col xs={12} md={6} className="position-relative d-md-flex d-none  align-items-center justify-content-center" >
-                <LoginLeftAnime/>
+                <LoginLeftAnime />
             </Col>
 
             <Col xs={12} md={6} className="d-flex flex-column justify-content-center align-items-center text-white" >
                 <h1 className="display-5 fw-bold mb-4">Sign In</h1>
 
-                <Button
+                {/* <Button
                     variant="light"
-                    className="mb-4 w-100 py-2 d-flex align-items-center justify-content-center"
+                    className="mb-4 w-100  py-2 d-flex align-items-center justify-content-center"
                     style={{ maxWidth: "400px" }}
                 >
                     <FcGoogle size={20} className="me-2" />
                     Sign in with Google
                 </Button>
-                <div class="d-flex align-items-center my-4">
+                <div class="d-flex d align-items-center my-4">
                     <div class="custom-divider"></div>
                     <span class="mx-3 text-white">Or</span>
                     <div class="custom-divider"></div>
                 </div>
-
+ */}
 
 
 

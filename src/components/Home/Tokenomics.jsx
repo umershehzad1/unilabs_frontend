@@ -1,27 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, ProgressBar, Image } from 'react-bootstrap';
 import SectionHeading from '../shared/SectionHeading';
 import PieChartComponent from '../shared/PieChart';
 
 const Tokenomics = () => {
 
-    const data = [
+    const [data, setData] = useState([
         { name: 'Private Sale', value: 10 },
         { name: 'Burned', value: 30 },
         { name: 'Public Sale', value: 20 },
         { name: 'Staking Reward', value: 28 },
-        { name: 'Partneship Funds', value: 7 },
+        { name: 'Partnership Funds', value: 7 },
         { name: 'Team Pool', value: 5 },
-    ];
+    ]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setData((prevData) =>
+                prevData.map((item) => ({
+                    ...item,
+                    value: item.value + 2 > 100 ? 100 : item.value + 2,
+                }))
+            );
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
     return (
         <>
-            <Container className='py-4 overflow-hidden'>
+            <Container className='py-4 '>
                 <h1 className='fw-bold text-white text-center text-uppercase'>Tokenomics</h1>
                 <Row className='pt-5 align-items-center'>
                     <Col xs={12} lg={6} className="position-relative ">
                         <div className='tokemonics-Bg-img '>
-                            <Image  src="/chartBG.png"  alt="Chart BG"  />
+                            <Image src="/chartBG.png" alt="Chart BG" />
                             <PieChartComponent data={data} />
                         </div>
                     </Col>
