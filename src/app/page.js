@@ -1,15 +1,16 @@
 "use client";
+import BlurShadowLayer from '@/components/BlurShadow';
 import Attributes from '@/components/Home/Attributes';
 import Hero from '@/components/Home/Hero';
+import RoadMaps from '@/components/Home/RoadMaps';
 import Tokenomics from '@/components/Home/Tokenomics';
+import Faqs from '@/components/shared/Faqs';
+import Subscribe from '@/components/shared/Subscribe';
 import AOS from 'aos';
 import { useEffect } from 'react';
 import { useAccount } from 'wagmi';
-import HowItWorks from '../components/HowItWorks/page'
-import RoadMaps from '@/components/Home/RoadMaps';
-import Faqs from '@/components/shared/Faqs';
-import Subscribe from '@/components/shared/Subscribe';
-import BlurShadowLayer from '@/components/BlurShadow';
+import HowItWorks from '../components/HowItWorks/page';
+import WalletInfo from '@/components/Home/WalletInfo';
 
 const LandingPage = () => {
   const isConnected = useAccount()
@@ -22,6 +23,7 @@ const LandingPage = () => {
       <Hero />
       <HowItWorks />
       <Attributes />
+      {/* {isConnected&& <WalletInfo />} */}
       <Tokenomics />
       <RoadMaps />
       <BlurShadowLayer />
@@ -29,12 +31,8 @@ const LandingPage = () => {
       <Subscribe />
 
       {/* <UnilToken/> */}
-
-
-
       {/* <ManageTransactions /> */}
       {/* <PoweredBy /> */}
-      {/* {isConnected&& <WalletInfo />} */}
       {/* <WhyUnilabs /> */}
       {/* <Presales /> */}
       {/* <Unique /> */}

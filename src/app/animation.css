@@ -52,7 +52,7 @@
     }
 }
 
-.presales {
+.presales:hover {
     animation: pulse-shadow 4s infinite ease-in-out;
 }
 

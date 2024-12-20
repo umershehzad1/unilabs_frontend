@@ -229,8 +229,13 @@
   color: #E0E0E0;
   padding: 20px;
   border-radius: 20px;
+  box-shadow: 0px 0px 29.6px 0px #4CAF50 inset;
+}
+
+.custom-inner:hover {
   animation: neon-border 2s infinite alternate;
 }
+
 
 .ufoImage {
   position: absolute;
