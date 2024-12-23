@@ -20,7 +20,7 @@ const Hero = () => {
 
 
     return (
-        <div className="position-relative py-5 custom-overflow">
+        <div className="position-relative py-lg-5 py-0 custom-overflow">
             <Container className="hero py-5">
                 <Row className="align-items-center pt-3 mt-5">
                     <Col xs={12} lg={7}>
@@ -56,8 +56,7 @@ const Hero = () => {
                             </div>
                         </Slide >
                     </Col>
-                    <Col xs={12} lg={5} className="position-relative" style={{ scrollBehavior: 'smooth' }}>
-
+                    <Col xs={12} lg={5} className="position-relative d-lg-flex d-none" style={{ scrollBehavior: 'smooth' }}>
                         <div className="animated-earth">
                             <Image src="/earth.png" alt="Earth" fluid />
                         </div>

@@ -43,7 +43,7 @@ const NavigationBar = () => {
           className="nav-bg px-md-3 py-0 overflow-hidden"
           style={{
             background: isNavbarScroll
-              ? "linear-gradient(to right, #1B3722, #3D6E47, #1E3A8A)"
+              ? 'rgb(56, 56, 56, 0.95)'
               : "",
 
 
