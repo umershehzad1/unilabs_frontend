@@ -4,11 +4,12 @@ import { Button, Container, Form, Image } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { FaRegComment } from "react-icons/fa";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import BlurShadowLayer from "@/components/BlurShadow";
 
 const NewsDetail = () => {
     return (
         <Container className="text-white news over-hidden">
-            {/* Title Section */}
+            <BlurShadowLayer />
             <Fade direction="down">
                 <h1 className="py-4 fw-bold col-xl-8 text-uppercase mx-auto text-center">
                     Ethereum Eyes $6,200 Amid Secondary Bull Run

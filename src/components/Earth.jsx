@@ -104,7 +104,9 @@ const GlobeVisualization = ({
         // Cleanup on unmount
         return () => {
             window.removeEventListener('resize', handleResize);
-            mountRef.current.removeChild(renderer.domElement);
+            if (mountRef.current) {
+                mountRef.current.removeChild(renderer.domElement);
+            }
         };
     }, [globeRadius, rotationSpeed, particleSize]);
 

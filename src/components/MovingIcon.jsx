@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Image } from 'react-bootstrap';
 
 const MovingIcons = () => {
@@ -9,22 +8,6 @@ const MovingIcons = () => {
         "/svg/f4.png",
         "/svg/f5.png",
     ];
-
-    const [animations, setAnimations] = useState([]);
-
-    useEffect(() => {
-        const animationNames = ['moveTopToBottom', 'moveBottomToTop', 'moveLeftToRight', 'moveRightToLeft'];
-
-        const generatedAnimations = icons.map(() => {
-            const animationName = animationNames[Math.floor(Math.random() * animationNames.length)];
-            const duration = Math.random() * 5 + 5;
-            const delay = Math.random() * 2;
-            return { animationName, duration, delay };
-        });
-
-        setAnimations(generatedAnimations);
-    }, [icons]);
-
     return (
         <>
             {icons.map((icon, index) => (

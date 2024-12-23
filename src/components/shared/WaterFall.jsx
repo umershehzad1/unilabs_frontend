@@ -81,7 +81,10 @@ const WaterfallWithBackground = () => {
 
         return () => {
             window.removeEventListener('resize', handleResize);
-            containerRef.current.removeChild(renderer.domElement);
+
+            if (containerRef.current) {
+                containerRef.current.removeChild(renderer.domElement);
+            }
         };
     }, []);
 

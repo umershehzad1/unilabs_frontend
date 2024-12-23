@@ -9,6 +9,7 @@ import { MdLogin } from "react-icons/md";
 import ConnectBtn from "../shared/ConnectBtn";
 import { menuItems } from "../shared/MenuItems";
 import Sidebar from "./Sidebar";
+import { AuthVerify } from "@/utils/auth.utils";
 
 const NavigationBar = () => {
   const [show, setShow] = useState(false);
@@ -32,6 +33,7 @@ const NavigationBar = () => {
   }, []);
 
   const [showModal, setShowModal] = useState(false);
+  const Auth = AuthVerify()
 
   return (
     <>
@@ -83,11 +85,13 @@ const NavigationBar = () => {
               ))}
             </Nav>
             <Form>
-              <div className="d-lg-block d-none">
-                <Button as={Link} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn px-3 rounded-pill  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="/login">
-                  Sign in <MdLogin size={25} className="ms-1" />
-                </Button>
-              </div>
+              {!Auth &&
+                <div className="d-lg-block d-none">
+                  <Button as={Link} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn px-3 rounded-pill  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="/login">
+                    Sign in <MdLogin size={25} className="ms-1" />
+                  </Button>
+                </div>
+              }
 
             </Form>
             <div className="d-flex gap-2 align-items-center d-none d-lg-block">

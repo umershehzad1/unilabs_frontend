@@ -10,8 +10,8 @@ const SidebarHeader = ({ onLogoClick }) => {
     const [showDropdown, setShowDropdown] = useState(false);
     const { logout } = useAuth();
     const [user, setUser] = useState({});
-    const userName = AuthName() ;
-    const fullName = `${userName?.firstName || ""} ${user?.lastName || "Siraj Amjad"}`;
+    const userName = AuthName();
+    const fullName = ` ${userName?.fullName || "Siraj Amjad"}`;
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem("user")) || {};
         setUser(storedUser);
@@ -24,11 +24,11 @@ const SidebarHeader = ({ onLogoClick }) => {
     return (
         <Container>
             <div className="d-flex py-2 justify-content-between align-items-center ">
-              
-                <Link href="#" 
-                onClick={onLogoClick}
+
+                <Link href="#"
+                    onClick={onLogoClick}
                     className="nav-button d-flex align-items-center p-2 d-lg-none d-block"
-                 >
+                >
                     <FaBarsStaggered size={25} className='text-white' />
                 </Link>
                 <div className="d-lg-inline-block d-none my-auto">

@@ -7,6 +7,7 @@ import { Fade } from "react-awesome-reveal";
 import ParticlesWave from "@/components/ParticlesWave";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import LatestNews from "@/components/LatestNews";
+import BlurShadowLayer from "@/components/BlurShadow";
 
 const page = () => {
     const particlesInit = async (main) => {
@@ -22,7 +23,6 @@ const page = () => {
                     particleColor="#68AC6A"
                 />
                 <div className="howTB-content w-100">
-
                     <div className="container text-center pt-5 pe-0">
                         <p className="green pt-5">
                             We are currently in the Presale of the UNIL Token. Log-In or Create an account to buy.
@@ -72,8 +72,8 @@ const page = () => {
                                 <div className="text-white d-flex align-items-center">UNI</div>
                             </div>
 
-                            <div className="d-flex flex-grow-2 align-items-stretch">
-                                <Button className="greenBtn w-100">Buy Now</Button>
+                            <div className="d-md-flex ">
+                                <Button className="greenBtn px-5 rounded-3">Buy Now</Button>
                             </div>
                         </div>
 
@@ -93,12 +93,12 @@ const page = () => {
                                     enable: true,
                                     mode: "repulse"
                                 },
-                                resize: true, // Adjust particles on resize
+                                resize: true,
                             },
                             modes: {
                                 repulse: {
-                                    distance: 100, // Responsive repulsion
-                                    duration: 0.6 // Longer repulsion effect
+                                    distance: 100,
+                                    duration: 0.6
                                 }
                             }
                         },
@@ -108,14 +108,14 @@ const page = () => {
                             },
                             links: {
                                 color: "#68AC6A",
-                                distance: 120, // Shorter distance for connections
+                                distance: 120,
                                 enable: true,
                                 opacity: 0.4,
                                 width: 1
                             },
                             move: {
                                 enable: true,
-                                speed: 0.6, // Slower speed for smoothness
+                                speed: 0.6,
                                 direction: "none",
                                 outModes: {
                                     default: "bounce"
@@ -126,22 +126,24 @@ const page = () => {
                                     enable: true,
                                     area: 800
                                 },
-                                value: 100 // Adjusted for performance
+                                value: 100
                             },
                             opacity: {
-                                value: 0.3 // Slightly higher opacity
+                                value: 0.3
                             },
                             shape: {
                                 type: "circle"
                             },
                             size: {
-                                value: { min: 2, max: 4 } // Uniform size range
+                                value: { min: 2, max: 4 }
                             }
                         },
                         detectRetina: true,
-                        fullScreen: { enable: false }
+                        fullScreen: { enable: false, zIndex: -2 }
                     }}
                 />
+                <BlurShadowLayer />
+
                 <Container className="text-white text-center">
                     <Fade bottom delay={300}>
                         <h1 className="display-5 fw-bold py-5 text-uppercase">

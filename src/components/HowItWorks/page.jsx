@@ -10,22 +10,21 @@ const HowItWorks = () => {
     ]
     return (
         <div className='py-5 howitworks'>
-
-
             <Container className='text-white py-5'>
-                <Row>
-                    <Col md={4} xs={12} className='d-flex align-items-center pe-0 d-lg-block d-none'>
-                        <div>
+                <Row className='shadows'>
+                    <Col md={4} xs={12} className='d-flex align-items-center pe-0 position-relative'>
+                        <div className="image-container">
+                            <div className="moving-shadow"></div>
                             <Image src="/howitworks.png" fluid alt="How It Works" />
                         </div>
                     </Col>
-                    <Col md={3} xs={12} className='d-flex align-items-center pe-0 d-lg-block d-none'>
-                        <div>
+                    <Col md={3} xs={12} className='d-flex align-items-center pe-0 position-relative'>
+                        <div className="image-container">
                             <Image src="/howitworkGlobe.png" fluid alt="How It Works Globe" className='howitworksGlobe' />
                         </div>
                     </Col>
                     <Col md={5} xs={12}>
-                        <h1 className='text-center fw-semibold'>How It Works</h1>
+                        <h1 className='fw-semibold ps-5'>How It Works</h1>
                         <div className="custom-border  position-relative ">
                             {howitworks.map((item, i) => {
                                 return <div className='ps-5' key={i}>

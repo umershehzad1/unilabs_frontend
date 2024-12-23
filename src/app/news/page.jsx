@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import Link from "next/link";
 import Subscribe from "@/components/shared/Subscribe";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
+import BlurShadowLayer from "@/components/BlurShadow";
 
 const data = [
   {
@@ -95,6 +96,7 @@ const data = [
 const News = () => {
   return (
     <Container className="text-white news overflow-hidden">
+      <BlurShadowLayer/>
       <Fade direction="down" triggerOnce>
         <h1 className="py-2 text-center fw-bold">NEWS</h1>
       </Fade>
