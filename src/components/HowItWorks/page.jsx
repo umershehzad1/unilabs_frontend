@@ -14,12 +14,12 @@ const HowItWorks = () => {
 
             <Container className='text-white py-5'>
                 <Row>
-                    <Col md={4} xs={12} className='d-flex align-items-center pe-0'>
+                    <Col md={4} xs={12} className='d-flex align-items-center pe-0 d-lg-block d-none'>
                         <div>
                             <Image src="/howitworks.png" fluid alt="How It Works" />
                         </div>
                     </Col>
-                    <Col md={3} xs={12} className='d-flex align-items-center pe-0'>
+                    <Col md={3} xs={12} className='d-flex align-items-center pe-0 d-lg-block d-none'>
                         <div>
                             <Image src="/howitworkGlobe.png" fluid alt="How It Works Globe" className='howitworksGlobe' />
                         </div>
