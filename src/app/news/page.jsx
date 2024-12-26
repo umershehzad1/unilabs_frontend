@@ -96,15 +96,18 @@ const data = [
 const News = () => {
   return (
     <Container className="text-white news overflow-hidden">
-      <BlurShadowLayer/>
+      <BlurShadowLayer />
       <Fade direction="down" triggerOnce>
         <h1 className="py-2 text-center fw-bold">NEWS</h1>
       </Fade>
 
       <Row className="py-5">
-        <Col lg={6} className="p-5 col-12 mb-4" style={{ backgroundColor: "#4CAF50" }}>
+        <Col
+          as={Link}
+          href="/newsDetail"
+          lg={6} className="p-5 col-12 mb-4 ColStyle">
           <Slide direction="left" triggerOnce>
-            <p className="d-inline py-1 px-2 rounded-1" style={{ backgroundColor: "#161617" }}>
+            <p className="text-white d-inline py-1 px-2 rounded-1" style={{ backgroundColor: "#161617" }}>
               <span className="me-2">Featured</span>
               <TiPinOutline />
             </p>
@@ -131,25 +134,27 @@ const News = () => {
         {data.map((item, index) => (
           <Col key={index} xs={12} md={4} className="py-3">
             <Fade direction="up" triggerOnce>
-              <Card style={{ backgroundColor: "#232325" }} className="text-secondary h-100 rounded-0">
+              <Card
+                as={Link}
+                href={item?.link}
+                className="text-secondary h-100 rounded-0 cardStyle">
                 <Card.Img
                   variant="top"
                   src={item.image}
                   style={{ height: "200px" }}
                 />
-                <Card.Body style={{ height: "200px" }} className="overflow-auto">
+                <Card.Body
+                  style={{ height: "200px", overflow: "hidden" }}>
                   <p>
                     <small>{item.date}</small>
                     <small className="px-3">{item.tag}</small>
                   </p>
                   <Card.Title
-                    as={Link}
-                    href={item?.link}
                     className="text-white pointer text-decoration-none"
                   >
                     {item.title}
                   </Card.Title>
-                  <Card.Text>{item.content}</Card.Text>
+                  <Card.Text className="truncate-text">{item.content}</Card.Text>
                 </Card.Body>
               </Card>
             </Fade>

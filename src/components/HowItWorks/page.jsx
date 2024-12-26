@@ -9,16 +9,16 @@ const HowItWorks = () => {
         { heading: "Consistent Profits With Transparency", text: "With integrated blockchain technology, our traders are able to make consistent profits from our investments. Our profit pool automatically distributes gains from capital positions, staking returns, and arbitrage opportunities across the market. " }
     ]
     return (
-        <div className='py-5 howitworks'>
-            <Container className='text-white py-5'>
+        <div className='py-lg-5 py-0 howitworks'>
+            <Container className='text-white py-lg-5 py-0'>
                 <Row className='shadows'>
-                    <Col md={4} xs={12} className='d-flex align-items-center pe-0 position-relative'>
+                    <Col md={4} xs={12} className='d-flex align-items-center pe-0 position-relative d-lg-flex d-none'>
                         <div className="image-container">
                             <div className="moving-shadow"></div>
                             <Image src="/howitworks.png" fluid alt="How It Works" />
                         </div>
                     </Col>
-                    <Col md={3} xs={12} className='d-flex align-items-center pe-0 position-relative'>
+                    <Col md={3} xs={12} className='d-flex align-items-center pe-0 position-relative d-lg-flex d-none'>
                         <div className="image-container">
                             <Image src="/howitworkGlobe.png" fluid alt="How It Works Globe" className='howitworksGlobe' />
                         </div>

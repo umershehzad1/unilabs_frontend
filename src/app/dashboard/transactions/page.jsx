@@ -1,7 +1,9 @@
 "use client";
 import PaginationComponent from '@/components/shared/Pagination';
-import { useState } from 'react';
+import { AllPayments } from '@/services/users';
+import { useEffect, useState } from 'react';
 import { Container, Table, Row, Col } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const Transactions = () => {
     const headers = ["Tranx NO", "Transaction Date", "Tokens", "Amount", "USD Amount", "To", "Type"];
@@ -15,18 +17,45 @@ const Transactions = () => {
         type: i % 2 === 0 ? "Purchase" : "Sale"
     }));
 
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 12;
-    const totalPages = Math.ceil(dummyData.length / itemsPerPage);
 
+    const [allTransactions, setAllTransactions] = useState([])
+    const getAllTransactions = async () => {
+        setIsLoading(true);
+        try {
+            const res = await AllPayments();
+            console.log("API Response: ", res);
+            setAllTransactions(res.data.data); // Update based on your API structure
+        } catch (err) {
+            setError("Failed to fetch transactions. Please try again.");
+            console.error("Error fetching transactions: ", err.response || err);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        getAllTransactions();
+    }, []);
+
+    console.log("transactions data: ", allTransactions)
+
+    // const totalPages = Math.ceil(allTransactions.length / itemsPerPage);
+    // const startIdx = (currentPage - 1) * itemsPerPage;
+    // const endIdx = Math.min(currentPage * itemsPerPage, allTransactions.length);
+    // const currentData = allTransactions.slice(startIdx, endIdx);
+
+
+    const totalPages = Math.ceil(dummyData.length / itemsPerPage);
     const startIdx = (currentPage - 1) * itemsPerPage + 1;
     const endIdx = Math.min(currentPage * itemsPerPage, dummyData.length);
-
     const currentData = dummyData.slice(
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );
-
     return (
         <Container fluid className="text-white">
             <div className="rounded-4  px-md-4 my-4 pb-5">
@@ -81,7 +110,7 @@ const Transactions = () => {
                         </tbody>
                     </Table>
                 </div>
-            
+
                 <Row className="align-items-center mt-4">
                     <Col xs={12} md={6} className="d-flex justify-content-lg-start justify-content-center">
                         <p className="text-white">

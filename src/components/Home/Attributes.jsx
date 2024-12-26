@@ -33,17 +33,17 @@ const Attributes = () => {
         <div>
             <Container>
                 <h1 className='display-6 text-center text-uppercase fw-bold text-white mb-4'>
-                    The UNILABS Application Range 
+                    The UNILABS Application Range
                     <span className="px-2">-</span>
-                     <span style={{ color: "var(--green)" }}>Our Core Offerings</span>
+                    <span style={{ color: "var(--green)" }}>Our Core Offerings</span>
                 </h1>
                 <Row className='py-4'>
                     {attributes.map(attribute => (
                         <Col key={attribute.id} xs={12} lg={attribute.colSize}>
-                            <Card className="bg-dark presales py-3 px-3  mb-5" style={{ borderRadius: "20px" }}>
+                            <Card className="bg-dark presales py-3 px-3 mb-5" style={{ borderRadius: "20px" }}>
                                 <Card.Body className="text-white mt-3">
                                     <h3 className='fw-bold text-uppercase'>{attribute.title}</h3>
-                                    <Card.Text className="font-apfel"  style={{ color: "#aaaaaa" }}>{attribute.text}</Card.Text>
+                                    <Card.Text className="font-apfel" style={{ color: "#aaaaaa" }}>{attribute.text}</Card.Text>
                                 </Card.Body>
                             </Card>
                         </Col>

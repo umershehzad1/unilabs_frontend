@@ -28,7 +28,14 @@ const Footer = () => {
                     <Col md={6} lg={8} className="mb-4 mb-lg-0">
                         <Col lg={6} md={12} className="d-flex flex-column align-items-center align-items-md-start text-center text-md-start">
                             <div className="d-flex gap-2 align-items-center">
-                                <Image src="/logo.png" width={60} height={50} alt="logo" />
+
+                                <Image
+                                    src={"/logo.png"}
+                                    width={100}
+                                    height={50}
+                                    alt="logo"
+                                    className="logo"
+                                />
                                 <h1 className="fw-bold mb-0">Unilabs</h1>
                             </div>
                             <p className="gray mt-3">

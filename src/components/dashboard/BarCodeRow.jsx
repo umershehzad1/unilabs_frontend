@@ -3,34 +3,41 @@ import { Button, Col, Container, Image, Row } from 'react-bootstrap';
 import Confetti from 'react-confetti';
 import { GrCopy } from 'react-icons/gr';
 import { useWindowSize } from 'react-use';
+import { useAccount } from 'wagmi';
+import { QRCodeCanvas } from 'qrcode.react';
 
-const BarCodeRow = () => {
+
+const BarCodeRow = ({
+    amount, paymentId
+}) => {
     const [copied, setCopied] = useState(false);
     const { width, height } = useWindowSize();
-
+    const isConnected = useAccount()
+    const url = `https://nowpayments.io/payment/?iid=${paymentId}`
     const handleCopy = () => {
-        navigator.clipboard.writeText("https://your-reference-link.com");
+        navigator.clipboard.writeText(url);
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
     };
+    const code = isConnected?.address;
+    // console.log("code", isConnected.address)
 
-    const code = "3QJSBWQDyBYn9qbFwUZWLQLF5zTHiRdxXP";
     const value = 0.7654;
 
     return (
         <Container fluid className="py-4 text-center py-5">
             <Row>
                 <Col md={6} className="text-center text-md-start mb-4 mb-md-0">
-                    <p style={{ color: "#DBDBDB" }}>Amount After Fee:</p>
+                    <p style={{ color: "#DBDBDB" }}>Amount After Fee: </p>
                     <p
                         className="fs-2 f-of rounded-3 fw-bold py-2 d-inline ps-2 pe-4"
                         style={{ background: "#589CFF38", color: "white" }}
                     >
-                        <Image src="/btc.png" alt="Coins" className="mx-1 mb-2" width={35} height={35} />
-                        {value} BTC
+                        <Image src="/f2.png" alt="Coins" className="mx-1 mb-2" width={35} height={35} />
+                        {amount} USD
                     </p>
 
-                    <p className="mt-3" style={{ color: "#DBDBDB" }}>To this Address:</p>
+                    <p className="mt-3" style={{ color: "#DBDBDB" }}>To this Address: </p>
                     <p
                         className="fs-5 f-of rounded-3 fw-bold py-2 d-inline-block overflow-hidden px-2"
                         style={{ background: "#589CFF38", color: "white", wordBreak: "break-all" }}
@@ -55,8 +62,9 @@ const BarCodeRow = () => {
                     </Button>
                 </Col>
 
-                <Col md={6} className="d-flex justify-content-lg-end justify-content-center  align-items-center">
-                    <Image src="/barcode.png" width={200} fluid alt="UniLabs" />
+                <Col md={6} className="d-flex justify-content-lg-end justify-content-center align-items-center">
+                    {/* <Image src="/barcode.png" width={200} fluid alt="UniLabs" /> */}
+                    <QRCodeCanvas className='bg-light py-2 px-2' value={url} size={200} />
                 </Col>
             </Row>
         </Container>

@@ -57,3 +57,26 @@
 .roadmap-icon.active svg path {
   fill: white !important;
 }
+
+
+.midLine {
+  margin-top: 100px;
+}
+
+.ColStyle {
+  background-color: #4CAF50;
+  text-decoration: none;
+}
+
+.cardStyle {
+  background-color: #232325;
+  text-decoration: none;
+}
+
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

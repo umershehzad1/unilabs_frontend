@@ -159,7 +159,8 @@ const HowItWorks = () => {
                     <Col lg={6} className="col-12 px-0">
                         <Zoom triggerOnce>
                             <div className="w-100 d-flex justify-content-center mb-4 ">
-                                <Image className='ml-0' fluid src="/roadmap.png" />
+                                {/* <Image className='ml-0' fluid src="/roadmap.png" /> */}
+                                <video src='/ETH.mp4' autoPlay loop muted className='w-100' />
                             </div>
                         </Zoom>
                     </Col>

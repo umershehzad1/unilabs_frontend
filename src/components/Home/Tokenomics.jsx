@@ -47,7 +47,7 @@ const Tokenomics = () => {
                                     <Col xs={12}>
                                         <div className="position-relative">
                                             <ProgressBar
-                                                now={item.value}
+                                                now={item.value / 1.5}
                                                 style={{
                                                     minHeight: "30px",
                                                     borderRadius: "5px",
@@ -59,7 +59,7 @@ const Tokenomics = () => {
                                                 style={{
                                                     position: "absolute",
                                                     top: "0%",
-                                                    left: `calc(${item.value}% + 10px)`,
+                                                    left: `calc(${item.value / 1.5}% + 10px)`,
                                                     fontSize: '16px',
                                                     fontWeight: 'bold',
                                                     color: '#fff',

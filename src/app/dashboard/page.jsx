@@ -2,19 +2,26 @@
 import StageCom from '@/components/dashboard/StageCom';
 import { AuthVerify } from '@/utils/auth.utils';
 import Image from 'next/image';
+import { useParams, useSearchParams } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const tick = '/dashboard/verified.png';
 
 const Dashboard = () => {
+    // const { state } = useParams()
+    const searchParams = useSearchParams();
+    const amount = searchParams.get("amount"); // Retrieve the query parameter
+    const [usdAmount, setUsdAmount] = useState(amount || 0); // Initialize state with the received amount
+
+    console.log("Received amount: ", usdAmount)
     const User = AuthVerify();
-    const [verified,setVerified]=useState(false)
+    const [verified, setVerified] = useState(false)
     useEffect(() => {
-        verified&&setVerified(true)
-    
+        verified && setVerified(true)
+
     }, [verified])
-    
+
 
 
     return (
@@ -48,12 +55,12 @@ const Dashboard = () => {
                     </div>
 
                 </Row>
-                <StageCom  />
+                <StageCom />
 
 
-                    <h2 className="border-top border-bottom py-4 border-white">
-                        Balance in Other Countries:
-                    </h2>
+                <h2 className="border-top border-bottom py-4 border-white">
+                    Balance in Other Countries:
+                </h2>
 
                 <Row className="flex-row mt-3">
                     <Col xs={4} md={3} className="text-center mb-2 mb-sm-0">

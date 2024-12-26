@@ -31,6 +31,8 @@ const faqItems = [
     },
 ];
 
+const Question = "Question about Unilabs"
+const questionBody = "Hi Team,%0D%0A%0D%0AI have a question about..."
 const Faqs = () => {
     const [openKey, setOpenKey] = useState(null);
 
@@ -44,8 +46,12 @@ const Faqs = () => {
                 <Row>
                     <Col lg={5}>
                         <h4 className="display-3 fw-bold mt-xl-5">FAQs</h4>
-                        <p  className="fs-4 col-xl-9 gray">Didn’t find an answer to your question? Drop us a line here. </p>
-                        <Button className="transparentBtn rounded-0">Ask A Question
+                        <p className="fs-4 col-xl-9 gray">Didn’t find an answer to your question? Drop us a line here. </p>
+                        <Button
+                            className="transparentBtn rounded-0"
+                            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${process.env.NEXT_PUBLIC_TO_EMAIL}&su=${Question}&body=${questionBody}`}
+                            target="_blank"
+                        >Ask A Question
                             <span className="ms-2">
                                 <FaArrowRight />
                             </span>
