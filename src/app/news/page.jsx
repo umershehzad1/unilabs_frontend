@@ -124,7 +124,7 @@ const News = () => {
         <Col lg={6} className="col-12">
           <Zoom triggerOnce>
             <div className="w-100 d-flex justify-content-center mb-4">
-              <Image fluid src="/news.png" />
+              <Image fluid src="/news.png" alt="News" />
             </div>
           </Zoom>
         </Col>
