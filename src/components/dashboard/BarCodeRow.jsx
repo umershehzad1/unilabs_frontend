@@ -34,7 +34,7 @@ const BarCodeRow = ({
                         style={{ background: "#589CFF38", color: "white" }}
                     >
                         <Image src="/f2.png" alt="Coins" className="mx-1 mb-2" width={35} height={35} />
-                        {amount} ETH
+                        {amount} USD
                     </p>
 
                     <p className="mt-3" style={{ color: "#DBDBDB" }}>To this Address: </p>
