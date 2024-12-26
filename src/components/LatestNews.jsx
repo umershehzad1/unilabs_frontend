@@ -90,6 +90,8 @@ const News = () => {
                             <Fade direction="up" triggerOnce>
                                 <Card style={{ backgroundColor: "#232325" }} className="text-secondary">
                                     <Card.Img
+                                        as={Link}
+                                        href={item?.link}
                                         variant="top"
                                         src={item.image}
                                         style={{ height: "200px" }}
@@ -108,7 +110,9 @@ const News = () => {
                                                 {item.title}
                                             </Card.Title>
                                         </div>
-                                        <Button className="greenBtn w-50 mt-3 text-dark">Read more</Button>
+                                        <Button
+                                            href={item?.link}
+                                            className="greenBtn w-50 mt-3 text-dark">Read more</Button>
                                     </Card.Body>
                                 </Card>
                             </Fade>

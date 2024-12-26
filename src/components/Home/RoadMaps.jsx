@@ -138,7 +138,7 @@ width:40px;
                                 }}
                                 contentArrowStyle={{ display: "none" }}
                                 date={`${item.phase}`}
-                                dateClassName="custom-date fs-1 fw-bold px-md-4 px-2"
+                                dateClassName="custom-date fs-1 fw-bold px-md-4 px-2 mt-5 py-5"
                                 icon={
                                     <div
                                         className={`roadmap-icon ${activeIndex >= index ? "active" : ""}`}
@@ -146,7 +146,7 @@ width:40px;
                                         {item.icon}
                                     </div>
                                 }
-                                iconClassName="mt-3"
+                                iconClassName="midLine"
                             >
                                 <p className="custom-inner p-5">{item.details}</p>
                             </VerticalTimelineElement>

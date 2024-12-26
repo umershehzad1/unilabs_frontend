@@ -38,7 +38,7 @@ const NavigationBar = () => {
   return (
     <>
       {/* <CustomModal setShowModal={setShowModal} showModal={true} /> */}
-      <Navbar expand="lg" className="fixed-top mt-lg-4  mx-md-2">
+      <Navbar style={{ marginTop: 30 }} expand="lg" className="fixed-top mx-md-2">
         <Container
           className="nav-bg px-md-3 py-0 overflow-hidden"
           style={{
@@ -85,12 +85,20 @@ const NavigationBar = () => {
               ))}
             </Nav>
             <Form>
-              {!Auth &&
+              {Auth ?
+                <div className="d-lg-block d-none">
+                  <Button as={Link} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn px-3 rounded-pill  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="/dashboard">
+                    Dashsboard
+                  </Button>
+                </div>
+                :
                 <div className="d-lg-block d-none">
                   <Button as={Link} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn px-3 rounded-pill  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="/login">
                     Sign in <MdLogin size={25} className="ms-1" />
                   </Button>
                 </div>
+
+
               }
 
             </Form>

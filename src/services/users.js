@@ -29,3 +29,9 @@ export const ResetPasswordService = function (data) {
 export const OTPCheck = function (data) {
   return GetApiData(`/user/verify-otp`, "POST", data, true);
 };
+export const CreateInvoice = function (data) {
+  return GetApiData(`/payment/payments/invoice`, "POST", data, true);
+};
+export const AllPayments = function () {
+  return GetApiData(`/payment/get-all/payments`, "GET", null, true);
+};
