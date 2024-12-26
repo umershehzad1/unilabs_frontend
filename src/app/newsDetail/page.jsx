@@ -71,7 +71,7 @@ const NewsDetail = () => {
                     <Slide direction="up">
                         <div className="d-flex gap-4">
                             <div>
-                                <Image src="/DoubleQuote.png" />
+                                <Image src="/DoubleQuote.png" alt="Quote" />
                             </div>
                             <div className="col-xl-7">
                                 <h5 className="text-white">

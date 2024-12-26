@@ -13,7 +13,7 @@ import { useRouter } from "next/navigation";
 import { AuthVerify } from "@/utils/auth.utils";
 import Swal from "sweetalert2";
 
-const page = () => {
+const Page = () => {
     const [usdAmount, setUsdAmount] = useState(0);
     const [uniAmount, setUniAmount] = useState(0);
     const router = useRouter()
