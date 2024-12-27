@@ -4,15 +4,15 @@ import { Button, Card, Col, Row } from 'react-bootstrap'
 import CustomChart from './CustomChart'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-const data = { stage: "4", remaining: "730921", price: "10", nextStagePrice: 102, total: "2000", sold: 20 }
+const data = { stage: "1", remaining: "210,921", price: "1", nextStagePrice: 10, total: "204042", sold: 15030340 }
 
 const StageCom = () => {
-    const router=useRouter()
+    const router = useRouter()
     return (
         <Row className='py-4 page-bg  px-0'>
-            <Col md={6} xs={12}  
+            <Col md={6} xs={12}
                 className="d-flex flex-column align-items-center justify-content-center"
-                style={{ textAlign: 'center',  }}
+                style={{ textAlign: 'center', }}
             >
                 <CustomChart percentage={30} />
                 <p className='mt-4'>
@@ -47,7 +47,7 @@ const StageCom = () => {
                                 tokens remaining in stage:
 
                             </span>
-                            <span>  {data?.price}</span>
+                            <span>  {data?.remaining}</span>
                         </div>
                         <div className="d-flex justify-content-between fs-4 my-2">
 
@@ -61,7 +61,7 @@ const StageCom = () => {
                             <span>
                                 The next stage price:
                             </span>
-                            <span>  {data?.price} USD</span>
+                            <span>  {data?.nextStagePrice} USD</span>
                         </div>
                     </div>
 
@@ -79,13 +79,13 @@ const StageCom = () => {
                         <span>
                             Tokens Sold in Total:
                         </span>
-                        <span>  {data?.price}</span>
+                        <span>  {data?.sold}</span>
                     </div>
                     <div className="d-flex justify-content-between fs-4 my-1    ">
 
                         <span>
                             Total Raised:                            </span>
-                        <span>  {data?.price} USD</span>
+                        <span>  {data?.total} USD</span>
                     </div>
 
 

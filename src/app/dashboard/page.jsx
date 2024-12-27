@@ -1,5 +1,7 @@
-"use client"
+"use client";
 import StageCom from '@/components/dashboard/StageCom';
+import { wagmiContractConfig } from '@/contract/tokenContract';
+import { useAccount, useReadContract } from 'wagmi';
 import { AuthVerify } from '@/utils/auth.utils';
 import Image from 'next/image';
 import { useParams, useSearchParams } from 'next/navigation';
@@ -9,20 +11,37 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 const tick = '/dashboard/verified.png';
 
 const Dashboard = () => {
-    // const { state } = useParams()
     const searchParams = useSearchParams();
-    const amount = searchParams.get("amount"); // Retrieve the query parameter
-    const [usdAmount, setUsdAmount] = useState(amount || 0); // Initialize state with the received amount
+    const amount = searchParams.get("amount");
+    const [usdAmount, setUsdAmount] = useState(amount || 0);
+    const isConnected = useAccount();
+    console.log("Received amount: ", usdAmount);
 
-    console.log("Received amount: ", usdAmount)
     const User = AuthVerify();
-    const [verified, setVerified] = useState(false)
+    const [verified, setVerified] = useState(false);
+
+    const [tokenBalance, setTokenBalance] = useState("0");
+
     useEffect(() => {
-        verified && setVerified(true)
+        if (verified) {
+            setVerified(true);
+        }
+    }, [verified]);
 
-    }, [verified])
+    const { data: balance, error } = useReadContract({
+        ...wagmiContractConfig,
+        functionName: 'balanceOf',
+        args: [isConnected.address],
+    });
 
-
+    useEffect(() => {
+        if (balance) {
+            setTokenBalance(balance?.toString());
+        }
+        if (error) {
+            console.log("Error fetching token balance: ", error);
+        }
+    }, [balance, error]);
 
     return (
         <Container fluid className="px-md-4 text-white">
@@ -41,42 +60,18 @@ const Dashboard = () => {
                             )}
                         </h2>
                     </Col>
-
-
                 </Row>
                 <div className="border-bottom  my-4"></div>
                 <Row>
-                    <div className="d-flex flex-md-row flex-column align-items-center justify-content-lg-end   gap-3">
+                    <div className="d-flex flex-md-row flex-column align-items-center justify-content-lg-end gap-3">
                         <h2 className='mb-0'>My Token Balance</h2>
-                        <p className=' mb-0 f-of rounded-3 ms-md-3 fw-bold ' style={{ padding: "15px", background: "var(--color2)", color: "var(--color3)" }}>
+                        <p className='mb-0 f-of rounded-3 ms-md-3 fw-bold ' style={{ padding: "15px", background: "var(--color2)", color: "var(--color3)" }}>
                             <Image src="/dashboard/coin.png" alt="Coins" className='mx-1' width={20} height={20} />
-                            100
+                            {tokenBalance}
                         </p>
                     </div>
-
                 </Row>
                 <StageCom />
-
-
-                <h2 className="border-top border-bottom py-4 border-white">
-                    Balance in Other Countries:
-                </h2>
-
-                <Row className="flex-row mt-3">
-                    <Col xs={4} md={3} className="text-center mb-2 mb-sm-0">
-                        <p className="mb-0">USD</p>
-                        <p>-</p>
-                    </Col>
-                    <Col xs={4} md={3} className="text-center mb-2 mb-sm-0">
-                        <p className="mb-0">BTC</p>
-                        <p>-</p>
-                    </Col>
-                    <Col xs={4} md={3} className="text-center">
-                        <p className="mb-0">ETH</p>
-                        <p>-</p>
-                    </Col>
-                </Row>
-
             </div>
         </Container>
     );
