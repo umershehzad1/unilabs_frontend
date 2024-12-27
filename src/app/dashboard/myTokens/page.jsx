@@ -3,8 +3,11 @@ import CopyableLink from '@/components/dashboard/CopyableLink';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { useAccount } from 'wagmi';
 
 const MyToken = () => {
+    const isConnected = useAccount();
+    const walletAddress = isConnected.address;
     const totalData = [
         { label: "Token Amount", value: 0 },
         { label: "Purchase Token:", value: 0 },
@@ -38,20 +41,41 @@ const MyToken = () => {
                                         Add or update your Ethereum wallet address to receive your $UNI tokens.
                                     </p>
                                     <Col className="d-flex flex-column flex-md-row align-items-center">
-                                        <small className="fs-5 f-of mb-2 mb-md-0">
-                                            <small style={{ color: "var(--color1)" }}>Receiving Wallet:</small>
-                                            <Link href="#" className="ms-2 small f-of">Add Your Wallet Address</Link>
-                                        </small>
-                                        <Button
-                                            size="sm"
-                                            className="ms-md-3 mt-2 mt-md-0 f-of"
-                                            style={{
-                                                backgroundColor: "rgba(13, 110, 253, 0.4)!important",
-                                                borderColor: "rgba(13, 110, 253, 0.7)"
-                                            }}
-                                        >
-                                            Add
-                                        </Button>
+                                        {walletAddress ?
+                                            <small className="fs-5 f-of mb-2 mb-md-0">
+                                                <small style={{ color: "var(--color1)" }}>Receiving Wallet: </small>
+                                                <p
+                                                    style={{
+                                                        wordWrap: "break-word",  // Allows breaking the long address into the next line
+                                                        overflowWrap: "break-word",  // Ensures the address breaks into the next line
+                                                        whiteSpace: "normal",  // Ensures the text doesn't stay in one line
+                                                        wordBreak: "break-word",  // Forces the word to break if needed
+                                                    }}
+
+                                                    className="ms-0 small f-of mb-0">{walletAddress}</p>
+                                            </small>
+                                            :
+                                            <>
+
+                                                <small className="fs-5 f-of mb-2 mb-md-0">
+                                                    <small style={{ color: "var(--color1)" }}>Receiving Wallet:</small>
+                                                    <Link href="#" className="ms-2 small f-of">Connect your wallet to view your wallet address</Link>
+                                                </small>
+                                                <Button
+                                                    size="sm"
+                                                    className="ms-md-3 mt-2 mt-md-0 f-of"
+                                                    style={{
+                                                        backgroundColor: "rgba(13, 110, 253, 0.4)!important",
+                                                        borderColor: "rgba(13, 110, 253, 0.7)"
+                                                    }}
+                                                >
+                                                    Add
+                                                </Button>
+                                            </>
+
+                                        }
+
+
                                     </Col>
                                 </div>
                             </Card>
@@ -75,7 +99,7 @@ const MyToken = () => {
                                 </div>
                             </Card>
 
-                            <Card className="p-3 rounded-4"
+                            {/* <Card className="p-3 rounded-4"
                                 style={{
                                     color: "#DBDBDB",
                                     background: "#589CFF38",
@@ -98,10 +122,10 @@ const MyToken = () => {
                                     <h5 className="text-white ">My referral link:</h5>
                                     <CopyableLink />
                                 </div>
-                            </Card>
+                            </Card> */}
                         </Col>
 
-                        <Col className='offset-xl-1 mt-xl-0 mt-4' xl={5} xs={12}>
+                        {/* <Col className='offset-xl-1 mt-xl-0 mt-4' xl={5} xs={12}>
                             <Row className="mb-3">
                                 <div className="d-flex flex-md-row flex-column align-items-center justify-content-lg-end gap-3">
                                     <h2 className='mb-0 f-of'>My Token Balance</h2>
@@ -141,8 +165,8 @@ const MyToken = () => {
                                     </Button>
                                 </div>
                             </Card>
-                           
-                        </Col>
+
+                        </Col> */}
                     </Row>
                 </div>
             </div>
