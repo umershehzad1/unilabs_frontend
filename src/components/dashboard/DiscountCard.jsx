@@ -13,25 +13,25 @@ const DiscountCard = ({ data }) => {
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            fontSize: '2rem', 
-            color:"#589CFF", 
+            fontSize: '2rem',
+            color: "#589CFF",
             fontWeight: 'bold',
             padding: '5px 10px',
             borderRadius: '8px'
           }}
         >
-       
-       
 
-           {data.discount}% 
-        
+
+
+          {data.discount}%
+
         </div>
       </div>
       <Card.Body>
         <Card.Text className="fs-4 fw-bold">
           Discount range from
-          <span className="text-success px-1">{data.ds} USD</span> to
-          <span className="text-success px-1 d-block">{data.de} USD</span>.
+          <span className="text-success"> {data.ds} USD </span> to
+          <span className="text-success d-block"> {data.de} USD</span>.
         </Card.Text>
 
       </Card.Body>

@@ -1,9 +1,8 @@
 "use client"
-import React from 'react'
-import { Button, Card, Col, Row } from 'react-bootstrap'
-import CustomChart from './CustomChart'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { Button, Card, Col, Row } from 'react-bootstrap'
+import CustomChart from './CustomChart'
 const data = { stage: "1", remaining: "210,921", price: "1", nextStagePrice: 10, total: "204042", sold: 15030340 }
 
 const StageCom = () => {
@@ -93,8 +92,7 @@ const StageCom = () => {
                 </Card>
 
                 <div className="d-flex justify-content-end">
-
-                    <Button onClick={() => router.push("/dashboard/makepayment")} className='shadow-button mb-0 f-of rounded-3 ms-md-3 fw-bold' style={{ background: 'var(--color4)' }}>
+                    <Button onClick={() => router.push("/dashboard/buytoken")} className='shadow-button mb-0 f-of rounded-3 ms-md-3 fw-bold' style={{ background: 'var(--color4)' }}>
                         <Image src="/dashboard/coin.png" alt="Coins" className='mx-1' width={20} height={20} />
                         Buy New Token
                     </Button>

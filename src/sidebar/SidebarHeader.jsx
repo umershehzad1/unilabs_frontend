@@ -1,4 +1,4 @@
-import { AuthName } from '@/utils/auth.utils';
+import { AuthName, AuthVerify } from '@/utils/auth.utils';
 import { useAuth } from '@/utils/AuthContext';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -11,7 +11,8 @@ const SidebarHeader = ({ onLogoClick }) => {
     const { logout } = useAuth();
     const [user, setUser] = useState({});
     const userName = AuthName();
-    const fullName = ` ${userName?.fullName || "Siraj Amjad"}`;
+    const UserVerify = AuthVerify();
+    const fullName = ` ${userName?.fullName || ""}`;
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem("user")) || {};
         setUser(storedUser);
@@ -34,36 +35,38 @@ const SidebarHeader = ({ onLogoClick }) => {
                 <div className="d-lg-inline-block d-none my-auto">
                 </div>
                 <div>
-                    <div className="d-flex align-items-center">
-                        <Dropdown show={showDropdown} onToggle={handleDropdownToggle}>
-                            <Dropdown.Toggle
-                                as="div" className='caret-none'
-                                style={{ cursor: 'pointer' }}
-                                id="user-dropdown"
-                            >
-                                <div className="mx-2 d-flex align-items-center" onClick={handleDropdownToggle}>
-                                    <div className="text-capitalize text-white f-qs" >
-                                        {fullName}
+                    {UserVerify &&
+                        <div className="d-flex align-items-center">
+                            <Dropdown show={showDropdown} onToggle={handleDropdownToggle}>
+                                <Dropdown.Toggle
+                                    as="div" className='caret-none'
+                                    style={{ cursor: 'pointer' }}
+                                    id="user-dropdown"
+                                >
+                                    <div className="mx-2 d-flex align-items-center" onClick={handleDropdownToggle}>
+                                        <div className="text-capitalize text-white f-qs" >
+                                            {fullName}
+                                        </div>
                                     </div>
-                                </div>
-                            </Dropdown.Toggle>
+                                </Dropdown.Toggle>
 
-                            <Dropdown.Menu className="border-0" style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}>
-                                <Dropdown.Item onClick={logout} >
-                                    <FaSignOutAlt className="me-2" />
-                                    Logout
-                                </Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
+                                <Dropdown.Menu className="border-0" style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}>
+                                    <Dropdown.Item onClick={logout} >
+                                        <FaSignOutAlt className="me-2" />
+                                        Logout
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
 
-                        <Image
-                            className="ms-2"
-                            onClick={handleDropdownToggle}
-                            src={user.image ? user.image : `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(fullName)}&radius=50`}
-                            alt="Avatar"
-                            style={{ height: '40px', width: "40px", borderRadius: "50%", cursor: 'pointer' }}
-                        />
-                    </div>
+                            <Image
+                                className="ms-2"
+                                onClick={handleDropdownToggle}
+                                src={user.image ? user.image : `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(fullName)}&radius=50`}
+                                alt="Avatar"
+                                style={{ height: '40px', width: "40px", borderRadius: "50%", cursor: 'pointer' }}
+                            />
+                        </div>
+                    }
                 </div>
             </div>
         </Container>

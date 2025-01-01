@@ -3,7 +3,7 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div><Faqs /></div>
+        <div className='py-5 mt-5'><Faqs /></div>
     )
 }
 

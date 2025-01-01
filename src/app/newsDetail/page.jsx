@@ -52,11 +52,12 @@ const NewsDetail = () => {
                             <small>January 10, 2024</small>
                             <small className="d-flex align-items-center">.</small>
                             <small>By Janet Lawson</small>
+                            {/*
                             <small className="d-flex align-items-center">.</small>
-                            <small className="gap-1">
+                             <small className="gap-1">
                                 <FaRegComment />
                                 3 comments
-                            </small>
+                            </small> */}
                         </p>
                     </Slide>
 

@@ -7,7 +7,6 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Button, Col, Container, Form } from "react-bootstrap";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 import Swal from "sweetalert2";
 import { loadFull } from "tsparticles";
 
@@ -21,12 +20,11 @@ function Login() {
         if (Auth) {
             router.back();
         }
-    }, [Auth, router]); 
+    }, [Auth, router]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = { email, password };
-
         if (!email || !password) {
             Swal.fire({
                 title: "Error",
@@ -36,7 +34,6 @@ function Login() {
             });
             return;
         }
-
         Swal.fire({
             title: "Logging In...",
             html: `<div class="spinner-container"><div class="loading-spinner"></div></div><p>Please wait while we log you in.</p>`,
@@ -45,7 +42,6 @@ function Login() {
             allowEscapeKey: false,
             backdrop: true,
         });
-
         try {
             const response = await LoginForm(data);
             const user = response.data.data;
@@ -53,9 +49,11 @@ function Login() {
                 localStorage.setItem("user", JSON.stringify(user));
                 router.push("/dashboard");
                 Swal.close();
+            } else {
+                Swal.close();
             }
         } catch (error) {
-            const errorMessage = error.response?.data?.errors[0]?.msg || error.response?.data?.error || "Something went wrong. Please try again.";
+            const errorMessage = error.response?.data?.error || error.response?.data?.errors[0]?.msg || "Something went wrong. Please try again.";
             console.log(errorMessage)
             Swal.fire({
                 title: "Login Failed",

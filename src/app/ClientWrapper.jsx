@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import DynamicTitle from '@/components/shared/DynamicTitle';
-import ContextProvider from '../../context';
+import ContextProvider from '../context';
 import DashboardLayout from './DashboardLayout';
 import LandingLayout from './LandingLayout';
 import { usePathname } from 'next/navigation';
@@ -25,7 +25,6 @@ export default function ClientWrapper({ children }) {
 
     return (
         <ContextProvider>
-            <DynamicTitle />
             <Layout>{children}</Layout>
         </ContextProvider>
     );

@@ -42,7 +42,7 @@ const Faqs = () => {
 
     return (
         <div className="faq">
-            <Container className="py-5 text-white  ">
+            <Container className="py-4 text-white">
                 <Row>
                     <Col lg={5}>
                         <h4 className="display-3 fw-bold mt-xl-5">FAQs</h4>

@@ -50,7 +50,8 @@ const Footer = () => {
                             <Col xs={12} md={6} className="text-center text-md-start mb-4 mb-md-0">
                                 <h5 className="text-white fw-bold text-uppercase">Company</h5>
                                 {menuItems.slice(0, 4).map((link, index) => (
-                                    <Link key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
+                                    <Link target={link.href.endsWith(".pdf") ? "_blank" : "_self"}
+                                        rel={link.href.endsWith(".pdf") ? "noopener noreferrer" : undefined} key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
                                         {link.label}
                                     </Link>
                                 ))}
@@ -58,12 +59,14 @@ const Footer = () => {
                             <Col xs={12} md={6} className="text-center text-md-start">
                                 <h5 className="text-white fw-bold text-uppercase">Resources</h5>
                                 {menuItems.slice(4, 8).map((link, index) => (
-                                    <Link key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
+                                    <Link target={link.href.endsWith(".pdf") ? "_blank" : "_self"}
+                                        rel={link.href.endsWith(".pdf") ? "noopener noreferrer" : undefined} key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
                                         {link.label}
                                     </Link>
                                 ))}
                                 {resources.map((link, index) => (
-                                    <Link key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
+                                    <Link target={link.href.endsWith(".pdf") ? "_blank" : "_self"}
+                                        rel={link.href.endsWith(".pdf") ? "noopener noreferrer" : undefined} key={index} href={link.href} className="text-decoration-none d-block py-1 gray">
                                         {link.label}
                                     </Link>
                                 ))}

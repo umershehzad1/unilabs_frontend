@@ -288,7 +288,17 @@
 
 .latestnews .swiper-pagination-bullet-active {
   background-color: var(--green) !important;
+}
 
+.hero-image {
+  filter: brightness(50%);
+}
+
+.hero-image:hover,
+.hero-image.move {
+  cursor: pointer;
+  filter: brightness(100%);
+  transition: all 0.3s ease-in-out !important;
 }
 
 .social-icons .footer-icon {
@@ -758,6 +768,10 @@ body {
   .signin-close-btn {
     top: -30%;
   }
+
+  .fs-custom {
+    font-size: 14px !important;
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -938,7 +952,7 @@ body {
 }
 
 .whybg {
-  background-image: url("../../public/map.png");
+  /* background-image: url("../../public/map.png"); */
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -1352,7 +1366,7 @@ body {
 }
 
 .teambg {
-  background-image: url("../../public/teambg.png");
+  /* background-image: url("../../public/teambg.png"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left center;

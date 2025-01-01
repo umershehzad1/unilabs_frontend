@@ -15,7 +15,7 @@ const Dashboard = () => {
     const amount = searchParams.get("amount");
     const [usdAmount, setUsdAmount] = useState(amount || 0);
     const isConnected = useAccount();
-    console.log("Received amount: ", usdAmount);
+    // console.log("Received amount: ", usdAmount);
 
     const User = AuthVerify();
     const [verified, setVerified] = useState(false);
@@ -49,7 +49,7 @@ const Dashboard = () => {
                 <Row className="align-items-center text-center text-md-start">
                     <Col md={6} className="mb-3 mb-md-0">
                         <h2 className="fs-5 fw-bold">
-                            <span className='me-1' style={{ color: "var(--color1)" }}>Account Status:</span>
+                            <span className='me-1 text-white'>Account Status:</span>
                             {User ? (
                                 <span >
                                     <Image width={24} height={24} src={tick} alt="Check" className="mx-1" />

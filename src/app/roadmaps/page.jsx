@@ -25,7 +25,7 @@ const HowItWorks = () => {
                         <Card className="bg-transparent text-white ms-auto works1 mb-4">
                             <div className="row">
                                 <div className="col-lg-8 col-10 offset-lg-0 offset-1">
-                                    <Slide left delay={200} triggerOnce>
+                                    <Slide left delay={100} smooth triggerOnce>
                                         <h4 className='fw-bold'>Phase 1: Genesis (Nov 2024 – Mar 2025)</h4>
                                         <h5 className='fw-bold' style={{ color: "var(--green)" }}>Laying the Foundation for Innovation</h5>  <Col>
                                             <ul style={{ color: "#CECECE" }}>
@@ -71,7 +71,7 @@ const HowItWorks = () => {
                                 </div>
 
                                 <div className="col-lg-8 col-10 offset-lg-0 offset-1 d-lg-block d-none">
-                                    <Slide right delay={200} triggerOnce>
+                                    <Slide right triggerOnce>
                                         <h4 className='fw-bold'>Phase 3: Apex (Aug 2025 – Nov 2025)</h4>
                                         <h5 className='fw-bold' style={{ color: "var(--green)" }}>Driving Innovation and Adoption</h5>
                                         <Col>

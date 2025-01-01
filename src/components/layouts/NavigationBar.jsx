@@ -69,16 +69,17 @@ const NavigationBar = () => {
           </Navbar.Toggle>
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="mx-auto my-2 my-lg-0 d-none d-lg-block"
+              className="mx-auto mx-0 my-2 my-lg-0 d-none d-lg-block"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
               {menuItems.map((link, index) => (
                 <Link
-                  className={`mx-xl-4 mx-2  ${pathname === link.href ? "text-green" : "text-white"
-                    }`}
+                  className={`mx-xl-3  mx-2 fs-custom  ${pathname === link.href ? "text-green" : "text-white"}`}
                   key={index}
                   href={link.href}
+                  target={link.href.endsWith(".pdf") ? "_blank" : "_self"}
+                  rel={link.href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -88,7 +89,7 @@ const NavigationBar = () => {
               {Auth ?
                 <div className="d-lg-block d-none">
                   <Button as={Link} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn px-3 rounded-pill  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="/dashboard">
-                    Dashsboard
+                    Dashboard
                   </Button>
                 </div>
                 :
@@ -102,11 +103,9 @@ const NavigationBar = () => {
               }
 
             </Form>
-            <div className="d-flex gap-2 align-items-center d-none d-lg-block">
-
-              <div className="mx-3 nav-button">
+            <div className="d-flex  align-items-center d-none d-lg-block">
+              <div className="mx-xl-3 nav-button">
                 <ConnectBtn />
-
               </div>
             </div>
           </Navbar.Collapse>

@@ -11,8 +11,8 @@ import { useAccount } from 'wagmi';
 const BuyToken = () => {
   const isConnected = useAccount();
   const router = useRouter();
-  const [loading, setLoading] = useState(false); // Loading state for the button
-  const [address, setAddress] = useState(isConnected.address || "Connect your wallet & Add wallet address");
+  const [loading, setLoading] = useState(false);
+  const [address, setAddress] = useState(isConnected?.address || "Connect your wallet & Add wallet address");
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
   const [amount, setAmount] = useState(query || 0);
@@ -22,8 +22,8 @@ const BuyToken = () => {
   const [purchaseBonus, setPurchaseBonus] = useState(0);
   const [selectedDiscount, setSelectedDiscount] = useState(0);
 
-  const ETH_RATE = 300; // 1 ETH = 300 USD
-  const UNI_RATE = 0.0001; // 1 UNI = 0.0001 ETH
+  const ETH_RATE = 300;
+  const UNI_RATE = 0.0001;
 
   const data = [
     { discount: 5, ds: 50.00, de: 250.0 },
@@ -33,18 +33,17 @@ const BuyToken = () => {
 
   useEffect(() => {
     if (isConnected?.address) {
-      setAddress(isConnected.address);
+      setAddress(isConnected?.address);
     }
-  }, [isConnected.address]);
+  }, [isConnected?.address]);
 
   useEffect(() => {
     if (amount > 0) {
-      const eth = amount / ETH_RATE; // Convert USD to ETH
-      const uni = eth / UNI_RATE; // Convert ETH to UNI
+      const eth = amount / ETH_RATE;
+      const uni = eth / UNI_RATE;
       setEthAmount(eth);
       setUniTokens(uni);
 
-      // Calculate Purchase Bonus based on selected discount
       const bonus = (uni * selectedDiscount) / 100;
       setPurchaseBonus(bonus);
     } else {
@@ -74,7 +73,7 @@ const BuyToken = () => {
       });
       return;
     }
-    setLoading(true); // Show loading animation
+    setLoading(true);
 
     const paymentData = {
       amount: amount,
@@ -89,7 +88,7 @@ const BuyToken = () => {
         const serializedData = encodeURIComponent(JSON.stringify(data));
         router.push(`/dashboard/makepayment?query=${serializedData}`);
       } else {
-        setLoading(false); // Stop loading once the process completes
+        setLoading(false);
         Swal.fire({
           icon: 'error',
           title: 'Create Payment Failed',
@@ -97,13 +96,13 @@ const BuyToken = () => {
         });
       }
     } catch (error) {
-      setLoading(false); // Stop loading once the process completes
+      setLoading(false);
       Swal.fire({
         icon: 'error',
         title: error.message,
       });
     } finally {
-      setLoading(false); // Stop loading once the process completes
+      setLoading(false);
 
     }
   };
@@ -135,7 +134,7 @@ const BuyToken = () => {
                 <Col key={index} md={4} xs={12}>
                   <DiscountCard data={d} />
                   <Button
-                    className="mt-3 w-50 d-flex justify-content-center mx-auto"
+                    className="shadow-button-lg mt-3 w-50 d-flex justify-content-center mx-auto"
                     style={{ background: 'var(--color4)' }}
                     onClick={() => {
                       handleSelectDiscount(d.de, d.discount);
@@ -161,10 +160,7 @@ const BuyToken = () => {
                 <Form.Control
                   type="number"
                   value={amount}
-                  onChange={(e) => {
-                    const value = Math.max(0, e.target.value); // Ensure value is not less than 0
-                    setAmount(value);
-                  }}
+                  onChange={(e) => setAmount(e.target.value)}
                   placeholder="Enter Sending Amount"
                   className="amount-input fs-4 border-0 rounded-3 p-3"
                 />
@@ -268,17 +264,6 @@ const BuyToken = () => {
                 </Button>
               </div>
             )}
-            {/* <div className="text-center">
-              <Button
-                onClick={handleOnBuy}
-                disabled={!isChecked}
-                className="shadow-button-lg mt-4 mb-0 f-of btn-lg fw-bold"
-                style={{ background: isChecked ? 'var(--color4)' : '#cccccc', borderColor: '#cccccc' }}
-              >
-                <Image src="/dashboard/coin.png" alt="Coins" className="mx-1" width={20} height={20} />
-                Buy Now
-              </Button>
-            </div> */}
           </div>
         )}
       </div>

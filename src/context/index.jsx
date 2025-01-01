@@ -5,7 +5,7 @@ import { createAppKit } from '@reown/appkit/react'
 import { mainnet, arbitrum } from '@reown/appkit/networks'
 import React from 'react'
 import { cookieToInitialState, WagmiProvider } from 'wagmi'
-import { wagmiAdapter,projectId } from '../config'
+import { wagmiAdapter, projectId } from '../../config'
 
 const queryClient = new QueryClient()
 
@@ -29,11 +29,11 @@ const modal = createAppKit({
   metadata,
   features: {
     analytics: true,
-    email:false,
-    socials:false,
-    emailShowWallets:true,
+    email: false,
+    socials: false,
+    emailShowWallets: true,
   },
-  themeMode:'dark'
+  themeMode: 'dark'
 })
 
 const ContextProvider = ({ children, cookies }) => {

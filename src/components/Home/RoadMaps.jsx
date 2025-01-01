@@ -119,7 +119,7 @@ width:40px;
                     style={{
                         minHeight: "100vh",
                         color: "#fff",
-                        padding: "100px 20px",
+                        padding: "50px 20px",
                     }}
                 >
                     <h1 className="text-center mb-5" style={{ color: "white" }}>

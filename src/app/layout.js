@@ -1,16 +1,17 @@
+import DynamicTitle from "@/components/shared/DynamicTitle";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Outfit, Quicksand, Smooch_Sans } from "next/font/google";
 import Head from "next/head";
 import "react-circular-progressbar/dist/styles.css";
-import "swiper/swiper-bundle.css";
-import ClientWrapper from "./ClientWrapper";
-import "./globals.css";
-import "./animation.css";
-import "./dashboard.css"; 
 import 'react-phone-number-input/style.css';
 import 'react-vertical-timeline-component/style.min.css';
+import "swiper/swiper-bundle.css";
+import "./animation.css";
+import ClientWrapper from "./ClientWrapper";
 import "./custom.css";
+import "./dashboard.css";
+import "./globals.css";
 
 
 const smoochSans = Smooch_Sans({
@@ -38,11 +39,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html suppressHydrationWarning lang="en">
       <Head>
         <link rel="icon" href="./public/favicon.ico" />
       </Head>
-      <body
+      <DynamicTitle />
+      <body suppressHydrationWarning
         className={`m-0 ${smoochSans.variable} ${quicksand.variable} ${outfit.variable}`}
       >
         <ClientWrapper>{children}</ClientWrapper>

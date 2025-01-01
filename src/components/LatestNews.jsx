@@ -89,13 +89,13 @@ const News = () => {
                         <SwiperSlide key={index}>
                             <Fade direction="up" triggerOnce>
                                 <Card style={{ backgroundColor: "#232325" }} className="text-secondary">
-                                    <Card.Img
-                                        as={Link}
-                                        href={item?.link}
-                                        variant="top"
-                                        src={item.image}
-                                        style={{ height: "200px" }}
-                                    />
+                                    <Link href={item?.link}>
+                                        <Card.Img
+                                            variant="top"
+                                            src={item?.image}
+                                            style={{ height: "200px" }}
+                                        />
+                                    </Link>
                                     <Card.Body className="overflow-auto" style={{ height: "200px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                                         <div>
                                             <p>

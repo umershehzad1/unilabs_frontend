@@ -12,5 +12,6 @@ export const menuItems = [
   { href: "/roadmaps", label: "Unilabs Roadmap" },
   { href: "/howToBuy", label: "How to Buy" },
   { href: "/news", label: "News" },
+  { href: "/Whitepaper1.pdf", label: "White Paper" },
 ];
 

@@ -36,8 +36,10 @@ const Sidebar = ({ show, handleClose, setShowModal }) => {
                             key={index}
                             href={link.href}
                             onClick={handleClose}
+                            target={link.href.endsWith(".pdf") ? "_blank" : "_self"}
+                            rel={link.href.endsWith(".pdf") ? "noopener noreferrer" : undefined}
                             className={`nav-item text-decoration-none py-3 px-3 text-white ${isActive(link.href) ? "active-link" : ""
-                                }`}  
+                                }`}
                             style={{
                                 borderBottom: "1px solid #4caf50",
                             }}
