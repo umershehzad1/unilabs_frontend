@@ -1,5 +1,10 @@
 import { GetApiData } from "@/utils/http-client";
 
+
+export const WalletSign = function (data) {
+  return GetApiData(`/user/connect`, "POST", data, true);
+};
+
 export const LoginForm = function (data) {
   return GetApiData(`/user/login`, "POST", data, true);
 };
@@ -9,10 +14,10 @@ export const UsersCreate = function (data) {
 export const GetAllUser = function (query) {
   return GetApiData(`/user/get-users?search=${query}`, "GET", null, true);
 };
-export const UserStatus = function (id,status) {
+export const UserStatus = function (id, status) {
   return GetApiData(`/user/update-status/${id}`, "PUT", {
-    "status" : status
-}, true);
+    "status": status
+  }, true);
 };
 
 export const UserDelete = function (id) {

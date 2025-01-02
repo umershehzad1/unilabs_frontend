@@ -48,7 +48,7 @@ const Dashboard = () => {
             <div className="rounded-4 py-3 px-md-5 my-4" style={{ background: "#589CFF0A" }}>
                 <Row className="align-items-center text-center text-md-start">
                     <Col md={6} className="mb-3 mb-md-0">
-                        <h2 className="fs-5 fw-bold">
+                        {/* <h2 className="fs-5 fw-bold">
                             <span className='me-1 text-white'>Account Status:</span>
                             {User ? (
                                 <span >
@@ -58,7 +58,7 @@ const Dashboard = () => {
                             ) : (
                                 <span className="text-danger">Not Verified</span>
                             )}
-                        </h2>
+                        </h2> */}
                     </Col>
                 </Row>
                 <div className="border-bottom  my-4"></div>

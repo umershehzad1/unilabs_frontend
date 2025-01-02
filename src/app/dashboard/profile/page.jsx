@@ -6,10 +6,9 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Profile = () => {
     const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
+        fullName: '',
         phone: '',
-        email:'',
+        email: '',
         password: '',
         oldPassword: '',
         confirmPassword: ''
@@ -35,37 +34,20 @@ const Profile = () => {
     return (
         <Container fluid className="px-md-4 text-white">
             <div className="rounded-4 py-3 px-md-5 my-4 pb-5" style={{ background: "#589CFF0A" }}>
-                <div className="page-bg bg-top">
+                <div className="page-bg bg-top py-5">
                     <h1 className="fw-bold border-bottom border-success pb-2">Profile Details</h1>
-
                     <Form onSubmit={handleSubmit}>
                         <Row className="mb-3 mt-4   ">
                             <Col className="mb-3" md={6}>
                                 <Form.Group>
-                                    <Form.Label className="fw-semibold">Enter your first name</Form.Label>
+                                    <Form.Label className="fw-semibold">Enter your full name</Form.Label>
                                     <Form.Control
                                         type="text"
-                                        name="firstName"
+                                        name="fullName"
                                         placeholder="First Name"
-                                        
-                                        className="px-4 py-3 border-0 input-custom rounded"
-                                        value={formData.firstName}
-                                        onChange={handleChange}
-                                        required
-                                    />
-                                </Form.Group>
-                            </Col>
 
-                            <Col className="mb-3" md={6}>
-                                <Form.Group>
-                                    <Form.Label className="fw-semibold">Enter your last name</Form.Label>
-                                    <Form.Control
-                                        type="text"
-                                        name="lastName"
-                                        placeholder="Last Name"
-                                        
                                         className="px-4 py-3 border-0 input-custom rounded"
-                                        value={formData.lastName}
+                                        value={formData.fullName}
                                         onChange={handleChange}
                                         required
                                     />
@@ -78,7 +60,7 @@ const Profile = () => {
                                         type="email"
                                         name="email"
                                         placeholder="email"
-                                        
+
                                         className="px-4 py-3 border-0 input-custom rounded"
                                         value={formData.email}
                                         required
@@ -109,7 +91,7 @@ const Profile = () => {
                                             type={showPassword ? 'text' : 'password'}
                                             name="oldPassword"
                                             placeholder="Old Password"
-                                            
+
                                             className="px-4 py-3 border-0 input-custom rounded"
                                             value={formData.oldPassword}
                                             onChange={handleChange}
@@ -142,7 +124,7 @@ const Profile = () => {
                                             type={showPassword ? 'text' : 'password'}
                                             name="password"
                                             placeholder="New Password"
-                                            
+
                                             className="px-4 py-3 border-0 input-custom rounded"
                                             value={formData.password}
                                             onChange={handleChange}
@@ -174,7 +156,7 @@ const Profile = () => {
                                         type={showPassword ? 'text' : 'password'}
                                         name="confirmPassword"
                                         placeholder="Confirm New Password"
-                                        
+
                                         className="px-4 py-3 border-0 input-custom rounded"
                                         value={formData.confirmPassword}
                                         onChange={handleChange}

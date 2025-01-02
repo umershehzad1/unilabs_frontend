@@ -43,7 +43,6 @@ const BuyToken = () => {
       const uni = eth / UNI_RATE;
       setEthAmount(eth);
       setUniTokens(uni);
-
       const bonus = (uni * selectedDiscount) / 100;
       setPurchaseBonus(bonus);
     } else {
@@ -73,8 +72,15 @@ const BuyToken = () => {
       });
       return;
     }
+    if (amount <= 0) {
+      Swal.fire({
+        title: "Error",
+        text: "Please Enter valid amount to proceed",
+        icon: "error",
+        confirmButtonText: "OK",
+      }); return
+    }
     setLoading(true);
-
     const paymentData = {
       amount: amount,
       currency: "usd",
@@ -156,9 +162,10 @@ const BuyToken = () => {
 
             <Form className="py-5 row">
               <Col xs={12} md={6} className="mb-4 gap-2">
-                <Form.Label className="fw-bold fs-5">Select Payment Method</Form.Label>
+                <Form.Label className="fw-bold fs-5">Payment Amount</Form.Label>
                 <Form.Control
                   type="number"
+                  min={1}
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   placeholder="Enter Sending Amount"
@@ -168,6 +175,7 @@ const BuyToken = () => {
                 <Form.Control
                   type="text"
                   value={address}
+                  disabled={true}
                   onChange={(e) => setAddress(e.target.value)}
                   placeholder="Enter Wallet Address"
                   className="amount-input fs-5 border-0 rounded-3 p-3"

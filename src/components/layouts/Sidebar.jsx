@@ -47,7 +47,7 @@ const Sidebar = ({ show, handleClose, setShowModal }) => {
                             {link.label}
                         </Link>
                     ))}
-                    <Link
+                    {/* <Link
                         onClick={() => { setShowModal(true), handleClose() }}
                         href="#sign-in"
                         className="nav-item text-decoration-none py-3 px-3 text-white"
@@ -57,7 +57,7 @@ const Sidebar = ({ show, handleClose, setShowModal }) => {
                         }}
                     >
                         Sign In
-                    </Link>
+                    </Link> */}
 
                     <div className="mx-3 nav-button mt-4" onClick={handleClose}>
                         <ConnectBtn />

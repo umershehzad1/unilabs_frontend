@@ -5,7 +5,7 @@ import { createAppKit } from '@reown/appkit/react'
 import { mainnet, arbitrum } from '@reown/appkit/networks'
 import React from 'react'
 import { cookieToInitialState, WagmiProvider } from 'wagmi'
-import { wagmiAdapter, projectId } from '../../config'
+import { wagmiAdapter, projectId } from '../config'
 
 const queryClient = new QueryClient()
 
@@ -20,7 +20,6 @@ const metadata = {
   icons: ['https://avatars.githubusercontent.com/u/179229932']
 }
 
-// Create the modal
 const modal = createAppKit({
   adapters: [wagmiAdapter],
   projectId,

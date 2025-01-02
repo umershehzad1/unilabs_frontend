@@ -43,7 +43,7 @@ const StageCom = () => {
                         <div className="d-flex justify-content-between fs-4 my-2">
 
                             <span>
-                                tokens remaining in stage:
+                                Tokens remaining in stage:
 
                             </span>
                             <span>  {data?.remaining}</span>

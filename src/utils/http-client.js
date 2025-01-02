@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../../config';
+import { API_BASE_URL } from '@/config';
 import { AuthHeader } from './auth.utils';
 import axios from 'axios';
 const baseURL = API_BASE_URL;

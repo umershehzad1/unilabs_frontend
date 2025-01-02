@@ -92,14 +92,12 @@ const NavigationBar = () => {
                     Dashboard
                   </Button>
                 </div>
-                :
-                <div className="d-lg-block d-none">
-                  <Button as={Link} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn px-3 rounded-pill  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="/login">
-                    Sign in <MdLogin size={25} className="ms-1" />
-                  </Button>
-                </div>
-
-
+                : ""
+                // <div className="d-lg-block d-none">
+                //   <Button as={Link} className="mx-xl-4 mx-2 text-white  fw-bold transparentBtn px-3 rounded-pill  py-2" style={{ fontFamily: "Neue_Machina!important" }} href="/login">
+                //     Sign in <MdLogin size={25} className="ms-1" />
+                //   </Button>
+                // </div>
               }
 
             </Form>
