@@ -2,7 +2,7 @@
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createAppKit } from '@reown/appkit/react'
-import { mainnet, arbitrum } from '@reown/appkit/networks'
+import { mainnet, arbitrum, sepolia } from '@reown/appkit/networks'
 import React from 'react'
 import { cookieToInitialState, WagmiProvider } from 'wagmi'
 import { wagmiAdapter, projectId } from '../config'
@@ -23,9 +23,10 @@ const metadata = {
 const modal = createAppKit({
   adapters: [wagmiAdapter],
   projectId,
-  networks: [mainnet, arbitrum],
-  defaultNetwork: mainnet,
+  networks: [sepolia],
+  defaultNetwork: sepolia,
   metadata,
+  // testnet: true,
   features: {
     analytics: true,
     email: false,

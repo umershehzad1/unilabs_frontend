@@ -3,8 +3,9 @@ import CopyableLink from '@/components/dashboard/CopyableLink';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import { useAccount } from 'wagmi';
-
+import { wagmiContractConfig } from '@/contract/tokenContract';
+import { useAccount, useReadContract } from 'wagmi';
+import { useEffect, useState } from 'react';
 const MyToken = () => {
     const isConnected = useAccount();
     const walletAddress = isConnected.address;
@@ -16,6 +17,20 @@ const MyToken = () => {
         { label: "Total Contributed", value: 0 },
     ];
 
+    const [tokenBalance, setTokenBalance] = useState(0);
+
+    const { data: balance, error } = useReadContract({
+        ...wagmiContractConfig,
+        functionName: 'balanceOf',
+        args: [isConnected.address],
+    });
+
+    useEffect(() => {
+        if (balance) {
+            setTokenBalance(Number(balance) / 10 ** 18);
+        }
+
+    }, [balance]);
     return (
         <Container fluid className="px-md-4 text-white">
             <div className="rounded-4 py-3 px-md-5 my-4 pb-5" style={{ background: "#589CFF0A" }}>
@@ -94,7 +109,7 @@ const MyToken = () => {
                                     }}
                                 >
                                     <h5 className="text-white mt-2 f-of">
-                                        0 <span style={{ color: "var(--color2)" }} className="px-1 f-of">UNI</span>
+                                        {tokenBalance} <span style={{ color: "var(--color2)" }} className="px-1 f-of">UNI</span>
                                     </h5>
                                 </div>
                             </Card>

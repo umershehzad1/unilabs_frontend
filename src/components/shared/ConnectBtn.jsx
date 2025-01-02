@@ -58,7 +58,7 @@ const ConnectBtn = () => {
 
     return (
         <div>
-            {User?.token ? <w3m-network-button /> : <w3m-button />}
+            {User?.token ? "" : <w3m-button />}
         </div>
     );
 };

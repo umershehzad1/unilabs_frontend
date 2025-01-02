@@ -2,7 +2,8 @@ import { AuthName, AuthVerify } from '@/utils/auth.utils';
 import { useAuth } from '@/utils/AuthContext';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Container, Dropdown, Image } from 'react-bootstrap';
+import { Container, Dropdown } from 'react-bootstrap';
+import { CiSettings } from "react-icons/ci";
 import { FaSignOutAlt } from 'react-icons/fa';
 import { FaBarsStaggered } from "react-icons/fa6";
 
@@ -42,28 +43,16 @@ const SidebarHeader = ({ onLogoClick }) => {
                                 style={{ cursor: 'pointer' }}
                                 id="user-dropdown"
                             >
-                                <div className="mx-2 d-flex align-items-center" onClick={handleDropdownToggle}>
-                                    <div className="text-capitalize text-white f-qs" >
-                                        {fullName}
-                                    </div>
-                                </div>
+                                <CiSettings color='white' size={30} />
                             </Dropdown.Toggle>
-
-                            <Dropdown.Menu className="border-0" style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}>
+                            d                            <Dropdown.Menu className="border-0" style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}>
                                 <Dropdown.Item onClick={logout} >
-                                    <FaSignOutAlt className="me-2" />
                                     Disconnect Wallet
                                 </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
-                        <Image
-                            className="ms-2"
-                            onClick={handleDropdownToggle}
-                            src={user.image ? user.image : `https://api.dicebear.com/7.x/initials/svg?seed=${encodeURIComponent(fullName)}&radius=50`}
-                            alt="Avatar"
-                            style={{ height: '40px', width: "40px", borderRadius: "50%", cursor: 'pointer' }}
-                        />
+
                     </div>
 
                 </div>

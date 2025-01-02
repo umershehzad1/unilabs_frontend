@@ -22,7 +22,7 @@ const Tokenomics = () => {
                     value: item.value + 2 > 100 ? 100 : item.value + 2,
                 }))
             );
-        }, 5000);
+        }, 15000);
 
         return () => clearInterval(interval);
     }, []);

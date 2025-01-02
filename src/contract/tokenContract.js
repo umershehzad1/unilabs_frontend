@@ -1,6 +1,9 @@
+import { sepolia } from "@reown/appkit/networks";
+
 export const wagmiContractConfig = {
     address: '0xbD36044b01B12ba4b1013B47490f9d34aaa20911',
-    abi:[
+    chainId: sepolia?.id,
+    abi: [
         {
             "inputs": [
                 {
@@ -605,4 +608,4 @@ export const wagmiContractConfig = {
             "type": "function"
         }
     ],
-  }
+}

@@ -2,11 +2,10 @@
 import StageCom from '@/components/dashboard/StageCom';
 import { wagmiContractConfig } from '@/contract/tokenContract';
 import { useAccount, useReadContract } from 'wagmi';
-import { AuthVerify } from '@/utils/auth.utils';
 import Image from 'next/image';
-import { useParams, useSearchParams } from 'next/navigation';
-import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const tick = '/dashboard/verified.png';
 
@@ -17,10 +16,9 @@ const Dashboard = () => {
     const isConnected = useAccount();
     // console.log("Received amount: ", usdAmount);
 
-    const User = AuthVerify();
     const [verified, setVerified] = useState(false);
 
-    const [tokenBalance, setTokenBalance] = useState("0");
+    const [tokenBalance, setTokenBalance] = useState(0);
 
     useEffect(() => {
         if (verified) {
@@ -36,12 +34,10 @@ const Dashboard = () => {
 
     useEffect(() => {
         if (balance) {
-            setTokenBalance(balance?.toString());
+            setTokenBalance(Number(balance) / 10 ** 18);
         }
-        if (error) {
-            console.log("Error fetching token balance: ", error);
-        }
-    }, [balance, error]);
+
+    }, [balance]);
 
     return (
         <Container fluid className="px-md-4 text-white">
