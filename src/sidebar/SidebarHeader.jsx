@@ -45,7 +45,7 @@ const SidebarHeader = ({ onLogoClick }) => {
                             >
                                 <CiSettings color='white' size={30} />
                             </Dropdown.Toggle>
-                            d                            <Dropdown.Menu className="border-0" style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}>
+                            <Dropdown.Menu className="border-0" style={{ boxShadow: "rgba(149, 157, 165, 0.2) 0px 8px 24px" }}>
                                 <Dropdown.Item onClick={logout} >
                                     Disconnect Wallet
                                 </Dropdown.Item>

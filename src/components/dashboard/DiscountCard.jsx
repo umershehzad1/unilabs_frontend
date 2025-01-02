@@ -31,9 +31,8 @@ const DiscountCard = ({ data }) => {
         <Card.Text className="fs-4 fw-bold">
           Discount range from
           <span className="text-success"> {data.ds} USD </span> to
-          <span className="text-success d-block"> {data.de} USD</span>.
+          <span className="text-success "> {data.de} USD</span>
         </Card.Text>
-
       </Card.Body>
     </Card>
   );

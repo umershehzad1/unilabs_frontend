@@ -7,6 +7,7 @@
   --color5: linear-gradient(90deg, #4CAF50 0%, #204921 100%);
   --color6: #5291ED;
 }
+
 #shadow-root button[data-size='md'] {
   background-color: green !important;
 }
@@ -45,10 +46,11 @@ body {
 .caret-none::after {
   display: none !important;
 }
-.otp-input{
-  background-color: transparent!important;
-  border: 2px solid white!important;
-  color: white!important;
+
+.otp-input {
+  background-color: transparent !important;
+  border: 2px solid white !important;
+  color: white !important;
 }
 
 .f-qs {
@@ -62,6 +64,7 @@ body {
 .form-control {
   font-family: var(--font-outfit), sans-serif !important;
 }
+
 .active-link {
   animation: background-glow 0.6s ease forwards;
   font-weight: 600 !important;
@@ -154,7 +157,7 @@ body {
 }
 
 .shadow-button-lg {
-  box-shadow: 0 0 30.6px rgba(177, 209, 255, 0.9);
+  box-shadow: 0 0 3px rgba(177, 209, 255, 0.9);
 }
 
 .shadow-button-lg:hover {
@@ -488,14 +491,11 @@ input:-webkit-autofill {
 
 
 .vedio-custom-player {
-  background-color: rgba(33, 33, 34, 0.7)!important;
+  background-color: rgba(33, 33, 34, 0.7) !important;
 }
+
 .vedio-custom-player .modal-content {
-  border: 2px solid white!important;
-  border-radius: 20px!important;
-  background: linear-gradient(116.52deg, rgba(255, 255, 255, 0.6) -0.3%, rgba(255, 255, 255, 0.2) 100%)!important;
+  border: 2px solid white !important;
+  border-radius: 20px !important;
+  background: linear-gradient(116.52deg, rgba(255, 255, 255, 0.6) -0.3%, rgba(255, 255, 255, 0.2) 100%) !important;
 }
-
-
-
-
