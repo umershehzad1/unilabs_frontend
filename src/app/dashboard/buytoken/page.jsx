@@ -131,8 +131,9 @@ const BuyToken = () => {
             <div className="border-bottom border-success "></div>
             <Form className="py-3">
               <Form.Control
-                type="number"
-                placeholder="Enter the amount in USD you want to spend to purchase UNI tokens."
+                type="text"
+                disabled={true}
+                placeholder="Choose the amount in USD you want to spend to purchase UNI tokens."
                 className="amount-input fs-3 border-0 rounded-3"
               />
             </Form>
