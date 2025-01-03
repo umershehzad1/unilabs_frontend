@@ -40,9 +40,8 @@ const Transactions = () => {
             <div className="rounded-4 px-md-4 my-4 pb-5">
                 <div className="page-bg bg-top">
                     <h1 className="fw-bold border-bottom border-success pb-3">Transactions</h1>
-
                     {isLoading ? (
-                        <div className="d-flex justify-content-center align-items-center" style={{ height: "300px" }}>
+                        <div className="d-flex justify-content-center align-items-center" style={{ height: "400px" }}>
                             <Spinner animation="border" variant="light" role="status">
                                 <span className="visually-hidden">Loading...</span>
                             </Spinner>
@@ -55,7 +54,7 @@ const Transactions = () => {
                         <Table responsive className="mt-4">
                             <thead>
                                 <tr>
-                                    {headers.map((header, index) => (
+                                    {headers?.map((header, index) => (
                                         <th
                                             className="f-of fw-normal"
                                             key={index}
@@ -76,7 +75,7 @@ const Transactions = () => {
                             <tbody>
                                 {currentData?.map((item, index) => (
                                     <tr
-                                        key={item._id || index}
+                                        key={item?._id || index}
                                         style={{
                                             backgroundColor: 'rgba(88, 156, 255, 0.3)!important',
                                             color: '#DBDBDB',
@@ -86,25 +85,25 @@ const Transactions = () => {
                                         }}
                                     >
                                         <td className="f-of ps-4" style={{ color: "#DBDBDB" }}>
-                                            {item.invoiceId || "N/A"}
+                                            {item?.invoiceId || "N/A"}
                                         </td>
                                         <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {new Date(item.createdAt).toLocaleDateString() || "N/A"}
+                                            {new Date(item?.createdAt).toLocaleDateString() || "N/A"}
                                         </td>
                                         <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item.status || "N/A"}
+                                            {item?.status || "N/A"}
                                         </td>
                                         <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item.pay_amount ? item.pay_amount.toFixed(2) : "N/A"}
+                                            {item?.pay_amount ? item.pay_amount?.toFixed(2) : "N/A"}
                                         </td>
                                         <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item.amount || "N/A"}
+                                            {item?.amount || "N/A"}
                                         </td>
                                         <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item.to || "N/A"}
+                                            {item?.to || "N/A"}
                                         </td>
                                         <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item.status || "N/A"}
+                                            {item?.status || "N/A"}
                                         </td>
                                     </tr>
                                 ))}
@@ -112,7 +111,6 @@ const Transactions = () => {
                         </Table>
                     )}
                 </div>
-
                 {!isLoading && !error && allTransactions?.length > 0 && (
                     <Row className="align-items-center mt-4">
                         <Col xs={12} md={6} className="d-flex justify-content-lg-start justify-content-center">
@@ -130,7 +128,7 @@ const Transactions = () => {
                     </Row>
                 )}
             </div>
-        </Container>
+        </Container >
     );
 };
 

@@ -31,6 +31,13 @@ const MyToken = () => {
         }
 
     }, [balance]);
+    const formatBalance = (balance) => {
+        return Intl.NumberFormat('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        }).format(balance);
+    };
+
     return (
         <Container fluid className="px-md-4 text-white">
             <div className="rounded-4 py-3 px-md-5 my-4 pb-5" style={{ background: "#589CFF0A" }}>
@@ -58,15 +65,13 @@ const MyToken = () => {
                                     <Col className="d-flex flex-column flex-md-row align-items-center">
                                         {walletAddress ?
                                             <small className="fs-5 f-of mb-2 mb-md-0">
-                                                <small style={{ color: "var(--color1)" }}>Receiving Wallet: </small>
-                                                <p
-                                                    style={{
-                                                        wordWrap: "break-word",  // Allows breaking the long address into the next line
-                                                        overflowWrap: "break-word",  // Ensures the address breaks into the next line
-                                                        whiteSpace: "normal",  // Ensures the text doesn't stay in one line
-                                                        wordBreak: "break-word",  // Forces the word to break if needed
-                                                    }}
-
+                                                <small className="text-info">Receiving Wallet: </small>
+                                                <p style={{
+                                                    wordWrap: "break-word",
+                                                    overflowWrap: "break-word",
+                                                    whiteSpace: "normal",
+                                                    wordBreak: "break-word",
+                                                }}
                                                     className="ms-0 small f-of mb-0">{walletAddress}</p>
                                             </small>
                                             :
@@ -109,7 +114,7 @@ const MyToken = () => {
                                     }}
                                 >
                                     <h5 className="text-white mt-2 f-of">
-                                        {tokenBalance} <span style={{ color: "var(--color2)" }} className="px-1 f-of">UNI</span>
+                                        {formatBalance(tokenBalance)} <span style={{ color: "var(--color2)" }} className="px-1 f-of">UNI</span>
                                     </h5>
                                 </div>
                             </Card>

@@ -19,6 +19,12 @@ const Dashboard = () => {
     const [verified, setVerified] = useState(false);
 
     const [tokenBalance, setTokenBalance] = useState(0);
+    const formatBalance = (balance) => {
+        return Intl.NumberFormat('en-US', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+        }).format(balance);
+    };
 
     useEffect(() => {
         if (verified) {
@@ -63,7 +69,7 @@ const Dashboard = () => {
                         <h2 className='mb-0'>My Token Balance</h2>
                         <p className='mb-0 f-of rounded-3 ms-md-3 fw-bold ' style={{ padding: "15px", background: "var(--color2)", color: "var(--color3)" }}>
                             <Image src="/dashboard/coin.png" alt="Coins" className='mx-1' width={20} height={20} />
-                            {tokenBalance}
+                            {formatBalance(tokenBalance)}
                         </p>
                     </div>
                 </Row>
