@@ -72,13 +72,14 @@ const BuyToken = () => {
       });
       return;
     }
-    if (amount <= 0) {
+    if (amount < 10) {
       Swal.fire({
         title: "Error",
-        text: "Please Enter valid amount to proceed",
+        text: "Please enter a minimum amount of 10 to proceed.",
         icon: "error",
         confirmButtonText: "OK",
-      }); return
+      });
+      return;
     }
     setLoading(true);
     const paymentData = {
@@ -165,7 +166,7 @@ const BuyToken = () => {
                 <Form.Label className="fw-bold fs-5">Payment Amount</Form.Label>
                 <Form.Control
                   type="number"
-                  min={1}
+                  min={10}
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   placeholder="Enter Sending Amount"
