@@ -35,7 +35,7 @@ const DashboardLayout = ({ children }) => {
 
                         {isConnected ? (
                             <div style={{
-                                overflowY: 'auto', height: "90vh",
+                                overflowY: 'auto', height: "96vh",
                             }}>
                                 <style jsx>{`
     div {
