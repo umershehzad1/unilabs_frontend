@@ -1,7 +1,6 @@
 
 export function AuthHeader() {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
-  console.log(loggedInUser)
   return loggedInUser && loggedInUser?.token
     ? { "x-access-token": loggedInUser?.token }
     : {};

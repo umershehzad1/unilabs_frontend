@@ -1,52 +1,32 @@
 "use client";
 import BarCodeRow from '@/components/dashboard/BarCodeRow';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Card, Col, Container, Image } from 'react-bootstrap';
 
 const MakePayment = () => {
-  const router = useRouter();
-  const [havePromo, setHavePromo] = useState(null);
-  const [paymentData, setPaymentData] = useState(null);
-
   const query = useSearchParams()
-  const rawData = query.get("query"); // Get the raw serialized data
-  const [parsedData, setParsedData] = useState(null);
-
-  // const data = query.get("query")
-
+  const QueryData = query.get("query");
+  const [stateData, setStateData] = useState(null);
   useEffect(() => {
-    if (rawData) {
-      try {
-        const decodedData = JSON.parse(decodeURIComponent(rawData));
-        setParsedData(decodedData.data);
-      } catch (error) {
-        console.error("Error parsing data:", error);
-      }
+    if (QueryData) {
+      const decodedData = JSON.parse(decodeURIComponent(QueryData));
+      setStateData(decodedData);
     }
-  }, [rawData]);
+  }, [QueryData])
 
-  console.log("Parsed Data:", parsedData);
-
-  // console.log("dataaaaa: ", JSON.stringify(data, null, 3))
-  const getcard = [
-    { label: "Token Ordered:", value: 0.00876 },
-    { label: "Purchase Bonus:", value: 12.00 },
+  const getCard = [
+    { label: "Token Ordered:", value: stateData?.uniTokens?.toFixed(2) },
+    { label: "Purchase Bonus:", value: stateData?.purchaseBonus?.toFixed(2) },
+    { label: "Total Tokens:", value: stateData?.totalToken?.toFixed(2) },
   ];
-
   return (
     <Container fluid className="px-md-4 text-white">
       <div className="rounded-4 py-3 px-md-5 my-4 pb-5" style={{ background: "#589CFF0A" }}>
         <div className="page-bg bg-top">
           <h1 className="fw-bold display-5 text-center">Make Your Payment</h1>
-          <div className="bojrder-bottom border-success mb-2"></div>
-
-
-          <BarCodeRow amount={parsedData?.amount} paymentId={parsedData?.paymentId
-          } />
-
-
-
+          <div className="border-bottom border-success mb-2"></div>
+          <BarCodeRow amount={stateData?.amount} paymentId={stateData?.paymentId} />
           <div className="border-top border-success mb-2 "></div>
           <h1 className="fw-bold display-6 text-center">You Get:</h1>
           <div className="border-bottom border-success mb-3 "></div>
@@ -59,7 +39,7 @@ const MakePayment = () => {
               color: "white",
               backgroundColor: "rgba(20, 47, 81, 0.7)"
             }}>
-              {getcard.map((item, index) => (
+              {getCard.map((item, index) => (
                 <div key={index} className="d-flex justify-content-between fs-4 py-1" style={{ color: "#DBDBDB" }}>
                   <small>{item.label}</small>
                   <small>

@@ -1,28 +1,17 @@
-import { useState } from 'react';
-import { Button, Col, Container, Image, Row } from 'react-bootstrap';
-import Confetti from 'react-confetti';
-import { GrCopy } from 'react-icons/gr';
-import { useWindowSize } from 'react-use';
-import { useAccount } from 'wagmi';
+import Link from 'next/link';
 import { QRCodeCanvas } from 'qrcode.react';
+import { Col, Container, Image, Row } from 'react-bootstrap';
+import { LiaCcAmazonPay } from "react-icons/lia";
+import { useAccount } from 'wagmi';
 
 
 const BarCodeRow = ({
     amount, paymentId
 }) => {
-    const [copied, setCopied] = useState(false);
-    const { width, height } = useWindowSize();
     const isConnected = useAccount()
     const url = `https://nowpayments.io/payment/?iid=${paymentId}`
-    const handleCopy = () => {
-        navigator.clipboard.writeText(url);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 1500);
-    };
-    const code = isConnected?.address;
-    // console.log("code", isConnected.address)
 
-    const value = 0.7654;
+    const code = isConnected?.address;
 
     return (
         <Container fluid className="py-4 text-center py-5">
@@ -45,25 +34,24 @@ const BarCodeRow = ({
                         {code}
                     </p>
 
-                    {copied && <Confetti width={width} height={height} recycle={false} numberOfPieces={200} />}
-
-                    <Button
-                        onClick={handleCopy}
-                        className="ms-2 mt-3 rounded-pill d-flex align-items-center justify-content-center"
-                        style={{
-                            backgroundColor: "#D9D9D933",
-                            border: "none",
-                            color: "white",
-                            padding: "10px 20px",
-                        }}
-                    >
-                        <GrCopy className="me-2" color={copied ? "green" : "white"} />
-                        Copy Link
-                    </Button>
+                    <div className='d-flex justify-content-md-start justify-content-center'>
+                        <Link href={url}
+                            target="_blank"
+                            className="rounded-pill btn d-flex align-items-center justify-content-center"
+                            style={{
+                                backgroundColor: "#D9D9D933",
+                                border: "none",
+                                color: "white",
+                                padding: "10px 20px",
+                            }}
+                        >
+                            <LiaCcAmazonPay size={30} className="me-2" />
+                            Pay Now
+                        </Link>
+                    </div>
                 </Col>
 
                 <Col md={6} className="d-flex justify-content-lg-end justify-content-center align-items-center">
-                    {/* <Image src="/barcode.png" width={200} fluid alt="UniLabs" /> */}
                     <QRCodeCanvas className='bg-light py-2 px-2' value={url} size={200} />
                 </Col>
             </Row>

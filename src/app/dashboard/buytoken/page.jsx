@@ -1,7 +1,7 @@
 "use client";
 import DiscountCard from '@/components/dashboard/DiscountCard';
 import { CreateInvoice } from '@/services/users';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Form, Image, Row } from 'react-bootstrap';
 import { AiOutlineDown } from 'react-icons/ai';
@@ -17,7 +17,7 @@ const BuyToken = () => {
   const query = searchParams.get("query");
   const [amount, setAmount] = useState(query || 0);
   const [showStep2, setShowStep2] = useState(!!query);
-  const [ethAmount, setEthAmount] = useState(0);
+  const [totalToken, setTotalToken] = useState(0);
   const [uniTokens, setUniTokens] = useState(0);
   const [purchaseBonus, setPurchaseBonus] = useState(0);
   const [selectedDiscount, setSelectedDiscount] = useState(0);
@@ -41,12 +41,12 @@ const BuyToken = () => {
     if (amount > 0) {
       const eth = amount / ETH_RATE;
       const uni = eth / UNI_RATE;
-      setEthAmount(eth);
-      setUniTokens(uni);
       const bonus = (uni * selectedDiscount) / 100;
+      setUniTokens(uni);
       setPurchaseBonus(bonus);
+      setTotalToken(uni + bonus);
     } else {
-      setEthAmount(0);
+      setTotalToken(0);
       setUniTokens(0);
       setPurchaseBonus(0);
     }
@@ -91,9 +91,15 @@ const BuyToken = () => {
     try {
       const response = await CreateInvoice(paymentData);
       if (response) {
-        const { data } = response.data;
-        const serializedData = encodeURIComponent(JSON.stringify(data));
-        router.push(`/dashboard/makepayment?query=${serializedData}`);
+        const { data } = response?.data?.data;
+        const stateData = {
+          ...data,
+          uniTokens,
+          totalToken,
+          purchaseBonus,
+        };
+        const query = encodeURIComponent(JSON.stringify(stateData));
+        router.push(`/dashboard/makepayment?query=${query}`);
       } else {
         setLoading(false);
         Swal.fire({
@@ -114,14 +120,12 @@ const BuyToken = () => {
     }
   };
 
-  const getcard = [
+  const getCard = [
     { label: "Token Ordered:", value: uniTokens.toFixed(2) },
     { label: "Purchase Bonus:", value: purchaseBonus.toFixed(2) },
-    { label: "Total Tokens:", value: (uniTokens + purchaseBonus).toFixed(2) },
+    { label: "Total Tokens:", value: totalToken.toFixed(2) },
   ];
-
   const [isChecked, setIsChecked] = useState(false);
-
   return (
     <Container fluid className="px-md-4 text-white ">
       <div className="rounded-4 py-3 px-md-5 my-4 pb-5" style={{ background: "#589CFF0A" }}>
@@ -131,8 +135,9 @@ const BuyToken = () => {
             <div className="border-bottom border-success "></div>
             <Form className="py-3">
               <Form.Control
-                type="number"
-                placeholder="Enter the amount in USD you want to spend to purchase UNI tokens."
+                type="text"
+                disabled={true}
+                placeholder="Choose the amount in USD you want to spend to purchase UNI tokens."
                 className="amount-input fs-3 border-0 rounded-3"
               />
             </Form>
@@ -223,7 +228,7 @@ const BuyToken = () => {
                 = 0.0001 ETH
               </p>
               <Card className="p-sm-5 p-3 rounded-4" style={{ color: "white", backgroundColor: "hsla(213, 60.40%, 19.80%, 0.70)" }}>
-                {getcard.map((data, index) => (
+                {getCard.map((data, index) => (
                   <div key={index} style={{ color: "#DBDBDB" }} className="d-flex justify-content-between fs-5 py-1">
                     <small>{data.label}</small>
                     <small>

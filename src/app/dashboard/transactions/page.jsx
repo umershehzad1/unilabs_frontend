@@ -37,7 +37,7 @@ const Transactions = () => {
 
     return (
         <Container fluid className="text-white">
-            <div className="rounded-4 px-md-4 my-4 pb-5">
+            <div className="rounded-4 transactions  px-md-4 my-4 pb-5">
                 <div className="page-bg bg-top">
                     <h1 className="fw-bold border-bottom border-success pb-3">Transactions</h1>
                     {isLoading ? (
