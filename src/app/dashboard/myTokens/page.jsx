@@ -1,11 +1,11 @@
 "use client";
-import CopyableLink from '@/components/dashboard/CopyableLink';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { wagmiContractConfig } from '@/contract/tokenContract';
-import { useAccount, useReadContract } from 'wagmi';
+import TextEllipsis from '@/libs/TextOverflow';
+import { BalanceFormater } from '@/utils/BalanceFormater';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { useAccount, useReadContract } from 'wagmi';
 const MyToken = () => {
     const isConnected = useAccount();
     const walletAddress = isConnected.address;
@@ -31,13 +31,6 @@ const MyToken = () => {
         }
 
     }, [balance]);
-    const formatBalance = (balance) => {
-        return Intl.NumberFormat('en-US', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-        }).format(balance);
-    };
-
     return (
         <Container fluid className="px-md-4 text-white">
             <div className="rounded-4 py-3 px-md-5 my-4 pb-5" style={{ background: "#589CFF0A" }}>
@@ -114,7 +107,8 @@ const MyToken = () => {
                                     }}
                                 >
                                     <h5 className="text-white mt-2 f-of">
-                                        {formatBalance(tokenBalance)} <span style={{ color: "var(--color2)" }} className="px-1 f-of">UNI</span>
+                                        <TextEllipsis value={BalanceFormater(tokenBalance)} />
+                                        <span style={{ color: "var(--color2)" }} className="px-1 f-of">UNI</span>
                                     </h5>
                                 </div>
                             </Card>

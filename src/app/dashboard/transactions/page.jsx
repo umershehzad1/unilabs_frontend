@@ -1,18 +1,18 @@
 "use client";
 import PaginationComponent from '@/components/shared/Pagination';
 import { AllPayments } from '@/services/users';
+import { BalanceFormater } from '@/utils/BalanceFormater';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Col, Container, Row, Spinner, Table } from 'react-bootstrap';
 
 const Transactions = () => {
-    const headers = ["Tranx NO", "Transaction Date", "Status", "Amount", "USD Amount", "To", "Type"];
+    const headers = ["Tranx NO", "Amount", "Tokens", "Status", "Transaction Date",];
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 12;
-
+    const itemsPerPage = 10;
     const [allTransactions, setAllTransactions] = useState([]);
-
     const getAllTransactions = async () => {
         setIsLoading(true);
         try {
@@ -84,26 +84,35 @@ const Transactions = () => {
                                             overflow: 'hidden',
                                         }}
                                     >
-                                        <td className="f-of ps-4" style={{ color: "#DBDBDB" }}>
-                                            {item?.invoiceId || "N/A"}
+                                        <td className="f-of ps-4" >
+                                            <Link href={item?.invoice_url || ""} target='_blank' style={{ color: "#DBDBDB" }} className='pointer text-decoration-none'>
+                                                {item?.invoiceId}
+                                            </Link>
                                         </td>
                                         <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {new Date(item?.createdAt).toLocaleDateString() || "N/A"}
+                                            {item?.amount}
+                                        </td>
+                                        <td>
+                                            <p className="f-of text-truncate"
+                                                title={BalanceFormater(item?.token || 0)}
+                                                style={{ color: "#DBDBDB", width: "150px", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
+                                                {BalanceFormater(item?.token || 0)}
+                                            </p>
+                                        </td>
+
+                                        <td className="f-of " style={{
+                                            color: item?.status === "waiting" ? "orange" : item?.status === "finished" ? "green" : "white"
+                                        }}>
+                                            <span className='text-capitalize'>
+                                                {item?.status}
+                                            </span>
                                         </td>
                                         <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item?.status || "N/A"}
-                                        </td>
-                                        <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item?.pay_amount ? item.pay_amount?.toFixed(2) : "N/A"}
-                                        </td>
-                                        <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item?.amount || "N/A"}
-                                        </td>
-                                        <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item?.to || "N/A"}
-                                        </td>
-                                        <td className="f-of" style={{ color: "#DBDBDB" }}>
-                                            {item?.status || "N/A"}
+                                            {new Date(item?.createdAt).toLocaleDateString("en-US", {
+                                                year: "numeric",
+                                                month: "short",
+                                                day: "2-digit",
+                                            })}
                                         </td>
                                     </tr>
                                 ))}
@@ -111,23 +120,25 @@ const Transactions = () => {
                         </Table>
                     )}
                 </div>
-                {!isLoading && !error && allTransactions?.length > 0 && (
-                    <Row className="align-items-center mt-4">
-                        <Col xs={12} md={6} className="d-flex justify-content-lg-start justify-content-center">
-                            <p className="text-white">
-                                Showing {startIdx + 1} - {endIdx} of {allTransactions.length} transactions
-                            </p>
-                        </Col>
-                        <Col xs={12} md={6} className="d-flex justify-content-lg-end justify-content-center">
-                            <PaginationComponent
-                                currentPage={currentPage}
-                                totalPages={totalPages}
-                                onPageChange={setCurrentPage}
-                            />
-                        </Col>
-                    </Row>
-                )}
-            </div>
+                {
+                    !isLoading && !error && allTransactions?.length > 0 && (
+                        <Row className="align-items-center mt-4">
+                            <Col xs={12} md={6} className="d-flex justify-content-lg-start justify-content-center">
+                                <p className="text-white">
+                                    Showing {startIdx + 1} - {endIdx} of {allTransactions.length} transactions
+                                </p>
+                            </Col>
+                            <Col xs={12} md={6} className="d-flex justify-content-lg-end justify-content-center">
+                                <PaginationComponent
+                                    currentPage={currentPage}
+                                    totalPages={totalPages}
+                                    onPageChange={setCurrentPage}
+                                />
+                            </Col>
+                        </Row>
+                    )
+                }
+            </div >
         </Container >
     );
 };

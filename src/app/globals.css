@@ -757,6 +757,25 @@ body {
   opacity: 1 !important;
 }
 
+.showValue {
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  cursor: pointer;
+  vertical-align: top;
+  transition: white-space 1s ease;
+}
+
+.showValue:hover {
+  text-overflow: clip;
+  white-space: normal;
+}
+
+
+
 @media only screen and (min-width: 1170px) {
   .roadmaps .vertical-timeline::after {
     left: 50%;
@@ -764,7 +783,7 @@ body {
   }
 
   .transactions .page-bg {
-    height: 70vh;
+    height: 80vh;
   }
 }
 

@@ -1,5 +1,7 @@
 "use client";
 import BarCodeRow from '@/components/dashboard/BarCodeRow';
+import TextEllipsis from '@/libs/TextOverflow';
+import { BalanceFormater } from '@/utils/BalanceFormater';
 import { useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Card, Col, Container, Image } from 'react-bootstrap';
@@ -16,9 +18,9 @@ const MakePayment = () => {
   }, [QueryData])
 
   const getCard = [
-    { label: "Token Ordered:", value: stateData?.uniTokens?.toFixed(2) },
-    { label: "Purchase Bonus:", value: stateData?.purchaseBonus?.toFixed(2) },
-    { label: "Total Tokens:", value: stateData?.totalToken?.toFixed(2) },
+    { label: "Token Ordered:", value: BalanceFormater(stateData?.uniTokens?.toFixed(2)) },
+    { label: "Purchase Bonus:", value: BalanceFormater(stateData?.purchaseBonus?.toFixed(2)) },
+    { label: "Total Tokens:", value: BalanceFormater(stateData?.totalToken?.toFixed(2)) },
   ];
   return (
     <Container fluid className="px-md-4 text-white">
@@ -26,9 +28,9 @@ const MakePayment = () => {
         <div className="page-bg bg-top">
           <h1 className="fw-bold display-5 text-center">Make Your Payment</h1>
           <div className="border-bottom border-success mb-2"></div>
-          <BarCodeRow amount={stateData?.amount} paymentId={stateData?.paymentId} />
+          <BarCodeRow stateData={stateData} />
           <div className="border-top border-success mb-2 "></div>
-          <h1 className="fw-bold display-6 text-center">You Get:</h1>
+          <h1 className="fw-bold display-6 text-center">Estimated Tokens You’ll Receive</h1>
           <div className="border-bottom border-success mb-3 "></div>
           <Col xl={5} md={7} xs={12} className="mx-auto text-center">
             <p className="mb-0 fs-4 f-of rounded-3 ms-md-3 fw-bold " style={{ padding: "15px" }}>
@@ -41,10 +43,11 @@ const MakePayment = () => {
             }}>
               {getCard.map((item, index) => (
                 <div key={index} className="d-flex justify-content-between fs-4 py-1" style={{ color: "#DBDBDB" }}>
-                  <small>{item.label}</small>
+                  <small>{item?.label}</small>
                   <small>
                     <Image src="/dashboard/coin.png" alt="Coins" className="mx-2 mb-1" width={15} height={15} />
-                    {item.value} UNI
+                    <TextEllipsis value={item?.value} />
+                    UNI
                   </small>
                 </div>
               ))}

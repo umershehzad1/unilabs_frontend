@@ -1,6 +1,9 @@
 "use client";
 import DiscountCard from '@/components/dashboard/DiscountCard';
+import { getCryptoExchangeRate } from '@/libs/ExchangeRate';
+import TextEllipsis from '@/libs/TextOverflow';
 import { CreateInvoice } from '@/services/users';
+import { BalanceFormater } from '@/utils/BalanceFormater';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { Button, Card, Col, Container, Form, Image, Row } from 'react-bootstrap';
@@ -20,10 +23,8 @@ const BuyToken = () => {
   const [totalToken, setTotalToken] = useState(0);
   const [uniTokens, setUniTokens] = useState(0);
   const [purchaseBonus, setPurchaseBonus] = useState(0);
-  const [selectedDiscount, setSelectedDiscount] = useState(0);
-
-  const ETH_RATE = 300;
-  const UNI_RATE = 0.0001;
+  const [ethRate, setEthRate] = useState(0);
+  const UNI_RATE = 1;
 
   const data = [
     { discount: 5, ds: 50.00, de: 250.0 },
@@ -32,29 +33,46 @@ const BuyToken = () => {
   ];
 
   useEffect(() => {
-    if (isConnected?.address) {
-      setAddress(isConnected?.address);
-    }
+    const fetchExchangeRate = async () => {
+      if (isConnected?.address) {
+        setAddress(isConnected?.address);
+      }
+      try {
+        const value = await getCryptoExchangeRate();
+        if (value) {
+          setEthRate(value);
+        }
+      } catch (error) {
+        console.error("Error fetching exchange rate:", error);
+      }
+    };
+
+    fetchExchangeRate();
   }, [isConnected?.address]);
 
   useEffect(() => {
+    setPurchaseBonus(0)
     if (amount > 0) {
-      const eth = amount / ETH_RATE;
+      const eth = amount * ethRate;
       const uni = eth / UNI_RATE;
-      const bonus = (uni * selectedDiscount) / 100;
+      if (amount >= 50 && amount <= 250) {
+        setPurchaseBonus(((uni * 5) / 100))
+      } else if (amount >= 251 && amount <= 400) {
+        setPurchaseBonus(((uni * 15) / 100))
+      } else if (amount >= 400) {
+        setPurchaseBonus(((uni * 25) / 100))
+      }
       setUniTokens(uni);
-      setPurchaseBonus(bonus);
-      setTotalToken(uni + bonus);
+      setTotalToken(uni + purchaseBonus);
     } else {
       setTotalToken(0);
       setUniTokens(0);
       setPurchaseBonus(0);
     }
-  }, [amount, selectedDiscount]);
+  }, [amount]);
 
-  const handleSelectDiscount = (selectedAmount, discount) => {
+  const handleSelectDiscount = (selectedAmount,) => {
     setAmount(selectedAmount);
-    setSelectedDiscount(discount);
     setShowStep2(true);
   };
 
@@ -81,6 +99,16 @@ const BuyToken = () => {
       });
       return;
     }
+    if (amount > 10000) {
+      Swal.fire({
+        title: "Error",
+        text: "Please enter a maximum amount of 10,000 to proceed.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
     setLoading(true);
     const paymentData = {
       amount: amount,
@@ -121,9 +149,9 @@ const BuyToken = () => {
   };
 
   const getCard = [
-    { label: "Token Ordered:", value: uniTokens.toFixed(2) },
-    { label: "Purchase Bonus:", value: purchaseBonus.toFixed(2) },
-    { label: "Total Tokens:", value: totalToken.toFixed(2) },
+    { label: "Token Ordered:", value: BalanceFormater(uniTokens.toFixed(2)) },
+    { label: "Purchase Bonus:", value: BalanceFormater(purchaseBonus.toFixed(2)) },
+    { label: "Total Tokens:", value: BalanceFormater(totalToken.toFixed(2)) },
   ];
   const [isChecked, setIsChecked] = useState(false);
   return (
@@ -172,6 +200,7 @@ const BuyToken = () => {
                 <Form.Control
                   type="number"
                   min={10}
+                  max={10000}
                   value={amount}
                   onChange={(e) => setAmount(e.target.value)}
                   placeholder="Enter Sending Amount"
@@ -219,7 +248,7 @@ const BuyToken = () => {
               </Col>
             </Form>
 
-            <h1 className="fw-bold display-6 text-center">You Get:</h1>
+            <h1 className="fw-bold display-6 text-center">Estimated Tokens You’ll Receive</h1>
             <Col xl={5} md={7} xs={12} className="mx-auto text-center">
               <p className=' mb-0 fs-4 f-of rounded-3 ms-md-3 fw-bold  border-top border-success border-2' style={{ padding: "15px", }}>
                 <Image src="/dashboard/coin.png" alt="Coins" className='mx-1' width={40} height={40} />
@@ -231,9 +260,10 @@ const BuyToken = () => {
                 {getCard.map((data, index) => (
                   <div key={index} style={{ color: "#DBDBDB" }} className="d-flex justify-content-between fs-5 py-1">
                     <small>{data.label}</small>
-                    <small>
+                    <small className='d-flex align-items-center'>
                       <Image src="/dashboard/coin.png" alt="Coins" className="mx-2 mb-1" width={15} height={15} />
-                      {data.value} UNI
+                      <TextEllipsis value={data.value} />
+                      UNI
                     </small>
                   </div>
                 ))}
